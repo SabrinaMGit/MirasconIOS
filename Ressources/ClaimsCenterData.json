@@ -1,0 +1,18 @@
+[
+    {
+        "name": "FILL OUT THE CLAIMS FORM",
+        "imageName": "icon_fillclaimsform_weiss"
+    },
+    {
+        "name": "PHTOS CAMERA / UPLOAD",
+        "imageName": "camera"
+    },
+    {
+        "name": "OTHER INFO / MP POLICE",
+        "imageName": "camera"
+    },
+    {
+        "name": "GLASS DAMAGE",
+        "imageName": "icon_glassdamage_weiss"
+    }
+]

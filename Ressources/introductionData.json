@@ -1,0 +1,20 @@
+[
+    {
+        "titel": "Welcome",
+        "id": 1001,
+        "isFeatured": true,
+        "explain": "You have an accident and need help? You want to report an accident with Mirascon? You can connect directly to the emergency center"
+    },
+    {
+        "titel": "Introduction",
+        "id": 1004,
+        "isFeatured": true,
+        "explain": "You have an accident and need help? You want to report an accident with Mirascon? You can connect directly to the emergency center"
+    },
+    {
+        "titel": "Preview",
+        "id": 1007,
+        "isFeatured": true,
+        "explain": "You have an accident and need help? You want to report an accident with Mirascon? You can connect directly to the emergency center"
+    }
+]

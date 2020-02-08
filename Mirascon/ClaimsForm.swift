@@ -20,11 +20,13 @@ struct ClaimsForm: View {
      @State private var showingAlert = false
     let defaults = UserDefaults.standard
     
-   @State private var firstNameSaved = UserDefaults.standard.string(forKey: "firstName")
-    @State private var lastNameSaved = UserDefaults.standard.string(forKey: "lastName")
-    @State private var lpSaved = UserDefaults.standard.string(forKey: "lp")
-    @State private var phoneSaved = UserDefaults.standard.string(forKey: "phone")
-    @State private var mailSaved = UserDefaults.standard.string(forKey: "mail")
+    @State public var firstNameSaved = UserDefaults.standard.string(forKey: "firstName")
+    @State public var lastNameSaved = UserDefaults.standard.string(forKey: "lastName")
+    @State public var lpSaved = UserDefaults.standard.string(forKey: "lp")
+    @State public var phoneSaved = UserDefaults.standard.string(forKey: "phone")
+    @State public var mailSaved = UserDefaults.standard.string(forKey: "mail")
+    
+    
     
     @ObservedObject var viewRouter: ViewRouter
       init(_ viewRouter: ViewRouter){
@@ -161,25 +163,19 @@ struct ClaimsForm: View {
                     
                     Button(action: {
                         print("continue tapped!")
-                        self.firstNameSaved = self.firstName
-                        self.lastNameSaved = self.lastName
-                        self.lpSaved = self.lp
-                        self.phoneSaved = self.phone
-                        self.mailSaved = self.email
-                        UserDefaults.standard.set(self.firstName, forKey: "firstName")
-                        UserDefaults.standard.set(self.lastName, forKey: "lastName")
-                        UserDefaults.standard.set(self.lp, forKey: "lp")
-                        UserDefaults.standard.set(self.phone, forKey: "phone")
-                        UserDefaults.standard.set(self.email, forKey: "mail")
-                        self.viewRouter.currentPage = "mainView"
-                        
+                        self.viewRouter.currentPage = "googleMaps"
                         if self.firstName != "" && self.lastName != "" && self.lp != "" && self.phone != "" && self.email != ""{
-                            //let defaults = UserDefaults.standard
-                        //defaults.set(25, forKey: "Age")
-                           
-                            
-                        //let arrayCustomData = [self.firstName,self.lastName,self.lp,self.phone,self.email ]
-                        //defaults.set(arrayCustomData, forKey: "SavedArrayData")
+                          self.firstNameSaved = self.firstName
+                          self.lastNameSaved = self.lastName
+                          self.lpSaved = self.lp
+                          self.phoneSaved = self.phone
+                          self.mailSaved = self.email
+                          UserDefaults.standard.set(self.firstName, forKey: "firstName")
+                          UserDefaults.standard.set(self.lastName, forKey: "lastName")
+                          UserDefaults.standard.set(self.lp, forKey: "lp")
+                          UserDefaults.standard.set(self.phone, forKey: "phone")
+                          UserDefaults.standard.set(self.email, forKey: "mail")
+                          
                         
                         } else{
                              self.showingAlert = true

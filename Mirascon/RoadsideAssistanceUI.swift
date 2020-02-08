@@ -47,23 +47,23 @@ struct RoadsideAssistanceUI: View {
                     .padding()
                 Spacer()
                 VStack {
-                    Form{
-                        Button(action: {
-                            print("police number tapped!")
-                            let tel = "tel://"
-                            let formattedString = tel + self.roadsideNmb
-                            let url = URL(string: formattedString)!
-                            UIApplication.shared.open(url)  }){
-                                Rows(image: "RoadsideAssistance", name: "ROADSIDE ASSISTANCE")
-                        }; Button(action: {
-                            print("police number tapped!")
-                            let tel = "tel://"
-                            let formattedString = tel + self.carclaimsNmb
-                            let url = URL(string: formattedString)!
-                            UIApplication.shared.open(url)  }){
-                                Rows(image: "CarClaims", name: "0800 CARCLAIMS         ")
-                        }
-                    }
+                    
+                    Button(action: {
+                        print("police number tapped!")
+                        let tel = "tel://"
+                        let formattedString = tel + self.roadsideNmb
+                        let url = URL(string: formattedString)!
+                        UIApplication.shared.open(url)  }){
+                            Rows(image: "RoadsideAssistance", name: "ROADSIDE ASSISTANCE")
+                    }.buttonStyle(btnStyle()); Button(action: {
+                        print("police number tapped!")
+                        let tel = "tel://"
+                        let formattedString = tel + self.carclaimsNmb
+                        let url = URL(string: formattedString)!
+                        UIApplication.shared.open(url)  }){
+                            Rows(image: "CarClaims", name: "0800 CARCLAIMS         ")
+                    }.buttonStyle(btnStyle())
+                    
                     Spacer()
                     Button(action: {
                         print("back tapped!")
@@ -88,27 +88,3 @@ struct RoadsideAssistanceUI_Previews: PreviewProvider {
         RoadsideAssistanceUI(ViewRouter())
     }
 }
-
-/* HStack {
- HStack{
- Image("RoadsideAssistance")
- .resizable()
- .scaledToFit()
- .foregroundColor(Color.white)
- .frame(width: 100.0,height: 90)
- Text("POLICE 110")
- .foregroundColor(Color.white)
- }
- Spacer()
- }.padding()
- HStack{
- Image("CarClaims")
- .resizable()
- .scaledToFit()
- .foregroundColor(Color.white)
- .frame(width: 100.0,height: 90)
- Text("FIRE DEPARTMENT 112")
- .foregroundColor(Color.white)
- Spacer()
- }.padding()
- */

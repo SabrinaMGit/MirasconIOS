@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import GoogleMaps
+import Firebase
+
+
+let googleApiKey = "AIzaSyCjIvCCSi1HC2PDtJRE1wEGi5W6WLbzfNc"
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-     let googleApiKey = "AIzaSyCjIvCCSi1HC2PDtJRE1wEGi5W6WLbzfNc"
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.shared.statusBarStyle = .lightContent
+         GMSServices.provideAPIKey(googleApiKey)
+         FirebaseApp.configure()
         return true
     }
 

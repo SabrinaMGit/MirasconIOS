@@ -96,7 +96,7 @@ struct uploadPhotos: View {
                             self.showingImagePicker2 = true
                     }.sheet(isPresented: $showingImagePicker2, onDismiss: loadImage2) {
                         ImagePicker(image: self.$inputImage2)
-                    }
+                    }.buttonStyle(btnStyle()) //Check if it zoom in if pressed
                 }
                 HStack{
                     ZStack{
@@ -236,7 +236,8 @@ extension CaptureImageView: UIViewControllerRepresentable {
 
 
 struct MailView: UIViewControllerRepresentable {
-    
+    let gMap = GoogleMap()
+    let cForm = ClaimsForm(ViewRouter())
     @Environment(\.presentationMode) var presentation
     @Binding var result: Result<MFMailComposeResult, Error>?
     
@@ -271,11 +272,12 @@ struct MailView: UIViewControllerRepresentable {
     }
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<MailView>) -> MFMailComposeViewController {
+        
         let vc = MFMailComposeViewController()
-        //vc.setPreferredSendingEmailAddress("qasway@gmail.com")
-        vc.setToRecipients(["qasway@gmail.com"])
+        //vc.setPreferredSendingEmailAddress("")
+        vc.setToRecipients(["claims@mirascon.com"])
         vc.setSubject("Claims Form")
-        vc.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
+        vc.setMessageBody("<p>First Name: \(String(describing: cForm.firstNameSaved)),\nLast Name: \(String(describing: cForm.lastNameSaved)),\nLicense Plate: \(String(describing: cForm.lpSaved)),\nPhone Number: \(String(describing: cForm.phoneSaved)),\n EMail: \(String(describing: cForm.mailSaved)),\nLatitude: \(self.gMap.userLatitude) Longitute:  \(self.gMap.userLongitude)</p>", isHTML: true)
         //vc.setMessageBody("Hello Im here", isHTML: false)
         
         //vc.addAttachmentData(self.image, mimeType: <#T##String#>, fileName: <#T##String#>)

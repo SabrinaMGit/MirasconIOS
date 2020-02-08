@@ -12,7 +12,8 @@ struct MainScreen: View {
     
     let startColor = Color(hex: "#19334f")
     let endColor = Color(hex: "#102234")
-    let url = URL(string: "https://www.hackingwithswift.com")
+    let labelColor = Color(hex: "#d40b0b")
+    let url = URL(string: "https://www.mirascon.com")
     
     @ObservedObject var viewRouter: ViewRouter
     init(_ viewRouter: ViewRouter){
@@ -22,73 +23,93 @@ struct MainScreen: View {
     }
     
     var body: some View {
-        VStack {
+        ZStack {
+            RadialGradient(gradient: Gradient(colors: [startColor, endColor]), center: .center, startRadius: 2, endRadius: 650)
+                .edgesIgnoringSafeArea(.all)
             VStack {
-                ZStack {
-                    RadialGradient(gradient: Gradient(colors: [startColor, endColor]), center: .center, startRadius: 2, endRadius: 650)
-                        .edgesIgnoringSafeArea(.all)
-                    VStack {
-                        Image("MirasconLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200.0,height:100)
-                        HStack {
-                            Image("what_can_we_do_for_you_Label")
-                            Spacer()
-                        }
+                Image("MirasconLogo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 200.0,height:100, alignment: .topLeading)
+                HStack {
+                    Text("")
+                    Divider()
+                    Text("WHAT CAN WE DO FOR YOU?")
+                        .frame(height: 40)
+                        .foregroundColor(Color.white)
+                        .font(.headline)
+                        //.fontWeight(.medium)
+                        .cornerRadius(4)
+                    Spacer()
+                }.background(labelColor)
+                    .frame(height: 40)
+                
+                
+                VStack {
+                    
+                    HStack{
+                        Button(action: {
+                            print("emergency tapped!")
+                            self.viewRouter.currentPage = "emergency"
+                        }) {
+                            MainViewRow(image:"emergency", name:"Emergency Call")
+                        }.buttonStyle(btnStyle())
+                        Button(action: {
+                            print("roadsideAssistance tapped!")
+                            self.viewRouter.currentPage = "roadside"
+                        }) {
+                            MainViewRow(image: "RoadsideAssistance", name: "Roadside Assistance")
+                        }.buttonStyle(btnStyle())
+                    }
+                    HStack{
+                        Button(action: {
+                            print("claimsCenter tapped!")
+                            self.viewRouter.currentPage = "claimsCenter"
+                        }) {
+                            MainViewRow(image: "ClaimsCenter", name:"Claims Center")
+                        }.buttonStyle(btnStyle())
+                        Button(action: {
+                            print("products tapped!")
+                            self.viewRouter.currentPage = "products"
+                        }) {
+                            MainViewRow(image: "Products", name: "Products")
+                        }.buttonStyle(btnStyle())
+                    }
+                    Spacer()
+                    HStack {
+                        Button(action: {
+                            print("back tapped!")
+                            self.viewRouter.currentPage = "launch"
+                        }) {
+                            Image("btnBack")
+                                .foregroundColor(Color.white)
+                        }.frame(minWidth: 0, maxWidth: .infinity)
+                            .padding()
+                            .padding(.horizontal, 10)
+                            .background(endColor)
+                            .cornerRadius(10)
                         
-                        VStack {
-                   
-                                HStack{
-                                    Button(action: {
-                                        print("emergency tapped!")
-                                        self.viewRouter.currentPage = "emergency"
-                                    }) {
-                                        MainViewRow(image:"emergency", name:"Emergency Call")
-                                    }
-                                    Button(action: {
-                                        print("roadsideAssistance tapped!")
-                                        self.viewRouter.currentPage = "roadside"
-                                    }) {
-                                        MainViewRow(image: "RoadsideAssistance", name: "Roadside Assistance")
-                                    }
-                                }
-                                HStack{
-                                    Button(action: {
-                                        print("claimsCenter tapped!")
-                                        self.viewRouter.currentPage = "claimsCenter"
-                                    }) {
-                                        MainViewRow(image: "ClaimsCenter", name:"Claims Center")
-                                    }
-                                    Button(action: {
-                                        print("products tapped!")
-                                        self.viewRouter.currentPage = "products"
-                                    }) {
-                                        MainViewRow(image: "Products", name: "Products")
-                                    }
-                                }
-                            
-                            HStack {
-                                Button(action: {
-                                    print("back tapped!")
-                                    self.viewRouter.currentPage = "launch"
-                                }) {
-                                    Image("btnBack")
-                                        .foregroundColor(Color.white)
-                                    
-                                }.frame(minWidth: 0, maxWidth: .infinity)
-                                    .padding()
-                                    .padding(.horizontal, 10)
-                                    .background(endColor)
-                                    .cornerRadius(10)
-                                
-                            }
-                        }
                     }
                 }
             }
+            HStack{
+                Spacer()
+                Button(action: {
+                    print("chat Firebase tapped!")
+                    self.viewRouter.currentPage = "chatFirebase"
+                }) {
+                    Image("chat_smaller_icon")
+                        .foregroundColor(Color.white)
+                    .padding()
+                    .background(Color.red)
+                    .cornerRadius(5)
+                    .mask(Circle())
+                }
+            }
         }
+        
     }
+
 }
 
 struct MainScreen_Previews: PreviewProvider {
@@ -106,11 +127,11 @@ struct MainViewRow: View {
             Image("\(image)")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 200.0,height:200)
+                .frame(width: 190.0,height:190)
                 .foregroundColor(Color.white)
             Text("\(name)")
                 .font(.title)
-                .fontWeight(.bold)
+                .fontWeight(.medium)
                 .foregroundColor(Color.white)
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
@@ -118,78 +139,31 @@ struct MainViewRow: View {
     }
 }
 
+struct btnStyle: ButtonStyle {
+    let btnColor = Color(hex: "#1b325e")
+    func makeBody(configuration: Self.Configuration) -> some View {
+        VStack {
+            configuration.label
+                
+                .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
+            
+        }
+    }
+}
+
 import WebKit
-  
+
 struct WebView : UIViewRepresentable {
-      
+    
     let request: URLRequest
-      
+    
     func makeUIView(context: Context) -> WKWebView  {
         return WKWebView()
     }
-      
+    
     func updateUIView(_ uiView: WKWebView, context: Context) {
         uiView.load(request)
     }
-      
+    
 }
-  
-
-/*
- VStack{
- Image("emergency")
- .resizable()
- .scaledToFit()
- .frame(width: 200.0,height:200)
- .foregroundColor(Color.white)
- Text("Emergency Call")
- .font(.title)
- .fontWeight(.bold)
- .foregroundColor(Color.white)
- .multilineTextAlignment(.center)
- .lineLimit(2)
- .padding()
- .frame(width: 200.0, height: 100.0)
- }
- VStack{
- Image("RoadsideAssistance")
- .resizable()
- .scaledToFit()
- .frame(width: 200.0,height:200)
- .foregroundColor(Color.white)
- Text("Roadside Assistance")
- .font(.title)
- .fontWeight(.bold)
- .foregroundColor(Color.white)
- .multilineTextAlignment(.center)
- .lineLimit(2)
- 
- HStack {
- 
- VStack{
- Image("ClaimsCenter")
- .resizable()
- .scaledToFit()
- .frame(width: 200.0,height:200)
- .foregroundColor(Color.white)
- Text("Claims Center")
- .font(.title)
- .fontWeight(.bold)
- .foregroundColor(Color.white)
- .multilineTextAlignment(.center)
- }
- VStack{
- Image("Products")
- .resizable()
- .scaledToFit()
- .frame(width: 200.0,height:200)
- .foregroundColor(Color.white)
- Text("Products")
- .font(.title)
- .fontWeight(.bold)
- .foregroundColor(Color.white)
- .multilineTextAlignment(.center)
- }
- }
- }*/
 

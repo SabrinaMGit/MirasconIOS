@@ -60,5 +60,17 @@
 	<string>Accept it to use the camera for sending pictures</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>NSLocationWhenInUseUsageDescriptio</string>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Because I always want to know where you are</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Because I need to know where you are</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Use Location</string>
 </dict>
 </plist>

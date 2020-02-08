@@ -48,7 +48,6 @@ struct EmergencyUI: View {
                     .foregroundColor(Color.white)
                     .padding()
                 VStack {
-                    Form{
                         Button(action: {
                             print("police number tapped!")
                             let tel = "tel://"
@@ -56,22 +55,21 @@ struct EmergencyUI: View {
                             let url = URL(string: formattedString)!
                             UIApplication.shared.open(url)  }){
                                 Rows(image:"Police",name:"POLICE 110                   ")
-                        }; Button(action: {
+                        }.buttonStyle(btnStyle()); Button(action: {
                             print("fireDepartment tapped!")
                             let tel = "tel://"
                             let formattedString = tel + self.fireDepartment
                             let url = URL(string: formattedString)!
                             UIApplication.shared.open(url)  }){
                                 Rows(image:"FireDepartment",name:"FIRE DEPARTMENT 112")
-                        }; Button(action: {
+                        }.buttonStyle(btnStyle()); Button(action: {
                             print("police number tapped!")
                             let tel = "tel://"
                             let formattedString = tel + self.mirascon
                             let url = URL(string: formattedString)!
                             UIApplication.shared.open(url)  }){
                                 Rows(image:"MirasconStar",name:"0800 MIRASCON         ")
-                        }
-                    }
+                        }.buttonStyle(btnStyle())
                     
                     Button(action: {
                         print("back tapped!")

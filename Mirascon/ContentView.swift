@@ -36,6 +36,10 @@ struct ContentView: View {
                 GlassDamage(viewRouter)
             } else if viewRouter.currentPage == "products" {
                 WebView(request: URLRequest(url: URL(string: "https://www.mirascon.com")!))
+            } else if viewRouter.currentPage == "googleMaps" {
+                GoogleMapsView(viewRouter)
+            } else if viewRouter.currentPage == "chatFirebase" {
+                ChatFirebaseView(viewRouter: viewRouter)
             }
         }
     }

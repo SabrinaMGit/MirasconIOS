@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0438E0128DD3CD91B00E4C0A /* Pods_Mirascon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF87B3E4605B890578C22AE /* Pods_Mirascon.framework */; };
+		8D25408423ED6B5000707704 /* ChatFirebaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25408323ED6B5000707704 /* ChatFirebaseView.swift */; };
+		8D25408623ED6B9F00707704 /* DataFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25408523ED6B9F00707704 /* DataFire.swift */; };
+		8D25408823ED6F5D00707704 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D25408723ED6F5D00707704 /* GoogleService-Info.plist */; };
 		8D55D9A623E0807800B0DC4B /* ClaimsCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55D9A523E0807800B0DC4B /* ClaimsCenter.swift */; };
 		8D55D9A923E0852700B0DC4B /* ClaimsCenterData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D55D9A823E0852700B0DC4B /* ClaimsCenterData.json */; };
 		8D55D9AB23E0866700B0DC4B /* icon_fillclaimsform_weiss.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D55D9AA23E0866700B0DC4B /* icon_fillclaimsform_weiss.png */; };
@@ -35,10 +39,19 @@
 		8DB99D8523AE87B100AE483B /* introductionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8DB99D8423AE87B100AE483B /* introductionData.json */; };
 		8DB99D8723AE881800AE483B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB99D8623AE881800AE483B /* Data.swift */; };
 		8DB99D9323AEB69900AE483B /* Introduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB99D9223AEB69900AE483B /* Introduction.swift */; };
+		8DBD931023ECC87F0034E918 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD930F23ECC87F0034E918 /* LocationManager.swift */; };
+		8DC0FF8323EEFA0400B8401F /* ListMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0FF8223EEFA0400B8401F /* ListMessage.swift */; };
+		8DC0FF8523EEFA4500B8401F /* Messagepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0FF8423EEFA4500B8401F /* Messagepage.swift */; };
+		8DC3835723EC52BA00000039 /* GoogleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3835623EC52BA00000039 /* GoogleMap.swift */; };
 		8DDAD9F923E05774001409EC /* ClaimsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAD9F823E05774001409EC /* ClaimsForm.swift */; };
+		8DDCB12423EC4BAE008858DC /* GoogleMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDCB12323EC4BAE008858DC /* GoogleMapsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		346B21D53E006A92AF7DD652 /* Pods-Mirascon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirascon.release.xcconfig"; path = "Target Support Files/Pods-Mirascon/Pods-Mirascon.release.xcconfig"; sourceTree = "<group>"; };
+		8D25408323ED6B5000707704 /* ChatFirebaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatFirebaseView.swift; sourceTree = "<group>"; };
+		8D25408523ED6B9F00707704 /* DataFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFire.swift; sourceTree = "<group>"; };
+		8D25408723ED6F5D00707704 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D55D9A523E0807800B0DC4B /* ClaimsCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsCenter.swift; sourceTree = "<group>"; };
 		8D55D9A823E0852700B0DC4B /* ClaimsCenterData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ClaimsCenterData.json; sourceTree = "<group>"; };
 		8D55D9AA23E0866700B0DC4B /* icon_fillclaimsform_weiss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_fillclaimsform_weiss.png; sourceTree = "<group>"; };
@@ -69,7 +82,14 @@
 		8DB99D8423AE87B100AE483B /* introductionData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = introductionData.json; sourceTree = "<group>"; };
 		8DB99D8623AE881800AE483B /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		8DB99D9223AEB69900AE483B /* Introduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Introduction.swift; sourceTree = "<group>"; };
+		8DBD930F23ECC87F0034E918 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		8DC0FF8223EEFA0400B8401F /* ListMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMessage.swift; sourceTree = "<group>"; };
+		8DC0FF8423EEFA4500B8401F /* Messagepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messagepage.swift; sourceTree = "<group>"; };
+		8DC3835623EC52BA00000039 /* GoogleMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMap.swift; sourceTree = "<group>"; };
 		8DDAD9F823E05774001409EC /* ClaimsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsForm.swift; sourceTree = "<group>"; };
+		8DDCB12323EC4BAE008858DC /* GoogleMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsView.swift; sourceTree = "<group>"; };
+		EEF87B3E4605B890578C22AE /* Pods_Mirascon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mirascon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1EC6C69E7F649B498605BD9 /* Pods-Mirascon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirascon.debug.xcconfig"; path = "Target Support Files/Pods-Mirascon/Pods-Mirascon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +97,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0438E0128DD3CD91B00E4C0A /* Pods_Mirascon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28826040C02C704E37279E5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEF87B3E4605B890578C22AE /* Pods_Mirascon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D25408223ED6B0C00707704 /* FirebaseChat */ = {
+			isa = PBXGroup;
+			children = (
+				8D25408323ED6B5000707704 /* ChatFirebaseView.swift */,
+				8D25408523ED6B9F00707704 /* DataFire.swift */,
+				8DC0FF8223EEFA0400B8401F /* ListMessage.swift */,
+				8DC0FF8423EEFA4500B8401F /* Messagepage.swift */,
+			);
+			path = FirebaseChat;
+			sourceTree = "<group>";
+		};
 		8DB99D2F23AD247300AE483B = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +133,8 @@
 				8DB99D3A23AD247300AE483B /* Mirascon */,
 				8DB99D8323AE879400AE483B /* Ressources */,
 				8DB99D8023AE86CB00AE483B /* Models */,
+				C2ED31251947BE6A5771CF7B /* Pods */,
+				28826040C02C704E37279E5D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +149,7 @@
 		8DB99D3A23AD247300AE483B /* Mirascon */ = {
 			isa = PBXGroup;
 			children = (
+				8D25408223ED6B0C00707704 /* FirebaseChat */,
 				8DB99D3B23AD247300AE483B /* AppDelegate.swift */,
 				8DB99D3D23AD247300AE483B /* SceneDelegate.swift */,
 				8D55D9C223E38BD500B0DC4B /* FirstLaunch.swift */,
@@ -115,6 +158,7 @@
 				8DB99D3F23AD247300AE483B /* ContentView.swift */,
 				8DB99D4123AD247600AE483B /* Assets.xcassets */,
 				8DB99D4623AD247600AE483B /* LaunchScreen.storyboard */,
+				8D25408723ED6F5D00707704 /* GoogleService-Info.plist */,
 				8DB99D4923AD247600AE483B /* Info.plist */,
 				8DB99D4323AD247600AE483B /* Preview Content */,
 				8D55D9BA23E2FDEA00B0DC4B /* MainScreen.swift */,
@@ -127,6 +171,9 @@
 				8D55D9B823E208E100B0DC4B /* Coordinator.swift */,
 				8D55D9BC23E2FF1800B0DC4B /* ViewRouter.swift */,
 				8DB99D7523AE154400AE483B /* PlayerView.swift */,
+				8DDCB12323EC4BAE008858DC /* GoogleMapsView.swift */,
+				8DC3835623EC52BA00000039 /* GoogleMap.swift */,
+				8DBD930F23ECC87F0034E918 /* LocationManager.swift */,
 			);
 			path = Mirascon;
 			sourceTree = "<group>";
@@ -168,6 +215,15 @@
 			path = Ressources;
 			sourceTree = "<group>";
 		};
+		C2ED31251947BE6A5771CF7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1EC6C69E7F649B498605BD9 /* Pods-Mirascon.debug.xcconfig */,
+				346B21D53E006A92AF7DD652 /* Pods-Mirascon.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,9 +231,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DB99D4C23AD247600AE483B /* Build configuration list for PBXNativeTarget "Mirascon" */;
 			buildPhases = (
+				DFBA134ED1D3A6E28AD1DE92 /* [CP] Check Pods Manifest.lock */,
 				8DB99D3423AD247300AE483B /* Sources */,
 				8DB99D3523AD247300AE483B /* Frameworks */,
 				8DB99D3623AD247300AE483B /* Resources */,
+				8B51120CCFB5E834E90ED27C /* [CP] Embed Pods Frameworks */,
+				BBA7DB062D8DC01390D82A8A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,12 +293,72 @@
 				8DB99D4823AD247600AE483B /* LaunchScreen.storyboard in Resources */,
 				8DB99D4523AD247600AE483B /* Preview Assets.xcassets in Resources */,
 				8DB99D8523AE87B100AE483B /* introductionData.json in Resources */,
+				8D25408823ED6F5D00707704 /* GoogleService-Info.plist in Resources */,
 				8D55D9AB23E0866700B0DC4B /* icon_fillclaimsform_weiss.png in Resources */,
 				8DB99D4223AD247600AE483B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8B51120CCFB5E834E90ED27C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mirascon/Pods-Mirascon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mirascon/Pods-Mirascon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mirascon/Pods-Mirascon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBA7DB062D8DC01390D82A8A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mirascon/Pods-Mirascon-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mirascon/Pods-Mirascon-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mirascon/Pods-Mirascon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFBA134ED1D3A6E28AD1DE92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mirascon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8DB99D3423AD247300AE483B /* Sources */ = {
@@ -253,15 +372,22 @@
 				8DB99D3C23AD247300AE483B /* AppDelegate.swift in Sources */,
 				8D55D9BF23E34FC000B0DC4B /* LaunchLogo.swift in Sources */,
 				8D55D9B523E1EFFC00B0DC4B /* uploadPhotos.swift in Sources */,
+				8D25408423ED6B5000707704 /* ChatFirebaseView.swift in Sources */,
 				8DB99D5023AD255300AE483B /* EmergencyUI.swift in Sources */,
+				8D25408623ED6B9F00707704 /* DataFire.swift in Sources */,
 				8DB99D3E23AD247300AE483B /* SceneDelegate.swift in Sources */,
 				8DB99D7623AE154400AE483B /* PlayerView.swift in Sources */,
+				8DC0FF8323EEFA0400B8401F /* ListMessage.swift in Sources */,
 				8D55D9B723E201FD00B0DC4B /* GlassDamage.swift in Sources */,
 				8D55D9A623E0807800B0DC4B /* ClaimsCenter.swift in Sources */,
 				8DB99D5223AD25F500AE483B /* RoadsideAssistanceUI.swift in Sources */,
 				8DB99D9323AEB69900AE483B /* Introduction.swift in Sources */,
+				8DBD931023ECC87F0034E918 /* LocationManager.swift in Sources */,
 				8D55D9BD23E2FF1800B0DC4B /* ViewRouter.swift in Sources */,
+				8DC0FF8523EEFA4500B8401F /* Messagepage.swift in Sources */,
 				8D55D9C323E38BD500B0DC4B /* FirstLaunch.swift in Sources */,
+				8DC3835723EC52BA00000039 /* GoogleMap.swift in Sources */,
+				8DDCB12423EC4BAE008858DC /* GoogleMapsView.swift in Sources */,
 				8DB99D4023AD247300AE483B /* ContentView.swift in Sources */,
 				8DB99D8723AE881800AE483B /* Data.swift in Sources */,
 				8DB99D7F23AE47F000AE483B /* PreviewIntroduction.swift in Sources */,
@@ -398,6 +524,7 @@
 		};
 		8DB99D4D23AD247600AE483B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1EC6C69E7F649B498605BD9 /* Pods-Mirascon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -418,6 +545,7 @@
 		};
 		8DB99D4E23AD247600AE483B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 346B21D53E006A92AF7DD652 /* Pods-Mirascon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

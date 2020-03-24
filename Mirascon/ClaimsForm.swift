@@ -14,10 +14,12 @@ struct ClaimsForm: View {
     @State var lp: String = ""
     @State var phone: String = ""
     @State var email: String = ""
+    @State var changeViewToGoogleAfterFirstLaunchCheck: Bool = false
+    @State var firstLaunchIsDone: Bool = true
     let blueRectangle = Color(hex: "#1b325e")
     let startColor = Color(hex: "#19334f")
     let endColor = Color(hex: "#102234")
-     @State private var showingAlert = false
+    @State private var showingAlert = false
     let defaults = UserDefaults.standard
     
     @State public var firstNameSaved = UserDefaults.standard.string(forKey: "firstName")
@@ -25,13 +27,15 @@ struct ClaimsForm: View {
     @State public var lpSaved = UserDefaults.standard.string(forKey: "lp")
     @State public var phoneSaved = UserDefaults.standard.string(forKey: "phone")
     @State public var mailSaved = UserDefaults.standard.string(forKey: "mail")
+    @State public var firstLaunchApp = UserDefaults.standard.bool(forKey: "firstLaunch")
+    let status = UserDefaults.standard.bool(forKey: "firstLaunc")
     
-    
+    let firstLaunch = FirstLaunch(userDefaults: .standard, key: "com.any-suggestion.FirstLaunch.WasLaunchedBefore")
     
     @ObservedObject var viewRouter: ViewRouter
-      init(_ viewRouter: ViewRouter){
-          self.viewRouter = viewRouter
-      }
+    init(_ viewRouter: ViewRouter){
+        self.viewRouter = viewRouter
+    }
     
     var body: some View {
         ZStack{
@@ -61,13 +65,13 @@ struct ClaimsForm: View {
                             }
                             ZStack(alignment: .leading) {
                                 
-                            TextField("", text: $firstName)
-                               .padding(8)
-                                .background(blueRectangle)
-                                .foregroundColor(Color.white)
-                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                                .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                    .stroke( lineWidth: 0))
+                                TextField("", text: $firstName)
+                                    .padding(8)
+                                    .background(blueRectangle)
+                                    .foregroundColor(Color.white)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                    .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .stroke( lineWidth: 0))
                                 if firstName.isEmpty { Text("\(firstNameSaved ?? "")").foregroundColor(.white) }
                             }
                         }
@@ -82,15 +86,15 @@ struct ClaimsForm: View {
                                     .multilineTextAlignment(.leading)
                                 Spacer()
                             }
-                             ZStack(alignment: .leading) {
-                            TextField("", text: $lastName)
-                                .padding(8)
-                                .background(blueRectangle)
-                                .foregroundColor(Color.white)
-                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                                .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                    .stroke( lineWidth: 0))
-                            if lastName.isEmpty { Text("\(lastNameSaved ?? "")").foregroundColor(.white) }
+                            ZStack(alignment: .leading) {
+                                TextField("", text: $lastName)
+                                    .padding(8)
+                                    .background(blueRectangle)
+                                    .foregroundColor(Color.white)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                    .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .stroke( lineWidth: 0))
+                                if lastName.isEmpty { Text("\(lastNameSaved ?? "")").foregroundColor(.white) }
                             }}
                         Spacer()
                     }
@@ -104,15 +108,15 @@ struct ClaimsForm: View {
                                 Spacer()
                             }
                             ZStack(alignment: .leading){
-                            TextField("", text: $lp)
-                                .padding(8)
-                                .background(blueRectangle)
-                                .foregroundColor(Color.white)
-                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                                .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                    .stroke( lineWidth: 0))
-                            if lp.isEmpty { Text("\(lpSaved ?? "")").foregroundColor(.white) }
-                        }
+                                TextField("", text: $lp)
+                                    .padding(8)
+                                    .background(blueRectangle)
+                                    .foregroundColor(Color.white)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                    .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .stroke( lineWidth: 0))
+                                if lp.isEmpty { Text("\(lpSaved ?? "")").foregroundColor(.white) }
+                            }
                         }
                         Spacer()
                     }
@@ -126,14 +130,14 @@ struct ClaimsForm: View {
                                 Spacer()
                             }
                             ZStack(alignment: .leading){
-                            TextField("", text: $phone)
-                                .padding(8)
-                                .background(blueRectangle)
-                                .foregroundColor(Color.white)
-                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                                .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                    .stroke( lineWidth: 0))
-                            if phone.isEmpty { Text("\(phoneSaved ?? "")").foregroundColor(.white) }
+                                TextField("", text: $phone)
+                                    .padding(8)
+                                    .background(blueRectangle)
+                                    .foregroundColor(Color.white)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                    .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .stroke( lineWidth: 0))
+                                if phone.isEmpty { Text("\(phoneSaved ?? "")").foregroundColor(.white) }
                             }}
                         Spacer()
                     }
@@ -147,14 +151,14 @@ struct ClaimsForm: View {
                                 Spacer()
                             }
                             ZStack(alignment: .leading){
-                            TextField("", text: $email)
-                                .padding(8)
-                                .background(blueRectangle)
-                                .foregroundColor(Color.white)
-                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                                .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                    .stroke( lineWidth: 0))
-                            if email.isEmpty { Text("\(mailSaved ?? "")").foregroundColor(.white) }
+                                TextField("", text: $email)
+                                    .padding(8)
+                                    .background(blueRectangle)
+                                    .foregroundColor(Color.white)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                    .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                        .stroke( lineWidth: 0))
+                                if email.isEmpty { Text("\(mailSaved ?? "")").foregroundColor(.white) }
                             }}
                         Spacer()
                     }
@@ -163,23 +167,39 @@ struct ClaimsForm: View {
                     
                     Button(action: {
                         print("continue tapped!")
-                        self.viewRouter.currentPage = "googleMaps"
-                        if self.firstName != "" && self.lastName != "" && self.lp != "" && self.phone != "" && self.email != ""{
-                          self.firstNameSaved = self.firstName
-                          self.lastNameSaved = self.lastName
-                          self.lpSaved = self.lp
-                          self.phoneSaved = self.phone
-                          self.mailSaved = self.email
-                          UserDefaults.standard.set(self.firstName, forKey: "firstName")
-                          UserDefaults.standard.set(self.lastName, forKey: "lastName")
-                          UserDefaults.standard.set(self.lp, forKey: "lp")
-                          UserDefaults.standard.set(self.phone, forKey: "phone")
-                          UserDefaults.standard.set(self.email, forKey: "mail")
-                          
                         
+                        if self.firstName != "" && self.lastName != "" && self.lp != "" && self.phone != "" && self.email != ""{
+                            self.firstNameSaved = self.firstName
+                            self.lastNameSaved = self.lastName
+                            self.lpSaved = self.lp
+                            self.phoneSaved = self.phone
+                            self.mailSaved = self.email
+                            
+                            UserDefaults.standard.set(self.firstName, forKey: "firstName")
+                            UserDefaults.standard.set(self.lastName, forKey: "lastName")
+                            UserDefaults.standard.set(self.lp, forKey: "lp")
+                            UserDefaults.standard.set(self.phone, forKey: "phone")
+                            UserDefaults.standard.set(self.email, forKey: "mail")
+                            
+                            UserDefaults.standard.set(self.firstLaunchIsDone, forKey: "com.any-suggestion.FirstLaunch.WasLaunchedBefore")
+                            //userDefaults: .standard, key: "com.any-suggestion.FirstLaunch.WasLaunchedBefore"
+                            if self.firstLaunch.isFirstLaunch {
+                                self.viewRouter.currentPage = "mainView"
+                                self.changeViewToGoogleAfterFirstLaunchCheck = true
+                                print("mainView open!")
+                            }
                         } else{
-                             self.showingAlert = true
+                            self.showingAlert = true
                         }
+                        if self.firstLaunchApp {
+                            self.viewRouter.currentPage = "googleMaps"
+                            print("google Maps open!")
+                        }
+                        if self.changeViewToGoogleAfterFirstLaunchCheck {
+                            self.firstLaunchApp = self.firstLaunchIsDone
+                            UserDefaults.standard.set(self.firstLaunchIsDone, forKey: "firstLaunch")
+                        }
+                        
                     }) {
                         Text("CONTINUE")
                             .fontWeight(.medium)
@@ -187,8 +207,8 @@ struct ClaimsForm: View {
                         
                     }.buttonStyle(GradientBackgroundStyle())
                     /*.alert(isPresented: $showingAlert) {
-                        Alert(title: Text("Some fields are empty"), message: Text("Fill out all fields"), dismissButton: .default(Text("Got it!")))
-                    }*/
+                     Alert(title: Text("Some fields are empty"), message: Text("Fill out all fields"), dismissButton: .default(Text("Got it!")))
+                     }*/
                     Spacer()
                     
                     Button(action: {

@@ -11,6 +11,7 @@ import SwiftUI
 struct RoadsideAssistanceUI: View {
     let startColor = Color(hex: "#19334f")
     let endColor = Color(hex: "#102234")
+    let labelColor = Color(hex: "#d40b0b")
     let roadsideNmb = ""
     let carclaimsNmb = ""
     
@@ -31,9 +32,17 @@ struct RoadsideAssistanceUI: View {
                     .scaledToFit()
                     .frame(width: 200.0,height:100)
                 HStack {
-                    Image("roadside_assistance_label")
+                    Text("")
+                    Divider()
+                    Text("ROADSIDE ASSISTANCE")
+                        .frame(height: 40)
+                        .foregroundColor(Color.white)
+                        .font(.headline)
+                        //.fontWeight(.medium)
+                        .cornerRadius(4)
                     Spacer()
-                }
+                }.background(labelColor)
+                    .frame(height: 40)
                 Spacer()
                 Image("PhoneCall")
                     .resizable()

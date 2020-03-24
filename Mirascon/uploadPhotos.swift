@@ -68,11 +68,13 @@ struct uploadPhotos: View {
                                 .background(pictureHolderColor)
                         }}
                         .onTapGesture {
-                            self.showCaptureImageView = true
-                    }/*.sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+                            self.showingImagePicker = true
+                    }.sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
                         ImagePicker(image: self.$inputImage)
-                    }
-                    MFMailComposeViewController.canSendMail() ? self.isShowingMailView.toggle() : self.alertNoMail.toggle()
+                    }/*.sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+                     ImagePicker(image: self.$inputImage)
+                     }
+                     MFMailComposeViewController.canSendMail() ? self.isShowingMailView.toggle() : self.alertNoMail.toggle()
                      }
                      //            .disabled(!MFMailComposeViewController.canSendMail())
                      .sheet(isPresented: $isShowingMailView) {
@@ -145,17 +147,17 @@ struct uploadPhotos: View {
                         
                     }}.buttonStyle(GradientBackgroundStyle())
                     //            .disabled(!MFMailComposeViewController.canSendMail())
-                                   .sheet(isPresented: $isShowingMailView) {
-                                       MailView(result: self.$result)
-                               }
-                               .alert(isPresented: self.$alertNoMail) {
-                                   Alert(title: Text("NO MAIL SETUP"))
-                               }/*
-                if (isShowingMailView) {
-                    mailView()
-                        .transition(.move(edge: .bottom))
-                        .animation(.default)
-                }*/
+                    .sheet(isPresented: $isShowingMailView) {
+                        MailView(result: self.$result)
+                }
+                .alert(isPresented: self.$alertNoMail) {
+                    Alert(title: Text("NO MAIL SETUP"))
+                }/*
+                 if (isShowingMailView) {
+                 mailView()
+                 .transition(.move(edge: .bottom))
+                 .animation(.default)
+                 }*/
                 
                 Button(action: {
                     print("back tapped!")
@@ -171,7 +173,7 @@ struct uploadPhotos: View {
                     .cornerRadius(10)
             }
             /*if (showCaptureImageView) {
-                CameraView(showCameraView: $showCaptureImageView, pickedImage: $image)
+             CameraView(showCameraView: $showCaptureImageView, pickedImage: $image)
              }*/
             
             
@@ -194,10 +196,10 @@ struct uploadPhotos: View {
         image4 = Image(uiImage: inputImage4)
     }
     /*private func mailView() -> some View {
-        MFMailComposeViewController.canSendMail() ?
-            AnyView(MailView(isShowing: $isShowingMailView, result: $result)) :
-            AnyView(Text("Can't send emails from this device"))
-    }*/
+     MFMailComposeViewController.canSendMail() ?
+     AnyView(MailView(isShowing: $isShowingMailView, result: $result)) :
+     AnyView(Text("Can't send emails from this device"))
+     }*/
 }
 
 struct uploadPhotos_Previews: PreviewProvider {
@@ -291,52 +293,52 @@ struct MailView: UIViewControllerRepresentable {
     }
 }
 /*
-struct MailView: UIViewControllerRepresentable {
-
-    @Binding var isShowing: Bool
-    @Binding var result: Result<MFMailComposeResult, Error>?
-
-    class Coordinator: NSObject, MFMailComposeViewControllerDelegate {
-
-        @Binding var isShowing: Bool
-        @Binding var result: Result<MFMailComposeResult, Error>?
-
-        init(isShowing: Binding<Bool>,
-             result: Binding<Result<MFMailComposeResult, Error>?>) {
-            _isShowing = isShowing
-            _result = result
-        }
-
-        func mailComposeController(_ controller: MFMailComposeViewController,
-                                   didFinishWith result: MFMailComposeResult,
-                                   error: Error?) {
-            defer {
-                isShowing = false
-            }
-            guard error == nil else {
-                self.result = .failure(error!)
-                return
-            }
-            self.result = .success(result)
-        }
-    }
-
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(isShowing: $isShowing,
-                           result: $result)
-    }
-
-    func makeUIViewController(context: UIViewControllerRepresentableContext<MailView>) -> MFMailComposeViewController {
-        let vc = MFMailComposeViewController()
-        vc.mailComposeDelegate = context.coordinator
-        return vc
-    }
-
-    func updateUIViewController(_ uiViewController: MFMailComposeViewController,
-                                context: UIViewControllerRepresentableContext<MailView>) {
-
-    }
-}*/
+ struct MailView: UIViewControllerRepresentable {
+ 
+ @Binding var isShowing: Bool
+ @Binding var result: Result<MFMailComposeResult, Error>?
+ 
+ class Coordinator: NSObject, MFMailComposeViewControllerDelegate {
+ 
+ @Binding var isShowing: Bool
+ @Binding var result: Result<MFMailComposeResult, Error>?
+ 
+ init(isShowing: Binding<Bool>,
+ result: Binding<Result<MFMailComposeResult, Error>?>) {
+ _isShowing = isShowing
+ _result = result
+ }
+ 
+ func mailComposeController(_ controller: MFMailComposeViewController,
+ didFinishWith result: MFMailComposeResult,
+ error: Error?) {
+ defer {
+ isShowing = false
+ }
+ guard error == nil else {
+ self.result = .failure(error!)
+ return
+ }
+ self.result = .success(result)
+ }
+ }
+ 
+ func makeCoordinator() -> Coordinator {
+ return Coordinator(isShowing: $isShowing,
+ result: $result)
+ }
+ 
+ func makeUIViewController(context: UIViewControllerRepresentableContext<MailView>) -> MFMailComposeViewController {
+ let vc = MFMailComposeViewController()
+ vc.mailComposeDelegate = context.coordinator
+ return vc
+ }
+ 
+ func updateUIViewController(_ uiViewController: MFMailComposeViewController,
+ context: UIViewControllerRepresentableContext<MailView>) {
+ 
+ }
+ }*/
 
 struct ImagePicker: UIViewControllerRepresentable {
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -373,41 +375,41 @@ struct ImagePicker: UIViewControllerRepresentable {
 }
 
 struct CameraView: UIViewControllerRepresentable {
-
-@Binding var showCameraView: Bool
-@Binding var pickedImage: Image
-
-func makeCoordinator() -> CameraView.Coordinator {
-    Coordinator(self)
-}
-
-func makeUIViewController(context: UIViewControllerRepresentableContext<CameraView>) -> UIViewController {
-    let cameraViewController = UIImagePickerController()
-    cameraViewController.delegate = context.coordinator
-    cameraViewController.sourceType = .camera
-    cameraViewController.allowsEditing = false
-    return cameraViewController
-}
-
-func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<CameraView>) {
-
-}
-
-class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    var parent: CameraView
-
-    init(_ cameraView: CameraView) {
-        self.parent = cameraView
+    
+    @Binding var showCameraView: Bool
+    @Binding var pickedImage: Image
+    
+    func makeCoordinator() -> CameraView.Coordinator {
+        Coordinator(self)
     }
-
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        parent.pickedImage = Image(uiImage: uiImage)
-        parent.showCameraView = false
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<CameraView>) -> UIViewController {
+        let cameraViewController = UIImagePickerController()
+        cameraViewController.delegate = context.coordinator
+        cameraViewController.sourceType = .camera
+        cameraViewController.allowsEditing = false
+        return cameraViewController
     }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        parent.showCameraView = false
+    
+    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<CameraView>) {
+        
     }
-}
+    
+    class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        var parent: CameraView
+        
+        init(_ cameraView: CameraView) {
+            self.parent = cameraView
+        }
+        
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+            parent.pickedImage = Image(uiImage: uiImage)
+            parent.showCameraView = false
+        }
+        
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            parent.showCameraView = false
+        }
+    }
 }

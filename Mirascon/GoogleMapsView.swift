@@ -31,9 +31,9 @@ struct GoogleMapsView: View {
                     GoogleMap()
                     Button(action: {
                         print("back tapped!")
-                        self.viewRouter.currentPage = "claimsForm"
+                        self.viewRouter.currentPage = "camera"
                     }) {
-                        Image("btnBack")
+                        Image("arrow-right")
                             .foregroundColor(Color.white)
                         
                     }.frame(minWidth: 0, maxWidth: .infinity)

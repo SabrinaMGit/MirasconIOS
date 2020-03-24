@@ -12,6 +12,7 @@ struct EmergencyUI: View {
     @ObservedObject var viewRouter: ViewRouter
     let startColor = Color(hex: "#19334f")
     let endColor = Color(hex: "#102234")
+    let labelColor = Color(hex: "#d40b0b")
     let policeNumber = "110"
     let fireDepartment = "112"
     let mirascon = ""
@@ -34,10 +35,18 @@ struct EmergencyUI: View {
                     .scaledToFit()
                     .frame(width: 200.0,height:40)
                     .padding()
-                HStack {
-                    Image("emergency_call_Label")
-                    Spacer()
-                }
+                    HStack {
+                              Text("")
+                              Divider()
+                              Text("EMERGENCY SERVICE")
+                                  .frame(height: 40)
+                                  .foregroundColor(Color.white)
+                                  .font(.headline)
+                                  //.fontWeight(.medium)
+                                  .cornerRadius(4)
+                              Spacer()
+                          }.background(labelColor)
+                              .frame(height: 40)
                 Image("PhoneCall")
                     .resizable()
                     .scaledToFit()

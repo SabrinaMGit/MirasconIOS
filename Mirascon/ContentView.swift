@@ -31,7 +31,7 @@ struct ContentView: View {
             } else if viewRouter.currentPage == "camera" {
                 uploadPhotos(viewRouter)
             } else if viewRouter.currentPage == "otherInfo" {
-                GlassDamage(viewRouter)
+                //GlassDamage(viewRouter)
             } else if viewRouter.currentPage == "glassDamage" {
                 GlassDamage(viewRouter)
             } else if viewRouter.currentPage == "products" {
@@ -39,7 +39,10 @@ struct ContentView: View {
             } else if viewRouter.currentPage == "googleMaps" {
                 GoogleMapsView(viewRouter)
             } else if viewRouter.currentPage == "chatFirebase" {
-                ChatFirebaseView(viewRouter: viewRouter)
+                //ChatFirebaseView(viewRouter: viewRouter)
+                //CloudMessaging(viewRouter: viewRouter)
+            } else if viewRouter.currentPage == "profil" {
+                Profil(viewRouter)
             }
         }
     }

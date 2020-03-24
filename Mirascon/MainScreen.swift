@@ -30,23 +30,30 @@ struct MainScreen: View {
                 Image("MirasconLogo")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 200.0,height:100, alignment: .topLeading)
+                    .frame(width: 200.0,height:100, alignment: .center)
                 HStack {
-                    Text("")
-                    Divider()
-                    Text("WHAT CAN WE DO FOR YOU?")
-                        .frame(height: 40)
-                        .foregroundColor(Color.white)
-                        .font(.headline)
-                        //.fontWeight(.medium)
-                        .cornerRadius(4)
+                    HStack {
+                        Spacer()
+                        VStack(alignment: .leading){
+                        //HStack (spacing: 20) {
+                            //Text("")
+                            Text("WHAT CAN WE DO FOR YOU?")
+                                .frame(height: 40)
+                                .foregroundColor(Color.white)
+                                .font(.headline)
+                                //.fontWeight(.medium)
+                                .cornerRadius(4)
+                         //   Spacer()
+                        //}.background(labelColor)
+                            
+                            //.padding(10)
+                        }
+                        Spacer()
+                    }.background(labelColor).frame(width: 350,height: 40, alignment: .leading)
                     Spacer()
-                }.background(labelColor)
-                    .frame(height: 40)
-                
-                
+                }
+                    //.padding(.trailing)
                 VStack {
-                    
                     HStack{
                         Button(action: {
                             print("emergency tapped!")
@@ -78,8 +85,8 @@ struct MainScreen: View {
                     Spacer()
                     HStack {
                         Button(action: {
-                            print("back tapped!")
-                            self.viewRouter.currentPage = "launch"
+                            print("exit tapped!")
+                            exit(0);
                         }) {
                             Image("btnBack")
                                 .foregroundColor(Color.white)
@@ -96,7 +103,7 @@ struct MainScreen: View {
                 Spacer()
                 Button(action: {
                     print("chat Firebase tapped!")
-                    self.viewRouter.currentPage = "chatFirebase"
+                    //self.viewRouter.currentPage = "chatFirebase"
                 }) {
                     Image("chat_smaller_icon")
                         .foregroundColor(Color.white)

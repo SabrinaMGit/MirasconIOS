@@ -7,7 +7,25 @@
 		<key>Mirascon.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>26</integer>
+			<integer>29</integer>
+		</dict>
+		<key>Notification.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>30</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>8D0C128623F0914C00C2D374</key>
+		<dict>
+			<key>primary</key>
+			<true />
+		</dict>
+		<key>8DB99D3723AD247300AE483B</key>
+		<dict>
+			<key>primary</key>
+			<true />
 		</dict>
 	</dict>
 </dict>

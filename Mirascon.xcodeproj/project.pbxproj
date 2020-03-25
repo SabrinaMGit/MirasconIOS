@@ -24,6 +24,7 @@
 		8D55D9BF23E34FC000B0DC4B /* LaunchLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55D9BE23E34FC000B0DC4B /* LaunchLogo.swift */; };
 		8D55D9C323E38BD500B0DC4B /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55D9C223E38BD500B0DC4B /* FirstLaunch.swift */; };
 		8D5742AC242B47260018160B /* GoogleMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5742AB242B47260018160B /* GoogleMapsView.swift */; };
+		8D5742AE242B89290018160B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8D5742AD242B89290018160B /* Podfile */; };
 		8DB99D3C23AD247300AE483B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB99D3B23AD247300AE483B /* AppDelegate.swift */; };
 		8DB99D3E23AD247300AE483B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB99D3D23AD247300AE483B /* SceneDelegate.swift */; };
 		8DB99D4023AD247300AE483B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB99D3F23AD247300AE483B /* ContentView.swift */; };
@@ -87,6 +88,7 @@
 		8D55D9BE23E34FC000B0DC4B /* LaunchLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLogo.swift; sourceTree = "<group>"; };
 		8D55D9C223E38BD500B0DC4B /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		8D5742AB242B47260018160B /* GoogleMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsView.swift; sourceTree = "<group>"; };
+		8D5742AD242B89290018160B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		8DB99D3823AD247300AE483B /* Mirascon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Mirascon.app; path = "/Users/dev-notebook/Library/Mobile Documents/com~apple~CloudDocs/Documents/Mirascon/build/Debug-iphoneos/Mirascon.app"; sourceTree = "<absolute>"; };
 		8DB99D3B23AD247300AE483B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DB99D3D23AD247300AE483B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 		8DB99D2F23AD247300AE483B = {
 			isa = PBXGroup;
 			children = (
+				8D5742AD242B89290018160B /* Podfile */,
 				8DB99D3A23AD247300AE483B /* Mirascon */,
 				8DB99D8323AE879400AE483B /* Ressources */,
 				8DB99D8023AE86CB00AE483B /* Models */,
@@ -338,6 +341,7 @@
 				8DB99D4523AD247600AE483B /* Preview Assets.xcassets in Resources */,
 				8DB99D8523AE87B100AE483B /* introductionData.json in Resources */,
 				8D25408823ED6F5D00707704 /* GoogleService-Info.plist in Resources */,
+				8D5742AE242B89290018160B /* Podfile in Resources */,
 				8DB99D4223AD247600AE483B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

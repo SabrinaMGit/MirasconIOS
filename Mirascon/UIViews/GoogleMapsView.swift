@@ -1,11 +1,10 @@
 //
-//  GoogleMapsView.swift
+//  GoogleMapsV.swift
 //  Mirascon
 //
 //  Created by Dev-Notebook on 06.02.20.
 //  Copyright © 2020 MIRASCON. All rights reserved.
 //
-
 import SwiftUI
 
 

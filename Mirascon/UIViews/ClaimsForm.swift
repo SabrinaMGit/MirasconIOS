@@ -182,7 +182,6 @@ struct ClaimsForm: View {
                             UserDefaults.standard.set(self.email, forKey: "mail")
                             
                             UserDefaults.standard.set(self.firstLaunchIsDone, forKey: "com.any-suggestion.FirstLaunch.WasLaunchedBefore")
-                            //userDefaults: .standard, key: "com.any-suggestion.FirstLaunch.WasLaunchedBefore"
                             if self.firstLaunch.isFirstLaunch {
                                 self.viewRouter.currentPage = "mainView"
                                 self.changeViewToGoogleAfterFirstLaunchCheck = true

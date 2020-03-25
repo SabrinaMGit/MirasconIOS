@@ -111,37 +111,3 @@ struct LaunchRow_Previews : PreviewProvider {
     }
 }
 #endif
-
-/*
- ZStack {
- RadialGradient(gradient: Gradient(colors: [startColor, endColor]), center: .center, startRadius: 2, endRadius: 650)
- .edgesIgnoringSafeArea(.all)
- Image("MirasconLogo")
- .resizable()
- .scaledToFit()
- .frame(width: 200.0,height:100)
- .scaleEffect(scale)
- .onAppear {
- DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
- LaunchLogo.shouldAnimate = false
- }
- }
- 
- if LaunchLogo.shouldAnimate {
- MainScreen(ViewRouter())
- }
- }
- 
- MapView(coordinate: CLLocationCoordinate2DMake(37.331820, -122.03118))
- .edgesIgnoringSafeArea(.all)
- SplashScreen()
- .opacity(showSplash ? 1 : 0)
- .onAppear {
- DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
- SplashScreen.shouldAnimate = false
- withAnimation() {
- self.showSplash = false
- }
- }
- }
- */

@@ -9,13 +9,35 @@
 import SwiftUI
 
 struct EmergencyUI: View {
+    
     @ObservedObject var viewRouter: ViewRouter
-    let startColor = Color(hex: "#19334f")
-    let endColor = Color(hex: "#102234")
-    let labelColor = Color(hex: "#d40b0b")
-    let policeNumber = "110"
-    let fireDepartment = "112"
-    let mirascon = ""
+    
+    let colorClass = ColorUI()
+    let view_label_description = "If you need help, quickly call the emergency contacts"
+    let tel = "tel://"
+    let width = 160.0
+    let height = 130
+    
+    //telefon number's
+    let police_number = "110"
+    let fireDepartment_number = "112"
+    let mirascon_number = ""
+    
+    //img's and button name's
+    let emergencyService_name = "EMERGENCY SERVICE"
+    let phoneCall_img = "PhoneCall"
+    let police_img = "Police"
+    let police_description = "POLICE 110                   "
+    let firedepartment_img = "FireDepartment"
+    let firedepartment_description = "FIRE DEPARTMENT 112"
+    let mirasconStar_img = "MirasconStar"
+    let mirasconStar_description = "0800 MIRASCON         "
+    let back_btn_img = "btnBack"
+    
+    //view's
+    let view_mainview = "mainView"
+    
+    
     
     init(_ viewRouter: ViewRouter){
         UITableView.appearance().backgroundColor = .clear
@@ -25,72 +47,47 @@ struct EmergencyUI: View {
     
     var body: some View {
         ZStack {
-            RadialGradient(gradient: Gradient(colors: [startColor, endColor]), center: .center, startRadius: 2, endRadius: 650)
-                .edgesIgnoringSafeArea(.all)
-            
+            RadialGradientUI()
             VStack {
                 Spacer()
-                Image("MirasconLogo")
+                LogoBarWithLabel(labelName: emergencyService_name)
+                Image(phoneCall_img)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 200.0,height:40)
-                    .padding()
-                    HStack {
-                              Text("")
-                              Divider()
-                              Text("EMERGENCY SERVICE")
-                                  .frame(height: 40)
-                                  .foregroundColor(Color.white)
-                                  .font(.headline)
-                                  //.fontWeight(.medium)
-                                  .cornerRadius(4)
-                              Spacer()
-                          }.background(labelColor)
-                              .frame(height: 40)
-                Image("PhoneCall")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 160.0,height:130)
-                Text("If you need help, quickly call the emergency contacts")
+                    .frame(width: CGFloat(width),height: CGFloat(height))
+                Text(view_label_description)
                     .font(.headline)
                     .fontWeight(.regular)
                     .foregroundColor(Color.white)
                     .padding()
                 VStack {
                         Button(action: {
-                            print("police number tapped!")
-                            let tel = "tel://"
-                            let formattedString = tel + self.policeNumber
+                            let formattedString = self.tel + self.police_number
                             let url = URL(string: formattedString)!
                             UIApplication.shared.open(url)  }){
-                                Rows(image:"Police",name:"POLICE 110                   ")
+                                Rows(image: police_img, name: police_description)
                         }.buttonStyle(btnStyle()); Button(action: {
-                            print("fireDepartment tapped!")
-                            let tel = "tel://"
-                            let formattedString = tel + self.fireDepartment
+                            let formattedString = self.tel + self.fireDepartment_number
                             let url = URL(string: formattedString)!
                             UIApplication.shared.open(url)  }){
-                                Rows(image:"FireDepartment",name:"FIRE DEPARTMENT 112")
+                                Rows(image: firedepartment_img, name: firedepartment_description)
                         }.buttonStyle(btnStyle()); Button(action: {
-                            print("police number tapped!")
-                            let tel = "tel://"
-                            let formattedString = tel + self.mirascon
+                            let formattedString = self.tel + self.mirascon_number
                             let url = URL(string: formattedString)!
                             UIApplication.shared.open(url)  }){
-                                Rows(image:"MirasconStar",name:"0800 MIRASCON         ")
+                                Rows(image: mirasconStar_img, name: mirasconStar_description)
                         }.buttonStyle(btnStyle())
                     
                     Button(action: {
-                        print("back tapped!")
-                        self.viewRouter.currentPage = "mainView"
+                        self.viewRouter.currentPage = self.view_mainview
                     }) {
-                        Image("btnBack")
+                        Image(back_btn_img)
                             .foregroundColor(Color.white)
                         
                     }.frame(minWidth: 0, maxWidth: .infinity)
                         .padding()
                         .padding(.horizontal, 10)
-                        .background(endColor)
+                        .background(colorClass.endColor)
                         .cornerRadius(10)
                 }
             }
@@ -105,9 +102,14 @@ struct EmergencyUI_Previews: PreviewProvider {
 }
 
 struct Rows: View {
-    let endColor = Color(hex: "#102234")
+    let colorClass = ColorUI()
     var image: String
     var name: String
+    
+    let cg_100 = 100
+    let cg_370 = 370
+    let cg_90 = 90
+    let cg_2 = 2
     
     var body: some View {
         HStack{
@@ -115,10 +117,10 @@ struct Rows: View {
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(Color.white)
-                .frame(width: 100.0,height: 90)
+                .frame(width: CGFloat(cg_100),height: CGFloat(cg_90))
             Text("\(name)")
                 .foregroundColor(Color.white)
-        } .frame(width: 370.0,height:100)
-            .border(endColor, width: 2)
+        } .frame(width: CGFloat(cg_370),height: CGFloat(cg_100))
+            .border(colorClass.endColor, width: CGFloat(cg_2))
     }
 }

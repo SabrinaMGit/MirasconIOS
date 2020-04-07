@@ -61,14 +61,13 @@ struct LaunchLogo_Previews: PreviewProvider {
 
 
 struct LaunchRow: View {
-    let startColor = Color(hex: "#19334f")
-    let endColor = Color(hex: "#102234")
+    let colorClass = ColorUI()
     static var shouldAnimate = true
     @State var scale: CGFloat = 1
     
     var body: some View {
         ZStack {
-            RadialGradient(gradient: Gradient(colors: [startColor, endColor]), center: .center, startRadius: 2, endRadius: 650)
+            RadialGradient(gradient: Gradient(colors: [colorClass.startColor, colorClass.endColor]), center: .center, startRadius: 2, endRadius: 650)
                 .edgesIgnoringSafeArea(.all)
             Image("MirasconLogo")
                 .resizable()

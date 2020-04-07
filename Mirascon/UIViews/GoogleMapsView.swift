@@ -11,8 +11,7 @@ import SwiftUI
 struct GoogleMapsView: View {
     //@ObservedObject var viewModel = ContentViewModel()
     @ObservedObject var viewRouter: ViewRouter
-    let startColor = Color(hex: "#19334f")
-    let endColor = Color(hex: "#102234")
+    let colorClass = ColorUI()
     
     init(_ viewRouter: ViewRouter){
         self.viewRouter = viewRouter
@@ -20,13 +19,9 @@ struct GoogleMapsView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                RadialGradient(gradient: Gradient(colors: [startColor, endColor]), center: .center, startRadius: 2, endRadius: 650)
-                    .edgesIgnoringSafeArea(.all)
+                RadialGradientUI()
                 VStack {
-                    Image("MirasconLogo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200.0,height:100, alignment: .bottomLeading)
+                    LogoBar()
                     GoogleMap()
                     Button(action: {
                         print("back tapped!")
@@ -38,7 +33,7 @@ struct GoogleMapsView: View {
                     }.frame(minWidth: 0, maxWidth: .infinity)
                         .padding()
                         .padding(.horizontal, 10)
-                        .background(endColor)
+                        .background(colorClass.endColor)
                         .cornerRadius(10)
                 }//.edgesIgnoringSafeArea(.vertical)
             }.edgesIgnoringSafeArea(.all)

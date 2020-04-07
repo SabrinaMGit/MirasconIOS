@@ -26,10 +26,7 @@ struct GlassDamage: View {
     @State var isShowingMailView = false
     @State var alertNoMail = false
     
-    let blueRectangle = Color(hex: "#1b325e")
-    let startColor = Color(hex: "#19334f")
-    let endColor = Color(hex: "#102234")
-    let pictureHolderColor = Color(hex: "#19334f")
+    let colorClass = ColorUI()
     @ObservedObject var viewRouter: ViewRouter
     init(_ viewRouter: ViewRouter){
         self.viewRouter = viewRouter
@@ -37,13 +34,9 @@ struct GlassDamage: View {
     
     var body: some View {
         ZStack{
-            RadialGradient(gradient: Gradient(colors: [startColor, endColor]), center: .center, startRadius: 2, endRadius: 650)
-                .edgesIgnoringSafeArea(.all)
+            RadialGradientUI()
             VStack {
-                Image("MirasconLogo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 200.0,height:100)
+                LogoBar()
                 Text(" INSTRUCTION WHAT TO MAKE PHOTOS FROM \n - CAR \n - SCENE \n - OTHER")
                     .frame(minWidth: 390, idealWidth: 390, maxWidth: 390, minHeight: 100, idealHeight: 100, maxHeight: 100, alignment: .leading)
                     .background(Color.white)
@@ -59,7 +52,7 @@ struct GlassDamage: View {
                     }
                     TextField("", text: $when)
                         .padding(8)
-                        .background(blueRectangle)
+                        .background(colorClass.blueRectangle)
                         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
                             .stroke( lineWidth: 0)
@@ -72,7 +65,7 @@ struct GlassDamage: View {
                     }
                     TextField("", text: $wheree)
                         .padding(8)
-                        .background(blueRectangle)
+                        .background(colorClass.blueRectangle)
                         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
                             .stroke( lineWidth: 0)
@@ -85,7 +78,7 @@ struct GlassDamage: View {
                     }
                     TextField("", text: $what)
                         .padding(8)
-                        .background(blueRectangle)
+                        .background(colorClass.blueRectangle)
                         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
                             .stroke( lineWidth: 0)
@@ -98,11 +91,11 @@ struct GlassDamage: View {
                             image1?.resizable()
                                 .scaledToFit()
                                 .frame(width: 200.0,height:200)
-                                .background(pictureHolderColor)
+                                .background(colorClass.pictureHolderColor)
                         } else {
                             Image("gesture-tap")
                                 .frame(width: 200.0,height:200)
-                                .background(pictureHolderColor)
+                                .background(colorClass.pictureHolderColor)
                         }}
                         .onTapGesture {
                             self.showingImagePicker1 = true
@@ -114,11 +107,11 @@ struct GlassDamage: View {
                             image2?.resizable()
                                 .scaledToFit()
                                 .frame(width: 200.0,height:200)
-                                .background(pictureHolderColor)
+                                .background(colorClass.pictureHolderColor)
                         } else {
                             Image("gesture-tap")
                                 .frame(width: 200.0,height:200)
-                                .background(pictureHolderColor)
+                                .background(colorClass.pictureHolderColor)
                         }}
                         .onTapGesture {
                             self.showingImagePicker2 = true
@@ -154,7 +147,7 @@ struct GlassDamage: View {
                 }.frame(minWidth: 0, maxWidth: .infinity)
                     .padding()
                     .padding(.horizontal, 10)
-                    .background(endColor)
+                    .background(colorClass.endColor)
                     .cornerRadius(10)
             }
         }

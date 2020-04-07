@@ -18,9 +18,9 @@ struct ContentView: View {
                 MainScreen(viewRouter)
             } else if viewRouter.currentPage == "emergency" {
                 EmergencyUI(viewRouter)
-            } else if viewRouter.currentPage == "roadside" {
+            } else if viewRouter.currentPage == "RoadsideAssistance" {
                 RoadsideAssistanceUI(viewRouter)
-            } else if viewRouter.currentPage == "claimsCenter" {
+            } else if viewRouter.currentPage == "ClaimsCenter" {
                 ClaimsCenter(viewRouter)
             } else if viewRouter.currentPage == "launch" {
                 LaunchLogo(viewRouter)
@@ -34,7 +34,7 @@ struct ContentView: View {
                 //GlassDamage(viewRouter)
             } else if viewRouter.currentPage == "glassDamage" {
                 GlassDamage(viewRouter)
-            } else if viewRouter.currentPage == "products" {
+            } else if viewRouter.currentPage == "Products" {
                 WebView(request: URLRequest(url: URL(string: "https://www.mirascon.com")!))
             } else if viewRouter.currentPage == "googleMaps" {
                 GoogleMapsView(viewRouter)

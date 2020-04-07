@@ -9,9 +9,7 @@
 import SwiftUI
 
 struct Profil: View {
-    let startColor = Color(hex: "#19334f")
-    let endColor = Color(hex: "#102234")
-    let labelColor = Color(hex: "#d40b0b")
+   let colorClass = ColorUI()
     let cForm = ClaimsForm(ViewRouter())
     @ObservedObject var viewRouter: ViewRouter
     
@@ -20,14 +18,9 @@ struct Profil: View {
     }
     var body: some View {
         ZStack {
-            RadialGradient(gradient: Gradient(colors: [startColor, endColor]), center: .center, startRadius: 2, endRadius: 650)
-                .edgesIgnoringSafeArea(.all)
+            RadialGradientUI()
             VStack {
-                Image("MirasconLogo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 200.0,height:40)
-                    .padding()
+                LogoBar()
                 HStack {
                     Text("")
                     Divider()
@@ -38,7 +31,7 @@ struct Profil: View {
                         //.fontWeight(.medium)
                         .cornerRadius(4)
                     Spacer()
-                }.background(labelColor)
+                }.background(colorClass.labelColor)
                     .frame(height: 40)
                 Spacer()
                 Image("account_circle")
@@ -68,7 +61,7 @@ struct Profil: View {
                 }.frame(minWidth: 0, maxWidth: .infinity)
                     .padding()
                     .padding(.horizontal, 10)
-                    .background(endColor)
+                    .background(colorClass.endColor)
                     .cornerRadius(10)
             }
         }

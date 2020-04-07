@@ -9,6 +9,13 @@
 import SwiftUI
 
 struct ClaimsForm: View {
+    
+    @ObservedObject var viewRouter: ViewRouter
+    
+    init(_ viewRouter: ViewRouter){
+        self.viewRouter = viewRouter
+    }
+    
     @State var firstName: String = ""
     @State var lastName: String = ""
     @State var lp: String = ""
@@ -16,10 +23,11 @@ struct ClaimsForm: View {
     @State var email: String = ""
     @State var changeViewToGoogleAfterFirstLaunchCheck: Bool = false
     @State var firstLaunchIsDone: Bool = true
-    let blueRectangle = Color(hex: "#1b325e")
-    let startColor = Color(hex: "#19334f")
-    let endColor = Color(hex: "#102234")
+    
+    let colorClass = ColorUI()
+    
     @State private var showingAlert = false
+    
     let defaults = UserDefaults.standard
     
     @State public var firstNameSaved = UserDefaults.standard.string(forKey: "firstName")
@@ -28,27 +36,51 @@ struct ClaimsForm: View {
     @State public var phoneSaved = UserDefaults.standard.string(forKey: "phone")
     @State public var mailSaved = UserDefaults.standard.string(forKey: "mail")
     @State public var firstLaunchApp = UserDefaults.standard.bool(forKey: "firstLaunch")
-    let status = UserDefaults.standard.bool(forKey: "firstLaunc")
     
+    let status = UserDefaults.standard.bool(forKey: "firstLaunc")
     let firstLaunch = FirstLaunch(userDefaults: .standard, key: "com.any-suggestion.FirstLaunch.WasLaunchedBefore")
     
-    @ObservedObject var viewRouter: ViewRouter
-    init(_ viewRouter: ViewRouter){
-        self.viewRouter = viewRouter
-    }
+    let description = "Online report is fast and easy! You can report accidents, vehicle damgage,  roadside service and more!"
+    let firstName_name = "First Name:"
+    let emptyText = ""
+    let lastName_name = "Last Name:"
+    let licencePlate_name = "Licence Plate:"
+    let phoneNumber_name = "Phone Number:"
+    let email_name = "EMail:"
+    let continue_name = "CONTINUE"
+    let back_btn_img = "btnBack"
+    
+    let forkey_firstname = "firstName"
+    let forkey_lastname = "lastName"
+    let forkey_lp = "lp"
+    let forkey_phone = "phone"
+    let forkey_mail = "mail"
+    let forkey_firstLaunchIsDone = "com.any-suggestion.FirstLaunch.WasLaunchedBefore"
+    let forkey_firstLaunch = "firstLaunch"
+    
+    let view_mainView = "mainView"
+    let view_googleMaps = "googleMaps"
+    let view_claimsCenter = "claimsCenter"
+    
+    let width = 390
+      let minWidth = 0
+      let width_370 = 370.0
+      let height = 100
+      let cornerRadius_4 = 4
+      let cornerRadius_1 = 1
+      let borderWidth = 2
+      let cg_10 = 10
+    let cg_8 = 8
+    let cg_0 = 0
     
     var body: some View {
         ZStack{
-            RadialGradient(gradient: Gradient(colors: [startColor, endColor]), center: .center, startRadius: 2, endRadius: 650)
-                .edgesIgnoringSafeArea(.all)
+            RadialGradientUI()
             VStack {
-                Image("MirasconLogo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 200.0,height:100)
-                Text("Online report is fast and easy! You can report accidents, vehicle damgage,  roadside service and more!")
+                LogoBar()
+                Text(description)
                     .background(Color.white)
-                    .cornerRadius(4)
+                    .cornerRadius(CGFloat(cornerRadius_4))
                     .multilineTextAlignment(.leading)
                 Spacer()
                 VStack{
@@ -57,7 +89,7 @@ struct ClaimsForm: View {
                         VStack {
                             HStack {
                                 VStack {
-                                    Text("First Name:")
+                                    Text(firstName_name)
                                         .foregroundColor(Color.white)
                                         .multilineTextAlignment(.leading)
                                 }
@@ -65,14 +97,14 @@ struct ClaimsForm: View {
                             }
                             ZStack(alignment: .leading) {
                                 
-                                TextField("", text: $firstName)
-                                    .padding(8)
-                                    .background(blueRectangle)
+                                TextField(emptyText, text: $firstName)
+                                    .padding(CGFloat(cg_8))
+                                    .background(colorClass.blueRectangle)
                                     .foregroundColor(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                                    .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                        .stroke( lineWidth: 0))
-                                if firstName.isEmpty { Text("\(firstNameSaved ?? "")").foregroundColor(.white) }
+                                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(cg_10), style: .continuous))
+                                    .overlay(RoundedRectangle(cornerRadius: CGFloat(cg_10), style: .continuous)
+                                        .stroke( lineWidth: CGFloat(cg_0)))
+                                if firstName.isEmpty { Text("\(firstNameSaved ?? emptyText)").foregroundColor(.white) }
                             }
                         }
                         Spacer()
@@ -81,20 +113,20 @@ struct ClaimsForm: View {
                         Spacer()
                         VStack {
                             HStack {
-                                Text("Last Name:")
+                                Text(lastName_name)
                                     .foregroundColor(Color.white)
                                     .multilineTextAlignment(.leading)
                                 Spacer()
                             }
                             ZStack(alignment: .leading) {
-                                TextField("", text: $lastName)
-                                    .padding(8)
-                                    .background(blueRectangle)
+                                TextField(emptyText, text: $lastName)
+                                    .padding(CGFloat(cg_8))
+                                    .background(colorClass.blueRectangle)
                                     .foregroundColor(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                                    .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                        .stroke( lineWidth: 0))
-                                if lastName.isEmpty { Text("\(lastNameSaved ?? "")").foregroundColor(.white) }
+                                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(cg_10), style: .continuous))
+                                    .overlay(RoundedRectangle(cornerRadius: CGFloat(cg_10), style: .continuous)
+                                        .stroke( lineWidth: CGFloat(cg_0)))
+                                if lastName.isEmpty { Text("\(lastNameSaved ?? emptyText)").foregroundColor(.white) }
                             }}
                         Spacer()
                     }
@@ -102,20 +134,20 @@ struct ClaimsForm: View {
                         Spacer()
                         VStack {
                             HStack {
-                                Text("Licence Plate:")
+                                Text(licencePlate_name)
                                     .foregroundColor(Color.white)
                                     .multilineTextAlignment(.leading)
                                 Spacer()
                             }
                             ZStack(alignment: .leading){
-                                TextField("", text: $lp)
-                                    .padding(8)
-                                    .background(blueRectangle)
+                                TextField(emptyText, text: $lp)
+                                    .padding(CGFloat(cg_8))
+                                    .background(colorClass.blueRectangle)
                                     .foregroundColor(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                                    .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                        .stroke( lineWidth: 0))
-                                if lp.isEmpty { Text("\(lpSaved ?? "")").foregroundColor(.white) }
+                                    .clipShape(RoundedRectangle(cornerRadius:  CGFloat(cg_10), style: .continuous))
+                                    .overlay(RoundedRectangle(cornerRadius:  CGFloat(cg_10), style: .continuous)
+                                        .stroke( lineWidth:  CGFloat(cg_0)))
+                                if lp.isEmpty { Text("\(lpSaved ?? emptyText)").foregroundColor(.white) }
                             }
                         }
                         Spacer()
@@ -124,20 +156,20 @@ struct ClaimsForm: View {
                         Spacer()
                         VStack {
                             HStack {
-                                Text("Phone Number:")
+                                Text(phoneNumber_name)
                                     .foregroundColor(Color.white)
                                     .multilineTextAlignment(.leading)
                                 Spacer()
                             }
                             ZStack(alignment: .leading){
-                                TextField("", text: $phone)
-                                    .padding(8)
-                                    .background(blueRectangle)
+                                TextField(emptyText, text: $phone)
+                                    .padding(CGFloat(cg_8))
+                                    .background(colorClass.blueRectangle)
                                     .foregroundColor(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                                    .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                        .stroke( lineWidth: 0))
-                                if phone.isEmpty { Text("\(phoneSaved ?? "")").foregroundColor(.white) }
+                                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(cg_10), style: .continuous))
+                                    .overlay(RoundedRectangle(cornerRadius: CGFloat(cg_10), style: .continuous)
+                                        .stroke( lineWidth: CGFloat(cg_0)))
+                                if phone.isEmpty { Text("\(phoneSaved ?? emptyText)").foregroundColor(.white) }
                             }}
                         Spacer()
                     }
@@ -145,20 +177,20 @@ struct ClaimsForm: View {
                         Spacer()
                         VStack {
                             HStack {
-                                Text("EMail:")
+                                Text(email_name)
                                     .foregroundColor(Color.white)
                                     .multilineTextAlignment(.leading)
                                 Spacer()
                             }
                             ZStack(alignment: .leading){
-                                TextField("", text: $email)
-                                    .padding(8)
-                                    .background(blueRectangle)
+                                TextField(emptyText, text: $email)
+                                    .padding(CGFloat(cg_8))
+                                    .background(colorClass.blueRectangle)
                                     .foregroundColor(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                                    .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                        .stroke( lineWidth: 0))
-                                if email.isEmpty { Text("\(mailSaved ?? "")").foregroundColor(.white) }
+                                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(cg_10), style: .continuous))
+                                    .overlay(RoundedRectangle(cornerRadius: CGFloat(cg_10), style: .continuous)
+                                        .stroke( lineWidth: CGFloat(cg_0)))
+                                if email.isEmpty { Text("\(mailSaved ?? emptyText)").foregroundColor(.white) }
                             }}
                         Spacer()
                     }
@@ -166,41 +198,38 @@ struct ClaimsForm: View {
                 VStack{
                     
                     Button(action: {
-                        print("continue tapped!")
                         
-                        if self.firstName != "" && self.lastName != "" && self.lp != "" && self.phone != "" && self.email != ""{
+                        if self.firstName != self.emptyText && self.lastName != self.emptyText && self.lp != self.emptyText && self.phone != self.emptyText && self.email != self.emptyText{
                             self.firstNameSaved = self.firstName
                             self.lastNameSaved = self.lastName
                             self.lpSaved = self.lp
                             self.phoneSaved = self.phone
                             self.mailSaved = self.email
                             
-                            UserDefaults.standard.set(self.firstName, forKey: "firstName")
-                            UserDefaults.standard.set(self.lastName, forKey: "lastName")
-                            UserDefaults.standard.set(self.lp, forKey: "lp")
-                            UserDefaults.standard.set(self.phone, forKey: "phone")
-                            UserDefaults.standard.set(self.email, forKey: "mail")
+                            UserDefaults.standard.set(self.firstName, forKey: self.forkey_firstname)
+                            UserDefaults.standard.set(self.lastName, forKey: self.forkey_lastname)
+                            UserDefaults.standard.set(self.lp, forKey: self.forkey_lp)
+                            UserDefaults.standard.set(self.phone, forKey: self.forkey_phone)
+                            UserDefaults.standard.set(self.email, forKey: self.forkey_mail)
                             
-                            UserDefaults.standard.set(self.firstLaunchIsDone, forKey: "com.any-suggestion.FirstLaunch.WasLaunchedBefore")
+                            UserDefaults.standard.set(self.firstLaunchIsDone, forKey: self.forkey_firstLaunchIsDone)
                             if self.firstLaunch.isFirstLaunch {
-                                self.viewRouter.currentPage = "mainView"
+                                self.viewRouter.currentPage = self.view_mainView
                                 self.changeViewToGoogleAfterFirstLaunchCheck = true
-                                print("mainView open!")
                             }
                         } else{
                             self.showingAlert = true
                         }
                         if self.firstLaunchApp {
-                            self.viewRouter.currentPage = "googleMaps"
-                            print("google Maps open!")
+                            self.viewRouter.currentPage = self.view_googleMaps
                         }
                         if self.changeViewToGoogleAfterFirstLaunchCheck {
                             self.firstLaunchApp = self.firstLaunchIsDone
-                            UserDefaults.standard.set(self.firstLaunchIsDone, forKey: "firstLaunch")
+                            UserDefaults.standard.set(self.firstLaunchIsDone, forKey: self.forkey_firstLaunch)
                         }
                         
                     }) {
-                        Text("CONTINUE")
+                        Text(continue_name)
                             .fontWeight(.medium)
                             .foregroundColor(Color.white)
                         
@@ -211,17 +240,16 @@ struct ClaimsForm: View {
                     Spacer()
                     
                     Button(action: {
-                        print("back tapped!")
-                        self.viewRouter.currentPage = "claimsCenter"
+                        self.viewRouter.currentPage = self.view_claimsCenter
                     }) {
-                        Image("btnBack")
+                        Image(back_btn_img)
                             .foregroundColor(Color.white)
                         
-                    }.frame(minWidth: 0, maxWidth: .infinity)
+                    }.frame(minWidth: CGFloat(cg_0), maxWidth: .infinity)
                         .padding()
-                        .padding(.horizontal, 10)
-                        .background(endColor)
-                        .cornerRadius(10)
+                        .padding(.horizontal, CGFloat(cg_10))
+                        .background(colorClass.endColor)
+                        .cornerRadius(CGFloat(cg_10))
                 }
             }
         }
@@ -234,104 +262,69 @@ struct ClaimsForm_Previews: PreviewProvider {
     }
 }
 struct GradientBackgroundStyle: ButtonStyle {
-    let btnColor = Color(hex: "#1b325e")
+    
+    let colorClass = ColorUI()
+    let cg_0 = 0
+    let cg_100 = 100
+    let cg_20 = 20
+    let cg_10 = 10
+    let cg_0_9 = 0.9
+    let cg_1_0 = 1.0
+    
     func makeBody(configuration: Self.Configuration) -> some View {
         VStack {
             configuration.label
-                .frame(minWidth: 0, maxWidth: 100)
+                .frame(minWidth: CGFloat(cg_0), maxWidth: CGFloat(cg_100))
                 .padding()
-                .padding(.horizontal, 20)
-                .background(btnColor)
-                .cornerRadius(10)
-                .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
+                .padding(.horizontal, CGFloat(cg_20))
+                .background(colorClass.btnColor)
+                .cornerRadius(CGFloat(cg_10))
+                .scaleEffect(configuration.isPressed ? CGFloat(cg_0_9) : CGFloat(cg_1_0))
             
         }
     }
 }
 
-extension Color {
-    init(hex string: String) {
-        var string: String = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        if string.hasPrefix("#") {
-            _ = string.removeFirst()
-        }
-        
-        // Double the last value if incomplete hex
-        if !string.count.isMultiple(of: 2), let last = string.last {
-            string.append(last)
-        }
-        
-        // Fix invalid values
-        if string.count > 8 {
-            string = String(string.prefix(8))
-        }
-        
-        // Scanner creation
-        let scanner = Scanner(string: string)
-        
-        var color: UInt64 = 0
-        scanner.scanHexInt64(&color)
-        
-        if string.count == 2 {
-            let mask = 0xFF
-            
-            let g = Int(color) & mask
-            
-            let gray = Double(g) / 255.0
-            
-            self.init(.sRGB, red: gray, green: gray, blue: gray, opacity: 1)
-            
-        } else if string.count == 4 {
-            let mask = 0x00FF
-            
-            let g = Int(color >> 8) & mask
-            let a = Int(color) & mask
-            
-            let gray = Double(g) / 255.0
-            let alpha = Double(a) / 255.0
-            
-            self.init(.sRGB, red: gray, green: gray, blue: gray, opacity: alpha)
-            
-        } else if string.count == 6 {
-            let mask = 0x0000FF
-            let r = Int(color >> 16) & mask
-            let g = Int(color >> 8) & mask
-            let b = Int(color) & mask
-            
-            let red = Double(r) / 255.0
-            let green = Double(g) / 255.0
-            let blue = Double(b) / 255.0
-            
-            self.init(.sRGB, red: red, green: green, blue: blue, opacity: 1)
-            
-        } else if string.count == 8 {
-            let mask = 0x000000FF
-            let r = Int(color >> 24) & mask
-            let g = Int(color >> 16) & mask
-            let b = Int(color >> 8) & mask
-            let a = Int(color) & mask
-            
-            let red = Double(r) / 255.0
-            let green = Double(g) / 255.0
-            let blue = Double(b) / 255.0
-            let alpha = Double(a) / 255.0
-            
-            self.init(.sRGB, red: red, green: green, blue: blue, opacity: alpha)
-            
-        } else {
-            self.init(.sRGB, red: 1, green: 1, blue: 1, opacity: 1)
+struct claimsFormRow: View {
+    
+    let colorClass = ColorUI()
+    
+    let firstName_name = "First Name:"
+    let emptyText = ""
+    let lastName_name = "Last Name:"
+    let licencePlate_name = "Licence Plate:"
+    let phoneNumber_name = "Phone Number:"
+    let email_name = "EMail:"
+    
+    let cg_10 = 10
+    let cg_8 = 8
+    let cg_0 = 0
+    
+    @State var lp: String = ""
+    @State public var lpSaved = UserDefaults.standard.string(forKey: "lp")
+    
+    var body: some View{
+        VStack {
+            HStack {
+                Text(licencePlate_name)
+                    .foregroundColor(Color.white)
+                    .multilineTextAlignment(.leading)
+                Spacer()
+            }
+            ZStack(alignment: .leading){
+                TextField(emptyText, text: $lp)
+                    .padding(CGFloat(cg_8))
+                    .background(colorClass.blueRectangle)
+                    .foregroundColor(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius:  CGFloat(cg_10), style: .continuous))
+                    .overlay(RoundedRectangle(cornerRadius:  CGFloat(cg_10), style: .continuous)
+                        .stroke( lineWidth:  CGFloat(cg_0)))
+                if lp.isEmpty { Text("\(lpSaved ?? emptyText)").foregroundColor(.white) }
+            }
         }
     }
 }
 
-let gray0 = Color(hex: "3f")
-let gray1 = Color(hex: "#69")
-let gray2 = Color(hex: "#6911")
-let gray3 = Color(hex: "fff")
-let red = Color(hex: "#FF000044s")
-let green = Color(hex: "#00FF00")
-let blue0 = Color(hex: "0000FF")
-let blue1 = Color(hex: "0000F")
 
 
 

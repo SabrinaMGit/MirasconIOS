@@ -9,91 +9,111 @@
 import SwiftUI
 
 struct ClaimsCenter: View {
-    let blueRectangle = Color(hex: "#1b325e")
-    let startColor = Color(hex: "#19334f")
-    let endColor = Color(hex: "#102234")
-    let cForm = ClaimsForm(ViewRouter())
     
     @ObservedObject var viewRouter: ViewRouter
-    init(_ viewRouter: ViewRouter){
-        UITableView.appearance().backgroundColor = .clear
-        UITableViewCell.appearance().backgroundColor = .clear
-        self.viewRouter = viewRouter
-    }
+     
+     init(_ viewRouter: ViewRouter){
+         self.viewRouter = viewRouter
+     }
+    
+    let colorClass = ColorUI()
+    let cForm = ClaimsForm(ViewRouter())
+    
+    let emptyText = ""
+    let fillForm_img = "fillForm"
+    let fillForm_description = "FILL OUT THE CLAIMS FORM"
+    let camera_description = "PHOTOS CAMERA UPLOAD      "
+    let cellphone_img = "cellphone_information"
+    let cellphone_decription = "OTHER INFO MP / POLICE        "
+    let glassDamage_img = "ic_glassdamage"
+    let glassDamage_description = "GLASS DAMAGE                       "
+    
+    let view_profil = "profil"
+    let view_claimsForm = "claimsForm"
+    let view_camera = "camera"
+    let view_googleMaps = "googleMaps"
+    let view_glassDamage = "glassDamage"
+    let view_mainView = "mainView"
+    
+    let edit_img = "account-edit-outline"
+    let back_btn_img = "btnBack"
+    
+    var label_descriptionWithData: String {
+          return " Your Data: \n First Name: \(cForm.firstNameSaved!),\n Last Name: \(cForm.lastNameSaved!),\n License Plate: \(cForm.lpSaved!)"
+      }
+    
+    let width = 390
+    let minWidth = 0
+    let width_370 = 370.0
+    let height = 100
+    let cornerRadius_4 = 4
+    let cornerRadius_1 = 1
+    let borderWidth = 2
+    let cg_10 = 10
     
     var body: some View {
         ZStack{
-            RadialGradient(gradient: Gradient(colors: [startColor, endColor]), center: .center, startRadius: 2, endRadius: 650)
-                .edgesIgnoringSafeArea(.all)
+            RadialGradientUI()
             VStack {
                 HStack(alignment: .center){
-                    Text("")
-                    Image("MirasconLogo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200.0,height:100, alignment: .trailing)
+                    Text(emptyText)
+                    LogoBar()
                     Button(action: {
-                        print("profil tapped!")
-                        self.viewRouter.currentPage = "profil"
+                        self.viewRouter.currentPage = self.view_profil
                     }) {
-                        Image("account-edit-outline")
+                        Image(edit_img)
                             .padding(.leading)
                             .foregroundColor(Color.white)
                     }
                 }
-                Text(" Your Data: \n First Name: \(cForm.firstNameSaved!),\n Last Name: \(cForm.lastNameSaved!),\n License Plate: \(cForm.lpSaved!)")
-                    .frame(minWidth: 390, idealWidth: 390, maxWidth: 390, minHeight: 100, idealHeight: 100, maxHeight: 100, alignment: .leading)
+                Text(label_descriptionWithData)
+                    .frame(minWidth: CGFloat(width), idealWidth: CGFloat(width), maxWidth: CGFloat(width), minHeight: CGFloat(height), idealHeight: CGFloat(height), maxHeight: CGFloat(height), alignment: .leading)
                     .background(Color.white)
-                    .cornerRadius(4)
+                    .cornerRadius(CGFloat(cornerRadius_4))
                     .multilineTextAlignment(.leading)
                 
                 Button(action: {
-                    print("claimsForm tapped!")
-                    self.viewRouter.currentPage = "claimsForm"
+                    self.viewRouter.currentPage = self.view_claimsForm
                 }) {
-                    ClaimsCenterRow(image: "fillForm", name: "FILL OUT THE CLAIMS FORM")
-                        .frame(width: 370.0,height:100)
-                        .border(endColor, width: 2)
+                    ClaimsCenterRow(image: fillForm_img, name: fillForm_description)
+                        .frame(width: CGFloat(width_370), height: CGFloat(height))
+                        .border(colorClass.endColor, width: CGFloat(borderWidth))
                 }.buttonStyle(btnStyle());
                 Button(action: {
-                    print("camera tapped!")
-                    self.viewRouter.currentPage = "camera"
+                    self.viewRouter.currentPage = self.view_camera
                 }) {
-                    ClaimsCenterRow(image: "camera", name: "PHOTOS CAMERA UPLOAD      ")
-                        .frame(width: 370.0,height:100)
+                    ClaimsCenterRow(image: view_camera, name: camera_description)
+                        .frame(width: CGFloat(width_370), height: CGFloat(height))
                         .overlay(
-                            RoundedRectangle(cornerRadius: 1)
-                                .stroke(endColor, lineWidth: 2)
+                            RoundedRectangle(cornerRadius: CGFloat(cornerRadius_1))
+                                .stroke(colorClass.endColor, lineWidth: CGFloat(borderWidth))
                     )}.buttonStyle(btnStyle());
                 Button(action: {
-                    print("other info tapped!")
-                    self.viewRouter.currentPage = "googleMaps"
+                    self.viewRouter.currentPage = self.view_googleMaps
                 }) {
-                    ClaimsCenterRow(image: "cellphone_information", name: "OTHER INFO MP / POLICE        ")
-                        .frame(width: 370.0,height:100)
-                        .border(endColor, width: 2)
+                    ClaimsCenterRow(image: cellphone_img, name: cellphone_decription)
+                        .frame(width: CGFloat(width_370), height: CGFloat(height))
+                        .border(colorClass.endColor, width: CGFloat(borderWidth))
                 }.buttonStyle(btnStyle());
                 Button(action: {
-                    print("glass damage tapped!")
-                    self.viewRouter.currentPage = "glassDamage"
+                    self.viewRouter.currentPage = self.view_glassDamage
                 }) {
-                    ClaimsCenterRow(image: "ic_glassdamage", name: "GLASS DAMAGE                       ")
-                        .frame(width: 370.0,height:100)
-                        .border(endColor, width: 2)
+                    ClaimsCenterRow(image: glassDamage_img, name: glassDamage_description)
+                        .frame(width: CGFloat(width_370), height: CGFloat(height))
+                        .border(colorClass.endColor, width: CGFloat(borderWidth))
                 }.buttonStyle(btnStyle())
                 Spacer()
                 Button(action: {
-                    print("back tapped!")
-                    self.viewRouter.currentPage = "mainView"
+                    self.viewRouter.currentPage = self.view_mainView
                 }) {
-                    Image("btnBack")
+                    Image(back_btn_img)
                         .foregroundColor(Color.white)
                     
-                }.frame(minWidth: 0, maxWidth: .infinity)
+                }.frame(minWidth: CGFloat(minWidth), maxWidth: .infinity)
                     .padding()
-                    .padding(.horizontal, 10)
-                    .background(endColor)
-                    .cornerRadius(10)
+                    .padding(.horizontal, CGFloat(cg_10))
+                    .background(colorClass.endColor)
+                    .cornerRadius(CGFloat(cg_10))
                 
                 
                 Spacer()
@@ -111,13 +131,16 @@ struct ClaimsCenterRow: View {
     var image: String
     var name: String
     
+    let width = 100.0
+    let height = 90
+    
     var body: some View {
         HStack{
             Image("\(image)")
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(Color.white)
-                .frame(width: 100.0,height: 90)
+                .frame(width: CGFloat(width), height: CGFloat(height))
             
             Text("\(name)")
                 .foregroundColor(Color.white)

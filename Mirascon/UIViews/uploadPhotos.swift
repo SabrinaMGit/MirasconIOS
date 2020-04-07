@@ -12,9 +12,7 @@ import UIKit
 
 
 struct uploadPhotos: View {
-    let startColor = Color(hex: "#19334f")
-    let endColor = Color(hex: "#102234")
-    let pictureHolderColor = Color(hex: "#19334f")
+    let colorClass = ColorUI()
     
     @State var showCaptureImageView: Bool = false
     
@@ -42,13 +40,9 @@ struct uploadPhotos: View {
     
     var body: some View {
         ZStack{
-            RadialGradient(gradient: Gradient(colors: [startColor, endColor]), center: .center, startRadius: 2, endRadius: 650)
-                .edgesIgnoringSafeArea(.all)
+            RadialGradientUI()
             VStack {
-                Image("MirasconLogo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 200.0,height:100)
+                LogoBar()
                 Text(" INSTRUCTION WHAT TO MAKE PHOTOS FROM \n - CAR \n - SCENE \n - OTHER")
                     .frame(minWidth: 390, idealWidth: 390, maxWidth: 390, minHeight: 100, idealHeight: 100, maxHeight: 100, alignment: .leading)
                     .background(Color.white)
@@ -61,11 +55,11 @@ struct uploadPhotos: View {
                             image?.resizable()
                                 .scaledToFit()
                                 .frame(width: 200.0,height:200)
-                                .background(pictureHolderColor)
+                                .background(colorClass.pictureHolderColor)
                         } else {
                             Image("gesture-tap")
                                 .frame(width: 200.0,height:200)
-                                .background(pictureHolderColor)
+                                .background(colorClass.pictureHolderColor)
                         }}
                         .onTapGesture {
                             self.showingImagePicker = true
@@ -88,11 +82,11 @@ struct uploadPhotos: View {
                             image2?.resizable()
                                 .scaledToFit()
                                 .frame(width: 200.0,height:200)
-                                .background(pictureHolderColor)
+                                .background(colorClass.pictureHolderColor)
                         } else {
                             Image("gesture-tap")
                                 .frame(width: 200.0,height:200)
-                                .background(pictureHolderColor)
+                                .background(colorClass.pictureHolderColor)
                         }}
                         .onTapGesture {
                             self.showingImagePicker2 = true
@@ -106,11 +100,11 @@ struct uploadPhotos: View {
                             image3?.resizable()
                                 .scaledToFit()
                                 .frame(width: 200.0,height:200)
-                                .background(pictureHolderColor)
+                                .background(colorClass.pictureHolderColor)
                         } else {
                             Image("gesture-tap")
                                 .frame(width: 200.0,height:200)
-                                .background(pictureHolderColor)
+                                .background(colorClass.pictureHolderColor)
                         }}
                         .onTapGesture {
                             self.showingImagePicker3 = true
@@ -122,11 +116,11 @@ struct uploadPhotos: View {
                             image4?.resizable()
                                 .scaledToFit()
                                 .frame(width: 200.0,height:200)
-                                .background(pictureHolderColor)
+                                .background(colorClass.pictureHolderColor)
                         } else {
                             Image("gesture-tap")
                                 .frame(width: 200.0,height:200)
-                                .background(pictureHolderColor)
+                                .background(colorClass.pictureHolderColor)
                         }}
                         .onTapGesture {
                             self.showingImagePicker4 = true
@@ -169,7 +163,7 @@ struct uploadPhotos: View {
                 }.frame(minWidth: 0, maxWidth: .infinity)
                     .padding()
                     .padding(.horizontal, 10)
-                    .background(endColor)
+                    .background(colorClass.endColor)
                     .cornerRadius(10)
             }
             /*if (showCaptureImageView) {

@@ -25,6 +25,10 @@
 		8D55D9C323E38BD500B0DC4B /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55D9C223E38BD500B0DC4B /* FirstLaunch.swift */; };
 		8D5742AC242B47260018160B /* GoogleMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5742AB242B47260018160B /* GoogleMapsView.swift */; };
 		8D5742AE242B89290018160B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8D5742AD242B89290018160B /* Podfile */; };
+		8DB2E1DE243B54DC00E3A1BD /* ColorUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2E1DD243B54DC00E3A1BD /* ColorUI.swift */; };
+		8DB2E1E0243C920200E3A1BD /* RadialGradientUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2E1DF243C920200E3A1BD /* RadialGradientUI.swift */; };
+		8DB2E1E2243C93DB00E3A1BD /* LogoBarWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2E1E1243C93DB00E3A1BD /* LogoBarWithLabel.swift */; };
+		8DB2E1E4243C9AE900E3A1BD /* LogoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2E1E3243C9AE900E3A1BD /* LogoBar.swift */; };
 		8DB99D3C23AD247300AE483B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB99D3B23AD247300AE483B /* AppDelegate.swift */; };
 		8DB99D3E23AD247300AE483B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB99D3D23AD247300AE483B /* SceneDelegate.swift */; };
 		8DB99D4023AD247300AE483B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB99D3F23AD247300AE483B /* ContentView.swift */; };
@@ -71,7 +75,6 @@
 
 /* Begin PBXFileReference section */
 		346B21D53E006A92AF7DD652 /* Pods-Mirascon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirascon.release.xcconfig"; path = "Target Support Files/Pods-Mirascon/Pods-Mirascon.release.xcconfig"; sourceTree = "<group>"; };
-		8D0C128723F0914C00C2D374 /* Notification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = Notification.appex; path = "/Users/dev-notebook/Library/Mobile Documents/com~apple~CloudDocs/Documents/Mirascon/build/Debug-iphoneos/Notification.appex"; sourceTree = "<absolute>"; };
 		8D0C128823F0914C00C2D374 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		8D0C128A23F0914D00C2D374 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		8D25408323ED6B5000707704 /* ChatFirebaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatFirebaseView.swift; sourceTree = "<group>"; };
@@ -89,7 +92,12 @@
 		8D55D9C223E38BD500B0DC4B /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		8D5742AB242B47260018160B /* GoogleMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsView.swift; sourceTree = "<group>"; };
 		8D5742AD242B89290018160B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		8DB99D3823AD247300AE483B /* Mirascon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Mirascon.app; path = "/Users/dev-notebook/Library/Mobile Documents/com~apple~CloudDocs/Documents/Mirascon/build/Debug-iphoneos/Mirascon.app"; sourceTree = "<absolute>"; };
+		8D5742AF242BB0D20018160B /* Mirascon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mirascon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DB2E1DC243640C100E3A1BD /* Notification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Notification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DB2E1DD243B54DC00E3A1BD /* ColorUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUI.swift; sourceTree = "<group>"; };
+		8DB2E1DF243C920200E3A1BD /* RadialGradientUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientUI.swift; sourceTree = "<group>"; };
+		8DB2E1E1243C93DB00E3A1BD /* LogoBarWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoBarWithLabel.swift; sourceTree = "<group>"; };
+		8DB2E1E3243C9AE900E3A1BD /* LogoBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoBar.swift; sourceTree = "<group>"; };
 		8DB99D3B23AD247300AE483B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DB99D3D23AD247300AE483B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8DB99D3F23AD247300AE483B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -184,6 +192,8 @@
 				8DB99D8023AE86CB00AE483B /* Models */,
 				C2ED31251947BE6A5771CF7B /* Pods */,
 				28826040C02C704E37279E5D /* Frameworks */,
+				8D5742AF242BB0D20018160B /* Mirascon.app */,
+				8DB2E1DC243640C100E3A1BD /* Notification.appex */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,11 +210,15 @@
 				8DB99D4923AD247600AE483B /* Info.plist */,
 				8DB99D4323AD247600AE483B /* Preview Content */,
 				8D55D9B823E208E100B0DC4B /* Coordinator.swift */,
+				8DB2E1DD243B54DC00E3A1BD /* ColorUI.swift */,
 				8D55D9C223E38BD500B0DC4B /* FirstLaunch.swift */,
 				8D55D9BC23E2FF1800B0DC4B /* ViewRouter.swift */,
 				8DB99D7523AE154400AE483B /* PlayerView.swift */,
 				8DC3835623EC52BA00000039 /* GoogleMap.swift */,
 				8DBD930F23ECC87F0034E918 /* LocationManager.swift */,
+				8DB2E1DF243C920200E3A1BD /* RadialGradientUI.swift */,
+				8DB2E1E1243C93DB00E3A1BD /* LogoBarWithLabel.swift */,
+				8DB2E1E3243C9AE900E3A1BD /* LogoBar.swift */,
 			);
 			path = Mirascon;
 			sourceTree = "<group>";
@@ -262,7 +276,7 @@
 			);
 			name = Notification;
 			productName = Notification;
-			productReference = 8D0C128723F0914C00C2D374 /* Notification.appex */;
+			productReference = 8DB2E1DC243640C100E3A1BD /* Notification.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		8DB99D3723AD247300AE483B /* Mirascon */ = {
@@ -284,7 +298,7 @@
 			);
 			name = Mirascon;
 			productName = Mirascon;
-			productReference = 8DB99D3823AD247300AE483B /* Mirascon.app */;
+			productReference = 8D5742AF242BB0D20018160B /* Mirascon.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -420,6 +434,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D55D9BB23E2FDEB00B0DC4B /* MainScreen.swift in Sources */,
+				8DB2E1E0243C920200E3A1BD /* RadialGradientUI.swift in Sources */,
+				8DB2E1E2243C93DB00E3A1BD /* LogoBarWithLabel.swift in Sources */,
 				8D55D9B323E08DE900B0DC4B /* UserData.swift in Sources */,
 				8DDAD9F923E05774001409EC /* ClaimsForm.swift in Sources */,
 				8D55D9B923E208E200B0DC4B /* Coordinator.swift in Sources */,
@@ -428,6 +444,7 @@
 				8D55D9B523E1EFFC00B0DC4B /* uploadPhotos.swift in Sources */,
 				8D25408423ED6B5000707704 /* ChatFirebaseView.swift in Sources */,
 				8DB99D5023AD255300AE483B /* EmergencyUI.swift in Sources */,
+				8DB2E1DE243B54DC00E3A1BD /* ColorUI.swift in Sources */,
 				8D25408623ED6B9F00707704 /* DataFire.swift in Sources */,
 				8DB99D3E23AD247300AE483B /* SceneDelegate.swift in Sources */,
 				8D5742AC242B47260018160B /* GoogleMapsView.swift in Sources */,
@@ -439,6 +456,7 @@
 				8DEBB2042415297800622D88 /* Profil.swift in Sources */,
 				8DB99D9323AEB69900AE483B /* Introduction.swift in Sources */,
 				8DBD931023ECC87F0034E918 /* LocationManager.swift in Sources */,
+				8DB2E1E4243C9AE900E3A1BD /* LogoBar.swift in Sources */,
 				8D55D9BD23E2FF1800B0DC4B /* ViewRouter.swift in Sources */,
 				8DC0FF8523EEFA4500B8401F /* Messagepage.swift in Sources */,
 				8D55D9C323E38BD500B0DC4B /* FirstLaunch.swift in Sources */,
@@ -633,6 +651,7 @@
 				DEVELOPMENT_TEAM = 897WYU8Q95;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Mirascon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -654,6 +673,7 @@
 				DEVELOPMENT_TEAM = 897WYU8Q95;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Mirascon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

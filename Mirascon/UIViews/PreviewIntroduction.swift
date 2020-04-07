@@ -134,16 +134,13 @@ struct PageControl: UIViewRepresentable {
 }
 
 struct PreviewIntroduction: View {
-    let startColor = Color(hex: "#19334f")
-    let endColor = Color(hex: "#102234")
     var introduction: Introduction
     
     @ObservedObject var viewRouter: ViewRouter
 
     var body: some View {
         ZStack {
-            RadialGradient(gradient: Gradient(colors: [startColor, endColor]), center: .center, startRadius: 2, endRadius: 650)
-                .edgesIgnoringSafeArea(.all)
+            RadialGradientUI()
             VStack(alignment: .leading) {
                 HStack {
                     Spacer()

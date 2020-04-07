@@ -9,11 +9,21 @@
 import SwiftUI
 
 struct RoadsideAssistanceUI: View {
-    let startColor = Color(hex: "#19334f")
-    let endColor = Color(hex: "#102234")
-    let labelColor = Color(hex: "#d40b0b")
+    let colorClass = ColorUI()
     let roadsideNmb = ""
     let carclaimsNmb = ""
+    let labelName = "ROADSIDE ASSISTANCE"
+    let description = "If you need help, call the roadside assistance contacts"
+    let tel = "tel://"
+    let view_mainview = "mainView"
+    
+    let phoneCall_img = "PhoneCall"
+    let roadside_img = "RoadsideAssistance"
+    let carClaims_img = "CarClaims"
+    let carClaims_description = "0800 CARCLAIMS         "
+    let back_btn_img = "btnBack"
+    
+
     
     @ObservedObject var viewRouter: ViewRouter
     init(_ viewRouter: ViewRouter){
@@ -23,33 +33,16 @@ struct RoadsideAssistanceUI: View {
     }
     var body: some View {
         ZStack {
-            RadialGradient(gradient: Gradient(colors: [startColor, endColor]), center: .center, startRadius: 2, endRadius: 650)
-                .edgesIgnoringSafeArea(.all)
-            
+            RadialGradientUI()
             VStack {
-                Image("MirasconLogo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 200.0,height:100)
-                HStack {
-                    Text("")
-                    Divider()
-                    Text("ROADSIDE ASSISTANCE")
-                        .frame(height: 40)
-                        .foregroundColor(Color.white)
-                        .font(.headline)
-                        //.fontWeight(.medium)
-                        .cornerRadius(4)
-                    Spacer()
-                }.background(labelColor)
-                    .frame(height: 40)
+                LogoBarWithLabel(labelName: labelName)
                 Spacer()
-                Image("PhoneCall")
+                Image(phoneCall_img)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 200.0,height:130)
                 Spacer()
-                Text("If you need help, call the roadside assistance contacts")
+                Text( description)
                     .font(.headline)
                     .fontWeight(.regular)
                     .foregroundColor(Color.white)
@@ -58,33 +51,28 @@ struct RoadsideAssistanceUI: View {
                 VStack {
                     
                     Button(action: {
-                        print("police number tapped!")
-                        let tel = "tel://"
-                        let formattedString = tel + self.roadsideNmb
+                        let formattedString = self.tel + self.roadsideNmb
                         let url = URL(string: formattedString)!
                         UIApplication.shared.open(url)  }){
-                            Rows(image: "RoadsideAssistance", name: "ROADSIDE ASSISTANCE")
+                            Rows(image: roadside_img, name: labelName)
                     }.buttonStyle(btnStyle()); Button(action: {
-                        print("police number tapped!")
-                        let tel = "tel://"
-                        let formattedString = tel + self.carclaimsNmb
+                        let formattedString = self.tel + self.carclaimsNmb
                         let url = URL(string: formattedString)!
                         UIApplication.shared.open(url)  }){
-                            Rows(image: "CarClaims", name: "0800 CARCLAIMS         ")
+                            Rows(image: carClaims_img, name: carClaims_description)
                     }.buttonStyle(btnStyle())
                     
                     Spacer()
                     Button(action: {
-                        print("back tapped!")
-                        self.viewRouter.currentPage = "mainView"
+                        self.viewRouter.currentPage = self.view_mainview
                     }) {
-                        Image("btnBack")
+                        Image(back_btn_img)
                             .foregroundColor(Color.white)
                         
                     }.frame(minWidth: 0, maxWidth: .infinity)
                         .padding()
                         .padding(.horizontal, 10)
-                        .background(endColor)
+                        .background(colorClass.endColor)
                         .cornerRadius(10)
                     
                 }

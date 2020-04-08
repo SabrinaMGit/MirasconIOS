@@ -11,26 +11,11 @@ import UIKit
 
 struct MainScreen: View {
     
-    let url = URL(string: "https://www.mirascon.com")
-    
     let colorClass = ColorUI()
     let dimensClass = dimens()
+    let stringsClass = strings()
     
-    let labelName = "WHAT CAN WE DO FOR YOU?"
-    let emergency_img = "emergency"
-    let emergency_name = "Emergency Call"
-    
-    let roadsideAssistance_img = "RoadsideAssistance"
-    let roadsideAssistance_name = "Roadside Assistance"
-    
-    let claimsCenter_img = "ClaimsCenter"
-    let claimsCenter_name = "Claims Center"
-    
-    let products_img = "Products"
-    
-    let back_btn_img = "btnBack"
-    
-    let chat_img = "chat_smaller_icon"
+    let url = URL(string: "https://www.mirascon.com")
     
     @ObservedObject var viewRouter: ViewRouter
     
@@ -42,22 +27,22 @@ struct MainScreen: View {
         ZStack {
             RadialGradientUI()
             VStack {
-                LogoBarWithLabel(labelName: labelName)
+                LogoBarWithLabel(labelName: stringsClass.labelNameM)
                 VStack {
                     HStack{
-                        MainViewRow(viewModel: viewRouter, viewRouterName: emergency_img, image: emergency_img, name: emergency_name)
-                        MainViewRow(viewModel: viewRouter, viewRouterName: roadsideAssistance_img, image: roadsideAssistance_img, name: roadsideAssistance_name)
+                        MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.emergency_img, image: stringsClass.emergency_img, name: stringsClass.emergency_name)
+                        MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.roadsideAssistance_img, image: stringsClass.roadsideAssistance_img, name: stringsClass.roadsideAssistance_name)
                     }
                     HStack{
-                        MainViewRow(viewModel: viewRouter, viewRouterName: claimsCenter_img, image: claimsCenter_img, name: claimsCenter_name)
-                        MainViewRow(viewModel: viewRouter, viewRouterName: products_img, image: products_img, name: products_img)
+                        MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.claimsCenter_img, image: stringsClass.claimsCenter_img, name: stringsClass.claimsCenter_name)
+                        MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.products_img, image: stringsClass.products_img, name: stringsClass.products_img)
                     }
                     Spacer()
                     HStack {
                         Button(action: {
                             exit(Int32(self.dimensClass.cg_0));
                         }) {
-                            Image(back_btn_img)
+                            Image(stringsClass.back_btn_img)
                                 .foregroundColor(Color.white)
                         }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)
                             .padding()
@@ -72,7 +57,7 @@ struct MainScreen: View {
                 Button(action: {
                     //self.viewRouter.currentPage = "chatFirebase"
                 }) {
-                    Image(chat_img)
+                    Image(stringsClass.chat_img)
                         .foregroundColor(Color.white)
                         .padding()
                         .background(Color.red)
@@ -95,7 +80,9 @@ struct MainScreen_Previews: PreviewProvider {
 struct MainViewRow: View {
     
     @ObservedObject var viewModel:ViewRouter
+    
     let dimensClass = dimens()
+    
     var viewRouterName: String
     var image: String
     var name: String
@@ -123,7 +110,9 @@ struct MainViewRow: View {
 
 
 struct btnStyle: ButtonStyle {
-     let dimensClass = dimens()
+    
+    let dimensClass = dimens()
+    
     func makeBody(configuration: Self.Configuration) -> some View {
         VStack {
             configuration.label

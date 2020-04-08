@@ -12,20 +12,7 @@ struct RoadsideAssistanceUI: View {
     
     let colorClass = ColorUI()
     let dimensClass = dimens()
-    
-    let roadsideNmb = ""
-    let carclaimsNmb = ""
-    let labelName = "ROADSIDE ASSISTANCE"
-    let description = "If you need help, call the roadside assistance contacts"
-    let tel = "tel://"
-    let view_mainview = "mainView"
-    
-    let phoneCall_img = "PhoneCall"
-    let roadside_img = "RoadsideAssistance"
-    let carClaims_img = "CarClaims"
-    let carClaims_description = "0800 CARCLAIMS         "
-    let back_btn_img = "btnBack"
-    
+    let stringsClass = strings()
 
     
     @ObservedObject var viewRouter: ViewRouter
@@ -38,14 +25,14 @@ struct RoadsideAssistanceUI: View {
         ZStack {
             RadialGradientUI()
             VStack {
-                LogoBarWithLabel(labelName: labelName)
+                LogoBarWithLabel(labelName: stringsClass.labelNameR)
                 Spacer()
-                Image(phoneCall_img)
+                Image(stringsClass.phoneCall_img)
                     .resizable()
                     .scaledToFit()
                     .frame(width: dimensClass.cg_200,height: dimensClass.cg_130)
                 Spacer()
-                Text( description)
+                Text( stringsClass.description)
                     .font(.headline)
                     .fontWeight(.regular)
                     .foregroundColor(Color.white)
@@ -54,22 +41,22 @@ struct RoadsideAssistanceUI: View {
                 VStack {
                     
                     Button(action: {
-                        let formattedString = self.tel + self.roadsideNmb
+                        let formattedString = self.stringsClass.tel + self.stringsClass.roadsideNmb
                         let url = URL(string: formattedString)!
                         UIApplication.shared.open(url)  }){
-                            Rows(image: roadside_img, name: labelName)
+                            Rows(image: stringsClass.roadside_img, name: stringsClass.labelNameR)
                     }.buttonStyle(btnStyle()); Button(action: {
-                        let formattedString = self.tel + self.carclaimsNmb
+                        let formattedString = self.stringsClass.tel + self.stringsClass.carclaimsNmb
                         let url = URL(string: formattedString)!
                         UIApplication.shared.open(url)  }){
-                            Rows(image: carClaims_img, name: carClaims_description)
+                            Rows(image: stringsClass.carClaims_img, name: stringsClass.carClaims_description)
                     }.buttonStyle(btnStyle())
                     
                     Spacer()
                     Button(action: {
-                        self.viewRouter.currentPage = self.view_mainview
+                        self.viewRouter.currentPage = self.stringsClass.view_mainview
                     }) {
-                        Image(back_btn_img)
+                        Image(stringsClass.back_btn_img)
                             .foregroundColor(Color.white)
                         
                     }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)

@@ -13,6 +13,7 @@ struct GoogleMapsView: View {
    
     let colorClass = ColorUI()
     let dimensClass = dimens()
+    let stringsClass = strings()
     
     @ObservedObject var viewRouter: ViewRouter
     
@@ -27,10 +28,9 @@ struct GoogleMapsView: View {
                     LogoBar()
                     GoogleMap()
                     Button(action: {
-                        print("back tapped!")
-                        self.viewRouter.currentPage = "camera"
+                        self.viewRouter.currentPage = self.stringsClass.view_camera
                     }) {
-                        Image("arrow-right")
+                        Image(stringsClass.arrow_right_img)
                             .foregroundColor(Color.white)
                         
                     }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)

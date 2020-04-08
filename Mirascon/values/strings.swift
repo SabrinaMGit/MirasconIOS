@@ -12,6 +12,8 @@ import SwiftUI
 
 struct strings {
     
+    //mirasconLogo
+    var mirasconLogo_img: String
     //**MainScreen**
     let labelNameM: String
     let emergency_img: String
@@ -95,8 +97,42 @@ struct strings {
     let forkey_firstLaunchIsDone: String
     let forkey_firstLaunch: String
     
+    //**UploadPhto**
+    let introduction_photos: String
+    let gesture_tap_img: String
+    let send_txt: String
+    let no_mail_setup_txt: String
+    
+    //**GlassDamage**
+    let when_txt: String
+    var where_txt: String
+    let what_txt: String
+    
+    //**Profil**
+    let profil_txt: String
+    let account_circle_img: String
+    
+    var change_txt: String
+    let enter_a_new_txt: String
+    let placeholder_fn: String
+    let placeholder_ln: String
+    let placeholder_lp: String
+    let placeholder_pn: String
+    let placeholder_eml: String
+    let default_txt: String
+    let pencil_img: String
+    let edit_txt: String
+    
+    let cancel_txt: String
+    let save_txt: String
+    let saved_in_userdefaults_msg: String
+    let debug_txt: String
+    
+    //**GoogleMaps**
+    let arrow_right_img: String
+    
     init() {
-        
+        mirasconLogo_img = "MirasconLogo"
         //**MainScreen**
         labelNameM = "WHAT CAN WE DO FOR YOU?"
         emergency_img = "emergency"
@@ -169,6 +205,37 @@ struct strings {
         forkey_firstLaunchIsDone = "com.any-suggestion.FirstLaunch.WasLaunchedBefore"
         forkey_firstLaunch = "firstLaunch"
         
+        //**Uploadphoto**
+        introduction_photos = " INSTRUCTION WHAT TO MAKE PHOTOS FROM \n - CAR \n - SCENE \n - OTHER"
+        gesture_tap_img = "gesture-tap"
+        send_txt = "SEND"
+        no_mail_setup_txt = "NO MAIL SETUP"
+        
+        when_txt = "When?:"
+        where_txt = "Where?:"
+        what_txt = "What?:"
+        
+        //**Profil**
+        profil_txt = "Profil"
+        account_circle_img = "account_circle"
+        
+        change_txt = "Change"
+        enter_a_new_txt = "Enter a new"
+        placeholder_fn = "First Name"
+        placeholder_ln = "Last Name"
+        placeholder_lp = "License Plate"
+        placeholder_pn = "Phone Number"
+        placeholder_eml = "Email"
+        default_txt = "Something happend wrong"
+        pencil_img = "pencil"
+        edit_txt = "Edit"
+        
+        cancel_txt = "Cancel"
+        save_txt = "Save"
+        saved_in_userdefaults_msg = "Saved new entry in UserDefaults"
+        debug_txt = "Debug: "
+        
+        arrow_right_img = "arrow-right"
         
     }
 }

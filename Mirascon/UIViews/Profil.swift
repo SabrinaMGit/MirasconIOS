@@ -12,22 +12,26 @@ struct Profil: View {
     
     let colorClass = ColorUI()
     let dimensClass = dimens()
+    let stringsClass = strings()
     let cForm = ClaimsForm(ViewRouter())
     
     @ObservedObject var viewRouter: ViewRouter
     
     init(_ viewRouter: ViewRouter){
+        UITableView.appearance().backgroundColor = .clear
+        UITableViewCell.appearance().backgroundColor = .clear
         self.viewRouter = viewRouter
     }
+    
     var body: some View {
         ZStack {
             RadialGradientUI()
             VStack {
                 LogoBar()
                 HStack {
-                    Text("")
+                    Text(stringsClass.emptyText)
                     Divider()
-                    Text("Profil")
+                    Text(stringsClass.profil_txt)
                         .frame(height: dimensClass.cg_40)
                         .foregroundColor(Color.white)
                         .font(.headline)
@@ -37,7 +41,7 @@ struct Profil: View {
                 }.background(colorClass.labelColor)
                     .frame(height: dimensClass.cg_40)
                 Spacer()
-                Image("account_circle")
+                Image(stringsClass.account_circle_img)
                     .resizable()
                     .scaledToFit()
                     .frame(width: dimensClass.cg_70, height: dimensClass.cg_70)
@@ -47,18 +51,17 @@ struct Profil: View {
                     .shadow(radius: dimensClass.cg_10)
                 Spacer()
                 List {
-                    ProfilRow(category:"First Name", customer_details: "\(cForm.firstNameSaved!)", whichEntry: Int(dimensClass.cg_1))
-                    ProfilRow(category:"Last Name", customer_details: "\(cForm.lastNameSaved!)", whichEntry: Int(dimensClass.cg_2))
-                    ProfilRow(category:"License Plate", customer_details: "\(cForm.lpSaved!)", whichEntry: Int(dimensClass.cg_3))
-                    ProfilRow(category:"Phone", customer_details: "\(cForm.phoneSaved!)", whichEntry: Int(dimensClass.cg_4))
-                    ProfilRow(category:"EMail", customer_details: "\(cForm.mailSaved!)", whichEntry: Int(dimensClass.cg_5))
+                    ProfilRow(category:stringsClass.firstName_name, customer_details: "\(cForm.firstNameSaved!)", whichEntry: Int(dimensClass.cg_1))
+                    ProfilRow(category:stringsClass.lastName_name, customer_details: "\(cForm.lastNameSaved!)", whichEntry: Int(dimensClass.cg_2))
+                    ProfilRow(category:stringsClass.licencePlate_name, customer_details: "\(cForm.lpSaved!)", whichEntry: Int(dimensClass.cg_3))
+                    ProfilRow(category:stringsClass.phoneNumber_name, customer_details: "\(cForm.phoneSaved!)", whichEntry: Int(dimensClass.cg_4))
+                    ProfilRow(category:stringsClass.email_name, customer_details: "\(cForm.mailSaved!)", whichEntry: Int(dimensClass.cg_5))
                 }.foregroundColor(Color.white)
                 Spacer()
                 Button(action: {
-                    print("back tapped!")
-                    self.viewRouter.currentPage = "claimsCenter"
+                    self.viewRouter.currentPage = self.stringsClass.view_claimsCenter
                 }) {
-                    Image("btnBack")
+                    Image(stringsClass.back_btn_img)
                         .foregroundColor(Color.white)
                     
                 }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)
@@ -79,12 +82,17 @@ struct Profil_Previews: PreviewProvider {
 
 
 struct ProfilRow: View {
+    
+    let stringsClass = strings()
+    
     @State private var showingAlert = false
     var category: String
     var customer_details: String
     var whichEntry: Int
     @State private var alertInput = ""
     @State private var isShowingAlert = false
+    
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading){
@@ -103,50 +111,48 @@ struct ProfilRow: View {
                 
                 switch self.whichEntry {
                 case 1:
-                    print("First Name")
-                    Mirascon.alert(title: "Change First Name",message: "Enter a new first name", placeholder: "First Name", savedKey: "firstName")
+                    Mirascon.alert(title: "" + self.stringsClass.change_txt + " " + self.stringsClass.firstName_name + "",message: "" + self.stringsClass.enter_a_new_txt + " " + self.stringsClass.firstName_name + "", placeholder: self.stringsClass.placeholder_fn, savedKey: self.stringsClass.forkey_firstname)
                     
                 case 2:
-                    print("You just released iTunes Live From SoHo")
-                    Mirascon.alert(title: "Change Last Name",message: "Enter a new Last name", placeholder: "Last Name", savedKey: "lastName")
+                    Mirascon.alert(title: "" + self.stringsClass.change_txt + " " + self.stringsClass.lastName_name + "",message: "" + self.stringsClass.enter_a_new_txt + " " + self.stringsClass.lastName_name + "", placeholder: self.stringsClass.placeholder_ln, savedKey: self.stringsClass.forkey_lastname)
                     
                 case 3:
-                    print("You just released Speak Now World Tour")
-                    Mirascon.alert(title: "Change License Plate",message: "Enter a new License Plate", placeholder: "License Plate", savedKey: "lp")
+                    Mirascon.alert(title: "" + self.stringsClass.change_txt + " " + self.stringsClass.licencePlate_name + "",message: "" + self.stringsClass.enter_a_new_txt + " " + self.stringsClass.licencePlate_name + "", placeholder: self.stringsClass.placeholder_lp, savedKey: self.stringsClass.forkey_lp)
                     
                 case 4:
-                    print("You just released Speak Now World Tour")
-                    Mirascon.alert(title: "Change License Plate",message: "Enter a new License Plate", placeholder: "License Plate", savedKey: "lp")
+                    Mirascon.alert(title: "" + self.stringsClass.change_txt + " " + self.stringsClass.phoneNumber_name + "",message: "" + self.stringsClass.enter_a_new_txt + " " + self.stringsClass.phoneNumber_name + "", placeholder: self.stringsClass.placeholder_pn, savedKey: self.stringsClass.forkey_phone)
                     
                 case 5:
-                    print("You just released Speak Now World Tour")
-                    Mirascon.alert(title: "Change License Plate",message: "Enter a new License Plate", placeholder: "License Plate", savedKey: "lp")
+                    Mirascon.alert(title: "" + self.stringsClass.change_txt + " " + self.stringsClass.email_name + "",message: "" + self.stringsClass.enter_a_new_txt + " " + self.stringsClass.email_name + "", placeholder: self.stringsClass.placeholder_eml, savedKey: self.stringsClass.forkey_mail)
                 default:
-                    print("Have you done something new?")
+                    print(self.stringsClass.default_txt)
                 }
             }) {
-                Image("pencil")
+                Image(self.stringsClass.pencil_img)
                     .foregroundColor(Color.white)
-                Text("Edit")
+                Text(self.stringsClass.edit_txt)
                     .foregroundColor(Color.white)
             }
         }
     }
 }
 private func alert(title: String, message: String, placeholder: String, savedKey: String,inputKeyboardType:UIKeyboardType = UIKeyboardType.default) {
+    
+    let stringsClass = strings()
+    
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     alert.addTextField() { textField in
         textField.placeholder = placeholder
         textField.text = ""
     }
     //alert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { _ in })
-    alert.addAction((UIAlertAction(title: "Cancel", style: .default, handler: nil)))
-    alert.addAction(UIAlertAction(title: "Save", style: .default, handler: {action in
-        print("Saved new entry in UserDefaults")
+    alert.addAction((UIAlertAction(title: stringsClass.cancel_txt, style: .default, handler: nil)))
+    alert.addAction(UIAlertAction(title: stringsClass.save_txt, style: .default, handler: {action in
+        print(stringsClass.saved_in_userdefaults_msg)
         let textField = alert.textFields![0]
-        print("Text field: \(String(describing: textField.text))")
+        print("" + stringsClass.debug_txt + " \(String(describing: textField.text))")
         let text: String = textField.text!
-        print("Text field: \(String(describing: text))")
+        print("" + stringsClass.debug_txt + "  \(String(describing: text))")
         UserDefaults.standard.set(text, forKey: savedKey)
     }))
     showAlert(alert: alert)

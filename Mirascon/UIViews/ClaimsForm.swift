@@ -255,14 +255,6 @@ struct claimsFormRow: View {
     let dimensClass = dimens()
     let stringsClass = strings()
     
-    /*let firstName_name = "First Name:"
-    let emptyText = ""
-    let lastName_name = "Last Name:"
-    let licencePlate_name = "Licence Plate:"
-    let phoneNumber_name = "Phone Number:"
-    let email_name = "EMail:"
- */
-    
     @State var lp: String = ""
     @State public var lpSaved = UserDefaults.standard.string(forKey: "lp")
     

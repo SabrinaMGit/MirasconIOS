@@ -15,6 +15,7 @@ struct uploadPhotos: View {
     
     let colorClass = ColorUI()
     let dimensClass = dimens()
+    let stringsClass = strings()
     
     @State var showCaptureImageView: Bool = false
     
@@ -39,13 +40,19 @@ struct uploadPhotos: View {
     init(_ viewRouter: ViewRouter){
         self.viewRouter = viewRouter
     }
+    /*
+    let introduction_photos = " INSTRUCTION WHAT TO MAKE PHOTOS FROM \n - CAR \n - SCENE \n - OTHER"
+    let gesture_tap_img = "gesture-tap"
+    let send_txt = "SEND"
+    let no_mail_setup_txt = "NO MAIL SETUP"
+ */
     
     var body: some View {
         ZStack{
             RadialGradientUI()
             VStack {
                 LogoBar()
-                Text(" INSTRUCTION WHAT TO MAKE PHOTOS FROM \n - CAR \n - SCENE \n - OTHER")
+                Text(stringsClass.introduction_photos)
                     .frame(minWidth: dimensClass.cg_390, idealWidth: dimensClass.cg_390, maxWidth: dimensClass.cg_390, minHeight: dimensClass.cg_100, idealHeight: dimensClass.cg_100, maxHeight: dimensClass.cg_100, alignment: .leading)
                     .background(Color.white)
                     .cornerRadius(dimensClass.cg_4)
@@ -59,7 +66,7 @@ struct uploadPhotos: View {
                                 .frame(width: dimensClass.cg_200, height: dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         } else {
-                            Image("gesture-tap")
+                            Image(stringsClass.gesture_tap_img)
                                 .frame(width: dimensClass.cg_200, height: dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         }}
@@ -86,7 +93,7 @@ struct uploadPhotos: View {
                                 .frame(width: dimensClass.cg_200, height: dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         } else {
-                            Image("gesture-tap")
+                            Image(stringsClass.gesture_tap_img)
                                 .frame(width: dimensClass.cg_200, height: dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         }}
@@ -104,7 +111,7 @@ struct uploadPhotos: View {
                                 .frame(width: dimensClass.cg_200, height: dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         } else {
-                            Image("gesture-tap")
+                            Image(stringsClass.gesture_tap_img)
                                 .frame(width: dimensClass.cg_200, height: dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         }}
@@ -120,7 +127,7 @@ struct uploadPhotos: View {
                                 .frame(width: dimensClass.cg_200, height: dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         } else {
-                            Image("gesture-tap")
+                            Image(stringsClass.gesture_tap_img)
                                 .frame(width: dimensClass.cg_200, height: dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         }}
@@ -133,11 +140,10 @@ struct uploadPhotos: View {
                 Spacer()
                 ZStack{
                     Button(action: {
-                        print("send tapped!")
                         //self.showCaptureImageView.toggle()
                         MFMailComposeViewController.canSendMail() ? self.isShowingMailView.toggle() : self.alertNoMail.toggle()
                     }) {
-                        Text("SEND")
+                        Text(stringsClass.send_txt)
                             .fontWeight(.medium)
                             .foregroundColor(Color.white)
                         
@@ -147,7 +153,7 @@ struct uploadPhotos: View {
                         MailView(result: self.$result)
                 }
                 .alert(isPresented: self.$alertNoMail) {
-                    Alert(title: Text("NO MAIL SETUP"))
+                    Alert(title: Text(stringsClass.no_mail_setup_txt))
                 }/*
                  if (isShowingMailView) {
                  mailView()
@@ -156,10 +162,9 @@ struct uploadPhotos: View {
                  }*/
                 
                 Button(action: {
-                    print("back tapped!")
-                    self.viewRouter.currentPage = "claimsCenter"
+                    self.viewRouter.currentPage = self.stringsClass.view_claimsCenter
                 }) {
-                    Image("btnBack")
+                    Image(stringsClass.back_btn_img)
                         .foregroundColor(Color.white)
                     
                 }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)

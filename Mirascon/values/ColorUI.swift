@@ -102,12 +102,3 @@ extension Color {
         }
     }
 }
-
-let gray0 = Color(hex: "3f")
-let gray1 = Color(hex: "#69")
-let gray2 = Color(hex: "#6911")
-let gray3 = Color(hex: "fff")
-let red = Color(hex: "#FF000044s")
-let green = Color(hex: "#00FF00")
-let blue0 = Color(hex: "0000FF")
-let blue1 = Color(hex: "0000F")

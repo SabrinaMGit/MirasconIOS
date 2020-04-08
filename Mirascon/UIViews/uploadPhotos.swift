@@ -12,7 +12,9 @@ import UIKit
 
 
 struct uploadPhotos: View {
+    
     let colorClass = ColorUI()
+    let dimensClass = dimens()
     
     @State var showCaptureImageView: Bool = false
     
@@ -44,9 +46,9 @@ struct uploadPhotos: View {
             VStack {
                 LogoBar()
                 Text(" INSTRUCTION WHAT TO MAKE PHOTOS FROM \n - CAR \n - SCENE \n - OTHER")
-                    .frame(minWidth: 390, idealWidth: 390, maxWidth: 390, minHeight: 100, idealHeight: 100, maxHeight: 100, alignment: .leading)
+                    .frame(minWidth: dimensClass.cg_390, idealWidth: dimensClass.cg_390, maxWidth: dimensClass.cg_390, minHeight: dimensClass.cg_100, idealHeight: dimensClass.cg_100, maxHeight: dimensClass.cg_100, alignment: .leading)
                     .background(Color.white)
-                    .cornerRadius(4)
+                    .cornerRadius(dimensClass.cg_4)
                     .multilineTextAlignment(.leading)
                 Spacer()
                 HStack{
@@ -54,11 +56,11 @@ struct uploadPhotos: View {
                         if image != nil{
                             image?.resizable()
                                 .scaledToFit()
-                                .frame(width: 200.0,height:200)
+                                .frame(width: dimensClass.cg_200, height: dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         } else {
                             Image("gesture-tap")
-                                .frame(width: 200.0,height:200)
+                                .frame(width: dimensClass.cg_200, height: dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         }}
                         .onTapGesture {
@@ -81,11 +83,11 @@ struct uploadPhotos: View {
                         if image2 != nil{
                             image2?.resizable()
                                 .scaledToFit()
-                                .frame(width: 200.0,height:200)
+                                .frame(width: dimensClass.cg_200, height: dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         } else {
                             Image("gesture-tap")
-                                .frame(width: 200.0,height:200)
+                                .frame(width: dimensClass.cg_200, height: dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         }}
                         .onTapGesture {
@@ -99,11 +101,11 @@ struct uploadPhotos: View {
                         if image3 != nil{
                             image3?.resizable()
                                 .scaledToFit()
-                                .frame(width: 200.0,height:200)
+                                .frame(width: dimensClass.cg_200, height: dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         } else {
                             Image("gesture-tap")
-                                .frame(width: 200.0,height:200)
+                                .frame(width: dimensClass.cg_200, height: dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         }}
                         .onTapGesture {
@@ -115,11 +117,11 @@ struct uploadPhotos: View {
                         if image4 != nil{
                             image4?.resizable()
                                 .scaledToFit()
-                                .frame(width: 200.0,height:200)
+                                .frame(width: dimensClass.cg_200, height: dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         } else {
                             Image("gesture-tap")
-                                .frame(width: 200.0,height:200)
+                                .frame(width: dimensClass.cg_200, height: dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         }}
                         .onTapGesture {
@@ -160,11 +162,11 @@ struct uploadPhotos: View {
                     Image("btnBack")
                         .foregroundColor(Color.white)
                     
-                }.frame(minWidth: 0, maxWidth: .infinity)
+                }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)
                     .padding()
-                    .padding(.horizontal, 10)
+                    .padding(.horizontal, dimensClass.cg_10)
                     .background(colorClass.endColor)
-                    .cornerRadius(10)
+                    .cornerRadius(dimensClass.cg_10)
             }
             /*if (showCaptureImageView) {
              CameraView(showCameraView: $showCaptureImageView, pickedImage: $image)

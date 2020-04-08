@@ -10,6 +10,9 @@ import SwiftUI
 
 struct ClaimsForm: View {
     
+    let colorClass = ColorUI()
+    let dimensClass = dimens()
+    
     @ObservedObject var viewRouter: ViewRouter
     
     init(_ viewRouter: ViewRouter){
@@ -23,8 +26,6 @@ struct ClaimsForm: View {
     @State var email: String = ""
     @State var changeViewToGoogleAfterFirstLaunchCheck: Bool = false
     @State var firstLaunchIsDone: Bool = true
-    
-    let colorClass = ColorUI()
     
     @State private var showingAlert = false
     
@@ -62,17 +63,6 @@ struct ClaimsForm: View {
     let view_googleMaps = "googleMaps"
     let view_claimsCenter = "claimsCenter"
     
-    let width = 390
-      let minWidth = 0
-      let width_370 = 370.0
-      let height = 100
-      let cornerRadius_4 = 4
-      let cornerRadius_1 = 1
-      let borderWidth = 2
-      let cg_10 = 10
-    let cg_8 = 8
-    let cg_0 = 0
-    
     var body: some View {
         ZStack{
             RadialGradientUI()
@@ -80,7 +70,7 @@ struct ClaimsForm: View {
                 LogoBar()
                 Text(description)
                     .background(Color.white)
-                    .cornerRadius(CGFloat(cornerRadius_4))
+                    .cornerRadius(dimensClass.cg_4)
                     .multilineTextAlignment(.leading)
                 Spacer()
                 VStack{
@@ -98,12 +88,12 @@ struct ClaimsForm: View {
                             ZStack(alignment: .leading) {
                                 
                                 TextField(emptyText, text: $firstName)
-                                    .padding(CGFloat(cg_8))
+                                    .padding(dimensClass.cg_8)
                                     .background(colorClass.blueRectangle)
                                     .foregroundColor(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(cg_10), style: .continuous))
-                                    .overlay(RoundedRectangle(cornerRadius: CGFloat(cg_10), style: .continuous)
-                                        .stroke( lineWidth: CGFloat(cg_0)))
+                                    .clipShape(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous))
+                                    .overlay(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous)
+                                        .stroke( lineWidth: dimensClass.cg_0))
                                 if firstName.isEmpty { Text("\(firstNameSaved ?? emptyText)").foregroundColor(.white) }
                             }
                         }
@@ -120,12 +110,12 @@ struct ClaimsForm: View {
                             }
                             ZStack(alignment: .leading) {
                                 TextField(emptyText, text: $lastName)
-                                    .padding(CGFloat(cg_8))
+                                    .padding(dimensClass.cg_8)
                                     .background(colorClass.blueRectangle)
                                     .foregroundColor(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(cg_10), style: .continuous))
-                                    .overlay(RoundedRectangle(cornerRadius: CGFloat(cg_10), style: .continuous)
-                                        .stroke( lineWidth: CGFloat(cg_0)))
+                                    .clipShape(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous))
+                                    .overlay(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous)
+                                        .stroke( lineWidth: dimensClass.cg_0))
                                 if lastName.isEmpty { Text("\(lastNameSaved ?? emptyText)").foregroundColor(.white) }
                             }}
                         Spacer()
@@ -141,12 +131,12 @@ struct ClaimsForm: View {
                             }
                             ZStack(alignment: .leading){
                                 TextField(emptyText, text: $lp)
-                                    .padding(CGFloat(cg_8))
+                                    .padding(dimensClass.cg_8)
                                     .background(colorClass.blueRectangle)
                                     .foregroundColor(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius:  CGFloat(cg_10), style: .continuous))
-                                    .overlay(RoundedRectangle(cornerRadius:  CGFloat(cg_10), style: .continuous)
-                                        .stroke( lineWidth:  CGFloat(cg_0)))
+                                    .clipShape(RoundedRectangle(cornerRadius:  dimensClass.cg_10, style: .continuous))
+                                    .overlay(RoundedRectangle(cornerRadius:  dimensClass.cg_10, style: .continuous)
+                                        .stroke( lineWidth:  dimensClass.cg_0))
                                 if lp.isEmpty { Text("\(lpSaved ?? emptyText)").foregroundColor(.white) }
                             }
                         }
@@ -163,12 +153,12 @@ struct ClaimsForm: View {
                             }
                             ZStack(alignment: .leading){
                                 TextField(emptyText, text: $phone)
-                                    .padding(CGFloat(cg_8))
+                                    .padding(dimensClass.cg_8)
                                     .background(colorClass.blueRectangle)
                                     .foregroundColor(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(cg_10), style: .continuous))
-                                    .overlay(RoundedRectangle(cornerRadius: CGFloat(cg_10), style: .continuous)
-                                        .stroke( lineWidth: CGFloat(cg_0)))
+                                    .clipShape(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous))
+                                    .overlay(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous)
+                                        .stroke( lineWidth: dimensClass.cg_0))
                                 if phone.isEmpty { Text("\(phoneSaved ?? emptyText)").foregroundColor(.white) }
                             }}
                         Spacer()
@@ -184,12 +174,12 @@ struct ClaimsForm: View {
                             }
                             ZStack(alignment: .leading){
                                 TextField(emptyText, text: $email)
-                                    .padding(CGFloat(cg_8))
+                                    .padding(dimensClass.cg_8)
                                     .background(colorClass.blueRectangle)
                                     .foregroundColor(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: CGFloat(cg_10), style: .continuous))
-                                    .overlay(RoundedRectangle(cornerRadius: CGFloat(cg_10), style: .continuous)
-                                        .stroke( lineWidth: CGFloat(cg_0)))
+                                    .clipShape(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous))
+                                    .overlay(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous)
+                                        .stroke( lineWidth: dimensClass.cg_0))
                                 if email.isEmpty { Text("\(mailSaved ?? emptyText)").foregroundColor(.white) }
                             }}
                         Spacer()
@@ -245,11 +235,11 @@ struct ClaimsForm: View {
                         Image(back_btn_img)
                             .foregroundColor(Color.white)
                         
-                    }.frame(minWidth: CGFloat(cg_0), maxWidth: .infinity)
+                    }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)
                         .padding()
-                        .padding(.horizontal, CGFloat(cg_10))
+                        .padding(.horizontal, dimensClass.cg_10)
                         .background(colorClass.endColor)
-                        .cornerRadius(CGFloat(cg_10))
+                        .cornerRadius(dimensClass.cg_10)
                 }
             }
         }
@@ -264,22 +254,17 @@ struct ClaimsForm_Previews: PreviewProvider {
 struct GradientBackgroundStyle: ButtonStyle {
     
     let colorClass = ColorUI()
-    let cg_0 = 0
-    let cg_100 = 100
-    let cg_20 = 20
-    let cg_10 = 10
-    let cg_0_9 = 0.9
-    let cg_1_0 = 1.0
+    let dimensClass = dimens()
     
     func makeBody(configuration: Self.Configuration) -> some View {
         VStack {
             configuration.label
-                .frame(minWidth: CGFloat(cg_0), maxWidth: CGFloat(cg_100))
+                .frame(minWidth: dimensClass.cg_0, maxWidth: dimensClass.cg_100)
                 .padding()
-                .padding(.horizontal, CGFloat(cg_20))
+                .padding(.horizontal, dimensClass.cg_20)
                 .background(colorClass.btnColor)
-                .cornerRadius(CGFloat(cg_10))
-                .scaleEffect(configuration.isPressed ? CGFloat(cg_0_9) : CGFloat(cg_1_0))
+                .cornerRadius(dimensClass.cg_10)
+                .scaleEffect(configuration.isPressed ? dimensClass.cg_scaleEffect_0_9 : dimensClass.cg_scaleEffect_1)
             
         }
     }
@@ -288,6 +273,7 @@ struct GradientBackgroundStyle: ButtonStyle {
 struct claimsFormRow: View {
     
     let colorClass = ColorUI()
+    let dimensClass = dimens()
     
     let firstName_name = "First Name:"
     let emptyText = ""
@@ -295,10 +281,6 @@ struct claimsFormRow: View {
     let licencePlate_name = "Licence Plate:"
     let phoneNumber_name = "Phone Number:"
     let email_name = "EMail:"
-    
-    let cg_10 = 10
-    let cg_8 = 8
-    let cg_0 = 0
     
     @State var lp: String = ""
     @State public var lpSaved = UserDefaults.standard.string(forKey: "lp")
@@ -313,12 +295,12 @@ struct claimsFormRow: View {
             }
             ZStack(alignment: .leading){
                 TextField(emptyText, text: $lp)
-                    .padding(CGFloat(cg_8))
+                    .padding(dimensClass.cg_8)
                     .background(colorClass.blueRectangle)
                     .foregroundColor(Color.white)
-                    .clipShape(RoundedRectangle(cornerRadius:  CGFloat(cg_10), style: .continuous))
-                    .overlay(RoundedRectangle(cornerRadius:  CGFloat(cg_10), style: .continuous)
-                        .stroke( lineWidth:  CGFloat(cg_0)))
+                    .clipShape(RoundedRectangle(cornerRadius:  dimensClass.cg_10, style: .continuous))
+                    .overlay(RoundedRectangle(cornerRadius:  dimensClass.cg_10, style: .continuous)
+                        .stroke( lineWidth:  dimensClass.cg_0))
                 if lp.isEmpty { Text("\(lpSaved ?? emptyText)").foregroundColor(.white) }
             }
         }

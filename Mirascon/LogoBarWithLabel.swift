@@ -10,8 +10,8 @@ import SwiftUI
 
 struct LogoBarWithLabel: View {
     let colorClass = ColorUI()
+    let dimensClass = dimens()
     var labelName: String
-    let height = 40
     
     var body: some View {
         VStack{
@@ -20,14 +20,14 @@ struct LogoBarWithLabel: View {
                 Text("")
                 Divider()
                 Text("\(labelName)")
-                    .frame(height: CGFloat(height))
+                    .frame(height: dimensClass.cg_40)
                     .foregroundColor(Color.white)
                     .font(.headline)
                     //.fontWeight(.medium)
-                    .cornerRadius(4)
+                    .cornerRadius(dimensClass.cg_4)
                 Spacer()
             }.background(colorClass.labelColor)
-                .frame(height: CGFloat(height))
+                .frame(height: dimensClass.cg_40)
             
             
             

@@ -134,6 +134,8 @@ struct PageControl: UIViewRepresentable {
 }
 
 struct PreviewIntroduction: View {
+    
+    let dimensClass = dimens()
     var introduction: Introduction
     
     @ObservedObject var viewRouter: ViewRouter
@@ -148,7 +150,7 @@ struct PreviewIntroduction: View {
                     Image("MirasconLogo")
                     .resizable()
                     .scaledToFit()
-                        .frame(width: 200.0,height:100)
+                        .frame(width: dimensClass.cg_200,height:dimensClass.cg_100)
                     Spacer()
                   Button(action: {
                         print("preview exit tapped!")

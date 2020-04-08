@@ -9,14 +9,13 @@
 import SwiftUI
 
 struct LogoBar: View {
-    let width = 200.0
-    let height = 100
+    let dimensClass = dimens()
     
     var body: some View {
         Image("MirasconLogo")
         .resizable()
         .scaledToFit()
-        .frame(width: CGFloat(width) ,height: CGFloat(height), alignment: .trailing)
+            .frame(width: dimensClass.cg_200 ,height: dimensClass.cg_100, alignment: .trailing)
     }
 }
 

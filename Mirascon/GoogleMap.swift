@@ -16,14 +16,16 @@ private let locationManager = CLLocationManager()
 
 struct GoogleMap: UIViewRepresentable {
     
+    let dimensClass = dimens()
+    
     @ObservedObject var locationManager = LocationManager()
 
     var userLatitude: String {
-        return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
+        return "\(locationManager.lastLocation?.coordinate.latitude ?? Double(dimensClass.cg_0))"
     }
 
     var userLongitude: String {
-        return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
+        return "\(locationManager.lastLocation?.coordinate.longitude ?? Double(dimensClass.cg_0))"
     }
         let marker : GMSMarker = GMSMarker()
     
@@ -33,12 +35,12 @@ struct GoogleMap: UIViewRepresentable {
             func makeUIView(context: Self.Context) -> GMSMapView {
                 // Create a GMSCameraPosition
                 
-                let vlatitude = Int(userLatitude) ?? 0
-                let vlongitude = Int(userLongitude) ?? 0
+                let vlatitude = Int(userLatitude) ?? Int(dimensClass.cg_0)
+                let vlongitude = Int(userLongitude) ?? Int(dimensClass.cg_0)
                 
-                let camera = GMSCameraPosition.camera(withLatitude: CLLocationDegrees(vlatitude), longitude: CLLocationDegrees(vlongitude), zoom: 16.0)
+                let camera = GMSCameraPosition.camera(withLatitude: CLLocationDegrees(vlatitude), longitude: CLLocationDegrees(vlongitude), zoom: Float(dimensClass.cg_16))
                 let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-                mapView.setMinZoom(14, maxZoom: 20)
+                mapView.setMinZoom(Float(dimensClass.cg_14), maxZoom: Float(dimensClass.cg_20))
                 mapView.settings.compassButton = true
                 mapView.isMyLocationEnabled = true
                 mapView.settings.myLocationButton = true
@@ -61,8 +63,8 @@ struct GoogleMap: UIViewRepresentable {
     //        Updates the presented `UIView` (and coordinator) to the latestconfiguration.
             func updateUIView(_ mapView: GMSMapView, context: Self.Context) {
                 // Creates a marker in the center of the map.
-                let latitude = Int(userLatitude) ?? 0
-                let longitude = Int(userLongitude) ?? 0
+                let latitude = Int(userLatitude) ?? Int(dimensClass.cg_0)
+                let longitude = Int(userLongitude) ?? Int(dimensClass.cg_0)
                 
                 marker.position = CLLocationCoordinate2D(latitude: CLLocationDegrees(latitude), longitude: CLLocationDegrees(longitude))
                 marker.title = "My Location"

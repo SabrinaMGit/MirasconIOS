@@ -9,8 +9,11 @@
 import SwiftUI
 
 struct Profil: View {
-   let colorClass = ColorUI()
+    
+    let colorClass = ColorUI()
+    let dimensClass = dimens()
     let cForm = ClaimsForm(ViewRouter())
+    
     @ObservedObject var viewRouter: ViewRouter
     
     init(_ viewRouter: ViewRouter){
@@ -25,30 +28,30 @@ struct Profil: View {
                     Text("")
                     Divider()
                     Text("Profil")
-                        .frame(height: 40)
+                        .frame(height: dimensClass.cg_40)
                         .foregroundColor(Color.white)
                         .font(.headline)
                         //.fontWeight(.medium)
-                        .cornerRadius(4)
+                        .cornerRadius(dimensClass.cg_4)
                     Spacer()
                 }.background(colorClass.labelColor)
-                    .frame(height: 40)
+                    .frame(height: dimensClass.cg_40)
                 Spacer()
                 Image("account_circle")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 70.0, height: 70.0)
+                    .frame(width: dimensClass.cg_70, height: dimensClass.cg_70)
                     .clipShape(Circle())
                     .overlay(
-                        Circle().stroke(Color.white, lineWidth: 2))
-                    .shadow(radius: 10)
+                        Circle().stroke(Color.white, lineWidth: dimensClass.cg_2))
+                    .shadow(radius: dimensClass.cg_10)
                 Spacer()
                 List {
-                    ProfilRow(category:"First Name", customer_details: "\(cForm.firstNameSaved!)", whichEntry: 1)
-                    ProfilRow(category:"Last Name", customer_details: "\(cForm.lastNameSaved!)", whichEntry: 2)
-                    ProfilRow(category:"License Plate", customer_details: "\(cForm.lpSaved!)", whichEntry: 3)
-                    ProfilRow(category:"Phone", customer_details: "\(cForm.phoneSaved!)", whichEntry: 4)
-                    ProfilRow(category:"EMail", customer_details: "\(cForm.mailSaved!)", whichEntry: 5)
+                    ProfilRow(category:"First Name", customer_details: "\(cForm.firstNameSaved!)", whichEntry: Int(dimensClass.cg_1))
+                    ProfilRow(category:"Last Name", customer_details: "\(cForm.lastNameSaved!)", whichEntry: Int(dimensClass.cg_2))
+                    ProfilRow(category:"License Plate", customer_details: "\(cForm.lpSaved!)", whichEntry: Int(dimensClass.cg_3))
+                    ProfilRow(category:"Phone", customer_details: "\(cForm.phoneSaved!)", whichEntry: Int(dimensClass.cg_4))
+                    ProfilRow(category:"EMail", customer_details: "\(cForm.mailSaved!)", whichEntry: Int(dimensClass.cg_5))
                 }.foregroundColor(Color.white)
                 Spacer()
                 Button(action: {
@@ -58,11 +61,11 @@ struct Profil: View {
                     Image("btnBack")
                         .foregroundColor(Color.white)
                     
-                }.frame(minWidth: 0, maxWidth: .infinity)
+                }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)
                     .padding()
-                    .padding(.horizontal, 10)
+                    .padding(.horizontal, dimensClass.cg_10)
                     .background(colorClass.endColor)
-                    .cornerRadius(10)
+                    .cornerRadius(dimensClass.cg_10)
             }
         }
     }

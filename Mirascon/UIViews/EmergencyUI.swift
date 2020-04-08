@@ -13,12 +13,12 @@ struct EmergencyUI: View {
     @ObservedObject var viewRouter: ViewRouter
     
     let colorClass = ColorUI()
+    let dimensClass = dimens()
+    
     let view_label_description = "If you need help, quickly call the emergency contacts"
-    let tel = "tel://"
-    let width = 160.0
-    let height = 130
     
     //telefon number's
+    let tel = "tel://"
     let police_number = "110"
     let fireDepartment_number = "112"
     let mirascon_number = ""
@@ -54,7 +54,7 @@ struct EmergencyUI: View {
                 Image(phoneCall_img)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: CGFloat(width),height: CGFloat(height))
+                    .frame(width: dimensClass.cg_160,height: dimensClass.cg_130)
                 Text(view_label_description)
                     .font(.headline)
                     .fontWeight(.regular)
@@ -84,11 +84,11 @@ struct EmergencyUI: View {
                         Image(back_btn_img)
                             .foregroundColor(Color.white)
                         
-                    }.frame(minWidth: 0, maxWidth: .infinity)
+                    }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)
                         .padding()
-                        .padding(.horizontal, 10)
+                        .padding(.horizontal, dimensClass.cg_10)
                         .background(colorClass.endColor)
-                        .cornerRadius(10)
+                        .cornerRadius(dimensClass.cg_10)
                 }
             }
         }
@@ -102,14 +102,12 @@ struct EmergencyUI_Previews: PreviewProvider {
 }
 
 struct Rows: View {
+    
     let colorClass = ColorUI()
+    let dimensClass = dimens()
+    
     var image: String
     var name: String
-    
-    let cg_100 = 100
-    let cg_370 = 370
-    let cg_90 = 90
-    let cg_2 = 2
     
     var body: some View {
         HStack{
@@ -117,10 +115,10 @@ struct Rows: View {
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(Color.white)
-                .frame(width: CGFloat(cg_100),height: CGFloat(cg_90))
+                .frame(width: CGFloat(dimensClass.cg_100),height: CGFloat(dimensClass.cg_90))
             Text("\(name)")
                 .foregroundColor(Color.white)
-        } .frame(width: CGFloat(cg_370),height: CGFloat(cg_100))
-            .border(colorClass.endColor, width: CGFloat(cg_2))
+        } .frame(width: CGFloat(dimensClass.cg_370),height: CGFloat(dimensClass.cg_100))
+            .border(colorClass.endColor, width: CGFloat(dimensClass.cg_2))
     }
 }

@@ -10,8 +10,11 @@ import SwiftUI
 
 struct GoogleMapsView: View {
     //@ObservedObject var viewModel = ContentViewModel()
-    @ObservedObject var viewRouter: ViewRouter
+   
     let colorClass = ColorUI()
+    let dimensClass = dimens()
+    
+    @ObservedObject var viewRouter: ViewRouter
     
     init(_ viewRouter: ViewRouter){
         self.viewRouter = viewRouter
@@ -30,11 +33,11 @@ struct GoogleMapsView: View {
                         Image("arrow-right")
                             .foregroundColor(Color.white)
                         
-                    }.frame(minWidth: 0, maxWidth: .infinity)
+                    }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)
                         .padding()
-                        .padding(.horizontal, 10)
+                        .padding(.horizontal, dimensClass.cg_10)
                         .background(colorClass.endColor)
-                        .cornerRadius(10)
+                        .cornerRadius(dimensClass.cg_10)
                 }//.edgesIgnoringSafeArea(.vertical)
             }.edgesIgnoringSafeArea(.all)
         }

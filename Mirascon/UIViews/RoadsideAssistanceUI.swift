@@ -9,7 +9,10 @@
 import SwiftUI
 
 struct RoadsideAssistanceUI: View {
+    
     let colorClass = ColorUI()
+    let dimensClass = dimens()
+    
     let roadsideNmb = ""
     let carclaimsNmb = ""
     let labelName = "ROADSIDE ASSISTANCE"
@@ -40,7 +43,7 @@ struct RoadsideAssistanceUI: View {
                 Image(phoneCall_img)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 200.0,height:130)
+                    .frame(width: dimensClass.cg_200,height: dimensClass.cg_130)
                 Spacer()
                 Text( description)
                     .font(.headline)
@@ -69,11 +72,11 @@ struct RoadsideAssistanceUI: View {
                         Image(back_btn_img)
                             .foregroundColor(Color.white)
                         
-                    }.frame(minWidth: 0, maxWidth: .infinity)
+                    }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)
                         .padding()
-                        .padding(.horizontal, 10)
+                        .padding(.horizontal, dimensClass.cg_10)
                         .background(colorClass.endColor)
-                        .cornerRadius(10)
+                        .cornerRadius(dimensClass.cg_10)
                     
                 }
             }

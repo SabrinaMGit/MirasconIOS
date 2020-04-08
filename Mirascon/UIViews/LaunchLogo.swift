@@ -12,6 +12,8 @@ var enable = true
 
 struct LaunchLogo: View {
     
+    let dimensClass = dimens()
+    
     @State var showSplash = true
     let firstLaunch = FirstLaunch(userDefaults: .standard, key: "com.any-suggestion.FirstLaunch.WasLaunchedBefore")
     
@@ -62,21 +64,23 @@ struct LaunchLogo_Previews: PreviewProvider {
 
 struct LaunchRow: View {
     let colorClass = ColorUI()
+    let dimensClass = dimens()
+    
     static var shouldAnimate = true
     @State var scale: CGFloat = 1
     
     var body: some View {
         ZStack {
-            RadialGradient(gradient: Gradient(colors: [colorClass.startColor, colorClass.endColor]), center: .center, startRadius: 2, endRadius: 650)
+            RadialGradient(gradient: Gradient(colors: [colorClass.startColor, colorClass.endColor]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
                 .edgesIgnoringSafeArea(.all)
             Image("MirasconLogo")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 200.0,height:200)
+                .frame(width: dimensClass.cg_200,height:dimensClass.cg_200)
                 .foregroundColor(Color.white)
                 .scaleEffect(scale)
                 .onAppear {
-                    let baseAnimation = Animation.easeInOut(duration: 1)
+                    let baseAnimation = Animation.easeInOut(duration: Double(self.dimensClass.cg_1))
                     
                     return withAnimation(baseAnimation) {
                         self.scale = 1.5

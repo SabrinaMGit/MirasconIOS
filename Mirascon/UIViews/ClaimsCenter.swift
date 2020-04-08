@@ -16,8 +16,10 @@ struct ClaimsCenter: View {
          self.viewRouter = viewRouter
      }
     
+    //initialized classes
     let colorClass = ColorUI()
     let cForm = ClaimsForm(ViewRouter())
+    let dimensClass = dimens()
     
     let emptyText = ""
     let fillForm_img = "fillForm"
@@ -41,15 +43,7 @@ struct ClaimsCenter: View {
     var label_descriptionWithData: String {
           return " Your Data: \n First Name: \(cForm.firstNameSaved!),\n Last Name: \(cForm.lastNameSaved!),\n License Plate: \(cForm.lpSaved!)"
       }
-    
-    let width = 390
-    let minWidth = 0
-    let width_370 = 370.0
-    let height = 100
-    let cornerRadius_4 = 4
-    let cornerRadius_1 = 1
-    let borderWidth = 2
-    let cg_10 = 10
+
     
     var body: some View {
         ZStack{
@@ -67,40 +61,40 @@ struct ClaimsCenter: View {
                     }
                 }
                 Text(label_descriptionWithData)
-                    .frame(minWidth: CGFloat(width), idealWidth: CGFloat(width), maxWidth: CGFloat(width), minHeight: CGFloat(height), idealHeight: CGFloat(height), maxHeight: CGFloat(height), alignment: .leading)
+                    .frame(minWidth: dimensClass.cg_390, idealWidth: dimensClass.cg_390, maxWidth: dimensClass.cg_390, minHeight: dimensClass.cg_100, idealHeight: dimensClass.cg_100, maxHeight: dimensClass.cg_100, alignment: .leading)
                     .background(Color.white)
-                    .cornerRadius(CGFloat(cornerRadius_4))
+                    .cornerRadius(dimensClass.cg_4)
                     .multilineTextAlignment(.leading)
                 
                 Button(action: {
                     self.viewRouter.currentPage = self.view_claimsForm
                 }) {
                     ClaimsCenterRow(image: fillForm_img, name: fillForm_description)
-                        .frame(width: CGFloat(width_370), height: CGFloat(height))
-                        .border(colorClass.endColor, width: CGFloat(borderWidth))
+                        .frame(width: dimensClass.cg_370, height: dimensClass.cg_100)
+                        .border(colorClass.endColor, width: dimensClass.cg_2)
                 }.buttonStyle(btnStyle());
                 Button(action: {
                     self.viewRouter.currentPage = self.view_camera
                 }) {
                     ClaimsCenterRow(image: view_camera, name: camera_description)
-                        .frame(width: CGFloat(width_370), height: CGFloat(height))
+                        .frame(width: dimensClass.cg_370, height: dimensClass.cg_100)
                         .overlay(
-                            RoundedRectangle(cornerRadius: CGFloat(cornerRadius_1))
-                                .stroke(colorClass.endColor, lineWidth: CGFloat(borderWidth))
+                            RoundedRectangle(cornerRadius: dimensClass.cg_1)
+                                .stroke(colorClass.endColor, lineWidth: dimensClass.cg_2)
                     )}.buttonStyle(btnStyle());
                 Button(action: {
                     self.viewRouter.currentPage = self.view_googleMaps
                 }) {
                     ClaimsCenterRow(image: cellphone_img, name: cellphone_decription)
-                        .frame(width: CGFloat(width_370), height: CGFloat(height))
-                        .border(colorClass.endColor, width: CGFloat(borderWidth))
+                        .frame(width: dimensClass.cg_370, height: dimensClass.cg_100)
+                        .border(colorClass.endColor, width: CGFloat(dimensClass.cg_2))
                 }.buttonStyle(btnStyle());
                 Button(action: {
                     self.viewRouter.currentPage = self.view_glassDamage
                 }) {
                     ClaimsCenterRow(image: glassDamage_img, name: glassDamage_description)
-                        .frame(width: CGFloat(width_370), height: CGFloat(height))
-                        .border(colorClass.endColor, width: CGFloat(borderWidth))
+                        .frame(width: dimensClass.cg_370, height: dimensClass.cg_100)
+                        .border(colorClass.endColor, width: dimensClass.cg_2)
                 }.buttonStyle(btnStyle())
                 Spacer()
                 Button(action: {
@@ -109,11 +103,11 @@ struct ClaimsCenter: View {
                     Image(back_btn_img)
                         .foregroundColor(Color.white)
                     
-                }.frame(minWidth: CGFloat(minWidth), maxWidth: .infinity)
+                }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)
                     .padding()
-                    .padding(.horizontal, CGFloat(cg_10))
+                    .padding(.horizontal, dimensClass.cg_10)
                     .background(colorClass.endColor)
-                    .cornerRadius(CGFloat(cg_10))
+                    .cornerRadius(dimensClass.cg_10)
                 
                 
                 Spacer()
@@ -128,11 +122,11 @@ struct ClaimsCenter_Previews: PreviewProvider {
     }
 }
 struct ClaimsCenterRow: View {
+    
+    let dimensClass = dimens()
+    
     var image: String
     var name: String
-    
-    let width = 100.0
-    let height = 90
     
     var body: some View {
         HStack{
@@ -140,7 +134,7 @@ struct ClaimsCenterRow: View {
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(Color.white)
-                .frame(width: CGFloat(width), height: CGFloat(height))
+                .frame(width: dimensClass.cg_100, height: dimensClass.cg_90)
             
             Text("\(name)")
                 .foregroundColor(Color.white)

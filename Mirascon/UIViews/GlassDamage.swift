@@ -10,6 +10,16 @@ import SwiftUI
 import MessageUI
 
 struct GlassDamage: View {
+    
+    let colorClass = ColorUI()
+    let dimensClass = dimens()
+    
+    @ObservedObject var viewRouter: ViewRouter
+    
+    init(_ viewRouter: ViewRouter){
+        self.viewRouter = viewRouter
+    }
+    
     @State var when: String = ""
     @State var wheree: String = ""
     @State var what: String = ""
@@ -25,22 +35,16 @@ struct GlassDamage: View {
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State var isShowingMailView = false
     @State var alertNoMail = false
-    
-    let colorClass = ColorUI()
-    @ObservedObject var viewRouter: ViewRouter
-    init(_ viewRouter: ViewRouter){
-        self.viewRouter = viewRouter
-    }
-    
+
     var body: some View {
         ZStack{
             RadialGradientUI()
             VStack {
                 LogoBar()
                 Text(" INSTRUCTION WHAT TO MAKE PHOTOS FROM \n - CAR \n - SCENE \n - OTHER")
-                    .frame(minWidth: 390, idealWidth: 390, maxWidth: 390, minHeight: 100, idealHeight: 100, maxHeight: 100, alignment: .leading)
+                    .frame(minWidth: dimensClass.cg_390, idealWidth: dimensClass.cg_390, maxWidth: dimensClass.cg_390, minHeight: dimensClass.cg_100, idealHeight: dimensClass.cg_100, maxHeight: dimensClass.cg_100, alignment: .leading)
                     .background(Color.white)
-                    .cornerRadius(4)
+                    .cornerRadius(dimensClass.cg_4)
                     .multilineTextAlignment(.leading)
                 Spacer()
                 VStack{
@@ -51,11 +55,11 @@ struct GlassDamage: View {
                         Spacer()
                     }
                     TextField("", text: $when)
-                        .padding(8)
+                        .padding(dimensClass.cg_8)
                         .background(colorClass.blueRectangle)
-                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .stroke( lineWidth: 0)
+                        .clipShape(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous))
+                        .overlay(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous)
+                            .stroke( lineWidth: dimensClass.cg_0)
                     )
                     HStack {
                         Text("Where?:")
@@ -64,11 +68,11 @@ struct GlassDamage: View {
                         Spacer()
                     }
                     TextField("", text: $wheree)
-                        .padding(8)
+                        .padding(dimensClass.cg_8)
                         .background(colorClass.blueRectangle)
-                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .stroke( lineWidth: 0)
+                        .clipShape(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous))
+                        .overlay(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous)
+                            .stroke( lineWidth: dimensClass.cg_0)
                     )
                     HStack {
                         Text("What?:")
@@ -77,11 +81,11 @@ struct GlassDamage: View {
                         Spacer()
                     }
                     TextField("", text: $what)
-                        .padding(8)
+                        .padding(dimensClass.cg_8)
                         .background(colorClass.blueRectangle)
-                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .stroke( lineWidth: 0)
+                        .clipShape(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous))
+                        .overlay(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous)
+                            .stroke( lineWidth: dimensClass.cg_0)
                     )
                 }.padding()
                 Spacer()
@@ -90,11 +94,11 @@ struct GlassDamage: View {
                         if image1 != nil{
                             image1?.resizable()
                                 .scaledToFit()
-                                .frame(width: 200.0,height:200)
+                                .frame(width: dimensClass.cg_200, height:dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         } else {
                             Image("gesture-tap")
-                                .frame(width: 200.0,height:200)
+                                .frame(width: dimensClass.cg_200,height:dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         }}
                         .onTapGesture {
@@ -106,11 +110,11 @@ struct GlassDamage: View {
                         if image2 != nil{
                             image2?.resizable()
                                 .scaledToFit()
-                                .frame(width: 200.0,height:200)
+                                .frame(width: dimensClass.cg_200,height:dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         } else {
                             Image("gesture-tap")
-                                .frame(width: 200.0,height:200)
+                                .frame(width: dimensClass.cg_200,height:dimensClass.cg_200)
                                 .background(colorClass.pictureHolderColor)
                         }}
                         .onTapGesture {
@@ -121,7 +125,6 @@ struct GlassDamage: View {
                 }
                 ZStack{
                     Button(action: {
-                        print("send tapped!")
                         //self.showCaptureImageView.toggle()
                         MFMailComposeViewController.canSendMail() ? self.isShowingMailView.toggle() : self.alertNoMail.toggle()
                     }) {
@@ -144,11 +147,11 @@ struct GlassDamage: View {
                     Image("btnBack")
                         .foregroundColor(Color.white)
                     
-                }.frame(minWidth: 0, maxWidth: .infinity)
+                }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)
                     .padding()
-                    .padding(.horizontal, 10)
+                    .padding(.horizontal, dimensClass.cg_10)
                     .background(colorClass.endColor)
-                    .cornerRadius(10)
+                    .cornerRadius(dimensClass.cg_10)
             }
         }
     }

@@ -29,6 +29,8 @@
 		8DB2E1E0243C920200E3A1BD /* RadialGradientUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2E1DF243C920200E3A1BD /* RadialGradientUI.swift */; };
 		8DB2E1E2243C93DB00E3A1BD /* LogoBarWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2E1E1243C93DB00E3A1BD /* LogoBarWithLabel.swift */; };
 		8DB2E1E4243C9AE900E3A1BD /* LogoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2E1E3243C9AE900E3A1BD /* LogoBar.swift */; };
+		8DB2E1E6243DC35300E3A1BD /* dimens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2E1E5243DC35300E3A1BD /* dimens.swift */; };
+		8DB2E1E9243DC39300E3A1BD /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2E1E8243DC39300E3A1BD /* strings.swift */; };
 		8DB99D3C23AD247300AE483B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB99D3B23AD247300AE483B /* AppDelegate.swift */; };
 		8DB99D3E23AD247300AE483B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB99D3D23AD247300AE483B /* SceneDelegate.swift */; };
 		8DB99D4023AD247300AE483B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB99D3F23AD247300AE483B /* ContentView.swift */; };
@@ -98,6 +100,8 @@
 		8DB2E1DF243C920200E3A1BD /* RadialGradientUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientUI.swift; sourceTree = "<group>"; };
 		8DB2E1E1243C93DB00E3A1BD /* LogoBarWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoBarWithLabel.swift; sourceTree = "<group>"; };
 		8DB2E1E3243C9AE900E3A1BD /* LogoBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoBar.swift; sourceTree = "<group>"; };
+		8DB2E1E5243DC35300E3A1BD /* dimens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dimens.swift; sourceTree = "<group>"; };
+		8DB2E1E8243DC39300E3A1BD /* strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
 		8DB99D3B23AD247300AE483B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DB99D3D23AD247300AE483B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8DB99D3F23AD247300AE483B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -183,6 +187,16 @@
 			path = UIViews;
 			sourceTree = "<group>";
 		};
+		8DB2E1E7243DC36300E3A1BD /* values */ = {
+			isa = PBXGroup;
+			children = (
+				8DB2E1DD243B54DC00E3A1BD /* ColorUI.swift */,
+				8DB2E1E5243DC35300E3A1BD /* dimens.swift */,
+				8DB2E1E8243DC39300E3A1BD /* strings.swift */,
+			);
+			path = values;
+			sourceTree = "<group>";
+		};
 		8DB99D2F23AD247300AE483B = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +224,6 @@
 				8DB99D4923AD247600AE483B /* Info.plist */,
 				8DB99D4323AD247600AE483B /* Preview Content */,
 				8D55D9B823E208E100B0DC4B /* Coordinator.swift */,
-				8DB2E1DD243B54DC00E3A1BD /* ColorUI.swift */,
 				8D55D9C223E38BD500B0DC4B /* FirstLaunch.swift */,
 				8D55D9BC23E2FF1800B0DC4B /* ViewRouter.swift */,
 				8DB99D7523AE154400AE483B /* PlayerView.swift */,
@@ -219,6 +232,7 @@
 				8DB2E1DF243C920200E3A1BD /* RadialGradientUI.swift */,
 				8DB2E1E1243C93DB00E3A1BD /* LogoBarWithLabel.swift */,
 				8DB2E1E3243C9AE900E3A1BD /* LogoBar.swift */,
+				8DB2E1E7243DC36300E3A1BD /* values */,
 			);
 			path = Mirascon;
 			sourceTree = "<group>";
@@ -440,6 +454,7 @@
 				8DDAD9F923E05774001409EC /* ClaimsForm.swift in Sources */,
 				8D55D9B923E208E200B0DC4B /* Coordinator.swift in Sources */,
 				8DB99D3C23AD247300AE483B /* AppDelegate.swift in Sources */,
+				8DB2E1E6243DC35300E3A1BD /* dimens.swift in Sources */,
 				8D55D9BF23E34FC000B0DC4B /* LaunchLogo.swift in Sources */,
 				8D55D9B523E1EFFC00B0DC4B /* uploadPhotos.swift in Sources */,
 				8D25408423ED6B5000707704 /* ChatFirebaseView.swift in Sources */,
@@ -452,6 +467,7 @@
 				8DC0FF8323EEFA0400B8401F /* ListMessage.swift in Sources */,
 				8D55D9B723E201FD00B0DC4B /* GlassDamage.swift in Sources */,
 				8D55D9A623E0807800B0DC4B /* ClaimsCenter.swift in Sources */,
+				8DB2E1E9243DC39300E3A1BD /* strings.swift in Sources */,
 				8DB99D5223AD25F500AE483B /* RoadsideAssistanceUI.swift in Sources */,
 				8DEBB2042415297800622D88 /* Profil.swift in Sources */,
 				8DB99D9323AEB69900AE483B /* Introduction.swift in Sources */,

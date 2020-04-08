@@ -10,11 +10,10 @@ import SwiftUI
 
 struct RadialGradientUI: View {
     let colorClass = ColorUI()
-    let startRadius = 2
-    let endRadius = 650
+    let dimensClass = dimens()
     
     var body: some View {
-        RadialGradient(gradient: Gradient(colors: [colorClass.startColor, colorClass.endColor]), center: .center, startRadius: CGFloat(startRadius), endRadius: CGFloat(endRadius))
+        RadialGradient(gradient: Gradient(colors: [colorClass.startColor, colorClass.endColor]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
         .edgesIgnoringSafeArea(.all)
     }
 }

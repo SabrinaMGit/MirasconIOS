@@ -40,12 +40,6 @@ struct uploadPhotos: View {
     init(_ viewRouter: ViewRouter){
         self.viewRouter = viewRouter
     }
-    /*
-    let introduction_photos = " INSTRUCTION WHAT TO MAKE PHOTOS FROM \n - CAR \n - SCENE \n - OTHER"
-    let gesture_tap_img = "gesture-tap"
-    let send_txt = "SEND"
-    let no_mail_setup_txt = "NO MAIL SETUP"
- */
     
     var body: some View {
         ZStack{

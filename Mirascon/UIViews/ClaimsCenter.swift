@@ -23,7 +23,7 @@ struct ClaimsCenter: View {
     let stringsClass = strings()
     
     var label_descriptionWithData: String {
-          return " Your Data: \n First Name: \(cForm.firstNameSaved!),\n Last Name: \(cForm.lastNameSaved!),\n License Plate: \(cForm.lpSaved!)"
+          return " Your Data: \n First Name: \(cForm.firstNameSaved!) \n Last Name: \(cForm.lastNameSaved!) \n License Plate: \(cForm.lpSaved!)"
       }
 
     
@@ -47,7 +47,7 @@ struct ClaimsCenter: View {
                     .background(Color.white)
                     .cornerRadius(dimensClass.cg_4)
                     .multilineTextAlignment(.leading)
-                
+                Spacer()
                 Button(action: {
                     self.viewRouter.currentPage = self.stringsClass.view_claimsForm
                 }) {

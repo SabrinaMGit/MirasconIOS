@@ -62,7 +62,6 @@ class PlayerUIView: UIView {
             object: nil)
     }
     @objc func fileComplete() {
-        print("IT'S DONE!")
         PlayerViewController().viewWillAppear(true)
         NotificationCenter.default.addObserver(self, selector: #selector(updateList), name: NSNotification.Name(rawValue: "update"), object: nil)
     }

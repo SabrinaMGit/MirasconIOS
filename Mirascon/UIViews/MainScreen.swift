@@ -11,6 +11,8 @@ import UIKit
 
 struct MainScreen: View {
     
+    @Environment(\.horizontalSizeClass) var sizeClass
+    
     let colorClass = ColorUI()
     let dimensClass = dimens()
     let stringsClass = strings()
@@ -25,32 +27,22 @@ struct MainScreen: View {
     
     var body: some View {
         ZStack {
+            if sizeClass == .compact {
             RadialGradientUI()
             VStack {
                 LogoBarWithLabel(labelName: stringsClass.labelNameM)
-                VStack {
+                Spacer()
                     HStack{
                         MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.emergency_img, image: stringsClass.emergency_img, name: stringsClass.emergency_name)
                         MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.roadsideAssistance_img, image: stringsClass.roadsideAssistance_img, name: stringsClass.roadsideAssistance_name)
                     }
+                Spacer()
+                 //view.flex.addItem(imageView).width(100).aspectRatio(1)
                     HStack{
                         MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.claimsCenter_img, image: stringsClass.claimsCenter_img, name: stringsClass.claimsCenter_name)
                         MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.products_img, image: stringsClass.products_img, name: stringsClass.products_img)
-                    }
-                    Spacer()
-                    HStack {
-                        Button(action: {
-                            exit(Int32(self.dimensClass.cg_0));
-                        }) {
-                            Image(stringsClass.back_btn_img)
-                                .foregroundColor(Color.white)
-                        }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)
-                            .padding()
-                            .padding(.horizontal, dimensClass.cg_10)
-                            .background(colorClass.endColor)
-                            .cornerRadius(dimensClass.cg_10)
-                    }
                 }
+                Spacer()
             }
             HStack{
                 Spacer()
@@ -65,8 +57,10 @@ struct MainScreen: View {
                         .mask(Circle())
                 }
             }
+            } else {
+                
+            }
         }
-        
     }
     
 }
@@ -95,10 +89,10 @@ struct MainViewRow: View {
                 Image("\(image)")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: dimensClass.cg_190,height: dimensClass.cg_190)
+                    .frame(width: dimensClass.cg_150,height: dimensClass.cg_150)
                     .foregroundColor(Color.white)
                 Text("\(name)")
-                    .font(.title)
+                    .font(.body)
                     .fontWeight(.medium)
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)

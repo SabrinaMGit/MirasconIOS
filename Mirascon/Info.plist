@@ -18,8 +18,22 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>NSLocationWhenInUseUsageDescriptio</string>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Because I always want to know where you are</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Use Location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Because I need to know where you are</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Accept it to use the camera for sending pictures</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -39,10 +53,14 @@
 	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -56,21 +74,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Accept it to use the camera for sending pictures</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>NSLocationWhenInUseUsageDescriptio</string>
-		<string>googlechromes</string>
-		<string>comgooglemaps</string>
-	</array>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Because I always want to know where you are</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Because I need to know where you are</string>
-	<key>NSLocationUsageDescription</key>
-	<string>Use Location</string>
 </dict>
 </plist>

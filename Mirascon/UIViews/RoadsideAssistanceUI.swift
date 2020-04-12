@@ -27,16 +27,8 @@ struct RoadsideAssistanceUI: View {
             VStack {
                 LogoBarWithLabel(labelName: stringsClass.labelNameR)
                 Spacer()
-                Image(stringsClass.phoneCall_img)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: dimensClass.cg_200,height: dimensClass.cg_130)
                 Spacer()
-                Text( stringsClass.description)
-                    .font(.headline)
-                    .fontWeight(.regular)
-                    .foregroundColor(Color.white)
-                    .padding()
+                cellphone_layout(description: stringsClass.description)
                 Spacer()
                 VStack {
                     
@@ -53,17 +45,7 @@ struct RoadsideAssistanceUI: View {
                     }.buttonStyle(btnStyle())
                     
                     Spacer()
-                    Button(action: {
-                        self.viewRouter.currentPage = self.stringsClass.view_mainview
-                    }) {
-                        Image(stringsClass.back_btn_img)
-                            .foregroundColor(Color.white)
-                        
-                    }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)
-                        .padding()
-                        .padding(.horizontal, dimensClass.cg_10)
-                        .background(colorClass.endColor)
-                        .cornerRadius(dimensClass.cg_10)
+                    backBtn_view(viewRouter: viewRouter)
                     
                 }
             }

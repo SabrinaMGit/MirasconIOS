@@ -10,6 +10,11 @@
 		0438E0128DD3CD91B00E4C0A /* Pods_Mirascon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF87B3E4605B890578C22AE /* Pods_Mirascon.framework */; };
 		8D0C128923F0914C00C2D374 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0C128823F0914C00C2D374 /* UserNotifications.framework */; };
 		8D0C128B23F0914D00C2D374 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0C128A23F0914D00C2D374 /* UserNotificationsUI.framework */; };
+		8D2138722441FACB0063F001 /* backBtn_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138712441FACA0063F001 /* backBtn_view.swift */; };
+		8D2138742441FE8F0063F001 /* cellphone_layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138732441FE8F0063F001 /* cellphone_layout.swift */; };
+		8D2138792442459A0063F001 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138782442459A0063F001 /* HostingController.swift */; };
+		8D21387B2442479D0063F001 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D21387A2442479D0063F001 /* Default-568h@2x.png */; };
+		8D2138832442547E0063F001 /* MirasconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138822442547E0063F001 /* MirasconTests.swift */; };
 		8D25408423ED6B5000707704 /* ChatFirebaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25408323ED6B5000707704 /* ChatFirebaseView.swift */; };
 		8D25408623ED6B9F00707704 /* DataFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25408523ED6B9F00707704 /* DataFire.swift */; };
 		8D25408823ED6F5D00707704 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D25408723ED6F5D00707704 /* GoogleService-Info.plist */; };
@@ -60,6 +65,13 @@
 			remoteGlobalIDString = 8D0C128623F0914C00C2D374;
 			remoteInfo = Notification;
 		};
+		8D2138852442547E0063F001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8DB99D3023AD247300AE483B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DB99D3723AD247300AE483B;
+			remoteInfo = Mirascon;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,6 +91,13 @@
 		346B21D53E006A92AF7DD652 /* Pods-Mirascon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirascon.release.xcconfig"; path = "Target Support Files/Pods-Mirascon/Pods-Mirascon.release.xcconfig"; sourceTree = "<group>"; };
 		8D0C128823F0914C00C2D374 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		8D0C128A23F0914D00C2D374 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		8D2138712441FACA0063F001 /* backBtn_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backBtn_view.swift; sourceTree = "<group>"; };
+		8D2138732441FE8F0063F001 /* cellphone_layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellphone_layout.swift; sourceTree = "<group>"; };
+		8D2138782442459A0063F001 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		8D21387A2442479D0063F001 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8D2138802442547E0063F001 /* MirasconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MirasconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D2138822442547E0063F001 /* MirasconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirasconTests.swift; sourceTree = "<group>"; };
+		8D2138842442547E0063F001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D25408323ED6B5000707704 /* ChatFirebaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatFirebaseView.swift; sourceTree = "<group>"; };
 		8D25408523ED6B9F00707704 /* DataFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFire.swift; sourceTree = "<group>"; };
 		8D25408723ED6F5D00707704 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -136,6 +155,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8D21387D2442547E0063F001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DB99D3523AD247300AE483B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -155,6 +181,52 @@
 				8D0C128A23F0914D00C2D374 /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D213875244243BF0063F001 /* MainSetting */ = {
+			isa = PBXGroup;
+			children = (
+				8DB99D3B23AD247300AE483B /* AppDelegate.swift */,
+				8DB99D3D23AD247300AE483B /* SceneDelegate.swift */,
+				8DB99D4623AD247600AE483B /* LaunchScreen.storyboard */,
+				8D25408723ED6F5D00707704 /* GoogleService-Info.plist */,
+				8DB99D4123AD247600AE483B /* Assets.xcassets */,
+			);
+			path = MainSetting;
+			sourceTree = "<group>";
+		};
+		8D213876244244580063F001 /* SectorViews */ = {
+			isa = PBXGroup;
+			children = (
+				8DB2E1DF243C920200E3A1BD /* RadialGradientUI.swift */,
+				8DB2E1E3243C9AE900E3A1BD /* LogoBar.swift */,
+				8DB2E1E1243C93DB00E3A1BD /* LogoBarWithLabel.swift */,
+				8D2138712441FACA0063F001 /* backBtn_view.swift */,
+				8D2138732441FE8F0063F001 /* cellphone_layout.swift */,
+			);
+			path = SectorViews;
+			sourceTree = "<group>";
+		};
+		8D213877244244EF0063F001 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8D2138782442459A0063F001 /* HostingController.swift */,
+				8D55D9BC23E2FF1800B0DC4B /* ViewRouter.swift */,
+				8D55D9C223E38BD500B0DC4B /* FirstLaunch.swift */,
+				8DB99D7523AE154400AE483B /* PlayerView.swift */,
+				8DC3835623EC52BA00000039 /* GoogleMap.swift */,
+				8DBD930F23ECC87F0034E918 /* LocationManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8D2138812442547E0063F001 /* MirasconTests */ = {
+			isa = PBXGroup;
+			children = (
+				8D2138822442547E0063F001 /* MirasconTests.swift */,
+				8D2138842442547E0063F001 /* Info.plist */,
+			);
+			path = MirasconTests;
 			sourceTree = "<group>";
 		};
 		8D25408223ED6B0C00707704 /* FirebaseChat */ = {
@@ -187,52 +259,45 @@
 			path = UIViews;
 			sourceTree = "<group>";
 		};
-		8DB2E1E7243DC36300E3A1BD /* values */ = {
+		8DB2E1E7243DC36300E3A1BD /* Values */ = {
 			isa = PBXGroup;
 			children = (
 				8DB2E1DD243B54DC00E3A1BD /* ColorUI.swift */,
 				8DB2E1E5243DC35300E3A1BD /* dimens.swift */,
 				8DB2E1E8243DC39300E3A1BD /* strings.swift */,
 			);
-			path = values;
+			path = Values;
 			sourceTree = "<group>";
 		};
 		8DB99D2F23AD247300AE483B = {
 			isa = PBXGroup;
 			children = (
+				8D21387A2442479D0063F001 /* Default-568h@2x.png */,
 				8D5742AD242B89290018160B /* Podfile */,
 				8DB99D3A23AD247300AE483B /* Mirascon */,
 				8DB99D8323AE879400AE483B /* Ressources */,
 				8DB99D8023AE86CB00AE483B /* Models */,
 				C2ED31251947BE6A5771CF7B /* Pods */,
+				8D2138812442547E0063F001 /* MirasconTests */,
 				28826040C02C704E37279E5D /* Frameworks */,
 				8D5742AF242BB0D20018160B /* Mirascon.app */,
 				8DB2E1DC243640C100E3A1BD /* Notification.appex */,
+				8D2138802442547E0063F001 /* MirasconTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
 		8DB99D3A23AD247300AE483B /* Mirascon */ = {
 			isa = PBXGroup;
 			children = (
+				8DB99D4923AD247600AE483B /* Info.plist */,
+				8D213875244243BF0063F001 /* MainSetting */,
 				8D5742A8242B44570018160B /* UIViews */,
 				8D25408223ED6B0C00707704 /* FirebaseChat */,
-				8DB99D3B23AD247300AE483B /* AppDelegate.swift */,
-				8DB99D3D23AD247300AE483B /* SceneDelegate.swift */,
-				8DB99D4123AD247600AE483B /* Assets.xcassets */,
-				8DB99D4623AD247600AE483B /* LaunchScreen.storyboard */,
-				8D25408723ED6F5D00707704 /* GoogleService-Info.plist */,
-				8DB99D4923AD247600AE483B /* Info.plist */,
 				8DB99D4323AD247600AE483B /* Preview Content */,
 				8D55D9B823E208E100B0DC4B /* Coordinator.swift */,
-				8D55D9C223E38BD500B0DC4B /* FirstLaunch.swift */,
-				8D55D9BC23E2FF1800B0DC4B /* ViewRouter.swift */,
-				8DB99D7523AE154400AE483B /* PlayerView.swift */,
-				8DC3835623EC52BA00000039 /* GoogleMap.swift */,
-				8DBD930F23ECC87F0034E918 /* LocationManager.swift */,
-				8DB2E1DF243C920200E3A1BD /* RadialGradientUI.swift */,
-				8DB2E1E1243C93DB00E3A1BD /* LogoBarWithLabel.swift */,
-				8DB2E1E3243C9AE900E3A1BD /* LogoBar.swift */,
-				8DB2E1E7243DC36300E3A1BD /* values */,
+				8D213876244244580063F001 /* SectorViews */,
+				8D213877244244EF0063F001 /* Utilities */,
+				8DB2E1E7243DC36300E3A1BD /* Values */,
 			);
 			path = Mirascon;
 			sourceTree = "<group>";
@@ -293,6 +358,24 @@
 			productReference = 8DB2E1DC243640C100E3A1BD /* Notification.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		8D21387F2442547E0063F001 /* MirasconTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D2138892442547E0063F001 /* Build configuration list for PBXNativeTarget "MirasconTests" */;
+			buildPhases = (
+				8D21387C2442547E0063F001 /* Sources */,
+				8D21387D2442547E0063F001 /* Frameworks */,
+				8D21387E2442547E0063F001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D2138862442547E0063F001 /* PBXTargetDependency */,
+			);
+			name = MirasconTests;
+			productName = MirasconTests;
+			productReference = 8D2138802442547E0063F001 /* MirasconTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8DB99D3723AD247300AE483B /* Mirascon */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DB99D4C23AD247600AE483B /* Build configuration list for PBXNativeTarget "Mirascon" */;
@@ -321,12 +404,16 @@
 		8DB99D3023AD247300AE483B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = MIRASCON;
 				TargetAttributes = {
 					8D0C128623F0914C00C2D374 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					8D21387F2442547E0063F001 = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = 8DB99D3723AD247300AE483B;
 					};
 					8DB99D3723AD247300AE483B = {
 						CreatedOnToolsVersion = 11.3;
@@ -348,12 +435,20 @@
 			targets = (
 				8DB99D3723AD247300AE483B /* Mirascon */,
 				8D0C128623F0914C00C2D374 /* Notification */,
+				8D21387F2442547E0063F001 /* MirasconTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D0C128523F0914C00C2D374 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D21387E2442547E0063F001 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -369,6 +464,7 @@
 				8DB99D4523AD247600AE483B /* Preview Assets.xcassets in Resources */,
 				8DB99D8523AE87B100AE483B /* introductionData.json in Resources */,
 				8D25408823ED6F5D00707704 /* GoogleService-Info.plist in Resources */,
+				8D21387B2442479D0063F001 /* Default-568h@2x.png in Resources */,
 				8D5742AE242B89290018160B /* Podfile in Resources */,
 				8DB99D4223AD247600AE483B /* Assets.xcassets in Resources */,
 			);
@@ -443,6 +539,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8D21387C2442547E0063F001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D2138832442547E0063F001 /* MirasconTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DB99D3423AD247300AE483B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -453,7 +557,9 @@
 				8D55D9B323E08DE900B0DC4B /* UserData.swift in Sources */,
 				8DDAD9F923E05774001409EC /* ClaimsForm.swift in Sources */,
 				8D55D9B923E208E200B0DC4B /* Coordinator.swift in Sources */,
+				8D2138792442459A0063F001 /* HostingController.swift in Sources */,
 				8DB99D3C23AD247300AE483B /* AppDelegate.swift in Sources */,
+				8D2138742441FE8F0063F001 /* cellphone_layout.swift in Sources */,
 				8DB2E1E6243DC35300E3A1BD /* dimens.swift in Sources */,
 				8D55D9BF23E34FC000B0DC4B /* LaunchLogo.swift in Sources */,
 				8D55D9B523E1EFFC00B0DC4B /* uploadPhotos.swift in Sources */,
@@ -467,6 +573,7 @@
 				8DC0FF8323EEFA0400B8401F /* ListMessage.swift in Sources */,
 				8D55D9B723E201FD00B0DC4B /* GlassDamage.swift in Sources */,
 				8D55D9A623E0807800B0DC4B /* ClaimsCenter.swift in Sources */,
+				8D2138722441FACB0063F001 /* backBtn_view.swift in Sources */,
 				8DB2E1E9243DC39300E3A1BD /* strings.swift in Sources */,
 				8DB99D5223AD25F500AE483B /* RoadsideAssistanceUI.swift in Sources */,
 				8DEBB2042415297800622D88 /* Profil.swift in Sources */,
@@ -490,6 +597,11 @@
 			isa = PBXTargetDependency;
 			target = 8D0C128623F0914C00C2D374 /* Notification */;
 			targetProxy = 8D0C129323F0914D00C2D374 /* PBXContainerItemProxy */;
+		};
+		8D2138862442547E0063F001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DB99D3723AD247300AE483B /* Mirascon */;
+			targetProxy = 8D2138852442547E0063F001 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -540,6 +652,48 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8D2138872442547E0063F001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 897WYU8Q95;
+				INFOPLIST_FILE = MirasconTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mirascon.MirasconTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mirascon.app/Mirascon";
+			};
+			name = Debug;
+		};
+		8D2138882442547E0063F001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 897WYU8Q95;
+				INFOPLIST_FILE = MirasconTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mirascon.MirasconTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mirascon.app/Mirascon";
 			};
 			name = Release;
 		};
@@ -675,7 +829,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mir.Mirascon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -697,7 +851,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mir.Mirascon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -709,6 +863,15 @@
 			buildConfigurations = (
 				8D0C129723F0914D00C2D374 /* Debug */,
 				8D0C129823F0914D00C2D374 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8D2138892442547E0063F001 /* Build configuration list for PBXNativeTarget "MirasconTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D2138872442547E0063F001 /* Debug */,
+				8D2138882442547E0063F001 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

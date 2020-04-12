@@ -28,16 +28,10 @@ struct EmergencyUI: View {
             VStack {
                 Spacer()
                 LogoBarWithLabel(labelName: stringsClass.emergencyService_name)
-                Image(stringsClass.phoneCall_img)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: dimensClass.cg_160,height: dimensClass.cg_130)
-                Text(stringsClass.view_label_description)
-                    .font(.headline)
-                    .fontWeight(.regular)
-                    .foregroundColor(Color.white)
-                    .padding()
+                cellphone_layout(description: stringsClass.view_label_description)
+                Spacer()
                 VStack {
+                    //Change this maybe
                         Button(action: {
                             let formattedString = self.stringsClass.tel + self.stringsClass.police_number
                             let url = URL(string: formattedString)!
@@ -55,17 +49,7 @@ struct EmergencyUI: View {
                                 Rows(image: stringsClass.mirasconStar_img, name: stringsClass.mirasconStar_description)
                         }.buttonStyle(btnStyle())
                     
-                    Button(action: {
-                        self.viewRouter.currentPage = self.stringsClass.view_mainview
-                    }) {
-                        Image(stringsClass.back_btn_img)
-                            .foregroundColor(Color.white)
-                        
-                    }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)
-                        .padding()
-                        .padding(.horizontal, dimensClass.cg_10)
-                        .background(colorClass.endColor)
-                        .cornerRadius(dimensClass.cg_10)
+                    backBtn_view(viewRouter: viewRouter)
                 }
             }
         }
@@ -92,10 +76,10 @@ struct Rows: View {
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(Color.white)
-                .frame(width: CGFloat(dimensClass.cg_100),height: CGFloat(dimensClass.cg_90))
+                .frame(width: CGFloat(dimensClass.cg_80),height: CGFloat(dimensClass.cg_60))
             Text("\(name)")
                 .foregroundColor(Color.white)
-        } .frame(width: CGFloat(dimensClass.cg_370),height: CGFloat(dimensClass.cg_100))
+        } .frame(width: CGFloat(dimensClass.cg_300),height: CGFloat(dimensClass.cg_60))
             .border(colorClass.endColor, width: CGFloat(dimensClass.cg_2))
     }
 }

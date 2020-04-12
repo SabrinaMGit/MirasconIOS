@@ -1,0 +1,33 @@
+Go to Terminal and switch to your local project by typing the following command:
+
+$ cd PATH_TO_YOUR_PROJECT_FOLDER
+
+- If you have not added the Podfile from directory:
+2. Once you are inside the project folder, type the command below to create/initialize your POD files:
+
+$ pod init
+
+//After running the “pod init” command you will notice that a Podfile was added to your project’s folder
+
+3. Then open the Podfile with your text editor such as Sublime Text, Text Edit etc.. 
+And add your dependencies under the “#Pods:
+
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+	pod 'Firebase/Firestore'
+	pod 'Firebase/Storage'
+
+4. Save and Close your Podfile.
+
+- If you have added the Podfile from directory, than jump to this command:
+
+5. Still inside your project’s folder, run the following command:
+
+$ pod install
+
+Once the installation is complete, you will get a confirmation message on the terminal and 
+you will also notice that some files were automatically added to your project
+
+6. Double click on the Xcode workspace to open the project
+
+7. You can clean/re-build your project and run it.

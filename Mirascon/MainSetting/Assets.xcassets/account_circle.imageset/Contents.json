@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "ProfileAccount_80x80px.png",
+      "filename" : "ProfileAccount_40x40px.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ProfileAccount_120x120px.png",
+      "filename" : "ProfileAccount_80x80px.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ProfileAccount_180x180px.png",
+      "filename" : "ProfileAccount_120x120px.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

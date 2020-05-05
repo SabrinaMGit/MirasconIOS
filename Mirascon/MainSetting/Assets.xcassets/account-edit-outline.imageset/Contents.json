@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "EditAccountDetails_80x80px.png",
+      "filename" : "EditAccountDetails_20x20px.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "EditAccountDetails_120x120px.png",
+      "filename" : "EditAccountDetails_40x40px.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "EditAccountDetails_180x180px.png",
+      "filename" : "EditAccountDetails_60x60px.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

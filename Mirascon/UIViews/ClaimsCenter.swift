@@ -30,56 +30,42 @@ struct ClaimsCenter: View {
     var body: some View {
         ZStack{
             RadialGradientUI()
-            VStack {
+            VStack (alignment: .center){
                 HStack(alignment: .center){
                     Text(stringsClass.emptyText)
                     LogoBar()
                     Button(action: {
                         self.viewRouter.currentPage = self.stringsClass.view_profil
                     }) {
+                        HStack{
+                            Text("Edit")
                         Image(stringsClass.edit_img)
                             .padding(.leading)
                             .foregroundColor(Color.white)
+                        }
                     }
                 }
-                Text(label_descriptionWithData)
-                    .frame(minWidth: dimensClass.cg_390, idealWidth: dimensClass.cg_390, maxWidth: dimensClass.cg_390, minHeight: dimensClass.cg_100, idealHeight: dimensClass.cg_100, maxHeight: dimensClass.cg_100, alignment: .leading)
+                
+                 List{
+                    Text(label_descriptionWithData)
+                    .frame(width: dimensClass.cg_300,height: dimensClass.cg_100, alignment: .leading)
+                    //.frame(minWidth: dimensClass.cg_390, idealWidth: dimensClass.cg_390, maxWidth: dimensClass.cg_390, minHeight: dimensClass.cg_100, idealHeight: dimensClass.cg_100, maxHeight: dimensClass.cg_100, alignment: .leading)
                     .background(Color.white)
                     .cornerRadius(dimensClass.cg_4)
                     .multilineTextAlignment(.leading)
-                Spacer()
-                Button(action: {
-                    self.viewRouter.currentPage = self.stringsClass.view_claimsForm
-                }) {
-                    ClaimsCenterRow(image: stringsClass.fillForm_img, name: stringsClass.fillForm_description)
-                        .frame(width: dimensClass.cg_370, height: dimensClass.cg_100)
-                        .border(colorClass.endColor, width: dimensClass.cg_2)
-                }.buttonStyle(btnStyle());
-                Button(action: {
-                    self.viewRouter.currentPage = self.stringsClass.view_camera
-                }) {
-                    ClaimsCenterRow(image: stringsClass.view_camera, name: stringsClass.camera_description)
-                        .frame(width: dimensClass.cg_370, height: dimensClass.cg_100)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: dimensClass.cg_1)
-                                .stroke(colorClass.endColor, lineWidth: dimensClass.cg_2)
-                    )}.buttonStyle(btnStyle());
-                Button(action: {
-                    self.viewRouter.currentPage = self.stringsClass.view_googleMaps
-                }) {
-                    ClaimsCenterRow(image: stringsClass.cellphone_img, name: stringsClass.cellphone_decription)
-                        .frame(width: dimensClass.cg_370, height: dimensClass.cg_100)
-                        .border(colorClass.endColor, width: CGFloat(dimensClass.cg_2))
-                }.buttonStyle(btnStyle());
-                Button(action: {
-                    self.viewRouter.currentPage = self.stringsClass.view_glassDamage
-                }) {
-                    ClaimsCenterRow(image: stringsClass.glassDamage_img, name: stringsClass.glassDamage_description)
-                        .frame(width: dimensClass.cg_370, height: dimensClass.cg_100)
-                        .border(colorClass.endColor, width: dimensClass.cg_2)
-                }.buttonStyle(btnStyle())
-                Spacer()
-                Button(action: {
+                    Spacer()
+                    ClaimsCenterRow(viewModel: viewRouter, viewRouterName: stringsClass.view_claimsForm, image: stringsClass.fillForm_img, name: stringsClass.fillForm_description)
+                    ClaimsCenterRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: stringsClass.view_camera, name: stringsClass.camera_description)
+                    ClaimsCenterRow(viewModel: viewRouter, viewRouterName: stringsClass.view_googleMaps, image: stringsClass.cellphone_img, name: stringsClass.cellphone_decription)
+                    ClaimsCenterRow(viewModel: viewRouter, viewRouterName: stringsClass.view_glassDamage, image: stringsClass.glassDamage_img, name: stringsClass.glassDamage_description)
+                    Spacer()
+                    
+                }.padding(.top, 20)
+                .listRowInsets(EdgeInsets())
+                //Spacer()
+                backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_mainview)
+                
+                /*Button(action: {
                     self.viewRouter.currentPage = self.stringsClass.view_mainview
                 }) {
                     Image(stringsClass.back_btn_img)
@@ -90,9 +76,9 @@ struct ClaimsCenter: View {
                     .padding(.horizontal, dimensClass.cg_10)
                     .background(colorClass.endColor)
                     .cornerRadius(dimensClass.cg_10)
+                */
                 
-                
-                Spacer()
+               // Spacer()
             }
         }
     }
@@ -105,21 +91,43 @@ struct ClaimsCenter_Previews: PreviewProvider {
 }
 struct ClaimsCenterRow: View {
     
-    let dimensClass = dimens()
+    @ObservedObject var viewModel:ViewRouter
     
+    let dimensClass = dimens()
+    let colorClass = ColorUI()
+    
+    var viewRouterName: String
     var image: String
     var name: String
     
     var body: some View {
-        HStack{
+        VStack{
+            Button(action: {
+                self.viewModel.currentPage = "\(self.viewRouterName)"
+            }) {
+                HStack{
             Image("\(image)")
                 .resizable()
                 .scaledToFit()
                 .foregroundColor(Color.white)
-                .frame(width: dimensClass.cg_100, height: dimensClass.cg_90)
+                //.frame(width: dimensClass.cg_100, height: dimensClass.cg_90)
+                .frame(width: CGFloat(dimensClass.cg_80),height: CGFloat(dimensClass.cg_60))
             
             Text("\(name)")
                 .foregroundColor(Color.white)
-        }
+            }.buttonStyle(btnStyle())
+            .frame(width: dimensClass.cg_300,height: dimensClass.cg_60)
+            .border(colorClass.endColor, width: dimensClass.cg_2)
+           
+            }}
     }
 }
+/*
+ .frame(width: dimensClass.cg_370, height: dimensClass.cg_100)
+            .border(colorClass.endColor, width: dimensClass.cg_2)
+ 
+ .frame(width: dimensClass.cg_370, height: dimensClass.cg_100)
+ .overlay(
+     RoundedRectangle(cornerRadius: dimensClass.cg_1)
+         .stroke(colorClass.endColor, lineWidth: dimensClass.cg_2))
+ */

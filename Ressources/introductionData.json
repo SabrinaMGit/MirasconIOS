@@ -1,18 +1,21 @@
 [
     {
-        "titel": "Welcome",
+        "image": "RoadsideAssistance",
+        "titel": "Quick Overview",
         "id": 1001,
         "isFeatured": true,
         "explain": "You have an accident and need help? You want to report an accident with Mirascon? You can connect directly to the emergency center"
     },
     {
-        "titel": "Introduction",
+        "image": "fillForm",
+        "titel": "The Claims Form",
         "id": 1004,
         "isFeatured": true,
         "explain": "You have an accident and need help? You want to report an accident with Mirascon? You can connect directly to the emergency center"
     },
     {
-        "titel": "Preview",
+        "image": "ic_glassdamage",
+        "titel": "Glass Damage",
         "id": 1007,
         "isFeatured": true,
         "explain": "You have an accident and need help? You want to report an accident with Mirascon? You can connect directly to the emergency center"

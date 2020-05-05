@@ -27,17 +27,17 @@ struct GoogleMapsView: View {
                 VStack {
                     LogoBar()
                     GoogleMap()
+                    
                     Button(action: {
                         self.viewRouter.currentPage = self.stringsClass.view_camera
                     }) {
-                        Image(stringsClass.arrow_right_img)
-                            .foregroundColor(Color.white)
-                        
-                    }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)
-                        .padding()
-                        .padding(.horizontal, dimensClass.cg_10)
-                        .background(colorClass.endColor)
-                        .cornerRadius(dimensClass.cg_10)
+                    Text(stringsClass.continue_name)
+                        .fontWeight(.medium)
+                        .foregroundColor(Color.white)
+                                    
+                    }.buttonStyle(GradientBackgroundStyle())
+                       
+                    backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_claimsForm)
                 }//.edgesIgnoringSafeArea(.vertical)
             }.edgesIgnoringSafeArea(.all)
         }
@@ -49,3 +49,16 @@ struct GoogleMapsView_Previews: PreviewProvider {
         GoogleMapsView(ViewRouter())
     }
 }
+/*
+ Button(action: {
+     self.viewRouter.currentPage = self.stringsClass.view_camera
+ }) {
+     Image(stringsClass.arrow_right_img)
+         .foregroundColor(Color.white)
+     
+ }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)
+     .padding()
+     .padding(.horizontal, dimensClass.cg_10)
+     .background(colorClass.endColor)
+     .cornerRadius(dimensClass.cg_10)
+ */

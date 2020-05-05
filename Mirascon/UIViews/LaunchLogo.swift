@@ -83,7 +83,7 @@ struct LaunchRow: View {
                     let baseAnimation = Animation.easeInOut(duration: Double(self.dimensClass.cg_1))
                     
                     return withAnimation(baseAnimation) {
-                        self.scale = 1.5
+                        self.scale = 1.2
                     }
             }
             
@@ -101,7 +101,7 @@ extension LaunchRow{
     }
     func runAnimation() {
         withAnimation(Animation.easeIn(duration: uAnimationDuration).delay(0.5)) {
-            self.scale = 1.3
+            self.scale = 1.2
         }
     }
     

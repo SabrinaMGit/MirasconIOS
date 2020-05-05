@@ -39,7 +39,7 @@ struct MainScreen: View {
                 Spacer()
                  //view.flex.addItem(imageView).width(100).aspectRatio(1)
                     HStack{
-                        MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.claimsCenter_img, image: stringsClass.claimsCenter_img, name: stringsClass.claimsCenter_name)
+                        MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.view_claimsCenter, image: stringsClass.claimsCenter_img, name: stringsClass.claimsCenter_name)
                         MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.products_img, image: stringsClass.products_img, name: stringsClass.products_img)
                 }
                 Spacer()

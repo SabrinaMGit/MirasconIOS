@@ -26,10 +26,8 @@ struct EmergencyUI: View {
         ZStack {
             RadialGradientUI()
             VStack {
-                Spacer()
                 LogoBarWithLabel(labelName: stringsClass.emergencyService_name)
                 cellphone_layout(description: stringsClass.view_label_description)
-                Spacer()
                 VStack {
                     //Change this maybe
                         Button(action: {
@@ -49,8 +47,9 @@ struct EmergencyUI: View {
                                 Rows(image: stringsClass.mirasconStar_img, name: stringsClass.mirasconStar_description)
                         }.buttonStyle(btnStyle())
                     
-                    backBtn_view(viewRouter: viewRouter)
+                  Spacer()
                 }
+                backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_mainview)
             }
         }
     }

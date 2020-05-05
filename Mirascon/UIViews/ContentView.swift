@@ -20,14 +20,14 @@ struct ContentView: View {
                 EmergencyUI(viewRouter)
             } else if viewRouter.currentPage == "RoadsideAssistance" {
                 RoadsideAssistanceUI(viewRouter)
-            } else if viewRouter.currentPage == "ClaimsCenter" {
+            } else if viewRouter.currentPage == "claimsCenter" {
                 ClaimsCenter(viewRouter)
             } else if viewRouter.currentPage == "launch" {
                 LaunchLogo(viewRouter)
             } else if viewRouter.currentPage == "pagerView" {
-                PageView(features.map { PreviewIntroduction(introduction: $0, viewRouter: viewRouter) }) .edgesIgnoringSafeArea(.all)
+                IntroUI(viewRouter: viewRouter)
             } else if viewRouter.currentPage == "claimsForm" {
-                ClaimsForm(viewRouter)
+                SaveUserData(viewRouter)
             } else if viewRouter.currentPage == "camera" {
                 uploadPhotos(viewRouter)
             } else if viewRouter.currentPage == "otherInfo" {

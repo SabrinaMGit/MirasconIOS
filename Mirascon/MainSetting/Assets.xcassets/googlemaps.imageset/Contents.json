@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "ChangeCustomerDetails_20x20px.png",
+      "filename" : "google-maps (2).png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "ChangeCustomerDetails_40x40px.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "ChangeCustomerDetails_60x60px.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

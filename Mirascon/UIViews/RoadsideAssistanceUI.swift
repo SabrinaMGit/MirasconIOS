@@ -45,7 +45,7 @@ struct RoadsideAssistanceUI: View {
                     }.buttonStyle(btnStyle())
                     
                     Spacer()
-                    backBtn_view(viewRouter: viewRouter)
+                    backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_mainview)
                     
                 }
             }

@@ -11,6 +11,7 @@ import CoreLocation
 struct Introduction: Hashable, Codable, Identifiable {
     
     var id: Int
+    var image: String
     var titel: String
     var explain: String
     var isFeatured: Bool

@@ -143,28 +143,16 @@ struct PreviewIntroduction: View {
     var body: some View {
         ZStack {
             RadialGradientUI()
-            VStack(alignment: .leading) {
-                HStack {
-                    Spacer()
-                    Spacer()
-                    Image("MirasconLogo")
+            VStack(alignment: .center ){
+                Image(introduction.image)
                     .resizable()
                     .scaledToFit()
-                        .frame(width: dimensClass.cg_200,height:dimensClass.cg_100)
-                    Spacer()
-                  Button(action: {
-                        print("preview exit tapped!")
-                        self.viewRouter.currentPage = "claimsForm"
-                    }) {
-                        Image("close")
-                    }
-                }
-                Spacer()
+                    .frame(width: dimensClass.cg_100,height:dimensClass.cg_100)
                 Text(introduction.titel)
                     .font(.title)
                     .bold()
                 Text(introduction.explain)
-                Spacer()
+                .frame(height:dimensClass.cg_160)
             }
             .padding()
         }

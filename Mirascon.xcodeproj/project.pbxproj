@@ -11,6 +11,10 @@
 		8D0C128923F0914C00C2D374 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0C128823F0914C00C2D374 /* UserNotifications.framework */; };
 		8D0C128B23F0914D00C2D374 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0C128A23F0914D00C2D374 /* UserNotificationsUI.framework */; };
 		8D1C077F2460768600F4EC7E /* OldClaimsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C077E2460768600F4EC7E /* OldClaimsForm.swift */; };
+		8D1C07812461A05100F4EC7E /* IntroUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07802461A05100F4EC7E /* IntroUI.swift */; };
+		8D1C07842461DC2900F4EC7E /* ClaimReason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07832461DC2900F4EC7E /* ClaimReason.swift */; };
+		8D1C07862461DFFA00F4EC7E /* Walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07852461DFFA00F4EC7E /* Walkthrough.swift */; };
+		8D1C07882461E50100F4EC7E /* SaveUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07872461E50100F4EC7E /* SaveUserData.swift */; };
 		8D2138722441FACB0063F001 /* backBtn_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138712441FACA0063F001 /* backBtn_view.swift */; };
 		8D2138742441FE8F0063F001 /* cellphone_layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138732441FE8F0063F001 /* cellphone_layout.swift */; };
 		8D2138792442459A0063F001 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138782442459A0063F001 /* HostingController.swift */; };
@@ -93,6 +97,10 @@
 		8D0C128823F0914C00C2D374 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		8D0C128A23F0914D00C2D374 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		8D1C077E2460768600F4EC7E /* OldClaimsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldClaimsForm.swift; sourceTree = "<group>"; };
+		8D1C07802461A05100F4EC7E /* IntroUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroUI.swift; sourceTree = "<group>"; };
+		8D1C07832461DC2900F4EC7E /* ClaimReason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimReason.swift; sourceTree = "<group>"; };
+		8D1C07852461DFFA00F4EC7E /* Walkthrough.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walkthrough.swift; sourceTree = "<group>"; };
+		8D1C07872461E50100F4EC7E /* SaveUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserData.swift; sourceTree = "<group>"; };
 		8D2138712441FACA0063F001 /* backBtn_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backBtn_view.swift; sourceTree = "<group>"; };
 		8D2138732441FE8F0063F001 /* cellphone_layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellphone_layout.swift; sourceTree = "<group>"; };
 		8D2138782442459A0063F001 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
@@ -185,6 +193,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8D1C07822461DBF400F4EC7E /* ClaimsForm */ = {
+			isa = PBXGroup;
+			children = (
+				8DDAD9F823E05774001409EC /* ClaimsForm.swift */,
+				8D1C07832461DC2900F4EC7E /* ClaimReason.swift */,
+			);
+			path = ClaimsForm;
+			sourceTree = "<group>";
+		};
 		8D213875244243BF0063F001 /* MainSetting */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +222,7 @@
 				8DB2E1E1243C93DB00E3A1BD /* LogoBarWithLabel.swift */,
 				8D2138712441FACA0063F001 /* backBtn_view.swift */,
 				8D2138732441FE8F0063F001 /* cellphone_layout.swift */,
+				8D1C07852461DFFA00F4EC7E /* Walkthrough.swift */,
 			);
 			path = SectorViews;
 			sourceTree = "<group>";
@@ -246,18 +264,20 @@
 			isa = PBXGroup;
 			children = (
 				8DB99D3F23AD247300AE483B /* ContentView.swift */,
+				8D1C07822461DBF400F4EC7E /* ClaimsForm */,
 				8D55D9BE23E34FC000B0DC4B /* LaunchLogo.swift */,
 				8DB99D7E23AE47F000AE483B /* PreviewIntroduction.swift */,
+				8D1C07802461A05100F4EC7E /* IntroUI.swift */,
 				8D55D9BA23E2FDEA00B0DC4B /* MainScreen.swift */,
 				8DB99D4F23AD255300AE483B /* EmergencyUI.swift */,
 				8DB99D5123AD25F500AE483B /* RoadsideAssistanceUI.swift */,
 				8D55D9A523E0807800B0DC4B /* ClaimsCenter.swift */,
-				8DDAD9F823E05774001409EC /* ClaimsForm.swift */,
 				8D55D9B423E1EFFC00B0DC4B /* uploadPhotos.swift */,
 				8D55D9B623E201FD00B0DC4B /* GlassDamage.swift */,
 				8DEBB2032415297800622D88 /* Profil.swift */,
 				8D5742AB242B47260018160B /* GoogleMapsView.swift */,
 				8D1C077E2460768600F4EC7E /* OldClaimsForm.swift */,
+				8D1C07872461E50100F4EC7E /* SaveUserData.swift */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
@@ -558,10 +578,13 @@
 				8DB2E1E0243C920200E3A1BD /* RadialGradientUI.swift in Sources */,
 				8DB2E1E2243C93DB00E3A1BD /* LogoBarWithLabel.swift in Sources */,
 				8D55D9B323E08DE900B0DC4B /* UserData.swift in Sources */,
+				8D1C07862461DFFA00F4EC7E /* Walkthrough.swift in Sources */,
 				8DDAD9F923E05774001409EC /* ClaimsForm.swift in Sources */,
+				8D1C07882461E50100F4EC7E /* SaveUserData.swift in Sources */,
 				8D55D9B923E208E200B0DC4B /* Coordinator.swift in Sources */,
 				8D2138792442459A0063F001 /* HostingController.swift in Sources */,
 				8DB99D3C23AD247300AE483B /* AppDelegate.swift in Sources */,
+				8D1C07812461A05100F4EC7E /* IntroUI.swift in Sources */,
 				8D2138742441FE8F0063F001 /* cellphone_layout.swift in Sources */,
 				8DB2E1E6243DC35300E3A1BD /* dimens.swift in Sources */,
 				8D55D9BF23E34FC000B0DC4B /* LaunchLogo.swift in Sources */,
@@ -579,6 +602,7 @@
 				8D2138722441FACB0063F001 /* backBtn_view.swift in Sources */,
 				8DB2E1E9243DC39300E3A1BD /* strings.swift in Sources */,
 				8D1C077F2460768600F4EC7E /* OldClaimsForm.swift in Sources */,
+				8D1C07842461DC2900F4EC7E /* ClaimReason.swift in Sources */,
 				8DB99D5223AD25F500AE483B /* RoadsideAssistanceUI.swift in Sources */,
 				8DEBB2042415297800622D88 /* Profil.swift in Sources */,
 				8DB99D9323AEB69900AE483B /* Introduction.swift in Sources */,

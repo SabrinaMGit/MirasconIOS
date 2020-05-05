@@ -12,6 +12,8 @@ struct backBtn_view: View {
     
     @ObservedObject var viewRouter: ViewRouter
     
+    var viewRouterName: String
+    
     let colorClass = ColorUI()
     let dimensClass = dimens()
     let stringsClass = strings()
@@ -19,7 +21,7 @@ struct backBtn_view: View {
     var body: some View {
         HStack {
             Button(action: {
-                self.viewRouter.currentPage = self.stringsClass.view_mainview //exit(Int32(self.dimensClass.cg_0));
+                self.viewRouter.currentPage = "\(self.viewRouterName)" //exit(Int32(self.dimensClass.cg_0));
             }) {
                 Image(stringsClass.back_btn_img)
                     .foregroundColor(Color.white)
@@ -34,6 +36,6 @@ struct backBtn_view: View {
 
 struct backBtn_view_Previews: PreviewProvider {
     static var previews: some View {
-        backBtn_view(viewRouter: ViewRouter())
+        backBtn_view(viewRouter: ViewRouter(), viewRouterName: "")
     }
 }

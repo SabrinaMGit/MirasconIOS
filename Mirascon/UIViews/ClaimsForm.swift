@@ -18,6 +18,8 @@ struct ClaimsForm: View {
     
     init(_ viewRouter: ViewRouter){
         self.viewRouter = viewRouter
+        UITableView.appearance().backgroundColor = .clear
+        UITableViewCell.appearance().backgroundColor = .clear
     }
     
     @State var firstName: String = ""
@@ -45,127 +47,25 @@ struct ClaimsForm: View {
     var body: some View {
         ZStack{
             RadialGradientUI()
-            VStack {
+            VStack{
                 LogoBar()
+            List{
                 Text(stringsClass.description)
                     .background(Color.white)
                     .cornerRadius(dimensClass.cg_4)
                     .multilineTextAlignment(.leading)
-                Spacer()
-                VStack{
-                    HStack {
-                        Spacer()
-                        VStack {
-                            HStack {
-                                VStack {
-                                    Text(stringsClass.firstName_name)
-                                        .foregroundColor(Color.white)
-                                        .multilineTextAlignment(.leading)
-                                }
-                                Spacer()
-                            }
-                            ZStack(alignment: .leading) {
-                                
-                                TextField(stringsClass.emptyText, text: $firstName)
-                                    .padding(dimensClass.cg_8)
-                                    .background(colorClass.blueRectangle)
-                                    .foregroundColor(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous))
-                                    .overlay(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous)
-                                        .stroke( lineWidth: dimensClass.cg_0))
-                                if firstName.isEmpty { Text("\(firstNameSaved ?? stringsClass.emptyText)").foregroundColor(.white) }
-                            }
-                        }
-                        Spacer()
-                    }
-                    HStack {
-                        Spacer()
-                        VStack {
-                            HStack {
-                                Text(stringsClass.lastName_name)
-                                    .foregroundColor(Color.white)
-                                    .multilineTextAlignment(.leading)
-                                Spacer()
-                            }
-                            ZStack(alignment: .leading) {
-                                TextField(stringsClass.emptyText, text: $lastName)
-                                    .padding(dimensClass.cg_8)
-                                    .background(colorClass.blueRectangle)
-                                    .foregroundColor(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous))
-                                    .overlay(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous)
-                                        .stroke( lineWidth: dimensClass.cg_0))
-                                if lastName.isEmpty { Text("\(lastNameSaved ?? stringsClass.emptyText)").foregroundColor(.white) }
-                            }}
-                        Spacer()
-                    }
-                    HStack {
-                        Spacer()
-                        VStack {
-                            HStack {
-                                Text(stringsClass.licencePlate_name)
-                                    .foregroundColor(Color.white)
-                                    .multilineTextAlignment(.leading)
-                                Spacer()
-                            }
-                            ZStack(alignment: .leading){
-                                TextField(stringsClass.emptyText, text: $lp)
-                                    .padding(dimensClass.cg_8)
-                                    .background(colorClass.blueRectangle)
-                                    .foregroundColor(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius:  dimensClass.cg_10, style: .continuous))
-                                    .overlay(RoundedRectangle(cornerRadius:  dimensClass.cg_10, style: .continuous)
-                                        .stroke( lineWidth:  dimensClass.cg_0))
-                                if lp.isEmpty { Text("\(lpSaved ?? stringsClass.emptyText)").foregroundColor(.white) }
-                            }
-                        }
-                        Spacer()
-                    }
-                    HStack {
-                        Spacer()
-                        VStack {
-                            HStack {
-                                Text(stringsClass.phoneNumber_name)
-                                    .foregroundColor(Color.white)
-                                    .multilineTextAlignment(.leading)
-                                Spacer()
-                            }
-                            ZStack(alignment: .leading){
-                                TextField(stringsClass.emptyText, text: $phone)
-                                    .padding(dimensClass.cg_8)
-                                    .background(colorClass.blueRectangle)
-                                    .foregroundColor(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous))
-                                    .overlay(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous)
-                                        .stroke( lineWidth: dimensClass.cg_0))
-                                if phone.isEmpty { Text("\(phoneSaved ?? stringsClass.emptyText)").foregroundColor(.white) }
-                            }}
-                        Spacer()
-                    }
-                    HStack {
-                        Spacer()
-                        VStack {
-                            HStack {
-                                Text(stringsClass.email_name)
-                                    .foregroundColor(Color.white)
-                                    .multilineTextAlignment(.leading)
-                                Spacer()
-                            }
-                            ZStack(alignment: .leading){
-                                TextField(stringsClass.emptyText, text: $email)
-                                    .padding(dimensClass.cg_8)
-                                    .background(colorClass.blueRectangle)
-                                    .foregroundColor(Color.white)
-                                    .clipShape(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous))
-                                    .overlay(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous)
-                                        .stroke( lineWidth: dimensClass.cg_0))
-                                if email.isEmpty { Text("\(mailSaved ?? stringsClass.emptyText)").foregroundColor(.white) }
-                            }}
-                        Spacer()
-                    }
-                }.padding()
-                VStack{
+                VStack(alignment: .leading) {
+                    LabelTextField(label: stringsClass.firstName_name, data: $firstName, savedData: firstNameSaved ?? stringsClass.emptyText)
+                    LabelTextField(label: stringsClass.lastName_name, data: $lastName, savedData: lastNameSaved ?? stringsClass.emptyText)
+                    LabelTextField(label: stringsClass.licencePlate_name, data: $lp, savedData: lpSaved ?? stringsClass.emptyText)
+                    LabelTextField(label: stringsClass.phoneNumber_name, data: $phone, savedData: phoneSaved ?? stringsClass.emptyText)
+                    LabelTextField(label: stringsClass.email_name, data: $email, savedData: mailSaved ?? stringsClass.emptyText)
+                    LabelTextField(label: stringsClass.email_name, data: $email, savedData: mailSaved ?? stringsClass.emptyText)
                     
+                }
+                .padding(.top, 20)
+                .listRowInsets(EdgeInsets())
+                VStack{
                     Button(action: {
                         
                         if self.firstName != self.stringsClass.emptyText && self.lastName != self.stringsClass.emptyText && self.lp != self.stringsClass.emptyText && self.phone != self.stringsClass.emptyText && self.email != self.stringsClass.emptyText{
@@ -206,7 +106,6 @@ struct ClaimsForm: View {
                     /*.alert(isPresented: $showingAlert) {
                      Alert(title: Text("Some fields are empty"), message: Text("Fill out all fields"), dismissButton: .default(Text("Got it!")))
                      }*/
-                    Spacer()
                     
                     Button(action: {
                         self.viewRouter.currentPage = self.stringsClass.view_claimsCenter
@@ -220,16 +119,13 @@ struct ClaimsForm: View {
                         .background(colorClass.endColor)
                         .cornerRadius(dimensClass.cg_10)
                 }
+                }
             }
         }
     }
 }
 
-struct ClaimsForm_Previews: PreviewProvider {
-    static var previews: some View {
-        ClaimsForm(ViewRouter())
-    }
-}
+
 struct GradientBackgroundStyle: ButtonStyle {
     
     let colorClass = ColorUI()
@@ -264,7 +160,7 @@ struct claimsFormRow: View {
                 Text(stringsClass.licencePlate_name)
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.leading)
-                Spacer()
+               // Spacer()
             }
             ZStack(alignment: .leading){
                 TextField(stringsClass.emptyText, text: $lp)
@@ -277,6 +173,75 @@ struct claimsFormRow: View {
                 if lp.isEmpty { Text("\(lpSaved ?? stringsClass.emptyText)").foregroundColor(.white) }
             }
         }
+    }
+}
+
+struct CustomTextField: View {
+    var placeholder: Text
+    @Binding var text: String
+    var editingChanged: (Bool)->() = { _ in }
+    var commit: ()->() = { }
+
+    var body: some View {
+        ZStack(alignment: .leading) {
+            if text.isEmpty { placeholder }
+            TextField("", text: $text, onEditingChanged: editingChanged, onCommit: commit)
+        }
+    }
+}
+
+struct LabelTextField : View {
+    let colorClass = ColorUI()
+    let dimensClass = dimens()
+    let stringsClass = strings()
+    let claimsForm = ClaimsForm(ViewRouter())
+    
+    var label: String
+    @Binding var data: String
+    var savedData: String
+    
+    var body: some View {
+        
+        VStack(alignment: .leading) {
+            Text(label)
+                .foregroundColor(Color.white)
+                .multilineTextAlignment(.leading)
+                .font(.headline)
+            
+            TextField(stringsClass.emptyText, text: $data)
+            .padding(dimensClass.cg_3)
+            .background(colorClass.btnColor)
+            .foregroundColor(Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous)
+                .stroke( lineWidth: dimensClass.cg_0))
+            if data.isEmpty { Text("\(savedData )").foregroundColor(.white) }
+            }
+            .padding(.horizontal, 15)
+    }
+}
+
+
+/*
+                  Text(stringsClass.firstName_name)
+                  .foregroundColor(Color.white)
+                  .multilineTextAlignment(.leading)
+                  */
+                 /*
+                 TextField(stringsClass.emptyText, text: $firstName)
+                     .padding(dimensClass.cg_8)
+                     .background(colorClass.blueRectangle)
+                     .foregroundColor(Color.white)
+                     .clipShape(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous))
+                     .overlay(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous)
+                         .stroke( lineWidth: dimensClass.cg_0))
+                 if firstName.isEmpty { Text("\(firstNameSaved ?? stringsClass.emptyText)").foregroundColor(.white) }
+                 */
+
+
+struct ClaimsForm_Previews: PreviewProvider {
+    static var previews: some View {
+        ClaimsForm(ViewRouter())
     }
 }
 

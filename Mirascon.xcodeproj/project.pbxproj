@@ -10,6 +10,7 @@
 		0438E0128DD3CD91B00E4C0A /* Pods_Mirascon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF87B3E4605B890578C22AE /* Pods_Mirascon.framework */; };
 		8D0C128923F0914C00C2D374 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0C128823F0914C00C2D374 /* UserNotifications.framework */; };
 		8D0C128B23F0914D00C2D374 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0C128A23F0914D00C2D374 /* UserNotificationsUI.framework */; };
+		8D1C077F2460768600F4EC7E /* OldClaimsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C077E2460768600F4EC7E /* OldClaimsForm.swift */; };
 		8D2138722441FACB0063F001 /* backBtn_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138712441FACA0063F001 /* backBtn_view.swift */; };
 		8D2138742441FE8F0063F001 /* cellphone_layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138732441FE8F0063F001 /* cellphone_layout.swift */; };
 		8D2138792442459A0063F001 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138782442459A0063F001 /* HostingController.swift */; };
@@ -91,6 +92,7 @@
 		346B21D53E006A92AF7DD652 /* Pods-Mirascon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirascon.release.xcconfig"; path = "Target Support Files/Pods-Mirascon/Pods-Mirascon.release.xcconfig"; sourceTree = "<group>"; };
 		8D0C128823F0914C00C2D374 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		8D0C128A23F0914D00C2D374 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		8D1C077E2460768600F4EC7E /* OldClaimsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldClaimsForm.swift; sourceTree = "<group>"; };
 		8D2138712441FACA0063F001 /* backBtn_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backBtn_view.swift; sourceTree = "<group>"; };
 		8D2138732441FE8F0063F001 /* cellphone_layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellphone_layout.swift; sourceTree = "<group>"; };
 		8D2138782442459A0063F001 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				8D55D9B623E201FD00B0DC4B /* GlassDamage.swift */,
 				8DEBB2032415297800622D88 /* Profil.swift */,
 				8D5742AB242B47260018160B /* GoogleMapsView.swift */,
+				8D1C077E2460768600F4EC7E /* OldClaimsForm.swift */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				8D55D9A623E0807800B0DC4B /* ClaimsCenter.swift in Sources */,
 				8D2138722441FACB0063F001 /* backBtn_view.swift in Sources */,
 				8DB2E1E9243DC39300E3A1BD /* strings.swift in Sources */,
+				8D1C077F2460768600F4EC7E /* OldClaimsForm.swift in Sources */,
 				8DB99D5223AD25F500AE483B /* RoadsideAssistanceUI.swift in Sources */,
 				8DEBB2042415297800622D88 /* Profil.swift in Sources */,
 				8DB99D9323AEB69900AE483B /* Introduction.swift in Sources */,
@@ -621,7 +625,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 897WYU8Q95;
+				DEVELOPMENT_TEAM = QBKR6YXC55;
 				INFOPLIST_FILE = Notification/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -640,7 +644,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 897WYU8Q95;
+				DEVELOPMENT_TEAM = QBKR6YXC55;
 				INFOPLIST_FILE = Notification/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -660,7 +664,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 897WYU8Q95;
+				DEVELOPMENT_TEAM = QBKR6YXC55;
 				INFOPLIST_FILE = MirasconTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -681,7 +685,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 897WYU8Q95;
+				DEVELOPMENT_TEAM = QBKR6YXC55;
 				INFOPLIST_FILE = MirasconTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -818,7 +822,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Mirascon/Preview Content\"";
-				DEVELOPMENT_TEAM = 897WYU8Q95;
+				DEVELOPMENT_TEAM = QBKR6YXC55;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Mirascon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -840,7 +844,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Mirascon/Preview Content\"";
-				DEVELOPMENT_TEAM = 897WYU8Q95;
+				DEVELOPMENT_TEAM = QBKR6YXC55;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Mirascon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

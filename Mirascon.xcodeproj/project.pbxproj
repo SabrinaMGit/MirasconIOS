@@ -15,6 +15,15 @@
 		8D1C07842461DC2900F4EC7E /* ClaimReason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07832461DC2900F4EC7E /* ClaimReason.swift */; };
 		8D1C07862461DFFA00F4EC7E /* Walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07852461DFFA00F4EC7E /* Walkthrough.swift */; };
 		8D1C07882461E50100F4EC7E /* SaveUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07872461E50100F4EC7E /* SaveUserData.swift */; };
+		8D1C078A2462B8EE00F4EC7E /* NavigationBarImageUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07892462B8EE00F4EC7E /* NavigationBarImageUI.swift */; };
+		8D1C078C2462C12500F4EC7E /* NavigationBarWithItemUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C078B2462C12500F4EC7E /* NavigationBarWithItemUI.swift */; };
+		8D1C078E2462DE4A00F4EC7E /* Rows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C078D2462DE4A00F4EC7E /* Rows.swift */; };
+		8D1C07902462DFA400F4EC7E /* ButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C078F2462DFA400F4EC7E /* ButtonRow.swift */; };
+		8D1C07922462E52C00F4EC7E /* camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07912462E52C00F4EC7E /* camera.swift */; };
+		8D1C07942462E56500F4EC7E /* CaptureImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07932462E56500F4EC7E /* CaptureImage.swift */; };
+		8D1C07962462E69A00F4EC7E /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07952462E69A00F4EC7E /* MailView.swift */; };
+		8D1C07982462E6D600F4EC7E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07972462E6D600F4EC7E /* ImagePicker.swift */; };
+		8D1C079A2462E71900F4EC7E /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07992462E71900F4EC7E /* CameraView.swift */; };
 		8D2138722441FACB0063F001 /* backBtn_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138712441FACA0063F001 /* backBtn_view.swift */; };
 		8D2138742441FE8F0063F001 /* cellphone_layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138732441FE8F0063F001 /* cellphone_layout.swift */; };
 		8D2138792442459A0063F001 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138782442459A0063F001 /* HostingController.swift */; };
@@ -101,6 +110,15 @@
 		8D1C07832461DC2900F4EC7E /* ClaimReason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimReason.swift; sourceTree = "<group>"; };
 		8D1C07852461DFFA00F4EC7E /* Walkthrough.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Walkthrough.swift; sourceTree = "<group>"; };
 		8D1C07872461E50100F4EC7E /* SaveUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserData.swift; sourceTree = "<group>"; };
+		8D1C07892462B8EE00F4EC7E /* NavigationBarImageUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarImageUI.swift; sourceTree = "<group>"; };
+		8D1C078B2462C12500F4EC7E /* NavigationBarWithItemUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarWithItemUI.swift; sourceTree = "<group>"; };
+		8D1C078D2462DE4A00F4EC7E /* Rows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rows.swift; sourceTree = "<group>"; };
+		8D1C078F2462DFA400F4EC7E /* ButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonRow.swift; sourceTree = "<group>"; };
+		8D1C07912462E52C00F4EC7E /* camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = camera.swift; sourceTree = "<group>"; };
+		8D1C07932462E56500F4EC7E /* CaptureImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureImage.swift; sourceTree = "<group>"; };
+		8D1C07952462E69A00F4EC7E /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		8D1C07972462E6D600F4EC7E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		8D1C07992462E71900F4EC7E /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		8D2138712441FACA0063F001 /* backBtn_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backBtn_view.swift; sourceTree = "<group>"; };
 		8D2138732441FE8F0063F001 /* cellphone_layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellphone_layout.swift; sourceTree = "<group>"; };
 		8D2138782442459A0063F001 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
@@ -198,6 +216,7 @@
 			children = (
 				8DDAD9F823E05774001409EC /* ClaimsForm.swift */,
 				8D1C07832461DC2900F4EC7E /* ClaimReason.swift */,
+				8D1C07912462E52C00F4EC7E /* camera.swift */,
 			);
 			path = ClaimsForm;
 			sourceTree = "<group>";
@@ -223,6 +242,14 @@
 				8D2138712441FACA0063F001 /* backBtn_view.swift */,
 				8D2138732441FE8F0063F001 /* cellphone_layout.swift */,
 				8D1C07852461DFFA00F4EC7E /* Walkthrough.swift */,
+				8D1C07892462B8EE00F4EC7E /* NavigationBarImageUI.swift */,
+				8D1C078B2462C12500F4EC7E /* NavigationBarWithItemUI.swift */,
+				8D1C078D2462DE4A00F4EC7E /* Rows.swift */,
+				8D1C078F2462DFA400F4EC7E /* ButtonRow.swift */,
+				8D1C07932462E56500F4EC7E /* CaptureImage.swift */,
+				8D1C07952462E69A00F4EC7E /* MailView.swift */,
+				8D1C07972462E6D600F4EC7E /* ImagePicker.swift */,
+				8D1C07992462E71900F4EC7E /* CameraView.swift */,
 			);
 			path = SectorViews;
 			sourceTree = "<group>";
@@ -578,19 +605,26 @@
 				8DB2E1E0243C920200E3A1BD /* RadialGradientUI.swift in Sources */,
 				8DB2E1E2243C93DB00E3A1BD /* LogoBarWithLabel.swift in Sources */,
 				8D55D9B323E08DE900B0DC4B /* UserData.swift in Sources */,
+				8D1C07902462DFA400F4EC7E /* ButtonRow.swift in Sources */,
 				8D1C07862461DFFA00F4EC7E /* Walkthrough.swift in Sources */,
 				8DDAD9F923E05774001409EC /* ClaimsForm.swift in Sources */,
+				8D1C07962462E69A00F4EC7E /* MailView.swift in Sources */,
 				8D1C07882461E50100F4EC7E /* SaveUserData.swift in Sources */,
 				8D55D9B923E208E200B0DC4B /* Coordinator.swift in Sources */,
+				8D1C07942462E56500F4EC7E /* CaptureImage.swift in Sources */,
+				8D1C078C2462C12500F4EC7E /* NavigationBarWithItemUI.swift in Sources */,
 				8D2138792442459A0063F001 /* HostingController.swift in Sources */,
 				8DB99D3C23AD247300AE483B /* AppDelegate.swift in Sources */,
 				8D1C07812461A05100F4EC7E /* IntroUI.swift in Sources */,
 				8D2138742441FE8F0063F001 /* cellphone_layout.swift in Sources */,
+				8D1C07922462E52C00F4EC7E /* camera.swift in Sources */,
+				8D1C07982462E6D600F4EC7E /* ImagePicker.swift in Sources */,
 				8DB2E1E6243DC35300E3A1BD /* dimens.swift in Sources */,
 				8D55D9BF23E34FC000B0DC4B /* LaunchLogo.swift in Sources */,
 				8D55D9B523E1EFFC00B0DC4B /* uploadPhotos.swift in Sources */,
 				8D25408423ED6B5000707704 /* ChatFirebaseView.swift in Sources */,
 				8DB99D5023AD255300AE483B /* EmergencyUI.swift in Sources */,
+				8D1C079A2462E71900F4EC7E /* CameraView.swift in Sources */,
 				8DB2E1DE243B54DC00E3A1BD /* ColorUI.swift in Sources */,
 				8D25408623ED6B9F00707704 /* DataFire.swift in Sources */,
 				8DB99D3E23AD247300AE483B /* SceneDelegate.swift in Sources */,
@@ -605,8 +639,10 @@
 				8D1C07842461DC2900F4EC7E /* ClaimReason.swift in Sources */,
 				8DB99D5223AD25F500AE483B /* RoadsideAssistanceUI.swift in Sources */,
 				8DEBB2042415297800622D88 /* Profil.swift in Sources */,
+				8D1C078E2462DE4A00F4EC7E /* Rows.swift in Sources */,
 				8DB99D9323AEB69900AE483B /* Introduction.swift in Sources */,
 				8DBD931023ECC87F0034E918 /* LocationManager.swift in Sources */,
+				8D1C078A2462B8EE00F4EC7E /* NavigationBarImageUI.swift in Sources */,
 				8DB2E1E4243C9AE900E3A1BD /* LogoBar.swift in Sources */,
 				8D55D9BD23E2FF1800B0DC4B /* ViewRouter.swift in Sources */,
 				8DC0FF8523EEFA4500B8401F /* Messagepage.swift in Sources */,

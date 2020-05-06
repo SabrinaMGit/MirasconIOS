@@ -27,7 +27,7 @@ struct Profil: View {
         ZStack {
             RadialGradientUI()
             VStack {
-                LogoBar()
+                NavigationBarImageUI()
                 HStack {
                     Text(stringsClass.emptyText)
                     Divider()
@@ -58,17 +58,8 @@ struct Profil: View {
                     ProfilRow(category:stringsClass.email_name, customer_details: "\(cForm.mailSaved!)", whichEntry: Int(dimensClass.cg_5))
                 }.foregroundColor(Color.white)
                 Spacer()
-                Button(action: {
-                    self.viewRouter.currentPage = self.stringsClass.view_claimsCenter
-                }) {
-                    Image(stringsClass.back_btn_img)
-                        .foregroundColor(Color.white)
-                    
-                }.frame(minWidth: dimensClass.cg_0, maxWidth: .infinity)
-                    .padding()
-                    .padding(.horizontal, dimensClass.cg_10)
-                    .background(colorClass.endColor)
-                    .cornerRadius(dimensClass.cg_10)
+                backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_claimsForm)
+              
             }
         }
     }

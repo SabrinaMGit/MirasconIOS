@@ -205,7 +205,7 @@ struct uploadPhotos_Previews: PreviewProvider {
 
 
 
-struct CaptureImageView {
+/*struct CaptureImageView {
     
     /// MARK: - Properties
     @Binding var isShown: Bool
@@ -229,64 +229,10 @@ extension CaptureImageView: UIViewControllerRepresentable {
                                 context: UIViewControllerRepresentableContext<CaptureImageView>) {
         
     }
-}
+}*/
 
 
-struct MailView: UIViewControllerRepresentable {
-    let gMap = GoogleMap()
-    let cForm = ClaimsForm(ViewRouter())
-    @Environment(\.presentationMode) var presentation
-    @Binding var result: Result<MFMailComposeResult, Error>?
-    
-    class Coordinator: NSObject, MFMailComposeViewControllerDelegate {
-        
-        @Binding var presentation: PresentationMode
-        @Binding var result: Result<MFMailComposeResult, Error>?
-        
-        init(presentation: Binding<PresentationMode>,
-             result: Binding<Result<MFMailComposeResult, Error>?>) {
-            _presentation = presentation
-            _result = result
-        }
-        
-        func mailComposeController(_ controller: MFMailComposeViewController,
-                                   didFinishWith result: MFMailComposeResult,
-                                   error: Error?) {
-            defer {
-                $presentation.wrappedValue.dismiss()
-            }
-            guard error == nil else {
-                self.result = .failure(error!)
-                return
-            }
-            self.result = .success(result)
-        }
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(presentation: presentation,
-                           result: $result)
-    }
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<MailView>) -> MFMailComposeViewController {
-        
-        let vc = MFMailComposeViewController()
-        //vc.setPreferredSendingEmailAddress("")
-        vc.setToRecipients(["claims@mirascon.com"])
-        vc.setSubject("Claims Form")
-        vc.setMessageBody("<p>First Name: \(String(describing: cForm.firstNameSaved)),\nLast Name: \(String(describing: cForm.lastNameSaved)),\nLicense Plate: \(String(describing: cForm.lpSaved)),\nPhone Number: \(String(describing: cForm.phoneSaved)),\n EMail: \(String(describing: cForm.mailSaved)),\nLatitude: \(self.gMap.userLatitude) Longitute:  \(self.gMap.userLongitude)</p>", isHTML: true)
-        //vc.setMessageBody("Hello Im here", isHTML: false)
-        
-        //vc.addAttachmentData(self.image, mimeType: <#T##String#>, fileName: <#T##String#>)
-        vc.mailComposeDelegate = context.coordinator
-        return vc
-    }
-    
-    func updateUIViewController(_ uiViewController: MFMailComposeViewController,
-                                context: UIViewControllerRepresentableContext<MailView>) {
-        
-    }
-}
+
 /*
  struct MailView: UIViewControllerRepresentable {
  
@@ -335,76 +281,6 @@ struct MailView: UIViewControllerRepresentable {
  }
  }*/
 
-struct ImagePicker: UIViewControllerRepresentable {
-    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        let parent: ImagePicker
-        
-        init(_ parent: ImagePicker) {
-            self.parent = parent
-        }
-        
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-            if let uiImage = info[.originalImage] as? UIImage {
-                parent.image = uiImage
-            }
-            
-            parent.presentationMode.wrappedValue.dismiss()
-        }
-    }
-    @Environment(\.presentationMode) var presentationMode
-    @Binding var image: UIImage?
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
-        let picker = UIImagePickerController()
-        picker.delegate = context.coordinator
-        return picker
-    }
-    
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
-        
-    }
-}
 
-struct CameraView: UIViewControllerRepresentable {
-    
-    @Binding var showCameraView: Bool
-    @Binding var pickedImage: Image
-    
-    func makeCoordinator() -> CameraView.Coordinator {
-        Coordinator(self)
-    }
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<CameraView>) -> UIViewController {
-        let cameraViewController = UIImagePickerController()
-        cameraViewController.delegate = context.coordinator
-        cameraViewController.sourceType = .camera
-        cameraViewController.allowsEditing = false
-        return cameraViewController
-    }
-    
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<CameraView>) {
-        
-    }
-    
-    class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        var parent: CameraView
-        
-        init(_ cameraView: CameraView) {
-            self.parent = cameraView
-        }
-        
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-            parent.pickedImage = Image(uiImage: uiImage)
-            parent.showCameraView = false
-        }
-        
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            parent.showCameraView = false
-        }
-    }
-}
+
+

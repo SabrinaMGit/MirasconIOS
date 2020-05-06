@@ -26,9 +26,11 @@ struct ContentView: View {
                 LaunchLogo(viewRouter)
             } else if viewRouter.currentPage == "pagerView" {
                 IntroUI(viewRouter: viewRouter)
-            } else if viewRouter.currentPage == "claimsForm" {
+            } else if viewRouter.currentPage == "saveData" {
                 SaveUserData(viewRouter)
-            } else if viewRouter.currentPage == "camera" {
+            } else if viewRouter.currentPage == "claimsForm" {
+                ClaimsForm(viewRouter)
+            }else if viewRouter.currentPage == "camera" {
                 uploadPhotos(viewRouter)
             } else if viewRouter.currentPage == "otherInfo" {
                 //GlassDamage(viewRouter)
@@ -43,6 +45,8 @@ struct ContentView: View {
                 //CloudMessaging(viewRouter: viewRouter)
             } else if viewRouter.currentPage == "profil" {
                 Profil(viewRouter)
+            } else if viewRouter.currentPage == "claimReason" {
+                ClaimReason(viewRouter)
             }
         }
     }

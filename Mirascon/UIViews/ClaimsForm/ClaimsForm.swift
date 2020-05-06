@@ -47,80 +47,51 @@ struct ClaimsForm: View {
     var body: some View {
         ZStack{
             RadialGradientUI()
-            VStack{
-                LogoBar()
-                Walkthrough()
+                VStack{
+                    NavigationBarWithItemUI(viewModel: ViewRouter(), viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
+                    Walkthrough()
                 List{
-                   /* HStack{
-                        Image(stringsClass.fillForm_img)
-                            .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
-                            .overlay(
-                                Rectangle()
-                                    .stroke(colorClass.endColor, lineWidth: dimensClass.cg_0))
-                            .background(Color.blue)
-                        Image(stringsClass.googlemaps_img)
-                            .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
-                            .overlay(
-                                Rectangle()
-                                    .stroke(colorClass.endColor, lineWidth: dimensClass.cg_0))
-                            .background(Color.green)
-                        Image(stringsClass.view_camera)
-                            .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
-                            .overlay(
-                                Rectangle()
-                                    .stroke(colorClass.endColor, lineWidth: dimensClass.cg_0))
-                            .background(Color.red)
-                    }
-                 
-                    Text(stringsClass.descriptionC)
-                        .background(Color.white)
-                        .cornerRadius(dimensClass.cg_4)
-                        .multilineTextAlignment(.leading)
-                    */
+                    /* HStack{
+                     Image(stringsClass.fillForm_img)
+                     .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
+                     .overlay(
+                     Rectangle()
+                     .stroke(colorClass.endColor, lineWidth: dimensClass.cg_0))
+                     .background(Color.blue)
+                     Image(stringsClass.googlemaps_img)
+                     .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
+                     .overlay(
+                     Rectangle()
+                     .stroke(colorClass.endColor, lineWidth: dimensClass.cg_0))
+                     .background(Color.green)
+                     Image(stringsClass.view_camera)
+                     .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
+                     .overlay(
+                     Rectangle()
+                     .stroke(colorClass.endColor, lineWidth: dimensClass.cg_0))
+                     .background(Color.red)
+                     }
+                     
+                     Text(stringsClass.descriptionC)
+                     .background(Color.white)
+                     .cornerRadius(dimensClass.cg_4)
+                     .multilineTextAlignment(.leading)
+                     */
                     VStack(alignment: .leading) {
-                        LabelTextField(label: stringsClass.firstName_name, data: $firstName, savedData: firstNameSaved ?? stringsClass.emptyText)
-                        LabelTextField(label: stringsClass.lastName_name, data: $lastName, savedData: lastNameSaved ?? stringsClass.emptyText)
-                        LabelTextField(label: stringsClass.licencePlate_name, data: $lp, savedData: lpSaved ?? stringsClass.emptyText)
-                        LabelTextField(label: stringsClass.phoneNumber_name, data: $phone, savedData: phoneSaved ?? stringsClass.emptyText)
-                        LabelTextField(label: stringsClass.email_name, data: $email, savedData: mailSaved ?? stringsClass.emptyText)
+                        LabelTextField(label: stringsClass.firstName_name, data: firstNameSaved  ?? stringsClass.emptyText)
+                        LabelTextField(label: stringsClass.lastName_name, data: lastNameSaved ?? stringsClass.emptyText)
+                        LabelTextField(label: stringsClass.licencePlate_name, data: lpSaved ?? stringsClass.emptyText)
+                        LabelTextField(label: stringsClass.phoneNumber_name, data: phoneSaved ?? stringsClass.emptyText)
+                        LabelTextField(label: stringsClass.email_name, data: mailSaved ?? stringsClass.emptyText)
                         
                     }
                     .padding(.top, 20)
-                    .listRowInsets(EdgeInsets())
+                    //.listRowInsets(EdgeInsets())
                     HStack {
                         Spacer()
                         VStack{
                             Button(action: {
-                                
-                                if self.firstName != self.stringsClass.emptyText && self.lastName != self.stringsClass.emptyText && self.lp != self.stringsClass.emptyText && self.phone != self.stringsClass.emptyText && self.email != self.stringsClass.emptyText{
-                                    self.firstNameSaved = self.firstName
-                                    self.lastNameSaved = self.lastName
-                                    self.lpSaved = self.lp
-                                    self.phoneSaved = self.phone
-                                    self.mailSaved = self.email
-                                    
-                                    UserDefaults.standard.set(self.firstName, forKey: self.stringsClass.forkey_firstname)
-                                    UserDefaults.standard.set(self.lastName, forKey: self.stringsClass.forkey_lastname)
-                                    UserDefaults.standard.set(self.lp, forKey: self.stringsClass.forkey_lp)
-                                    UserDefaults.standard.set(self.phone, forKey: self.stringsClass.forkey_phone)
-                                    UserDefaults.standard.set(self.email, forKey: self.stringsClass.forkey_mail)
-                                    
-                                    UserDefaults.standard.set(self.firstLaunchIsDone, forKey: self.stringsClass.forkey_firstLaunchIsDone)
-                                    if self.firstLaunch.isFirstLaunch {
-                                        self.viewRouter.currentPage = self.stringsClass.view_mainview
-                                        self.changeViewToGoogleAfterFirstLaunchCheck = true
-                                    }
-                                } else{
-                                    self.showingAlert = true
-                                }
-                                if self.firstLaunchApp {
-                                    self.viewRouter.currentPage = self.stringsClass.view_googleMaps
-                                }
-                                if self.changeViewToGoogleAfterFirstLaunchCheck {
-                                    self.firstLaunchApp = self.firstLaunchIsDone
-                                    UserDefaults.standard.set(self.firstLaunchIsDone, forKey: self.stringsClass.forkey_firstLaunch)
-                                }
-                                
+                                self.viewRouter.currentPage = self.stringsClass.view_claimReason
                             }) {
                                 Text(stringsClass.continue_name)
                                     .fontWeight(.medium)
@@ -196,28 +167,21 @@ struct LabelTextField : View {
     let colorClass = ColorUI()
     let dimensClass = dimens()
     let stringsClass = strings()
-    let claimsForm = ClaimsForm(ViewRouter())
     
     var label: String
-    @Binding var data: String
-    var savedData: String
+    var data: String
     
     var body: some View {
         
         VStack(alignment: .leading) {
             Text(label)
-                .foregroundColor(colorClass.grey)
+                .foregroundColor(Color.white)
                 .multilineTextAlignment(.leading)
                 .font(.headline)
-            
-            TextField(stringsClass.emptyText, text: $data)
-                .padding(dimensClass.cg_3)
-                .background(Color.white)
-                .foregroundColor(Color.black)
-                .clipShape(RoundedRectangle(cornerRadius: dimensClass.cg_5, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: dimensClass.cg_5, style: .continuous)
-                    .stroke( lineWidth: dimensClass.cg_0))
-            if data.isEmpty { Text("\(savedData )").foregroundColor(.white) }
+            Text(data)
+                .foregroundColor(Color.white)
+                .multilineTextAlignment(.leading)
+                .font(.body)
         }
         .padding(.horizontal, 15)
     }

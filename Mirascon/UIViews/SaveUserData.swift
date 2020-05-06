@@ -48,13 +48,20 @@ struct SaveUserData: View {
         ZStack{
             RadialGradientUI()
             VStack{
-                ZStack{
-                    RadialGradient(gradient: Gradient(colors: [colorClass.darkerBlue, colorClass.endColor]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
-                    LogoBar()
-                }.frame( height: dimensClass.cg_40)
-                
-               
+                   NavigationBarImageUI()
                 List{
+                    ZStack(alignment: .center){
+                        RadialGradient(gradient: Gradient(colors: [colorClass.darkerRed, colorClass.endRed]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
+                        
+                        Text("Save your data securely in your profile so that you can quickly send us a damage report in the event of an accident. You can change your details in your profile at any time")
+                            //.background(Color.white)
+                            //.cornerRadius(dimensClass.cg_4)
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(Color.white)
+                            .padding(dimensClass.cg_8)
+                            .font(.subheadline)
+                        //.padding(.top, dimensClass.cg_20)
+                    }.frame( height: dimensClass.cg_130)
                     /* HStack{
                      Image(stringsClass.fillForm_img)
                      .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
@@ -81,13 +88,7 @@ struct SaveUserData: View {
                      .cornerRadius(dimensClass.cg_4)
                      .multilineTextAlignment(.leading)
                      */
-                    Text("Save your data securely in your profile so that you can quickly send us a damage report in the event of an accident. You can change your details in your profile at any time")
-                                       .background(Color.white)
-                                       .cornerRadius(dimensClass.cg_4)
-                                       .multilineTextAlignment(.leading)
-                                       .foregroundColor(Color.black)
-                                       .padding(dimensClass.cg_10)
-                                       //.padding(.top, dimensClass.cg_20)
+                    
                     VStack(alignment: .leading) {
                         LabelTextFields(label: stringsClass.firstName_name, datas: $firstName, savedDatas: firstNameSaved ?? stringsClass.emptyText)
                         LabelTextFields(label: stringsClass.lastName_name, datas: $lastName, savedDatas: lastNameSaved ?? stringsClass.emptyText)
@@ -137,9 +138,9 @@ struct SaveUserData: View {
                                     .foregroundColor(Color.white)
                                 
                             }.buttonStyle(GradientBackgroundStyle())
-                            /*.alert(isPresented: $showingAlert) {
-                             Alert(title: Text("Some fields are empty"), message: Text("Fill out all fields"), dismissButton: .default(Text("Got it!")))
-                             }*/
+                                .alert(isPresented: $showingAlert) {
+                                    Alert(title: Text("Some fields are empty"), message: Text("Fill out all fields"), dismissButton: .default(Text("Got it!")))
+                            }
                         }
                         Spacer()
                     }

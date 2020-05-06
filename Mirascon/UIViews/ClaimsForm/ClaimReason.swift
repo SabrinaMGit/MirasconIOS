@@ -13,49 +13,39 @@ struct ClaimReason: View {
     let dimensClass = dimens()
     let stringsClass = strings()
     
-    init(){
-        UITableView.appearance().backgroundColor = .clear
-        UITableViewCell.appearance().backgroundColor = .clear
-    }
+     @ObservedObject var viewRouter: ViewRouter
+       
+       init(_ viewRouter: ViewRouter){
+           self.viewRouter = viewRouter
+           UITableView.appearance().backgroundColor = .clear
+           UITableViewCell.appearance().backgroundColor = .clear
+       }
     
     
     var body: some View {
         ZStack{
             RadialGradientUI()
+            VStack (alignment: .center){
             VStack{
-                HStack {
-                    Spacer()
-                    Spacer()
-                    LogoBar()
-                    Spacer()
-                    Button(action: {
-                        //self.viewRouter.currentPage = "claimsForm"
-                    }) {
-                        Image("help")
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundColor(Color.white)
-                            .frame(width: dimensClass.cg_30,height: dimensClass.cg_30)
-                    }
-                    Spacer()
-                }
+                NavigationBarWithItemUI(viewModel: ViewRouter(), viewRouterName: stringsClass.view_claimsForm, image: "help")
                 Walkthrough()
+                
+                    //Spacer()
                 List{
-                    HStack{
-                        //Spacer()
-                    VStack {
-                        ImageRow(image: stringsClass.roadside_img, label: "I habe a flat tire.")
-                        ImageRow(image: stringsClass.roadside_img, label: "I habe a flat tire.")
-                        ImageRow(image: stringsClass.roadside_img, label: "I habe a flat tire.")
-                        ImageRow(image: stringsClass.roadside_img, label: "I habe a flat tire.")
-                        ImageRow(image: stringsClass.roadside_img, label: "I habe a flat tire.")
-                        ImageRow(image: stringsClass.roadside_img, label: "I habe a flat tire.")
-                    }
-                    .padding(.top, 20)
+                        
+                    ButtonRows(viewModel: ViewRouter(), viewRouterName: stringsClass.view_camera, image: stringsClass.products_img, name: "I have a flat tire.")
+                    ButtonRows(viewModel: ViewRouter(), viewRouterName: "", image: stringsClass.products_img, name: "I'm out of gas.")
+                    ButtonRows(viewModel: ViewRouter(), viewRouterName: "", image: stringsClass.products_img, name: "My battery is dead.")
+                    ButtonRows(viewModel: ViewRouter(), viewRouterName: "", image: stringsClass.products_img, name: "I'm locked out.")
+                    ButtonRows(viewModel: ViewRouter(), viewRouterName: "", image: stringsClass.products_img, name: "My vecicle is disabled.")
+                    ButtonRows(viewModel: ViewRouter(), viewRouterName: "", image: stringsClass.products_img, name: "I'm stuck in a ditch.")
+                    // Spacer()
+                    }.padding()
                     .listRowInsets(EdgeInsets())
-                        Spacer()
-                    }
+                       
+                  
                 }
+                backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_claimsForm)
             }
         }
     }
@@ -63,11 +53,11 @@ struct ClaimReason: View {
 
 struct ClaimReason_Previews: PreviewProvider {
     static var previews: some View {
-        ClaimReason()
+        ClaimReason(ViewRouter())
     }
 }
 
-struct ImageRow : View {
+/*struct ImageRow : View {
     let colorClass = ColorUI()
     let dimensClass = dimens()
     let stringsClass = strings()
@@ -78,15 +68,50 @@ struct ImageRow : View {
     var body: some View {
         
         HStack{
-            Image("\(image)")
-                .resizable()
-                .scaledToFit()
-                .foregroundColor(Color.white)
-                .frame(width: CGFloat(dimensClass.cg_80),height: CGFloat(dimensClass.cg_60))
-            Text("\(label)")
-                .foregroundColor(Color.white)
-        } .frame(width: CGFloat(dimensClass.cg_350),height: CGFloat(dimensClass.cg_60))
-            .border(colorClass.endColor, width: CGFloat(dimensClass.cg_2))
+                   Image("\(image)")
+                       .resizable()
+                       .scaledToFit()
+                       .foregroundColor(Color.white)
+                       .frame(width: CGFloat(dimensClass.cg_80),height: CGFloat(dimensClass.cg_60))
+                   Text("\(name)")
+                       .foregroundColor(Color.white)
+               } .frame(width: CGFloat(dimensClass.cg_300),height: CGFloat(dimensClass.cg_60))
+                   .border(colorClass.endColor, width: CGFloat(dimensClass.cg_2))
         
     }
+}*/
+struct ButtonRows: View {
+         @ObservedObject var viewModel:ViewRouter
+           
+           let dimensClass = dimens()
+           let colorClass = ColorUI()
+           
+           var viewRouterName: String
+           var image: String
+           var name: String
+           
+           var body: some View {
+            VStack{
+                   Button(action: {
+                       self.viewModel.currentPage = "\(self.viewRouterName)"
+                   }) {
+                       HStack{
+                           Image("\(image)")
+                               .resizable()
+                               .scaledToFit()
+                               .foregroundColor(Color.white)
+                               //.frame(width: dimensClass.cg_100, height: dimensClass.cg_90)
+                               .frame(width: CGFloat(dimensClass.cg_80),height: CGFloat(dimensClass.cg_60))
+                           
+                           Text("\(name)")
+                            .foregroundColor(Color.white)
+                        Spacer()
+                       }.buttonStyle(btnStyle())
+                           .frame(width: dimensClass.cg_260, height: dimensClass.cg_60)
+                           .border(colorClass.endColor, width: dimensClass.cg_2)
+                       
+                   }.buttonStyle(btnStyle())
+               }
+           }
 }
+

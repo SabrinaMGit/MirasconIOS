@@ -14,24 +14,25 @@ struct LogoBarWithLabel: View {
     var labelName: String
     
     var body: some View {
-        VStack{
-            LogoBar()
-            HStack {
-                Text("")
-                Divider()
-                Text("\(labelName)")
-                    .frame(height: dimensClass.cg_30)
-                    .foregroundColor(Color.white)
-                    .font(.headline)
-                    //.fontWeight(.medium)
-                    .cornerRadius(dimensClass.cg_4)
-                Spacer()
-            }.background(colorClass.labelColor)
-                .frame(height: dimensClass.cg_20)
-            
-            
-            
-        }
+        ZStack{
+            RadialGradient(gradient: Gradient(colors: [colorClass.darkerBlue, colorClass.endColor]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
+            VStack(alignment: .center){
+                LogoBar()
+                HStack {
+                    Text("")
+                    Divider()
+                    Text("\(labelName)")
+                        .frame(height: dimensClass.cg_30)
+                        .foregroundColor(Color.white)
+                        .font(.headline)
+                        //.fontWeight(.medium)
+                        .cornerRadius(dimensClass.cg_4)
+                    Spacer()
+                }.background(colorClass.labelColor)
+                    .frame(height: dimensClass.cg_20)
+                
+            }
+        }.frame( height: dimensClass.cg_70)
     }
 }
 

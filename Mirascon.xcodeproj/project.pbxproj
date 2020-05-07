@@ -30,7 +30,6 @@
 		8D2138722441FACB0063F001 /* backBtn_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138712441FACA0063F001 /* backBtn_view.swift */; };
 		8D2138742441FE8F0063F001 /* cellphone_layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138732441FE8F0063F001 /* cellphone_layout.swift */; };
 		8D2138792442459A0063F001 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138782442459A0063F001 /* HostingController.swift */; };
-		8D21387B2442479D0063F001 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D21387A2442479D0063F001 /* Default-568h@2x.png */; };
 		8D2138832442547E0063F001 /* MirasconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138822442547E0063F001 /* MirasconTests.swift */; };
 		8D25408423ED6B5000707704 /* ChatFirebaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25408323ED6B5000707704 /* ChatFirebaseView.swift */; };
 		8D25408623ED6B9F00707704 /* DataFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25408523ED6B9F00707704 /* DataFire.swift */; };
@@ -129,7 +128,6 @@
 		8D2138712441FACA0063F001 /* backBtn_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backBtn_view.swift; sourceTree = "<group>"; };
 		8D2138732441FE8F0063F001 /* cellphone_layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellphone_layout.swift; sourceTree = "<group>"; };
 		8D2138782442459A0063F001 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
-		8D21387A2442479D0063F001 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		8D2138802442547E0063F001 /* MirasconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MirasconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D2138822442547E0063F001 /* MirasconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirasconTests.swift; sourceTree = "<group>"; };
 		8D2138842442547E0063F001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -342,7 +340,6 @@
 		8DB99D2F23AD247300AE483B = {
 			isa = PBXGroup;
 			children = (
-				8D21387A2442479D0063F001 /* Default-568h@2x.png */,
 				8D5742AD242B89290018160B /* Podfile */,
 				8DB99D3A23AD247300AE483B /* Mirascon */,
 				8DB99D8323AE879400AE483B /* Ressources */,
@@ -539,7 +536,6 @@
 				8DB99D4523AD247600AE483B /* Preview Assets.xcassets in Resources */,
 				8DB99D8523AE87B100AE483B /* introductionData.json in Resources */,
 				8D25408823ED6F5D00707704 /* GoogleService-Info.plist in Resources */,
-				8D21387B2442479D0063F001 /* Default-568h@2x.png in Resources */,
 				8D5742AE242B89290018160B /* Podfile in Resources */,
 				8DB99D4223AD247600AE483B /* Assets.xcassets in Resources */,
 			);

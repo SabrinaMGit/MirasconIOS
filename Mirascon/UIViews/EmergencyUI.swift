@@ -27,9 +27,11 @@ struct EmergencyUI: View {
             RadialGradientUI()
             VStack {
                 LogoBarWithLabel(labelName: stringsClass.emergencyService_name)
+                    .padding(.bottom, 20)
                 cellphone_layout(description: stringsClass.view_label_description)
                 VStack {
                     //Change this maybe
+                    List{
                         Button(action: {
                             let formattedString = self.stringsClass.tel + self.stringsClass.police_number
                             let url = URL(string: formattedString)!
@@ -46,7 +48,7 @@ struct EmergencyUI: View {
                             UIApplication.shared.open(url)  }){
                                 Rows(image: stringsClass.mirasconStar_img, name: stringsClass.mirasconStar_description)
                         }.buttonStyle(btnStyle())
-                    
+                    }
                   Spacer()
                 }
                 backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_mainview)

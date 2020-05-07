@@ -25,26 +25,22 @@ struct ClaimReason: View {
     var body: some View {
         ZStack{
             RadialGradientUI()
-            VStack (alignment: .center){
             VStack{
-                NavigationBarWithItemUI(viewModel: ViewRouter(), viewRouterName: stringsClass.view_claimsForm, image: "help")
-                Walkthrough()
-                
+                NavigationBarWithItemUI(viewModel: ViewRouter(), viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
+                Walkthrough(image: "WalkthroughCar")
                     //Spacer()
                 List{
-                        
-                    ButtonRows(viewModel: ViewRouter(), viewRouterName: stringsClass.view_camera, image: stringsClass.products_img, name: "I have a flat tire.")
-                    ButtonRows(viewModel: ViewRouter(), viewRouterName: "", image: stringsClass.products_img, name: "I'm out of gas.")
-                    ButtonRows(viewModel: ViewRouter(), viewRouterName: "", image: stringsClass.products_img, name: "My battery is dead.")
-                    ButtonRows(viewModel: ViewRouter(), viewRouterName: "", image: stringsClass.products_img, name: "I'm locked out.")
-                    ButtonRows(viewModel: ViewRouter(), viewRouterName: "", image: stringsClass.products_img, name: "My vecicle is disabled.")
-                    ButtonRows(viewModel: ViewRouter(), viewRouterName: "", image: stringsClass.products_img, name: "I'm stuck in a ditch.")
+                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: "platter_reifen", name: "Flat Tire")
+                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: "gas-station", name: "Low Fuel")
+                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: "battery-off-outline", name: "Battery Dead")
+                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: "car-door-lock", name: "Locked")
+                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: "car-disabled", name: "My vecicle is disabled")
+                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: "car-fire", name: "Stuck in a Ditch")
                     // Spacer()
-                    }.padding()
+                    }
+                //.padding()
                     .listRowInsets(EdgeInsets())
-                       
-                  
-                }
+                
                 backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_claimsForm)
             }
         }

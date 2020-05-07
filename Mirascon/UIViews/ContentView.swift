@@ -31,11 +31,11 @@ struct ContentView: View {
             } else if viewRouter.currentPage == "claimsForm" {
                 ClaimsForm(viewRouter)
             }else if viewRouter.currentPage == "camera" {
-                uploadPhotos(viewRouter)
+                camera(viewRouter)
             } else if viewRouter.currentPage == "otherInfo" {
                 //GlassDamage(viewRouter)
             } else if viewRouter.currentPage == "glassDamage" {
-                GlassDamage(viewRouter)
+               // GlassDamage(viewRouter)
             } else if viewRouter.currentPage == "Products" {
                 WebView(request: URLRequest(url: URL(string: "https://www.mirascon.com")!))
             } else if viewRouter.currentPage == "googleMaps" {
@@ -47,6 +47,8 @@ struct ContentView: View {
                 Profil(viewRouter)
             } else if viewRouter.currentPage == "claimReason" {
                 ClaimReason(viewRouter)
+            } else if viewRouter.currentPage == "review" {
+                Review(viewRouter)
             }
         }
     }

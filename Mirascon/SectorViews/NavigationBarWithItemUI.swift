@@ -33,8 +33,8 @@ struct NavigationBarWithItemUI: View {
                         .foregroundColor(Color.white)
                 }
                 Spacer()
-            }.frame( height: dimensClass.cg_70)
-        }.frame( height: dimensClass.cg_40)
+            }//.frame( height: dimensClass.cg_50)
+        }.frame( height: dimensClass.cg_40) .padding(.top, 20)
     }
 }
 

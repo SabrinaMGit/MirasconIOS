@@ -53,10 +53,14 @@ struct strings {
     let view_mainview: String
     let view_profil: String
     let view_claimsForm: String
+    let view_saveData: String
     let view_camera: String
     let view_googleMaps: String
     let view_glassDamage: String
     let view_claimsCenter: String
+    let view_pagerview: String
+    let view_claimReason: String
+    let view_review: String
     
     //**RoadsideAssistance**
     let roadsideNmb: String
@@ -81,6 +85,7 @@ struct strings {
     let edit_img: String
     
     //**ClaimsForm**
+    let googlemaps_img: String
     let descriptionC: String
     let firstName_name: String
     let lastName_name: String
@@ -96,6 +101,10 @@ struct strings {
     let forkey_mail: String
     let forkey_firstLaunchIsDone: String
     let forkey_firstLaunch: String
+    let forkey_address: String
+    let forkey_city: String
+    let forkey_state: String
+    let forkey_zipCode: String
     
     //**UploadPhto**
     let introduction_photos: String
@@ -164,10 +173,14 @@ struct strings {
         view_mainview = "mainView"
         view_profil = "profil"
         view_claimsForm = "claimsForm"
+        view_saveData = "saveData"
         view_camera = "camera"
         view_googleMaps = "googleMaps"
         view_glassDamage = "glassDamage"
         view_claimsCenter = "claimsCenter"
+        view_pagerview = "pagerView"
+        view_claimReason = "claimReason"
+        view_review = "review"
         
         //**RoadsideAssistance
         roadsideNmb = ""
@@ -190,13 +203,14 @@ struct strings {
         edit_img = "account-edit-outline"
         
         //**ClaimsForm**
+        googlemaps_img = "googlemaps"
         descriptionC = "Online report is fast and easy! You can report accidents, vehicle damgage,  roadside service and more!"
         firstName_name = "First Name:"
         lastName_name = "Last Name:"
         licencePlate_name = "Licence Plate:"
         phoneNumber_name = "Phone Number:"
         email_name = "EMail:"
-        continue_name = "CONTINUE"
+        continue_name = "Submit"
         forkey_firstname = "firstName"
         forkey_lastname = "lastName"
         forkey_lp = "lp"
@@ -204,6 +218,10 @@ struct strings {
         forkey_mail = "mail"
         forkey_firstLaunchIsDone = "com.any-suggestion.FirstLaunch.WasLaunchedBefore"
         forkey_firstLaunch = "firstLaunch"
+        forkey_address = "address"
+        forkey_city = "city"
+        forkey_state = "state"
+        forkey_zipCode = "zipCode"
         
         //**Uploadphoto**
         introduction_photos = " INSTRUCTION WHAT TO MAKE PHOTOS FROM \n - CAR \n - SCENE \n - OTHER"

@@ -49,7 +49,7 @@ struct ClaimsForm: View {
             RadialGradientUI()
                 VStack{
                     NavigationBarWithItemUI(viewModel: ViewRouter(), viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
-                    Walkthrough()
+                    Walkthrough(image: "selectInfo")
                 List{
                     /* HStack{
                      Image(stringsClass.fillForm_img)
@@ -78,16 +78,17 @@ struct ClaimsForm: View {
                      .multilineTextAlignment(.leading)
                      */
                     VStack(alignment: .leading) {
-                        LabelTextField(label: stringsClass.firstName_name, data: firstNameSaved  ?? stringsClass.emptyText)
-                        LabelTextField(label: stringsClass.lastName_name, data: lastNameSaved ?? stringsClass.emptyText)
-                        LabelTextField(label: stringsClass.licencePlate_name, data: lpSaved ?? stringsClass.emptyText)
-                        LabelTextField(label: stringsClass.phoneNumber_name, data: phoneSaved ?? stringsClass.emptyText)
-                        LabelTextField(label: stringsClass.email_name, data: mailSaved ?? stringsClass.emptyText)
+                        LabelTextField(label: stringsClass.firstName_name, labelColor: Color.white, data: firstNameSaved  ?? stringsClass.emptyText, dataColor: Color.white)
+                        LabelTextField(label: stringsClass.lastName_name, labelColor: Color.white, data: lastNameSaved ?? stringsClass.emptyText, dataColor: Color.white)
+                        LabelTextField(label: stringsClass.licencePlate_name, labelColor: Color.white, data: lpSaved ?? stringsClass.emptyText, dataColor: Color.white)
+                        LabelTextField(label: stringsClass.phoneNumber_name, labelColor: Color.white, data: phoneSaved ?? stringsClass.emptyText, dataColor: Color.white)
+                        LabelTextField(label: stringsClass.email_name, labelColor: Color.white, data: mailSaved ?? stringsClass.emptyText, dataColor: Color.white)
                         
                     }
                     .padding(.top, 20)
                     //.listRowInsets(EdgeInsets())
-                    HStack {
+                   
+                    /*HStack {
                         Spacer()
                         VStack{
                             Button(action: {
@@ -103,16 +104,17 @@ struct ClaimsForm: View {
                              }*/
                         }
                         Spacer()
-                    }
+                    }*/
                     
                 }
-                backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_claimsCenter)
+                     ContinueBtn(viewModel: viewRouter, viewRouterName: stringsClass.view_claimReason)
+                    backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_claimsCenter)
             }
         }
     }
 }
 
-
+/*
 struct GradientBackgroundStyle: ButtonStyle {
     
     let colorClass = ColorUI()
@@ -130,7 +132,7 @@ struct GradientBackgroundStyle: ButtonStyle {
             
         }
     }
-}
+}*/
 
 struct claimsFormRow: View {
     
@@ -169,17 +171,19 @@ struct LabelTextField : View {
     let stringsClass = strings()
     
     var label: String
+    var labelColor: Color
     var data: String
+    var dataColor: Color
     
     var body: some View {
         
         VStack(alignment: .leading) {
             Text(label)
-                .foregroundColor(Color.white)
+                .foregroundColor(labelColor)
                 .multilineTextAlignment(.leading)
                 .font(.headline)
             Text(data)
-                .foregroundColor(Color.white)
+                .foregroundColor(dataColor)
                 .multilineTextAlignment(.leading)
                 .font(.body)
         }

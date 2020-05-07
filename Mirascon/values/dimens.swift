@@ -25,7 +25,9 @@ struct dimens {
     let cg_20: CGFloat
     let cg_30: CGFloat
     let cg_40: CGFloat
+    let cg_50: CGFloat
     let cg_60: CGFloat
+    let cg_68: CGFloat
     let cg_70: CGFloat
     let cg_80: CGFloat
     let cg_90: CGFloat
@@ -37,10 +39,16 @@ struct dimens {
     let cg_160: CGFloat
     let cg_190: CGFloat
     let cg_200: CGFloat
+    let cg_220: CGFloat
+    let cg_250: CGFloat
+    let cg_260: CGFloat
+    let cg_280: CGFloat
     let cg_300: CGFloat
     let cg_350: CGFloat
     let cg_370: CGFloat
     let cg_390: CGFloat
+    let cg_450: CGFloat
+    let cg_500: CGFloat
     let cg_650: CGFloat
     
     let cg_scaleEffect_0_9: CGFloat
@@ -61,7 +69,9 @@ struct dimens {
         cg_20 = 20
         cg_30 = 30
         cg_40 = 40
+        cg_50 = 50
         cg_60 = 60
+        cg_68 = 68
         cg_70 = 70
         cg_80 = 80
         cg_90 = 90
@@ -73,10 +83,16 @@ struct dimens {
         cg_160 = 160
         cg_190 = 190
         cg_200 = 200
+        cg_220 = 220
+        cg_250 = 250
+        cg_260 = 260
+        cg_280 = 280
         cg_300 = 300
         cg_350 = 350
         cg_370 = 370
         cg_390 = 390
+        cg_450 = 450
+        cg_500 = 500
         cg_650 = 650
         
         cg_scaleEffect_0_9 = 0.9

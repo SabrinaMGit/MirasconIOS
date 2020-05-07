@@ -26,6 +26,7 @@ struct RoadsideAssistanceUI: View {
             RadialGradientUI()
             VStack {
                 LogoBarWithLabel(labelName: stringsClass.labelNameR)
+                 .padding(.bottom, 20)
                 Spacer()
                 Spacer()
                 cellphone_layout(description: stringsClass.description)

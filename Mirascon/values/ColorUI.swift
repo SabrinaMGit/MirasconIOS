@@ -17,6 +17,10 @@ struct ColorUI {
     let blueRectangle: Color
     var pictureHolderColor: Color
     var btnColor: Color
+    var grey: Color
+    var darkerBlue: Color
+    var darkerRed: Color
+    var endRed: Color
 
   init() {
     startColor = Color(hex: "#19334f")
@@ -25,6 +29,11 @@ struct ColorUI {
     blueRectangle = Color("#1b325e")
     pictureHolderColor = Color(hex: "#19334f")
     btnColor = Color(hex: "#1b325e")
+    grey = Color(hex:"#b5b6b7")
+    darkerBlue = Color(hex: "#112336")
+    darkerRed = Color(hex: "#b00202")
+    endRed = Color(hex: "#4f0101")
+    
   }
 }
 

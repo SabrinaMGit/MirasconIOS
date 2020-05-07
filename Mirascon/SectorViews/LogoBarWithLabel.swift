@@ -32,7 +32,8 @@ struct LogoBarWithLabel: View {
                     .frame(height: dimensClass.cg_20)
                 
             }
-        }.frame( height: dimensClass.cg_70)
+        }.frame( height: dimensClass.cg_68)
+         .padding(.top, 20)
     }
 }
 

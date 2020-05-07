@@ -10,7 +10,7 @@ import SwiftUI
 import MessageUI
 import UIKit
 
-
+/*
 struct uploadPhotos: View {
     
     let colorClass = ColorUI()
@@ -284,3 +284,4 @@ extension CaptureImageView: UIViewControllerRepresentable {
 
 
 
+ /**/*/

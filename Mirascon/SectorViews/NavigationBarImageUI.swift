@@ -16,6 +16,7 @@ struct NavigationBarImageUI: View {
             RadialGradient(gradient: Gradient(colors: [colorClass.darkerBlue, colorClass.endColor]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
             LogoBar()
         }.frame( height: dimensClass.cg_40)
+            .padding(.top, 20)
     }
 }
 

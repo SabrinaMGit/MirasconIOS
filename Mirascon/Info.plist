@@ -26,6 +26,8 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow camera access to take a picture</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Because I always want to know where you are</string>
 	<key>NSLocationUsageDescription</key>

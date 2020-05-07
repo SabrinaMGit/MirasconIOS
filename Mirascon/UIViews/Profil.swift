@@ -127,7 +127,7 @@ struct ProfilRow: View {
         }
     }
 }
-private func alert(title: String, message: String, placeholder: String, savedKey: String,inputKeyboardType:UIKeyboardType = UIKeyboardType.default) {
+private func alert(title: String, message: String, placeholder: String, savedKey: String, inputKeyboardType:UIKeyboardType = UIKeyboardType.default) {
     
     let stringsClass = strings()
     

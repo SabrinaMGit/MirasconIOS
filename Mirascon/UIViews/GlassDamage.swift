@@ -8,7 +8,7 @@
 
 import SwiftUI
 import MessageUI
-
+/*
 struct GlassDamage: View {
     
     let colorClass = ColorUI()
@@ -170,4 +170,4 @@ struct GlassDamage_Previews: PreviewProvider {
         GlassDamage(ViewRouter())
     }
 }
-
+*/

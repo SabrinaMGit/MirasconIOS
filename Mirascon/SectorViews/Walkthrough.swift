@@ -12,8 +12,10 @@ struct Walkthrough: View {
     let colorClass = ColorUI()
     let dimensClass = dimens()
     let stringsClass = strings()
+    
+    var image: String
     var body: some View {
-        Image("selectInfo")
+        Image("\(image)")
             .resizable()
             .scaledToFit()
             .frame(height:dimensClass.cg_50)
@@ -23,6 +25,6 @@ struct Walkthrough: View {
 
 struct Walkthrough_Previews: PreviewProvider {
     static var previews: some View {
-        Walkthrough()
+        Walkthrough(image: "")
     }
 }

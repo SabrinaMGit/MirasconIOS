@@ -11,6 +11,8 @@
 		</dict>
 		<key>Notification.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>30</integer>
 		</dict>
@@ -20,12 +22,12 @@
 		<key>8D0C128623F0914C00C2D374</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 		<key>8DB99D3723AD247300AE483B</key>
 		<dict>
 			<key>primary</key>
-			<true />
+			<true/>
 		</dict>
 	</dict>
 </dict>

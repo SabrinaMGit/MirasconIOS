@@ -30,6 +30,8 @@ struct SaveUserData: View {
     @State var changeViewToGoogleAfterFirstLaunchCheck: Bool = false
     @State var firstLaunchIsDone: Bool = true
     
+    @State private var didTap: Bool = false
+    
     @State private var showingAlert = false
     
     let defaults = UserDefaults.standard
@@ -51,17 +53,19 @@ struct SaveUserData: View {
                    NavigationBarImageUI()
                 List{
                     ZStack(alignment: .center){
-                        RadialGradient(gradient: Gradient(colors: [colorClass.darkerRed, colorClass.endRed]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
+                        RadialGradient(gradient: Gradient(colors: [Color.white, Color.white]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_250)
                         
-                        Text("Save your data securely in your profile so that you can quickly send us a damage report in the event of an accident. You can change your details in your profile at any time")
+                        Text("Save your data securely in your profile so that you can quickly send us a damage report in the event of an accident. You can change your details in your profile at any time.")
                             //.background(Color.white)
                             //.cornerRadius(dimensClass.cg_4)
                             .multilineTextAlignment(.leading)
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Color.black)
                             .padding(dimensClass.cg_8)
                             .font(.subheadline)
                         //.padding(.top, dimensClass.cg_20)
                     }.frame( height: dimensClass.cg_130)
+                        .cornerRadius(10)
+                    
                     /* HStack{
                      Image(stringsClass.fillForm_img)
                      .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
@@ -90,17 +94,16 @@ struct SaveUserData: View {
                      */
                     
                     VStack(alignment: .leading) {
-                        LabelTextFields(label: stringsClass.firstName_name, datas: $firstName, savedDatas: firstNameSaved ?? stringsClass.emptyText)
-                        LabelTextFields(label: stringsClass.lastName_name, datas: $lastName, savedDatas: lastNameSaved ?? stringsClass.emptyText)
-                        LabelTextFields(label: stringsClass.licencePlate_name, datas: $lp, savedDatas: lpSaved ?? stringsClass.emptyText)
-                        LabelTextFields(label: stringsClass.phoneNumber_name, datas: $phone, savedDatas: phoneSaved ?? stringsClass.emptyText)
-                        LabelTextFields(label: stringsClass.email_name, datas: $email, savedDatas: mailSaved ?? stringsClass.emptyText)
+                        LabelTextFields(label: stringsClass.firstName_name, labelColor: Color.white, datas: $firstName, savedDatas: firstNameSaved ?? stringsClass.emptyText, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
+                        LabelTextFields(label: stringsClass.lastName_name, labelColor: Color.white, datas: $lastName, savedDatas: lastNameSaved ?? stringsClass.emptyText, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
+                        LabelTextFields(label: stringsClass.licencePlate_name, labelColor: Color.white, datas: $lp, savedDatas: lpSaved ?? stringsClass.emptyText, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
+                        LabelTextFields(label: stringsClass.phoneNumber_name, labelColor: Color.white, datas: $phone, savedDatas: phoneSaved ?? stringsClass.emptyText, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
+                        LabelTextFields(label: stringsClass.email_name, labelColor: Color.white, datas: $email, savedDatas: mailSaved ?? stringsClass.emptyText, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
                         
                     }
+                }.padding(.top, dimensClass.cg_20)
                     .listRowInsets(EdgeInsets())
-                    HStack {
-                        Spacer()
-                        VStack{
+                        VStack(alignment: .center){
                             Button(action: {
                                 
                                 if self.firstName != self.stringsClass.emptyText && self.lastName != self.stringsClass.emptyText && self.lp != self.stringsClass.emptyText && self.phone != self.stringsClass.emptyText && self.email != self.stringsClass.emptyText{
@@ -115,7 +118,7 @@ struct SaveUserData: View {
                                     UserDefaults.standard.set(self.lp, forKey: self.stringsClass.forkey_lp)
                                     UserDefaults.standard.set(self.phone, forKey: self.stringsClass.forkey_phone)
                                     UserDefaults.standard.set(self.email, forKey: self.stringsClass.forkey_mail)
-                                    
+                                 
                                     UserDefaults.standard.set(self.firstLaunchIsDone, forKey: self.stringsClass.forkey_firstLaunchIsDone)
                                     if self.firstLaunch.isFirstLaunch {
                                         self.viewRouter.currentPage = self.stringsClass.view_mainview
@@ -123,6 +126,7 @@ struct SaveUserData: View {
                                     }
                                 } else{
                                     self.showingAlert = true
+                                    self.didTap = true
                                 }
                                 if self.firstLaunchApp {
                                     self.viewRouter.currentPage = self.stringsClass.view_googleMaps
@@ -130,6 +134,8 @@ struct SaveUserData: View {
                                 if self.changeViewToGoogleAfterFirstLaunchCheck {
                                     self.firstLaunchApp = self.firstLaunchIsDone
                                     UserDefaults.standard.set(self.firstLaunchIsDone, forKey: self.stringsClass.forkey_firstLaunch)
+                                  
+                                    //self.viewRouter.currentPage = self.stringsClass.view_googleMaps
                                 }
                                 
                             }) {
@@ -137,21 +143,28 @@ struct SaveUserData: View {
                                     .fontWeight(.medium)
                                     .foregroundColor(Color.white)
                                 
-                            }.buttonStyle(GradientBackgroundStyle())
+                            }.buttonStyle(GradientBackgroundStyle(color: colorClass.blue))
                                 .alert(isPresented: $showingAlert) {
-                                    Alert(title: Text("Some fields are empty"), message: Text("Fill out all fields"), dismissButton: .default(Text("Got it!")))
+                                    Alert(title: Text("There was a problem with your submission"), message: Text("Please complete all requiered fields"), dismissButton: .default(Text("Got it!")))
                             }
-                        }
+                        }.padding(10)
                         Spacer()
                     }
                     
-                }
+                
                 //backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_claimsCenter)
-            }
         }
+        }
+    }
+
+
+struct SaveUserData_Previews: PreviewProvider {
+    static var previews: some View {
+        SaveUserData(ViewRouter())
     }
 }
 
+/*
 struct SavedDataFormRow: View {
     
     let colorClass = ColorUI()
@@ -182,6 +195,7 @@ struct SavedDataFormRow: View {
         }
     }
 }
+ 
 
 struct LabelTextFields : View {
     let colorClass = ColorUI()
@@ -215,12 +229,12 @@ struct LabelTextFields : View {
 }
 
 
-/*
+
  Text(stringsClass.firstName_name)
  .foregroundColor(Color.white)
  .multilineTextAlignment(.leading)
- */
-/*
+ 
+
  TextField(stringsClass.emptyText, text: $firstName)
  .padding(dimensClass.cg_8)
  .background(colorClass.blueRectangle)
@@ -229,18 +243,14 @@ struct LabelTextFields : View {
  .overlay(RoundedRectangle(cornerRadius: dimensClass.cg_10, style: .continuous)
  .stroke( lineWidth: dimensClass.cg_0))
  if firstName.isEmpty { Text("\(firstNameSaved ?? stringsClass.emptyText)").foregroundColor(.white) }
- */
-
-
-struct SaveUserData_Previews: PreviewProvider {
-    static var previews: some View {
-        SaveUserData(ViewRouter())
-    }
-}
+ 
 
 
 
-/*Button(action: {
+
+
+
+Button(action: {
  self.viewRouter.currentPage = self.stringsClass.view_claimsCenter
  }) {
  Image(stringsClass.back_btn_img)
@@ -251,4 +261,6 @@ struct SaveUserData_Previews: PreviewProvider {
  .padding(.horizontal, dimensClass.cg_10)
  .background(colorClass.endColor)
  .cornerRadius(dimensClass.cg_10)
+ 
  */
+

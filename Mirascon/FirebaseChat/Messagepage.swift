@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import Combine
+/*import Combine
 
 struct Messagepage: View {
     @ObservedObject var message = DataFire()
@@ -49,3 +49,4 @@ struct Messagepage: View {
         }
     }
 }
+*/

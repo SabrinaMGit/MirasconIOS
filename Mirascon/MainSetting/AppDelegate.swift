@@ -8,7 +8,7 @@
 
 import UIKit
 import GoogleMaps
-import Firebase
+//import Firebase
 
 let googleApiKey = "AIzaSyCjIvCCSi1HC2PDtJRE1wEGi5W6WLbzfNc"
 
@@ -50,8 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         */
         
         
-        GMSServices.provideAPIKey(googleApiKey)
-         FirebaseApp.configure()
+       GMSServices.provideAPIKey(googleApiKey)
+        // FirebaseApp.configure()
         
       
         

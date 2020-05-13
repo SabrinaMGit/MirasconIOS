@@ -4,20 +4,20 @@
         "titel": "Quick Overview",
         "id": 1001,
         "isFeatured": true,
-        "explain": "You have an accident and need help? You want to report an accident with Mirascon? You can connect directly to the emergency center"
+        "explain": "You have an accident and need support? Do you want to report an accident with Mirascon? You can connect directly to the emergency center."
     },
     {
         "image": "fillForm",
         "titel": "The Claims Form",
         "id": 1004,
         "isFeatured": true,
-        "explain": "You have an accident and need help? You want to report an accident with Mirascon? You can connect directly to the emergency center"
+        "explain": "You have an accident and need support? Do you want to report an accident with Mirascon? You can connect directly to the emergency center."
     },
     {
         "image": "ic_glassdamage",
         "titel": "Glass Damage",
         "id": 1007,
         "isFeatured": true,
-        "explain": "You have an accident and need help? You want to report an accident with Mirascon? You can connect directly to the emergency center"
+        "explain": "You have an accident and need support? Do you want to report an accident with Mirascon? You can connect directly to the emergency center."
     }
 ]

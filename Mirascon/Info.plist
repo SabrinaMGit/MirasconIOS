@@ -15,9 +15,13 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>ITSEncryptionExportComplianceCode)</key>
+	<string></string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>NSLocationWhenInUseUsageDescriptio</string>
@@ -27,13 +31,13 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Allow camera access to take a picture</string>
+	<string>Allow camera access to take pictures</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Because I always want to know where you are</string>
+	<string>Allow location for access map</string>
 	<key>NSLocationUsageDescription</key>
-	<string>Use Location</string>
+	<string>Allow location for access map</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Because I need to know where you are</string>
+	<string>Allow location for access map</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Accept it to use the camera for sending pictures</string>
 	<key>UIApplicationSceneManifest</key>

@@ -25,24 +25,18 @@ struct ContentView: View {
             } else if viewRouter.currentPage == "launch" {
                 LaunchLogo(viewRouter)
             } else if viewRouter.currentPage == "pagerView" {
-                IntroUI(viewRouter: viewRouter)
+                //IntroUI(viewRouter: viewRouter)
+                Preview(viewRouter)
             } else if viewRouter.currentPage == "saveData" {
                 SaveUserData(viewRouter)
             } else if viewRouter.currentPage == "claimsForm" {
                 ClaimsForm(viewRouter)
             }else if viewRouter.currentPage == "camera" {
                 camera(viewRouter)
-            } else if viewRouter.currentPage == "otherInfo" {
-                //GlassDamage(viewRouter)
-            } else if viewRouter.currentPage == "glassDamage" {
-               // GlassDamage(viewRouter)
             } else if viewRouter.currentPage == "Products" {
                 WebView(request: URLRequest(url: URL(string: "https://www.mirascon.com")!))
             } else if viewRouter.currentPage == "googleMaps" {
                 GoogleMapsView(viewRouter)
-            } else if viewRouter.currentPage == "chatFirebase" {
-                //ChatFirebaseView(viewRouter: viewRouter)
-                //CloudMessaging(viewRouter: viewRouter)
             } else if viewRouter.currentPage == "profil" {
                 Profil(viewRouter)
             } else if viewRouter.currentPage == "claimReason" {
@@ -59,3 +53,14 @@ struct ContentView_Previews: PreviewProvider {
         ContentView(viewRouter: ViewRouter())
     }
 }
+/*
+else if viewRouter.currentPage == "otherInfo" {
+               //GlassDamage(viewRouter)
+           } else if viewRouter.currentPage == "glassDamage" {
+              // GlassDamage(viewRouter)
+           }
+else if viewRouter.currentPage == "chatFirebase" {
+    //ChatFirebaseView(viewRouter: viewRouter)
+    //CloudMessaging(viewRouter: viewRouter)
+}
+ */

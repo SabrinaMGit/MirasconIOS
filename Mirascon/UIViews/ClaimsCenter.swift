@@ -34,7 +34,7 @@ struct ClaimsCenter: View {
                 NavigationBarWithItemUI(viewModel: ViewRouter(), viewRouterName: stringsClass.view_claimsForm, image: "help")
                 List{
                     ZStack(alignment: .leading){
-                        RadialGradient(gradient: Gradient(colors: [colorClass.darkerRed, colorClass.endRed]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
+                        RadialGradient(gradient: Gradient(colors: [colorClass.blue, colorClass.blue]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
                         
                         Text(label_descriptionWithData)
                             //.background(Color.white)

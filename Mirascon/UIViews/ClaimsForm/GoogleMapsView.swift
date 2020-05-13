@@ -59,10 +59,10 @@ struct GoogleMapsView: View {
                                 .foregroundColor(Color.white)
                         }
                         if manuellyLocation {
-                            LabelTextFields(label: "Address:", datas: $address, savedDatas: "" )
-                            LabelTextFields(label: "City:", datas: $city, savedDatas: "" )
-                            LabelTextFields(label: "State:", datas: $state, savedDatas: "" )
-                            LabelTextFields(label: "ZIP Code::", datas: $zipCode, savedDatas: "" )
+                            LabelTextFields(label: "Address:", labelColor: Color.white, datas: $address, savedDatas: "", textFieldBorderColor: Color.white )
+                            LabelTextFields(label: "City:", labelColor: Color.white, datas: $city, savedDatas: "", textFieldBorderColor: Color.white )
+                            LabelTextFields(label: "State:", labelColor: Color.white, datas: $state, savedDatas: "", textFieldBorderColor: Color.white )
+                            LabelTextFields(label: "ZIP Code::", labelColor: Color.white, datas: $zipCode, savedDatas: "", textFieldBorderColor: Color.white )
                         }
                  
                     }
@@ -97,7 +97,7 @@ struct GoogleMapsView: View {
                             .fontWeight(.medium)
                             .foregroundColor(Color.white)
                         
-                    }.buttonStyle(GradientBackgroundStyle())
+                    }.buttonStyle(GradientBackgroundStyle(color: colorClass.btnColor))
                         .alert(isPresented: $showingAlert) {
                             Alert(title: Text("Notice!"), message: Text("Fill out all fields in the address rows"), dismissButton: .default(Text("Got it!")))}
                     

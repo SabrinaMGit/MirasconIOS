@@ -50,16 +50,19 @@ struct Review: View {
                     VStack(alignment: .leading) {
                         
                         HStack{
+                            
                             VStack(alignment: .leading){
                                 
                                 Text("Personal Information")
                                     .font(.title)
                                     .foregroundColor(colorClass.startColor)
                                     .padding()
+                                
                                 LabelTextField(label: stringsClass.firstName_name, labelColor: colorClass.startColor, data: firstNameSaved  ?? stringsClass.emptyText, dataColor: colorClass.startColor)
                                 LabelTextField(label: stringsClass.lastName_name, labelColor: colorClass.startColor, data: lastNameSaved ?? stringsClass.emptyText, dataColor: colorClass.startColor)
                                 LabelTextField(label: stringsClass.licencePlate_name, labelColor: colorClass.startColor, data: lpSaved ?? stringsClass.emptyText, dataColor: colorClass.startColor)
                                 LabelTextField(label: stringsClass.phoneNumber_name, labelColor: colorClass.startColor, data: phoneSaved ?? stringsClass.emptyText, dataColor: colorClass.startColor)
+ 
                                 
                             }
                             Spacer()
@@ -100,7 +103,7 @@ struct Review: View {
                         .fontWeight(.medium)
                         .foregroundColor(Color.white)
                     
-                }.buttonStyle(GradientBackgroundStyle())
+                }.buttonStyle(GradientBackgroundStyle(color: colorClass.btnColor))
                 //            .disabled(!MFMailComposeViewController.canSendMail())
                 .sheet(isPresented: $isShowingMailView) {
                     MailView(result: self.$result)
@@ -119,3 +122,7 @@ struct Review_Previews: PreviewProvider {
         Review(ViewRouter())
     }
 }
+
+//Sie werden in Kürze benachrichtigt. Weiteres Verfahren nach abschicken
+//Sind alle Daten vollständig
+//Emergency center wurde kontaktiert, wir kümmern sich um weiteres.

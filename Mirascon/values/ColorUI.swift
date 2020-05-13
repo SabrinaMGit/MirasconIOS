@@ -21,6 +21,8 @@ struct ColorUI {
     var darkerBlue: Color
     var darkerRed: Color
     var endRed: Color
+    var blue: Color
+    var darkerBlue2: Color
 
   init() {
     startColor = Color(hex: "#19334f")
@@ -33,6 +35,8 @@ struct ColorUI {
     darkerBlue = Color(hex: "#112336")
     darkerRed = Color(hex: "#b00202")
     endRed = Color(hex: "#4f0101")
+    blue = Color(hex: "#4184f0")
+    darkerBlue2 = Color(hex: "#2b63bd")
     
   }
 }

@@ -73,10 +73,10 @@ struct LaunchRow: View {
         ZStack {
             RadialGradient(gradient: Gradient(colors: [colorClass.startColor, colorClass.endColor]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
                 .edgesIgnoringSafeArea(.all)
-            Image("MirasconLogo")
+            Image("PreviewSplashLogo")
                 .resizable()
                 .scaledToFit()
-                .frame(width: dimensClass.cg_200,height:dimensClass.cg_200)
+                .frame(width: dimensClass.cg_190,height:dimensClass.cg_190)
                 .foregroundColor(Color.white)
                 .scaleEffect(scale)
                 .onAppear {

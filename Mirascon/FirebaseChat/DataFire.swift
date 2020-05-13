@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import Firebase
+/*import Firebase
 import Combine
 
 
@@ -56,3 +56,4 @@ struct iDData : Identifiable {
     var msg : String
     @State var image : Data
 }
+*/

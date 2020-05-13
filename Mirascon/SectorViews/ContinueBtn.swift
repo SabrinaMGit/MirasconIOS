@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContinueBtn: View {
     let stringsClass = strings()
+    let colorClass = ColorUI()
     @ObservedObject var viewModel:ViewRouter
     
     var viewRouterName: String
@@ -24,7 +25,7 @@ struct ContinueBtn: View {
                         .fontWeight(.medium)
                         .foregroundColor(Color.white)
                     
-                }.buttonStyle(GradientBackgroundStyle())
+                }.buttonStyle(GradientBackgroundStyle(color: colorClass.btnColor))
                 /*.alert(isPresented: $showingAlert) {
                  Alert(title: Text("Some fields are empty"), message: Text("Fill out all fields"), dismissButton: .default(Text("Got it!")))
                  }*/

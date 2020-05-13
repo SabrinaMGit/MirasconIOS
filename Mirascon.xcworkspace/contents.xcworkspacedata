@@ -5,6 +5,6 @@
       location = "absolute:Mirascon.xcodeproj">
    </FileRef>
    <FileRef
-      location = "absolute:Pods/Pods.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

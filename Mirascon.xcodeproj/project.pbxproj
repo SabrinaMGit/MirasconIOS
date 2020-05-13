@@ -3,13 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0438E0128DD3CD91B00E4C0A /* Pods_Mirascon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF87B3E4605B890578C22AE /* Pods_Mirascon.framework */; };
-		8D0C128923F0914C00C2D374 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0C128823F0914C00C2D374 /* UserNotifications.framework */; };
-		8D0C128B23F0914D00C2D374 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D0C128A23F0914D00C2D374 /* UserNotificationsUI.framework */; };
+		224CDFDDE0539E6C54C94B60 /* libPods-Mirascon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19A1EE45298411844E3DA7CB /* libPods-Mirascon.a */; };
 		8D1C077F2460768600F4EC7E /* OldClaimsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C077E2460768600F4EC7E /* OldClaimsForm.swift */; };
 		8D1C07812461A05100F4EC7E /* IntroUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07802461A05100F4EC7E /* IntroUI.swift */; };
 		8D1C07842461DC2900F4EC7E /* ClaimReason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07832461DC2900F4EC7E /* ClaimReason.swift */; };
@@ -30,11 +28,11 @@
 		8D2138722441FACB0063F001 /* backBtn_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138712441FACA0063F001 /* backBtn_view.swift */; };
 		8D2138742441FE8F0063F001 /* cellphone_layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138732441FE8F0063F001 /* cellphone_layout.swift */; };
 		8D2138792442459A0063F001 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138782442459A0063F001 /* HostingController.swift */; };
-		8D2138832442547E0063F001 /* MirasconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138822442547E0063F001 /* MirasconTests.swift */; };
 		8D25408423ED6B5000707704 /* ChatFirebaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25408323ED6B5000707704 /* ChatFirebaseView.swift */; };
 		8D25408623ED6B9F00707704 /* DataFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25408523ED6B9F00707704 /* DataFire.swift */; };
 		8D25408823ED6F5D00707704 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D25408723ED6F5D00707704 /* GoogleService-Info.plist */; };
 		8D3DD1CF24634068002C2418 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3DD1CE24634068002C2418 /* Review.swift */; };
+		8D52E50A2464A96A00B1FA33 /* LabelTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52E5092464A96A00B1FA33 /* LabelTextFields.swift */; };
 		8D55D9A623E0807800B0DC4B /* ClaimsCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55D9A523E0807800B0DC4B /* ClaimsCenter.swift */; };
 		8D55D9A923E0852700B0DC4B /* ClaimsCenterData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D55D9A823E0852700B0DC4B /* ClaimsCenterData.json */; };
 		8D55D9B323E08DE900B0DC4B /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55D9B223E08DE900B0DC4B /* UserData.swift */; };
@@ -47,6 +45,9 @@
 		8D55D9C323E38BD500B0DC4B /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55D9C223E38BD500B0DC4B /* FirstLaunch.swift */; };
 		8D5742AC242B47260018160B /* GoogleMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5742AB242B47260018160B /* GoogleMapsView.swift */; };
 		8D5742AE242B89290018160B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8D5742AD242B89290018160B /* Podfile */; };
+		8DA40AAA2467ED9700EFB8D9 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA40AA92467ED9700EFB8D9 /* Preview.swift */; };
+		8DA40AAC2467EF5A00EFB8D9 /* PreviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA40AAB2467EF5A00EFB8D9 /* PreviewRow.swift */; };
+		8DA40AAE2467F48900EFB8D9 /* AGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA40AAD2467F48900EFB8D9 /* AGB.swift */; };
 		8DB2E1DE243B54DC00E3A1BD /* ColorUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2E1DD243B54DC00E3A1BD /* ColorUI.swift */; };
 		8DB2E1E0243C920200E3A1BD /* RadialGradientUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2E1DF243C920200E3A1BD /* RadialGradientUI.swift */; };
 		8DB2E1E2243C93DB00E3A1BD /* LogoBarWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB2E1E1243C93DB00E3A1BD /* LogoBarWithLabel.swift */; };
@@ -74,23 +75,6 @@
 		8DEBB2042415297800622D88 /* Profil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBB2032415297800622D88 /* Profil.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		8D0C129323F0914D00C2D374 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8DB99D3023AD247300AE483B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8D0C128623F0914C00C2D374;
-			remoteInfo = Notification;
-		};
-		8D2138852442547E0063F001 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8DB99D3023AD247300AE483B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DB99D3723AD247300AE483B;
-			remoteInfo = Mirascon;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		8D0C129623F0914D00C2D374 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -105,9 +89,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		346B21D53E006A92AF7DD652 /* Pods-Mirascon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirascon.release.xcconfig"; path = "Target Support Files/Pods-Mirascon/Pods-Mirascon.release.xcconfig"; sourceTree = "<group>"; };
+		19A1EE45298411844E3DA7CB /* libPods-Mirascon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mirascon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BBE39B07A2DDCBAD7B4A5ED /* Pods-Mirascon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirascon.release.xcconfig"; path = "Target Support Files/Pods-Mirascon/Pods-Mirascon.release.xcconfig"; sourceTree = "<group>"; };
 		8D0C128823F0914C00C2D374 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		8D0C128A23F0914D00C2D374 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		8D0ECDBD246479BA00193008 /* absl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = absl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0ECDBF246479CD00193008 /* grpc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = grpc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0ECDC1246479D300193008 /* grpcpp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = grpcpp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0ECDC3246479DE00193008 /* leveldb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = leveldb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0ECDC524647A1400193008 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0ECDC724647A1B00193008 /* FirebaseFirestore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseFirestore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0ECDC924647A2900193008 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0ECDCB24647A5E00193008 /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1C077E2460768600F4EC7E /* OldClaimsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldClaimsForm.swift; sourceTree = "<group>"; };
 		8D1C07802461A05100F4EC7E /* IntroUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroUI.swift; sourceTree = "<group>"; };
 		8D1C07832461DC2900F4EC7E /* ClaimReason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimReason.swift; sourceTree = "<group>"; };
@@ -128,13 +121,14 @@
 		8D2138712441FACA0063F001 /* backBtn_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backBtn_view.swift; sourceTree = "<group>"; };
 		8D2138732441FE8F0063F001 /* cellphone_layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellphone_layout.swift; sourceTree = "<group>"; };
 		8D2138782442459A0063F001 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
-		8D2138802442547E0063F001 /* MirasconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MirasconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D2138822442547E0063F001 /* MirasconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirasconTests.swift; sourceTree = "<group>"; };
 		8D2138842442547E0063F001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D25408323ED6B5000707704 /* ChatFirebaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatFirebaseView.swift; sourceTree = "<group>"; };
 		8D25408523ED6B9F00707704 /* DataFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFire.swift; sourceTree = "<group>"; };
 		8D25408723ED6F5D00707704 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D3DD1CE24634068002C2418 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		8D52E5092464A96A00B1FA33 /* LabelTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTextFields.swift; sourceTree = "<group>"; };
+		8D52E50F246551B400B1FA33 /* libPods-Mirascon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-Mirascon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D55D9A523E0807800B0DC4B /* ClaimsCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsCenter.swift; sourceTree = "<group>"; };
 		8D55D9A823E0852700B0DC4B /* ClaimsCenterData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ClaimsCenterData.json; sourceTree = "<group>"; };
 		8D55D9B223E08DE900B0DC4B /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -146,9 +140,11 @@
 		8D55D9BE23E34FC000B0DC4B /* LaunchLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLogo.swift; sourceTree = "<group>"; };
 		8D55D9C223E38BD500B0DC4B /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		8D5742AB242B47260018160B /* GoogleMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsView.swift; sourceTree = "<group>"; };
-		8D5742AD242B89290018160B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		8D5742AD242B89290018160B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8D5742AF242BB0D20018160B /* Mirascon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mirascon.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8DB2E1DC243640C100E3A1BD /* Notification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Notification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DA40AA92467ED9700EFB8D9 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		8DA40AAB2467EF5A00EFB8D9 /* PreviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewRow.swift; sourceTree = "<group>"; };
+		8DA40AAD2467F48900EFB8D9 /* AGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGB.swift; sourceTree = "<group>"; };
 		8DB2E1DD243B54DC00E3A1BD /* ColorUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUI.swift; sourceTree = "<group>"; };
 		8DB2E1DF243C920200E3A1BD /* RadialGradientUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientUI.swift; sourceTree = "<group>"; };
 		8DB2E1E1243C93DB00E3A1BD /* LogoBarWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoBarWithLabel.swift; sourceTree = "<group>"; };
@@ -175,32 +171,15 @@
 		8DC3835623EC52BA00000039 /* GoogleMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMap.swift; sourceTree = "<group>"; };
 		8DDAD9F823E05774001409EC /* ClaimsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsForm.swift; sourceTree = "<group>"; };
 		8DEBB2032415297800622D88 /* Profil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profil.swift; sourceTree = "<group>"; };
-		EEF87B3E4605B890578C22AE /* Pods_Mirascon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mirascon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1EC6C69E7F649B498605BD9 /* Pods-Mirascon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirascon.debug.xcconfig"; path = "Target Support Files/Pods-Mirascon/Pods-Mirascon.debug.xcconfig"; sourceTree = "<group>"; };
+		B6D56FEE086A1E36BA3E6D41 /* Pods-Mirascon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirascon.debug.xcconfig"; path = "Target Support Files/Pods-Mirascon/Pods-Mirascon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8D0C128423F0914C00C2D374 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8D0C128B23F0914D00C2D374 /* UserNotificationsUI.framework in Frameworks */,
-				8D0C128923F0914C00C2D374 /* UserNotifications.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8D21387D2442547E0063F001 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8DB99D3523AD247300AE483B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0438E0128DD3CD91B00E4C0A /* Pods_Mirascon.framework in Frameworks */,
+				224CDFDDE0539E6C54C94B60 /* libPods-Mirascon.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,11 +189,29 @@
 		28826040C02C704E37279E5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EEF87B3E4605B890578C22AE /* Pods_Mirascon.framework */,
+				8D52E50F246551B400B1FA33 /* libPods-Mirascon.a */,
+				8D0ECDCB24647A5E00193008 /* nanopb.framework */,
+				8D0ECDC924647A2900193008 /* FirebaseCoreDiagnostics.framework */,
+				8D0ECDC724647A1B00193008 /* FirebaseFirestore.framework */,
+				8D0ECDC524647A1400193008 /* FirebaseCore.framework */,
+				8D0ECDC3246479DE00193008 /* leveldb.framework */,
+				8D0ECDC1246479D300193008 /* grpcpp.framework */,
+				8D0ECDBF246479CD00193008 /* grpc.framework */,
+				8D0ECDBD246479BA00193008 /* absl.framework */,
 				8D0C128823F0914C00C2D374 /* UserNotifications.framework */,
 				8D0C128A23F0914D00C2D374 /* UserNotificationsUI.framework */,
+				19A1EE45298411844E3DA7CB /* libPods-Mirascon.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4343397D5F3C6F8928F116CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B6D56FEE086A1E36BA3E6D41 /* Pods-Mirascon.debug.xcconfig */,
+				7BBE39B07A2DDCBAD7B4A5ED /* Pods-Mirascon.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		8D1C07822461DBF400F4EC7E /* ClaimsForm */ = {
@@ -269,6 +266,8 @@
 				8D1C07952462E69A00F4EC7E /* MailView.swift */,
 				8D1C07A12463037200F4EC7E /* ContinueBtn.swift */,
 				8D1C07A32463082200F4EC7E /* GradientBackgroundStyle.swift */,
+				8D52E5092464A96A00B1FA33 /* LabelTextFields.swift */,
+				8DA40AAB2467EF5A00EFB8D9 /* PreviewRow.swift */,
 			);
 			path = SectorViews;
 			sourceTree = "<group>";
@@ -323,6 +322,8 @@
 				8DEBB2032415297800622D88 /* Profil.swift */,
 				8D1C077E2460768600F4EC7E /* OldClaimsForm.swift */,
 				8D1C07872461E50100F4EC7E /* SaveUserData.swift */,
+				8DA40AA92467ED9700EFB8D9 /* Preview.swift */,
+				8DA40AAD2467F48900EFB8D9 /* AGB.swift */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
@@ -344,12 +345,10 @@
 				8DB99D3A23AD247300AE483B /* Mirascon */,
 				8DB99D8323AE879400AE483B /* Ressources */,
 				8DB99D8023AE86CB00AE483B /* Models */,
-				C2ED31251947BE6A5771CF7B /* Pods */,
 				8D2138812442547E0063F001 /* MirasconTests */,
 				28826040C02C704E37279E5D /* Frameworks */,
 				8D5742AF242BB0D20018160B /* Mirascon.app */,
-				8DB2E1DC243640C100E3A1BD /* Notification.appex */,
-				8D2138802442547E0063F001 /* MirasconTests.xctest */,
+				4343397D5F3C6F8928F116CE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -396,73 +395,25 @@
 			path = Ressources;
 			sourceTree = "<group>";
 		};
-		C2ED31251947BE6A5771CF7B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F1EC6C69E7F649B498605BD9 /* Pods-Mirascon.debug.xcconfig */,
-				346B21D53E006A92AF7DD652 /* Pods-Mirascon.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D0C128623F0914C00C2D374 /* Notification */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8D0C129923F0914D00C2D374 /* Build configuration list for PBXNativeTarget "Notification" */;
-			buildPhases = (
-				8D0C128323F0914C00C2D374 /* Sources */,
-				8D0C128423F0914C00C2D374 /* Frameworks */,
-				8D0C128523F0914C00C2D374 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Notification;
-			productName = Notification;
-			productReference = 8DB2E1DC243640C100E3A1BD /* Notification.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
-		8D21387F2442547E0063F001 /* MirasconTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8D2138892442547E0063F001 /* Build configuration list for PBXNativeTarget "MirasconTests" */;
-			buildPhases = (
-				8D21387C2442547E0063F001 /* Sources */,
-				8D21387D2442547E0063F001 /* Frameworks */,
-				8D21387E2442547E0063F001 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8D2138862442547E0063F001 /* PBXTargetDependency */,
-			);
-			name = MirasconTests;
-			productName = MirasconTests;
-			productReference = 8D2138802442547E0063F001 /* MirasconTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		8DB99D3723AD247300AE483B /* Mirascon */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DB99D4C23AD247600AE483B /* Build configuration list for PBXNativeTarget "Mirascon" */;
 			buildPhases = (
-				DFBA134ED1D3A6E28AD1DE92 /* [CP] Check Pods Manifest.lock */,
+				31FB3AE4EF112449256BBDA0 /* [CP] Check Pods Manifest.lock */,
 				8DB99D3423AD247300AE483B /* Sources */,
 				8DB99D3523AD247300AE483B /* Frameworks */,
 				8DB99D3623AD247300AE483B /* Resources */,
-				8B51120CCFB5E834E90ED27C /* [CP] Embed Pods Frameworks */,
-				BBA7DB062D8DC01390D82A8A /* [CP] Copy Pods Resources */,
 				8D0C129623F0914D00C2D374 /* Embed App Extensions */,
+				58A667725C994B8FFB41FF30 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8D0C129423F0914D00C2D374 /* PBXTargetDependency */,
 			);
 			name = Mirascon;
-			packageProductDependencies = (
-			);
 			productName = Mirascon;
 			productReference = 8D5742AF242BB0D20018160B /* Mirascon.app */;
 			productType = "com.apple.product-type.application";
@@ -477,20 +428,13 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = MIRASCON;
 				TargetAttributes = {
-					8D0C128623F0914C00C2D374 = {
-						CreatedOnToolsVersion = 11.3.1;
-					};
-					8D21387F2442547E0063F001 = {
-						CreatedOnToolsVersion = 11.4;
-						TestTargetID = 8DB99D3723AD247300AE483B;
-					};
 					8DB99D3723AD247300AE483B = {
 						CreatedOnToolsVersion = 11.3;
 					};
 				};
 			};
 			buildConfigurationList = 8DB99D3323AD247300AE483B /* Build configuration list for PBXProject "Mirascon" */;
-			compatibilityVersion = "Xcode 11.4";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -506,27 +450,11 @@
 			projectRoot = "";
 			targets = (
 				8DB99D3723AD247300AE483B /* Mirascon */,
-				8D0C128623F0914C00C2D374 /* Notification */,
-				8D21387F2442547E0063F001 /* MirasconTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8D0C128523F0914C00C2D374 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8D21387E2442547E0063F001 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8DB99D3623AD247300AE483B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -544,41 +472,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8B51120CCFB5E834E90ED27C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mirascon/Pods-Mirascon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mirascon/Pods-Mirascon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mirascon/Pods-Mirascon-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BBA7DB062D8DC01390D82A8A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mirascon/Pods-Mirascon-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Mirascon/Pods-Mirascon-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mirascon/Pods-Mirascon-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DFBA134ED1D3A6E28AD1DE92 /* [CP] Check Pods Manifest.lock */ = {
+		31FB3AE4EF112449256BBDA0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -600,24 +494,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		58A667725C994B8FFB41FF30 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mirascon/Pods-Mirascon-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mirascon/Pods-Mirascon-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mirascon/Pods-Mirascon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8D0C128323F0914C00C2D374 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8D21387C2442547E0063F001 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8D2138832442547E0063F001 /* MirasconTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8DB99D3423AD247300AE483B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -628,6 +524,7 @@
 				8D55D9B323E08DE900B0DC4B /* UserData.swift in Sources */,
 				8D1C07902462DFA400F4EC7E /* ButtonRow.swift in Sources */,
 				8D1C07A22463037300F4EC7E /* ContinueBtn.swift in Sources */,
+				8D52E50A2464A96A00B1FA33 /* LabelTextFields.swift in Sources */,
 				8D1C07862461DFFA00F4EC7E /* Walkthrough.swift in Sources */,
 				8DDAD9F923E05774001409EC /* ClaimsForm.swift in Sources */,
 				8D1C07962462E69A00F4EC7E /* MailView.swift in Sources */,
@@ -635,10 +532,12 @@
 				8D55D9B923E208E200B0DC4B /* Coordinator.swift in Sources */,
 				8D1C07942462E56500F4EC7E /* CaptureImage.swift in Sources */,
 				8D1C078C2462C12500F4EC7E /* NavigationBarWithItemUI.swift in Sources */,
+				8DA40AAE2467F48900EFB8D9 /* AGB.swift in Sources */,
 				8D2138792442459A0063F001 /* HostingController.swift in Sources */,
 				8DB99D3C23AD247300AE483B /* AppDelegate.swift in Sources */,
 				8D1C07812461A05100F4EC7E /* IntroUI.swift in Sources */,
 				8D2138742441FE8F0063F001 /* cellphone_layout.swift in Sources */,
+				8DA40AAA2467ED9700EFB8D9 /* Preview.swift in Sources */,
 				8D1C07922462E52C00F4EC7E /* camera.swift in Sources */,
 				8D1C07982462E6D600F4EC7E /* ImagePicker.swift in Sources */,
 				8DB2E1E6243DC35300E3A1BD /* dimens.swift in Sources */,
@@ -662,6 +561,7 @@
 				8DB99D5223AD25F500AE483B /* RoadsideAssistanceUI.swift in Sources */,
 				8DEBB2042415297800622D88 /* Profil.swift in Sources */,
 				8D1C078E2462DE4A00F4EC7E /* Rows.swift in Sources */,
+				8DA40AAC2467EF5A00EFB8D9 /* PreviewRow.swift in Sources */,
 				8DB99D9323AEB69900AE483B /* Introduction.swift in Sources */,
 				8DBD931023ECC87F0034E918 /* LocationManager.swift in Sources */,
 				8D1C078A2462B8EE00F4EC7E /* NavigationBarImageUI.swift in Sources */,
@@ -681,19 +581,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		8D0C129423F0914D00C2D374 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8D0C128623F0914C00C2D374 /* Notification */;
-			targetProxy = 8D0C129323F0914D00C2D374 /* PBXContainerItemProxy */;
-		};
-		8D2138862442547E0063F001 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8DB99D3723AD247300AE483B /* Mirascon */;
-			targetProxy = 8D2138852442547E0063F001 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		8DB99D4623AD247600AE483B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -706,89 +593,10 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		8D0C129723F0914D00C2D374 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QBKR6YXC55;
-				INFOPLIST_FILE = Notification/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = mir.Mirascon.Notification;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		8D0C129823F0914D00C2D374 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QBKR6YXC55;
-				INFOPLIST_FILE = Notification/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = mir.Mirascon.Notification;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		8D2138872442547E0063F001 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QBKR6YXC55;
-				INFOPLIST_FILE = MirasconTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = mirascon.MirasconTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mirascon.app/Mirascon";
-			};
-			name = Debug;
-		};
-		8D2138882442547E0063F001 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QBKR6YXC55;
-				INFOPLIST_FILE = MirasconTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = mirascon.MirasconTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mirascon.app/Mirascon";
-			};
-			name = Release;
-		};
 		8DB99D4A23AD247600AE483B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -836,19 +644,21 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "arm64 x86_64";
 			};
 			name = Debug;
 		};
 		8DB99D4B23AD247600AE483B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -890,23 +700,27 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 x86_64";
 			};
 			name = Release;
 		};
 		8DB99D4D23AD247600AE483B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1EC6C69E7F649B498605BD9 /* Pods-Mirascon.debug.xcconfig */;
+			baseConfigurationReference = B6D56FEE086A1E36BA3E6D41 /* Pods-Mirascon.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Mirascon/Preview Content\"";
 				DEVELOPMENT_TEAM = QBKR6YXC55;
 				ENABLE_PREVIEWS = YES;
@@ -916,21 +730,29 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.3.6;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mir.Mirascon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = "debug-only";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
 			name = Debug;
 		};
 		8DB99D4E23AD247600AE483B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 346B21D53E006A92AF7DD652 /* Pods-Mirascon.release.xcconfig */;
+			baseConfigurationReference = 7BBE39B07A2DDCBAD7B4A5ED /* Pods-Mirascon.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Mirascon/Preview Content\"";
 				DEVELOPMENT_TEAM = QBKR6YXC55;
 				ENABLE_PREVIEWS = YES;
@@ -940,35 +762,22 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.3.6;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mir.Mirascon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = "debug-only";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8D0C129923F0914D00C2D374 /* Build configuration list for PBXNativeTarget "Notification" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8D0C129723F0914D00C2D374 /* Debug */,
-				8D0C129823F0914D00C2D374 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8D2138892442547E0063F001 /* Build configuration list for PBXNativeTarget "MirasconTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8D2138872442547E0063F001 /* Debug */,
-				8D2138882442547E0063F001 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		8DB99D3323AD247300AE483B /* Build configuration list for PBXProject "Mirascon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

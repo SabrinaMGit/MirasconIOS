@@ -8,9 +8,9 @@
 
 import UIKit
 import SwiftUI
-import GoogleMaps
-import GooglePlaces
-import CoreLocation
+//import GoogleMaps
+//import GooglePlaces
+//import CoreLocation
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

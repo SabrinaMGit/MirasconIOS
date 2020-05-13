@@ -7,7 +7,7 @@
 
 //Realtime Messaging Firebase
 import SwiftUI
-
+/*
 struct ChatFirebaseView: View {
     @ObservedObject var viewRouter: ViewRouter
     @State var name : String = ""
@@ -93,3 +93,4 @@ struct ChatFirebaseView_Previews: PreviewProvider {
         ChatFirebaseView(viewRouter: ViewRouter())
     }
 }
+*/

@@ -58,11 +58,11 @@ struct camera: View {
                 //.background(Color.blue)
                 .foregroundColor(Color.white)
             
-                .buttonStyle(GradientBackgroundStyle())
+                .buttonStyle(GradientBackgroundStyle(color: colorClass.btnColor))
             Button(stringsClass.continue_name) {
                 self.viewRouter.currentPage = self.stringsClass.view_googleMaps
             }.foregroundColor(Color.white)
-                    .buttonStyle(GradientBackgroundStyle())
+                .buttonStyle(GradientBackgroundStyle(color: colorClass.btnColor))
             //ContinueBtn(viewModel: viewRouter, viewRouterName: stringsClass.view_googleMaps)
             //ContinueBtn(viewModel: viewRouter, viewRouterName: stringsClass.view_googleMaps)
             }

@@ -131,3 +131,11 @@ struct WebView : UIViewRepresentable {
     
 }
 
+
+//Automatische Standort zur Polizei
+//Welchen Support brauchst du gerade?
+//Polizei und Notdienst werden automatisch kontaktiert.
+//Service warten...
+//Möchtest du deine Anfrage vervollständigen ?
+//Klare Anweisungen
+

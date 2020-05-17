@@ -34,14 +34,18 @@ struct RoadsideAssistanceUI: View {
                 VStack {
                     
                     Button(action: {
-                        let formattedString = self.stringsClass.tel + self.stringsClass.roadsideNmb
-                        let url = URL(string: formattedString)!
-                        UIApplication.shared.open(url)  }){
+                        
+                        self.phone(tel: self.stringsClass.tel, number: self.stringsClass.roadsideNmb)
+                        
+                    }){
                             Rows(image: stringsClass.roadside_img, name: stringsClass.labelNameR)
-                    }.buttonStyle(btnStyle()); Button(action: {
-                        let formattedString = self.stringsClass.tel + self.stringsClass.carclaimsNmb
-                        let url = URL(string: formattedString)!
-                        UIApplication.shared.open(url)  }){
+                    }.buttonStyle(btnStyle());
+                    
+                    Button(action: {
+                        
+                        self.phone(tel: self.stringsClass.tel, number: self.stringsClass.carclaimsNmb)
+                        
+                    }){
                             Rows(image: stringsClass.carClaims_img, name: stringsClass.carClaims_description)
                     }.buttonStyle(btnStyle())
                     
@@ -51,7 +55,13 @@ struct RoadsideAssistanceUI: View {
                 }
             }
         }
-    }}
+    }
+    func phone(tel: String, number: String){
+           let formattedString = tel + number
+           let url = URL(string: formattedString)!
+           UIApplication.shared.open(url)
+       }
+}
 
 struct RoadsideAssistanceUI_Previews: PreviewProvider {
     static var previews: some View {

@@ -32,6 +32,11 @@
 		8D25408623ED6B9F00707704 /* DataFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25408523ED6B9F00707704 /* DataFire.swift */; };
 		8D25408823ED6F5D00707704 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D25408723ED6F5D00707704 /* GoogleService-Info.plist */; };
 		8D3DD1CF24634068002C2418 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3DD1CE24634068002C2418 /* Review.swift */; };
+		8D527DF0246C95DB00879FAD /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D527DEF246C95DB00879FAD /* SignInView.swift */; };
+		8D527DF2246C95FD00879FAD /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D527DF1246C95FD00879FAD /* SignUpView.swift */; };
+		8D527DF5246C982900879FAD /* PhoneAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D527DF4246C982900879FAD /* PhoneAuth.swift */; };
+		8D527DF7246C99F100879FAD /* LoginUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D527DF6246C99F100879FAD /* LoginUI.swift */; };
+		8D527DF9246C9E3B00879FAD /* LoginRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D527DF8246C9E3B00879FAD /* LoginRow.swift */; };
 		8D52E50A2464A96A00B1FA33 /* LabelTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D52E5092464A96A00B1FA33 /* LabelTextFields.swift */; };
 		8D55D9A623E0807800B0DC4B /* ClaimsCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55D9A523E0807800B0DC4B /* ClaimsCenter.swift */; };
 		8D55D9A923E0852700B0DC4B /* ClaimsCenterData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8D55D9A823E0852700B0DC4B /* ClaimsCenterData.json */; };
@@ -71,6 +76,12 @@
 		8DC0FF8323EEFA0400B8401F /* ListMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0FF8223EEFA0400B8401F /* ListMessage.swift */; };
 		8DC0FF8523EEFA4500B8401F /* Messagepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0FF8423EEFA4500B8401F /* Messagepage.swift */; };
 		8DC3835723EC52BA00000039 /* GoogleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3835623EC52BA00000039 /* GoogleMap.swift */; };
+		8DC95CFA247194B000197C0F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95CF9247194B000197C0F /* WebView.swift */; };
+		8DC95CFD2471A7D500197C0F /* LogOutBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95CFC2471A7D500197C0F /* LogOutBtn.swift */; };
+		8DC95D002471AAFC00197C0F /* ScreenSizeFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95CFF2471AAFC00197C0F /* ScreenSizeFrame.swift */; };
+		8DC95D022471D52C00197C0F /* ProfilRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95D012471D52C00197C0F /* ProfilRow.swift */; };
+		8DC95D042471D83100197C0F /* LogOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95D032471D83100197C0F /* LogOutView.swift */; };
+		8DC95D062471DB2300197C0F /* AlertIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95D052471DB2300197C0F /* AlertIdentifier.swift */; };
 		8DDAD9F923E05774001409EC /* ClaimsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAD9F823E05774001409EC /* ClaimsForm.swift */; };
 		8DEBB2042415297800622D88 /* Profil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBB2032415297800622D88 /* Profil.swift */; };
 /* End PBXBuildFile section */
@@ -127,6 +138,12 @@
 		8D25408523ED6B9F00707704 /* DataFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFire.swift; sourceTree = "<group>"; };
 		8D25408723ED6F5D00707704 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D3DD1CE24634068002C2418 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		8D527DEF246C95DB00879FAD /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		8D527DF1246C95FD00879FAD /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		8D527DF3246C97AD00879FAD /* Mirascon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mirascon.entitlements; sourceTree = "<group>"; };
+		8D527DF4246C982900879FAD /* PhoneAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuth.swift; sourceTree = "<group>"; };
+		8D527DF6246C99F100879FAD /* LoginUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUI.swift; sourceTree = "<group>"; };
+		8D527DF8246C9E3B00879FAD /* LoginRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRow.swift; sourceTree = "<group>"; };
 		8D52E5092464A96A00B1FA33 /* LabelTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTextFields.swift; sourceTree = "<group>"; };
 		8D52E50F246551B400B1FA33 /* libPods-Mirascon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-Mirascon.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D55D9A523E0807800B0DC4B /* ClaimsCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsCenter.swift; sourceTree = "<group>"; };
@@ -169,6 +186,12 @@
 		8DC0FF8223EEFA0400B8401F /* ListMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMessage.swift; sourceTree = "<group>"; };
 		8DC0FF8423EEFA4500B8401F /* Messagepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messagepage.swift; sourceTree = "<group>"; };
 		8DC3835623EC52BA00000039 /* GoogleMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMap.swift; sourceTree = "<group>"; };
+		8DC95CF9247194B000197C0F /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		8DC95CFC2471A7D500197C0F /* LogOutBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogOutBtn.swift; path = Mirascon/Utilities/LogOutBtn.swift; sourceTree = SOURCE_ROOT; };
+		8DC95CFF2471AAFC00197C0F /* ScreenSizeFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSizeFrame.swift; sourceTree = "<group>"; };
+		8DC95D012471D52C00197C0F /* ProfilRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilRow.swift; sourceTree = "<group>"; };
+		8DC95D032471D83100197C0F /* LogOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutView.swift; sourceTree = "<group>"; };
+		8DC95D052471DB2300197C0F /* AlertIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertIdentifier.swift; sourceTree = "<group>"; };
 		8DDAD9F823E05774001409EC /* ClaimsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsForm.swift; sourceTree = "<group>"; };
 		8DEBB2032415297800622D88 /* Profil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profil.swift; sourceTree = "<group>"; };
 		B6D56FEE086A1E36BA3E6D41 /* Pods-Mirascon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirascon.debug.xcconfig"; path = "Target Support Files/Pods-Mirascon/Pods-Mirascon.debug.xcconfig"; sourceTree = "<group>"; };
@@ -252,6 +275,8 @@
 		8D213876244244580063F001 /* SectorViews */ = {
 			isa = PBXGroup;
 			children = (
+				8DC95CFE2471AAD400197C0F /* ScreenFrame */,
+				8DC95CFB2471A7B300197C0F /* Auth */,
 				8D1C079B2462E91500F4EC7E /* Camera */,
 				8DB2E1DF243C920200E3A1BD /* RadialGradientUI.swift */,
 				8DB2E1E3243C9AE900E3A1BD /* LogoBar.swift */,
@@ -268,6 +293,9 @@
 				8D1C07A32463082200F4EC7E /* GradientBackgroundStyle.swift */,
 				8D52E5092464A96A00B1FA33 /* LabelTextFields.swift */,
 				8DA40AAB2467EF5A00EFB8D9 /* PreviewRow.swift */,
+				8D527DF8246C9E3B00879FAD /* LoginRow.swift */,
+				8DC95D012471D52C00197C0F /* ProfilRow.swift */,
+				8DC95D032471D83100197C0F /* LogOutView.swift */,
 			);
 			path = SectorViews;
 			sourceTree = "<group>";
@@ -281,6 +309,8 @@
 				8DB99D7523AE154400AE483B /* PlayerView.swift */,
 				8DC3835623EC52BA00000039 /* GoogleMap.swift */,
 				8DBD930F23ECC87F0034E918 /* LocationManager.swift */,
+				8DC95CF9247194B000197C0F /* WebView.swift */,
+				8DC95D052471DB2300197C0F /* AlertIdentifier.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -310,7 +340,10 @@
 			children = (
 				8DB99D3F23AD247300AE483B /* ContentView.swift */,
 				8D55D9BE23E34FC000B0DC4B /* LaunchLogo.swift */,
+				8DA40AA92467ED9700EFB8D9 /* Preview.swift */,
+				8DA773E0246C9474009E95B5 /* FirebaseAuth */,
 				8DB99D7E23AE47F000AE483B /* PreviewIntroduction.swift */,
+				8D1C07872461E50100F4EC7E /* SaveUserData.swift */,
 				8D1C07802461A05100F4EC7E /* IntroUI.swift */,
 				8D55D9BA23E2FDEA00B0DC4B /* MainScreen.swift */,
 				8DB99D4F23AD255300AE483B /* EmergencyUI.swift */,
@@ -321,11 +354,20 @@
 				8D55D9B623E201FD00B0DC4B /* GlassDamage.swift */,
 				8DEBB2032415297800622D88 /* Profil.swift */,
 				8D1C077E2460768600F4EC7E /* OldClaimsForm.swift */,
-				8D1C07872461E50100F4EC7E /* SaveUserData.swift */,
-				8DA40AA92467ED9700EFB8D9 /* Preview.swift */,
 				8DA40AAD2467F48900EFB8D9 /* AGB.swift */,
 			);
 			path = UIViews;
+			sourceTree = "<group>";
+		};
+		8DA773E0246C9474009E95B5 /* FirebaseAuth */ = {
+			isa = PBXGroup;
+			children = (
+				8D527DF6246C99F100879FAD /* LoginUI.swift */,
+				8D527DF4246C982900879FAD /* PhoneAuth.swift */,
+				8D527DF1246C95FD00879FAD /* SignUpView.swift */,
+				8D527DEF246C95DB00879FAD /* SignInView.swift */,
+			);
+			path = FirebaseAuth;
 			sourceTree = "<group>";
 		};
 		8DB2E1E7243DC36300E3A1BD /* Values */ = {
@@ -355,6 +397,7 @@
 		8DB99D3A23AD247300AE483B /* Mirascon */ = {
 			isa = PBXGroup;
 			children = (
+				8D527DF3246C97AD00879FAD /* Mirascon.entitlements */,
 				8DB99D4923AD247600AE483B /* Info.plist */,
 				8D213875244243BF0063F001 /* MainSetting */,
 				8D5742A8242B44570018160B /* UIViews */,
@@ -395,6 +438,22 @@
 			path = Ressources;
 			sourceTree = "<group>";
 		};
+		8DC95CFB2471A7B300197C0F /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				8DC95CFC2471A7D500197C0F /* LogOutBtn.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		8DC95CFE2471AAD400197C0F /* ScreenFrame */ = {
+			isa = PBXGroup;
+			children = (
+				8DC95CFF2471AAFC00197C0F /* ScreenSizeFrame.swift */,
+			);
+			path = ScreenFrame;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -425,7 +484,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = MIRASCON;
 				TargetAttributes = {
 					8DB99D3723AD247300AE483B = {
@@ -524,6 +583,8 @@
 				8D55D9B323E08DE900B0DC4B /* UserData.swift in Sources */,
 				8D1C07902462DFA400F4EC7E /* ButtonRow.swift in Sources */,
 				8D1C07A22463037300F4EC7E /* ContinueBtn.swift in Sources */,
+				8DC95CFD2471A7D500197C0F /* LogOutBtn.swift in Sources */,
+				8DC95D022471D52C00197C0F /* ProfilRow.swift in Sources */,
 				8D52E50A2464A96A00B1FA33 /* LabelTextFields.swift in Sources */,
 				8D1C07862461DFFA00F4EC7E /* Walkthrough.swift in Sources */,
 				8DDAD9F923E05774001409EC /* ClaimsForm.swift in Sources */,
@@ -532,11 +593,13 @@
 				8D55D9B923E208E200B0DC4B /* Coordinator.swift in Sources */,
 				8D1C07942462E56500F4EC7E /* CaptureImage.swift in Sources */,
 				8D1C078C2462C12500F4EC7E /* NavigationBarWithItemUI.swift in Sources */,
+				8D527DF5246C982900879FAD /* PhoneAuth.swift in Sources */,
 				8DA40AAE2467F48900EFB8D9 /* AGB.swift in Sources */,
 				8D2138792442459A0063F001 /* HostingController.swift in Sources */,
 				8DB99D3C23AD247300AE483B /* AppDelegate.swift in Sources */,
 				8D1C07812461A05100F4EC7E /* IntroUI.swift in Sources */,
 				8D2138742441FE8F0063F001 /* cellphone_layout.swift in Sources */,
+				8DC95CFA247194B000197C0F /* WebView.swift in Sources */,
 				8DA40AAA2467ED9700EFB8D9 /* Preview.swift in Sources */,
 				8D1C07922462E52C00F4EC7E /* camera.swift in Sources */,
 				8D1C07982462E6D600F4EC7E /* ImagePicker.swift in Sources */,
@@ -550,16 +613,19 @@
 				8D25408623ED6B9F00707704 /* DataFire.swift in Sources */,
 				8DB99D3E23AD247300AE483B /* SceneDelegate.swift in Sources */,
 				8D5742AC242B47260018160B /* GoogleMapsView.swift in Sources */,
+				8DC95D062471DB2300197C0F /* AlertIdentifier.swift in Sources */,
 				8DB99D7623AE154400AE483B /* PlayerView.swift in Sources */,
 				8DC0FF8323EEFA0400B8401F /* ListMessage.swift in Sources */,
 				8D55D9B723E201FD00B0DC4B /* GlassDamage.swift in Sources */,
 				8D55D9A623E0807800B0DC4B /* ClaimsCenter.swift in Sources */,
 				8D2138722441FACB0063F001 /* backBtn_view.swift in Sources */,
+				8DC95D002471AAFC00197C0F /* ScreenSizeFrame.swift in Sources */,
 				8DB2E1E9243DC39300E3A1BD /* strings.swift in Sources */,
 				8D1C077F2460768600F4EC7E /* OldClaimsForm.swift in Sources */,
 				8D1C07842461DC2900F4EC7E /* ClaimReason.swift in Sources */,
 				8DB99D5223AD25F500AE483B /* RoadsideAssistanceUI.swift in Sources */,
 				8DEBB2042415297800622D88 /* Profil.swift in Sources */,
+				8D527DF2246C95FD00879FAD /* SignUpView.swift in Sources */,
 				8D1C078E2462DE4A00F4EC7E /* Rows.swift in Sources */,
 				8DA40AAC2467EF5A00EFB8D9 /* PreviewRow.swift in Sources */,
 				8DB99D9323AEB69900AE483B /* Introduction.swift in Sources */,
@@ -570,12 +636,16 @@
 				8DC0FF8523EEFA4500B8401F /* Messagepage.swift in Sources */,
 				8D55D9C323E38BD500B0DC4B /* FirstLaunch.swift in Sources */,
 				8D3DD1CF24634068002C2418 /* Review.swift in Sources */,
+				8D527DF0246C95DB00879FAD /* SignInView.swift in Sources */,
 				8D1C079D2462E92F00F4EC7E /* PhotoCaptureView.swift in Sources */,
+				8DC95D042471D83100197C0F /* LogOutView.swift in Sources */,
 				8DC3835723EC52BA00000039 /* GoogleMap.swift in Sources */,
+				8D527DF9246C9E3B00879FAD /* LoginRow.swift in Sources */,
 				8DB99D4023AD247300AE483B /* ContentView.swift in Sources */,
 				8DB99D8723AE881800AE483B /* Data.swift in Sources */,
 				8DB99D7F23AE47F000AE483B /* PreviewIntroduction.swift in Sources */,
 				8D1C07A42463082200F4EC7E /* GradientBackgroundStyle.swift in Sources */,
+				8D527DF7246C99F100879FAD /* LoginUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,6 +788,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_ENTITLEMENTS = Mirascon/Mirascon.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -730,7 +801,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.6;
+				MARKETING_VERSION = 1.3.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mir.Mirascon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -750,6 +821,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_ENTITLEMENTS = Mirascon/Mirascon.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -762,7 +834,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.6;
+				MARKETING_VERSION = 1.3.7;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mir.Mirascon;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -61,6 +61,12 @@ struct strings {
     let view_pagerview: String
     let view_claimReason: String
     let view_review: String
+    let view_loginUI: String
+    let view_phoneAuth: String
+    let view_mailUI: String
+    let view_agb: String
+    let view_signInView: String
+    let view_signUpView: String
     
     //**RoadsideAssistance**
     let roadsideNmb: String
@@ -159,7 +165,7 @@ struct strings {
         tel = "tel://"
         police_number = "110"
         fireDepartment_number = "112"
-        mirascon_number = ""
+        mirascon_number = "+49 22192548878"
         emergencyService_name = "EMERGENCY SERVICE"
         phoneCall_img = "PhoneCall"
         police_img = "Police"
@@ -181,10 +187,16 @@ struct strings {
         view_pagerview = "pagerView"
         view_claimReason = "claimReason"
         view_review = "review"
+        view_loginUI = "LoginUI"
+        view_phoneAuth = "PhoneAuth"
+        view_mailUI = "MailUI"
+        view_agb = "AGB"
+        view_signInView = "SignIn"
+        view_signUpView = "SignUp"
         
         //**RoadsideAssistance
-        roadsideNmb = ""
-        carclaimsNmb = ""
+        roadsideNmb = "+49 22192548879"
+        carclaimsNmb = "+49 22192548879"
         labelNameR = "ROADSIDE ASSISTANCE"
         description = "If you need help, call the roadside assistance contacts"
         roadside_img = "RoadsideAssistance"

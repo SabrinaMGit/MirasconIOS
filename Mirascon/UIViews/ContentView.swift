@@ -10,8 +10,10 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var viewRouter: ViewRouter
+    init(_ viewRouter: ViewRouter){
+             self.viewRouter = viewRouter
+         }
     //@State var page = "emergency"
-    
     var body: some View {
         VStack {
             if viewRouter.currentPage == "mainView" {
@@ -34,7 +36,7 @@ struct ContentView: View {
             }else if viewRouter.currentPage == "camera" {
                 camera(viewRouter)
             } else if viewRouter.currentPage == "Products" {
-                WebView(request: URLRequest(url: URL(string: "https://www.mirascon.com")!))
+               // WebView(request: URLRequest(url: URL(string: "https://www.mirascon.com")!))
             } else if viewRouter.currentPage == "googleMaps" {
                 GoogleMapsView(viewRouter)
             } else if viewRouter.currentPage == "profil" {
@@ -43,6 +45,20 @@ struct ContentView: View {
                 ClaimReason(viewRouter)
             } else if viewRouter.currentPage == "review" {
                 Review(viewRouter)
+            } else if viewRouter.currentPage == "LoginUI" {
+                LoginUI(viewRouter)
+            } else if viewRouter.currentPage == "PhoneAuth" {
+                PhoneAuth(viewRouter) 
+            } else if viewRouter.currentPage == "ScndPage" {
+                //ScndPage(viewRouter)
+            } else if viewRouter.currentPage == "MailUI" {
+                //VerificationUIView(viewRouter)
+            } else if viewRouter.currentPage == "ABG" {
+               AGB(viewRouter)
+            } else if viewRouter.currentPage == "SignIn" {
+               //SignInView(viewRouter)
+            } else if viewRouter.currentPage == "SignUp" {
+               SignUpView(viewRouter)
             }
         }
     }
@@ -50,7 +66,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewRouter: ViewRouter())
+        ContentView(ViewRouter())
     }
 }
 /*

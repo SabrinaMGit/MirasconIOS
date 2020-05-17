@@ -115,27 +115,13 @@ struct btnStyle: ButtonStyle {
     }
 }
 
-import WebKit
 
-struct WebView : UIViewRepresentable {
-    
-    let request: URLRequest
-    
-    func makeUIView(context: Context) -> WKWebView  {
-        return WKWebView()
-    }
-    
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        uiView.load(request)
-    }
-    
-}
 
 
 //Automatische Standort zur Polizei
 //Welchen Support brauchst du gerade?
 //Polizei und Notdienst werden automatisch kontaktiert.
-//Service warten...
+//auf Service warten...
 //Möchtest du deine Anfrage vervollständigen ?
 //Klare Anweisungen
 

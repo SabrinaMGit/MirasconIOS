@@ -8,7 +8,7 @@
 
 import UIKit
 import GoogleMaps
-//import Firebase
+import Firebase
 
 let googleApiKey = "AIzaSyCjIvCCSi1HC2PDtJRE1wEGi5W6WLbzfNc"
 
@@ -20,38 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        if #available(iOS 13, *)
-        {
+       
         //UIApplication.shared.statusBarStyle = .lightContent
-        }
-        
-        
-        if #available(iOS 13.0, *) {
-            let navBarAppearance = UINavigationBarAppearance()
-            navBarAppearance.configureWithOpaqueBackground()
-            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-            navBarAppearance.backgroundColor = .red   // use your own color
-           // navBarAppearance.shared.statusBarStyle = .lightContent
-            //navigationBar.standardAppearance = navBarAppearance
-            //navigationBar.scrollEdgeAppearance = navBarAppearance
-        }
-        
-       /* if #available(iOS 13.0, *) {
-                let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-                // Reference - https://stackoverflow.com/a/57899013/7316675
-                let statusBar = UIView(frame: window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
-                statusBar.backgroundColor = .white
-                window?.addSubview(statusBar)
-         } else {
-                UIApplication.shared.statusBarView?.backgroundColor = .white
-                UIApplication.shared.statusBarStyle = .lightContent
-         }
-        */
-        
         
        GMSServices.provideAPIKey(googleApiKey)
-        // FirebaseApp.configure()
+        FirebaseApp.configure()
         
       
         
@@ -79,6 +52,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         */
         return true
     }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+      // Pass device token to auth
+      Auth.auth().setAPNSToken(deviceToken, type: .prod)
+
+      // Further handling of the device token if needed by the app
+      // ...
+    }
+    
+    func application(_ application: UIApplication,
+        didReceiveRemoteNotification notification: [AnyHashable : Any],
+        fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+      if Auth.auth().canHandleNotification(notification) {
+        completionHandler(.noData)
+        return
+      }
+      // This notification is not auth related, developer should handle it.
+    }
+    
+    // For iOS 9+
+    func application(_ application: UIApplication, open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+      if Auth.auth().canHandle(url) {
+        return true
+      }
+      // URL not auth related, developer should handle it.
+        return true
+    }
+
     
     /*
     // [START receive_message]

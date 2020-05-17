@@ -23,6 +23,9 @@ struct ColorUI {
     var endRed: Color
     var blue: Color
     var darkerBlue2: Color
+    var facebookColor: Color
+    var mailColor: Color
+    var phoneColor: Color
 
   init() {
     startColor = Color(hex: "#19334f")
@@ -37,6 +40,9 @@ struct ColorUI {
     endRed = Color(hex: "#4f0101")
     blue = Color(hex: "#4184f0")
     darkerBlue2 = Color(hex: "#2b63bd")
+    facebookColor = Color(hex: "#4885ed") //<- google. facebook Color: #29487d
+    mailColor = Color(hex: "#db3232")
+    phoneColor = Color(hex: "#0d7a1e") 
     
   }
 }

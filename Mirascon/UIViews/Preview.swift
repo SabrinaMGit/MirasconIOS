@@ -42,7 +42,7 @@ struct Preview: View {
                 }
                 .listRowInsets(EdgeInsets())
                 Button(stringsClass.continue_name) {
-                    self.viewRouter.currentPage = self.stringsClass.view_saveData
+                    self.viewRouter.currentPage = self.stringsClass.view_loginUI
                 }.foregroundColor(Color.white)
                     .buttonStyle(GradientBackgroundStyle(color: colorClass.blue))
                 

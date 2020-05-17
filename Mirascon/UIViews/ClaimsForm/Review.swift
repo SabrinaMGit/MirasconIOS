@@ -124,5 +124,5 @@ struct Review_Previews: PreviewProvider {
 }
 
 //Sie werden in Kürze benachrichtigt. Weiteres Verfahren nach abschicken
-//Sind alle Daten vollständig
+//Sind alle Daten vollständig?
 //Emergency center wurde kontaktiert, wir kümmern sich um weiteres.

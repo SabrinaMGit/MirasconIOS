@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import Firebase
 //import GoogleMaps
 //import GooglePlaces
 //import CoreLocation
@@ -23,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         let mainContent = LaunchLogo(ViewRouter())
+        //let mainContent = PhoneAuth(ViewRouter())
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
@@ -30,6 +32,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
         }
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+      for urlContext in URLContexts {
+          let url = urlContext.url
+          Auth.auth().canHandle(url)
+      }
+      // URL not auth related, developer should handle it.
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -17,7 +17,6 @@ struct LabelTextFields : View {
     var label: String
     var labelColor: Color
     @Binding var datas: String
-    var savedDatas: String
     var textFieldBorderColor: Color
     
     var body: some View {
@@ -37,7 +36,6 @@ struct LabelTextFields : View {
                     .stroke( lineWidth: dimensClass.cg_0))
             .border(textFieldBorderColor, width: CGFloat(dimensClass.cg_2))
             .cornerRadius(5)
-            if datas.isEmpty { Text("\(savedDatas )").foregroundColor(.white) }
         }
         .padding(.horizontal, 15)
     }

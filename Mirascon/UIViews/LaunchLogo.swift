@@ -25,7 +25,7 @@ struct LaunchLogo: View {
     var body: some View {
         ZStack{
             if firstLaunch.isFirstLaunch {
-                ContentView(viewRouter: viewRouter)
+                ContentView(viewRouter)
                 LaunchRow()
                     .opacity(showSplash ? 1 : 0)
                     .onAppear {
@@ -39,7 +39,7 @@ struct LaunchLogo: View {
                 }
                 //FirstLaunch.WasLaunchedBefore = false
             }else{
-                ContentView(viewRouter: viewRouter)
+                ContentView(viewRouter)
                 LaunchRow()
                     .opacity(showSplash ? 1 : 0)
                     .onAppear {
@@ -76,7 +76,7 @@ struct LaunchRow: View {
             Image("PreviewSplashLogo")
                 .resizable()
                 .scaledToFit()
-                .frame(width: dimensClass.cg_190,height:dimensClass.cg_190)
+                .frame(width: dimensClass.cg_150,height:dimensClass.cg_150)
                 .foregroundColor(Color.white)
                 .scaleEffect(scale)
                 .onAppear {
@@ -85,7 +85,7 @@ struct LaunchRow: View {
                     return withAnimation(baseAnimation) {
                         self.scale = 1.2
                     }
-            }
+            }.padding(.bottom,20)
             
         }
     }

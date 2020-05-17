@@ -33,20 +33,31 @@ struct EmergencyUI: View {
                     //Change this maybe
                     List{
                         Button(action: {
-                            let formattedString = self.stringsClass.tel + self.stringsClass.police_number
-                            let url = URL(string: formattedString)!
-                            UIApplication.shared.open(url)  }){
-                                Rows(image: stringsClass.police_img, name: stringsClass.police_description)
-                        }.buttonStyle(btnStyle()); Button(action: {
-                            let formattedString = self.stringsClass.tel + self.stringsClass.fireDepartment_number
-                            let url = URL(string: formattedString)!
-                            UIApplication.shared.open(url)  }){
-                                Rows(image: stringsClass.firedepartment_img, name: stringsClass.firedepartment_description)
-                        }.buttonStyle(btnStyle()); Button(action: {
-                            let formattedString = self.stringsClass.tel + self.stringsClass.mirascon_number
-                            let url = URL(string: formattedString)!
-                            UIApplication.shared.open(url)  }){
-                                Rows(image: stringsClass.mirasconStar_img, name: stringsClass.mirasconStar_description)
+                            
+                            //self.phone(tel: self.stringsClass.tel, number: self.stringsClass.police_number)
+                            
+                        }){
+                            
+                        Rows(image: stringsClass.police_img, name: stringsClass.police_description)
+                            
+                        }.buttonStyle(btnStyle());
+                        
+                        Button(action: {
+                            
+                            //self.phone(tel: self.stringsClass.tel, number: self.stringsClass.fireDepartment_number)
+                            
+                        }){
+                            Rows(image: stringsClass.firedepartment_img, name: stringsClass.firedepartment_description)
+                            
+                        }.buttonStyle(btnStyle());
+                        
+                        Button(action: {
+                            
+                            self.phone(tel: self.stringsClass.tel, number: self.stringsClass.mirascon_number)
+                            
+                        }){
+                            Rows(image: stringsClass.mirasconStar_img, name: stringsClass.mirasconStar_description)
+                            
                         }.buttonStyle(btnStyle())
                     }
                   Spacer()
@@ -54,6 +65,11 @@ struct EmergencyUI: View {
                 backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_mainview)
             }
         }
+    }
+    func phone(tel: String, number: String){
+        let formattedString = tel + number
+        let url = URL(string: formattedString)!
+        UIApplication.shared.open(url)
     }
 }
 

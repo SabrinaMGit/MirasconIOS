@@ -43,7 +43,7 @@ struct GoogleMapsView: View {
             ZStack{
                 RadialGradientUI()
                 VStack {
-                    NavigationBarWithItemUI(viewModel: ViewRouter(), viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
+                    NavigationBarWithItemUI(viewModel: viewRouter, viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
                     Walkthrough(image: "WalkthroughMap")
                     
                     List{
@@ -59,10 +59,10 @@ struct GoogleMapsView: View {
                                 .foregroundColor(Color.white)
                         }
                         if manuellyLocation {
-                            LabelTextFields(label: "Address:", labelColor: Color.white, datas: $address, savedDatas: "", textFieldBorderColor: Color.white )
-                            LabelTextFields(label: "City:", labelColor: Color.white, datas: $city, savedDatas: "", textFieldBorderColor: Color.white )
-                            LabelTextFields(label: "State:", labelColor: Color.white, datas: $state, savedDatas: "", textFieldBorderColor: Color.white )
-                            LabelTextFields(label: "ZIP Code::", labelColor: Color.white, datas: $zipCode, savedDatas: "", textFieldBorderColor: Color.white )
+                            LabelTextFields(label: "Address:", labelColor: Color.white, datas: $address, textFieldBorderColor: Color.white )
+                            LabelTextFields(label: "City:", labelColor: Color.white, datas: $city, textFieldBorderColor: Color.white )
+                            LabelTextFields(label: "State:", labelColor: Color.white, datas: $state, textFieldBorderColor: Color.white )
+                            LabelTextFields(label: "ZIP Code::", labelColor: Color.white, datas: $zipCode, textFieldBorderColor: Color.white )
                         }
                  
                     }

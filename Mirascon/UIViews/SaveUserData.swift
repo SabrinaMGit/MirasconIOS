@@ -66,39 +66,14 @@ struct SaveUserData: View {
                     }.frame( height: dimensClass.cg_130)
                         .cornerRadius(10)
                     
-                    /* HStack{
-                     Image(stringsClass.fillForm_img)
-                     .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
-                     .overlay(
-                     Rectangle()
-                     .stroke(colorClass.endColor, lineWidth: dimensClass.cg_0))
-                     .background(Color.blue)
-                     Image(stringsClass.googlemaps_img)
-                     .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
-                     .overlay(
-                     Rectangle()
-                     .stroke(colorClass.endColor, lineWidth: dimensClass.cg_0))
-                     .background(Color.green)
-                     Image(stringsClass.view_camera)
-                     .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
-                     .overlay(
-                     Rectangle()
-                     .stroke(colorClass.endColor, lineWidth: dimensClass.cg_0))
-                     .background(Color.red)
-                     }
-                     
-                     Text(stringsClass.descriptionC)
-                     .background(Color.white)
-                     .cornerRadius(dimensClass.cg_4)
-                     .multilineTextAlignment(.leading)
-                     */
+
                     
                     VStack(alignment: .leading) {
-                        LabelTextFields(label: stringsClass.firstName_name, labelColor: Color.white, datas: $firstName, savedDatas: firstNameSaved ?? stringsClass.emptyText, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
-                        LabelTextFields(label: stringsClass.lastName_name, labelColor: Color.white, datas: $lastName, savedDatas: lastNameSaved ?? stringsClass.emptyText, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
-                        LabelTextFields(label: stringsClass.licencePlate_name, labelColor: Color.white, datas: $lp, savedDatas: lpSaved ?? stringsClass.emptyText, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
-                        LabelTextFields(label: stringsClass.phoneNumber_name, labelColor: Color.white, datas: $phone, savedDatas: phoneSaved ?? stringsClass.emptyText, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
-                        LabelTextFields(label: stringsClass.email_name, labelColor: Color.white, datas: $email, savedDatas: mailSaved ?? stringsClass.emptyText, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
+                        LabelTextFields(label: stringsClass.firstName_name, labelColor: Color.white, datas: $firstName, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray) 
+                        LabelTextFields(label: stringsClass.lastName_name, labelColor: Color.white, datas: $lastName, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
+                        LabelTextFields(label: stringsClass.licencePlate_name, labelColor: Color.white, datas: $lp, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
+                        LabelTextFields(label: stringsClass.phoneNumber_name, labelColor: Color.white, datas: $phone, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
+                        LabelTextFields(label: stringsClass.email_name, labelColor: Color.white, datas: $email, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
                         
                     }
                 }.padding(.top, dimensClass.cg_20)
@@ -262,5 +237,32 @@ Button(action: {
  .background(colorClass.endColor)
  .cornerRadius(dimensClass.cg_10)
  
+ 
+ /* HStack{
+  Image(stringsClass.fillForm_img)
+  .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
+  .overlay(
+  Rectangle()
+  .stroke(colorClass.endColor, lineWidth: dimensClass.cg_0))
+  .background(Color.blue)
+  Image(stringsClass.googlemaps_img)
+  .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
+  .overlay(
+  Rectangle()
+  .stroke(colorClass.endColor, lineWidth: dimensClass.cg_0))
+  .background(Color.green)
+  Image(stringsClass.view_camera)
+  .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
+  .overlay(
+  Rectangle()
+  .stroke(colorClass.endColor, lineWidth: dimensClass.cg_0))
+  .background(Color.red)
+  }
+  
+  Text(stringsClass.descriptionC)
+  .background(Color.white)
+  .cornerRadius(dimensClass.cg_4)
+  .multilineTextAlignment(.leading)
+  */
  */
 

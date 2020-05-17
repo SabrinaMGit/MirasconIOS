@@ -12,7 +12,7 @@ import SwiftUI
 
 class ViewRouter: ObservableObject {
     let objectWillChange = PassthroughSubject<ViewRouter,Never>()
-    var currentPage: String = "mainView" {
+    var currentPage: String = "" {
         didSet {
             objectWillChange.send(self)
         }

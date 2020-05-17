@@ -12,6 +12,7 @@ target 'Mirascon' do
 
 	pod 'GoogleMaps'
   	pod 'GooglePlaces'
+	pod 'Firebase/Auth'
 	#pod 'Firebase/Firestore'
 	#pod 'Firebase/Storage'
 	#pod 'Firebase/Analytics'

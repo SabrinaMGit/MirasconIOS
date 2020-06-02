@@ -23,7 +23,7 @@
 		8D1C07982462E6D600F4EC7E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07972462E6D600F4EC7E /* ImagePicker.swift */; };
 		8D1C079A2462E71900F4EC7E /* CameraViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07992462E71900F4EC7E /* CameraViews.swift */; };
 		8D1C079D2462E92F00F4EC7E /* PhotoCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C079C2462E92F00F4EC7E /* PhotoCaptureView.swift */; };
-		8D1C07A22463037300F4EC7E /* ContinueBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07A12463037200F4EC7E /* ContinueBtn.swift */; };
+		8D1C07A22463037300F4EC7E /* NextBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07A12463037200F4EC7E /* NextBtn.swift */; };
 		8D1C07A42463082200F4EC7E /* GradientBackgroundStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C07A32463082200F4EC7E /* GradientBackgroundStyle.swift */; };
 		8D2138722441FACB0063F001 /* backBtn_view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138712441FACA0063F001 /* backBtn_view.swift */; };
 		8D2138742441FE8F0063F001 /* cellphone_layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2138732441FE8F0063F001 /* cellphone_layout.swift */; };
@@ -83,6 +83,7 @@
 		8DC95D042471D83100197C0F /* LogOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95D032471D83100197C0F /* LogOutView.swift */; };
 		8DC95D062471DB2300197C0F /* AlertIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95D052471DB2300197C0F /* AlertIdentifier.swift */; };
 		8DDAD9F923E05774001409EC /* ClaimsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAD9F823E05774001409EC /* ClaimsForm.swift */; };
+		8DE184EE24811CFF0010573F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8DE184ED24811CFF0010573F /* Settings.bundle */; };
 		8DEBB2042415297800622D88 /* Profil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBB2032415297800622D88 /* Profil.swift */; };
 /* End PBXBuildFile section */
 
@@ -127,7 +128,7 @@
 		8D1C07972462E6D600F4EC7E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		8D1C07992462E71900F4EC7E /* CameraViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViews.swift; sourceTree = "<group>"; };
 		8D1C079C2462E92F00F4EC7E /* PhotoCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureView.swift; sourceTree = "<group>"; };
-		8D1C07A12463037200F4EC7E /* ContinueBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueBtn.swift; sourceTree = "<group>"; };
+		8D1C07A12463037200F4EC7E /* NextBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextBtn.swift; sourceTree = "<group>"; };
 		8D1C07A32463082200F4EC7E /* GradientBackgroundStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackgroundStyle.swift; sourceTree = "<group>"; };
 		8D2138712441FACA0063F001 /* backBtn_view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backBtn_view.swift; sourceTree = "<group>"; };
 		8D2138732441FE8F0063F001 /* cellphone_layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellphone_layout.swift; sourceTree = "<group>"; };
@@ -193,6 +194,7 @@
 		8DC95D032471D83100197C0F /* LogOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutView.swift; sourceTree = "<group>"; };
 		8DC95D052471DB2300197C0F /* AlertIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertIdentifier.swift; sourceTree = "<group>"; };
 		8DDAD9F823E05774001409EC /* ClaimsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsForm.swift; sourceTree = "<group>"; };
+		8DE184ED24811CFF0010573F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		8DEBB2032415297800622D88 /* Profil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profil.swift; sourceTree = "<group>"; };
 		B6D56FEE086A1E36BA3E6D41 /* Pods-Mirascon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirascon.debug.xcconfig"; path = "Target Support Files/Pods-Mirascon/Pods-Mirascon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -275,6 +277,7 @@
 		8D213876244244580063F001 /* SectorViews */ = {
 			isa = PBXGroup;
 			children = (
+				8DD277D024866C6C00B9F9FB /* Rows */,
 				8DC95CFE2471AAD400197C0F /* ScreenFrame */,
 				8DC95CFB2471A7B300197C0F /* Auth */,
 				8D1C079B2462E91500F4EC7E /* Camera */,
@@ -286,15 +289,10 @@
 				8D1C07852461DFFA00F4EC7E /* Walkthrough.swift */,
 				8D1C07892462B8EE00F4EC7E /* NavigationBarImageUI.swift */,
 				8D1C078B2462C12500F4EC7E /* NavigationBarWithItemUI.swift */,
-				8D1C078D2462DE4A00F4EC7E /* Rows.swift */,
-				8D1C078F2462DFA400F4EC7E /* ButtonRow.swift */,
 				8D1C07952462E69A00F4EC7E /* MailView.swift */,
-				8D1C07A12463037200F4EC7E /* ContinueBtn.swift */,
+				8D1C07A12463037200F4EC7E /* NextBtn.swift */,
 				8D1C07A32463082200F4EC7E /* GradientBackgroundStyle.swift */,
 				8D52E5092464A96A00B1FA33 /* LabelTextFields.swift */,
-				8DA40AAB2467EF5A00EFB8D9 /* PreviewRow.swift */,
-				8D527DF8246C9E3B00879FAD /* LoginRow.swift */,
-				8DC95D012471D52C00197C0F /* ProfilRow.swift */,
 				8DC95D032471D83100197C0F /* LogOutView.swift */,
 			);
 			path = SectorViews;
@@ -385,8 +383,8 @@
 			children = (
 				8D5742AD242B89290018160B /* Podfile */,
 				8DB99D3A23AD247300AE483B /* Mirascon */,
-				8DB99D8323AE879400AE483B /* Ressources */,
 				8DB99D8023AE86CB00AE483B /* Models */,
+				8DB99D8323AE879400AE483B /* Ressources */,
 				8D2138812442547E0063F001 /* MirasconTests */,
 				28826040C02C704E37279E5D /* Frameworks */,
 				8D5742AF242BB0D20018160B /* Mirascon.app */,
@@ -407,6 +405,7 @@
 				8D213876244244580063F001 /* SectorViews */,
 				8D213877244244EF0063F001 /* Utilities */,
 				8DB2E1E7243DC36300E3A1BD /* Values */,
+				8DE184ED24811CFF0010573F /* Settings.bundle */,
 			);
 			path = Mirascon;
 			sourceTree = "<group>";
@@ -452,6 +451,18 @@
 				8DC95CFF2471AAFC00197C0F /* ScreenSizeFrame.swift */,
 			);
 			path = ScreenFrame;
+			sourceTree = "<group>";
+		};
+		8DD277D024866C6C00B9F9FB /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				8D1C078D2462DE4A00F4EC7E /* Rows.swift */,
+				8D1C078F2462DFA400F4EC7E /* ButtonRow.swift */,
+				8DA40AAB2467EF5A00EFB8D9 /* PreviewRow.swift */,
+				8D527DF8246C9E3B00879FAD /* LoginRow.swift */,
+				8DC95D012471D52C00197C0F /* ProfilRow.swift */,
+			);
+			path = Rows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,6 +529,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DE184EE24811CFF0010573F /* Settings.bundle in Resources */,
 				8D55D9A923E0852700B0DC4B /* ClaimsCenterData.json in Resources */,
 				8DB99D4823AD247600AE483B /* LaunchScreen.storyboard in Resources */,
 				8DB99D4523AD247600AE483B /* Preview Assets.xcassets in Resources */,
@@ -582,7 +594,7 @@
 				8DB2E1E2243C93DB00E3A1BD /* LogoBarWithLabel.swift in Sources */,
 				8D55D9B323E08DE900B0DC4B /* UserData.swift in Sources */,
 				8D1C07902462DFA400F4EC7E /* ButtonRow.swift in Sources */,
-				8D1C07A22463037300F4EC7E /* ContinueBtn.swift in Sources */,
+				8D1C07A22463037300F4EC7E /* NextBtn.swift in Sources */,
 				8DC95CFD2471A7D500197C0F /* LogOutBtn.swift in Sources */,
 				8DC95D022471D52C00197C0F /* ProfilRow.swift in Sources */,
 				8D52E50A2464A96A00B1FA33 /* LabelTextFields.swift in Sources */,
@@ -791,6 +803,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mirascon/Mirascon.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Mirascon/Preview Content\"";
 				DEVELOPMENT_TEAM = QBKR6YXC55;
@@ -804,7 +817,7 @@
 				MARKETING_VERSION = 1.3.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mir.Mirascon;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Mirascon;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = "debug-only";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -824,6 +837,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mirascon/Mirascon.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Mirascon/Preview Content\"";
 				DEVELOPMENT_TEAM = QBKR6YXC55;
@@ -837,7 +851,7 @@
 				MARKETING_VERSION = 1.3.7;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mir.Mirascon;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Mirascon;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = "debug-only";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

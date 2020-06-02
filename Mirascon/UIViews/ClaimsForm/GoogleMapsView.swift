@@ -24,19 +24,17 @@ struct GoogleMapsView: View {
     }
     
     @State public var atHome = false
-    @State public var manuellyLocation = false
-    @State var address: String = ""
+    @State public var manuallyLocation = false
+    @State var street: String = ""
     @State var city: String = ""
     @State var state: String = ""
-    @State var zipCode: String = ""
     
     @State private var showingAlert = false
     let defaults = UserDefaults.standard
     
-    @State public var addressSaved = UserDefaults.standard.string(forKey: "address")
+    @State public var streetSaved = UserDefaults.standard.string(forKey: "street")
     @State public var citySaved = UserDefaults.standard.string(forKey: "city")
     @State public var stateSaved = UserDefaults.standard.string(forKey: "state")
-    @State public var zipCodeSaved = UserDefaults.standard.string(forKey: "zipCode")
     
     var body: some View {
         NavigationView {
@@ -54,15 +52,14 @@ struct GoogleMapsView: View {
                             Text("Is this vehicle at home?")
                                 .foregroundColor(Color.white)
                         }
-                        Toggle(isOn: $manuellyLocation) {
-                            Text("Manuelly enter your location.")
+                        Toggle(isOn: $manuallyLocation) {
+                            Text("Enter manually your location below.")
                                 .foregroundColor(Color.white)
                         }
-                        if manuellyLocation {
-                            LabelTextFields(label: "Address:", labelColor: Color.white, datas: $address, textFieldBorderColor: Color.white )
+                        if manuallyLocation {
+                            LabelTextFields(label: "Street:", labelColor: Color.white, datas: $street, textFieldBorderColor: Color.white )
                             LabelTextFields(label: "City:", labelColor: Color.white, datas: $city, textFieldBorderColor: Color.white )
                             LabelTextFields(label: "State:", labelColor: Color.white, datas: $state, textFieldBorderColor: Color.white )
-                            LabelTextFields(label: "ZIP Code::", labelColor: Color.white, datas: $zipCode, textFieldBorderColor: Color.white )
                         }
                  
                     }
@@ -71,18 +68,16 @@ struct GoogleMapsView: View {
                         if self.atHome {
                             //set UserDefaults
                         }
-                        if self.manuellyLocation {
-                            if self.address != self.stringsClass.emptyText && self.city != self.stringsClass.emptyText && self.state != self.stringsClass.emptyText && self.zipCode != self.stringsClass.emptyText {
+                        if self.manuallyLocation {
+                            if self.street != self.stringsClass.emptyText && self.city != self.stringsClass.emptyText && self.state != self.stringsClass.emptyText {
                                 
-                                self.addressSaved = self.address
+                                self.streetSaved = self.street
                                 self.citySaved = self.city
                                 self.stateSaved = self.state
-                                self.zipCodeSaved = self.zipCode
                                 
-                                UserDefaults.standard.set(self.address, forKey: self.stringsClass.forkey_address)
+                                UserDefaults.standard.set(self.street, forKey: self.stringsClass.forkey_street)
                                 UserDefaults.standard.set(self.city, forKey: self.stringsClass.forkey_city)
                                 UserDefaults.standard.set(self.state, forKey: self.stringsClass.forkey_state)
-                                UserDefaults.standard.set(self.zipCode, forKey: self.stringsClass.forkey_zipCode)
                                 
                                 self.viewRouter.currentPage = self.stringsClass.view_review
                             } else{
@@ -93,7 +88,7 @@ struct GoogleMapsView: View {
                         self.viewRouter.currentPage = self.stringsClass.view_review
                         }
                     }) {
-                        Text(stringsClass.continue_name)
+                        Text(stringsClass.proceed_name)
                             .fontWeight(.medium)
                             .foregroundColor(Color.white)
                         

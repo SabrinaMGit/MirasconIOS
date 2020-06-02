@@ -40,6 +40,7 @@ struct SignUpView: View {
     @State var phone: String = ""
     @State var email: String = ""
     @State var password: String = ""
+    @State var passwordsecond: String = ""
     
     @State private var didTap: Bool = false
     
@@ -74,6 +75,7 @@ struct SignUpView: View {
             self.presentationMode.wrappedValue.dismiss()
             self.emailAddress = ""
             self.password = ""
+            self.passwordsecond = ""
             self.agreeCheck = false
             self.errorText = ""
             
@@ -110,17 +112,36 @@ struct SignUpView: View {
                         
                         LabelTextFields(label: stringsClass.licencePlate_name, labelColor: Color.white, datas: $lp, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
                         
-                        LabelTextFields(label: stringsClass.phoneNumber_name, labelColor: Color.white, datas: $phone, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
+                        LabelTextFields(label: stringsClass.phoneNumber_name, labelColor: Color.white, datas: $phone, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray).keyboardType(.numberPad)
                         
-                        LabelTextFields(label: stringsClass.email_name, labelColor: Color.white, datas: $email, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
+                        LabelTextFields(label: stringsClass.email_name, labelColor: Color.white, datas: $email, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray).keyboardType(.emailAddress)
                         
                         VStack(alignment: .leading) {
-                            Text("Password")
+                            Text("Password:")
                                 .foregroundColor(Color.white)
                                 .multilineTextAlignment(.leading)
                                 .font(.headline)
                             
                             SecureField(stringsClass.emptyText, text: $password)
+                                .padding(dimensClass.cg_3)
+                                .background(colorClass.startColor)
+                                .foregroundColor(Color.white)
+                                .clipShape(RoundedRectangle(cornerRadius: dimensClass.cg_5, style: .continuous))
+                                .overlay(RoundedRectangle(cornerRadius: dimensClass.cg_5, style: .continuous)
+                                    .stroke( lineWidth: dimensClass.cg_0))
+                                .border(didTap ? colorClass.darkerRed : Color.gray, width: CGFloat(dimensClass.cg_2))
+                                .cornerRadius(5)
+                            // if password.isEmpty { Text("\(stringsClass.emptyText )").foregroundColor(.white) }
+                        }
+                        .padding(.horizontal, 15)
+                        
+                        VStack(alignment: .leading) {
+                            Text("Repeat Password:")
+                                .foregroundColor(Color.white)
+                                .multilineTextAlignment(.leading)
+                                .font(.headline)
+                            
+                            SecureField(stringsClass.emptyText, text: $passwordsecond)
                                 .padding(dimensClass.cg_3)
                                 .background(colorClass.startColor)
                                 .foregroundColor(Color.white)
@@ -148,33 +169,38 @@ struct SignUpView: View {
                 
                 Button(action: {
                     
-                    if self.firstName != self.stringsClass.emptyText && self.lastName != self.stringsClass.emptyText && self.lp != self.stringsClass.emptyText && self.phone != self.stringsClass.emptyText && self.email != self.stringsClass.emptyText && self.password != self.stringsClass.emptyText
+                    if self.firstName != self.stringsClass.emptyText && self.lastName != self.stringsClass.emptyText && self.lp != self.stringsClass.emptyText && self.phone != self.stringsClass.emptyText && self.email != self.stringsClass.emptyText && self.password != self.stringsClass.emptyText && self.passwordsecond != self.stringsClass.emptyText
                     {
-                        self.firstNameSaved = self.firstName
-                        self.lastNameSaved = self.lastName
-                        self.lpSaved = self.lp
-                        self.phoneSaved = self.phone
-                        self.mailSaved = self.email
-                        self.passwordSaved = self.password
-                        
-                        UserDefaults.standard.set(self.firstName, forKey: self.stringsClass.forkey_firstname)
-                        UserDefaults.standard.set(self.lastName, forKey: self.stringsClass.forkey_lastname)
-                        UserDefaults.standard.set(self.lp, forKey: self.stringsClass.forkey_lp)
-                        UserDefaults.standard.set(self.phone, forKey: self.stringsClass.forkey_phone)
-                        UserDefaults.standard.set(self.email, forKey: self.stringsClass.forkey_mail)
-                        
-                        if(self.agreeCheck){
-                            print("Printing outputs" + self.email, self.password  )
-                            self.shouldAnimate = true
-                            self.MailVerificationAuthView(email:self.email, password:self.password)
-                            self.alertIdentifier = AlertIdentifier(id: .forth)
-                            self.viewRouter.currentPage = self.stringsClass.view_loginUI
-                        }
-                        else{
-                            //self.errorText = "Please Agree to the Terms and Condition"
+                        if(self.password == self.passwordsecond)
+                        {
+                            self.firstNameSaved = self.firstName
+                            self.lastNameSaved = self.lastName
+                            self.lpSaved = self.lp
+                            self.phoneSaved = self.phone
+                            self.mailSaved = self.email
+                            self.passwordSaved = self.password
+                            
+                            UserDefaults.standard.set(self.firstName, forKey: self.stringsClass.forkey_firstname)
+                            UserDefaults.standard.set(self.lastName, forKey: self.stringsClass.forkey_lastname)
+                            UserDefaults.standard.set(self.lp, forKey: self.stringsClass.forkey_lp)
+                            UserDefaults.standard.set(self.phone, forKey: self.stringsClass.forkey_phone)
+                            UserDefaults.standard.set(self.email, forKey: self.stringsClass.forkey_mail)
+                            
+                            if(self.agreeCheck){
+                                print("Printing outputs" + self.email, self.password  )
+                                self.shouldAnimate = true
+                                self.MailVerificationAuthView(email:self.email, password:self.password)
+                                self.alertIdentifier = AlertIdentifier(id: .forth)
+                                self.viewRouter.currentPage = self.stringsClass.view_loginUI
+                            }
+                            else{
+                                //self.errorText = "Please Agree to the Terms and Condition"
+                                self.alertIdentifier = AlertIdentifier(id: .second)
+                            }
+                            //self.showingAlert = true
+                        }else{
                             self.alertIdentifier = AlertIdentifier(id: .second)
                         }
-                        //self.showingAlert = true
                         
                     } else{
                         self.alertIdentifier = AlertIdentifier(id: .first)
@@ -208,7 +234,7 @@ struct SignUpView: View {
                 
                 
                 //Spacer()
-                backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_loginUI)
+                //backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_loginUI)
             }
             //.padding(10)
             

@@ -37,11 +37,11 @@ struct Preview: View {
                 List{
                     PreviewRow(image: "Claims_80x80px", name: "Claims Center", description: "Mirascon supports you by quickly connecting to your local emergency center and also creating an accident report for you.")
                     PreviewRow(image: "Police_80x80px", name: "Emergency Center", description: "Mirascon supports you by quickly connecting to your local emergency center and also creating an accident report for you.")
-                    PreviewRow(image: "GlassDamage_1024x1024px", name: "Glass Damage", description: "Mirascon supports you by quickly connecting to your local emergency center and also creating an accident report for you.")
-                    PreviewRow(image: "Chat_80x80px", name: "Support", description: "Mirascon supports you by quickly connecting to your local emergency center and also creating an accident report for you.")
+                    PreviewRow(image: "RoadsideAssistance", name: "Roadside Assistance", description: "Mirascon supports you by quickly connecting to your local emergency center and also creating an accident report for you.")
+                    //PreviewRow(image: "Chat_80x80px", name: "Support", description: "Mirascon supports you by quickly connecting to your local emergency center and also creating an accident report for you.")
                 }
                 .listRowInsets(EdgeInsets())
-                Button(stringsClass.continue_name) {
+                Button(stringsClass.next_name) {
                     self.viewRouter.currentPage = self.stringsClass.view_loginUI
                 }.foregroundColor(Color.white)
                     .buttonStyle(GradientBackgroundStyle(color: colorClass.blue))

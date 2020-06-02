@@ -1,6 +1,0 @@
-framework module Pods_Mirascon {
-  umbrella header "Pods-Mirascon-umbrella.h"
-
-  export *
-  module * { export * }
-}

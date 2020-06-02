@@ -44,7 +44,7 @@ struct Review: View {
         ZStack{
             RadialGradientUI()
             VStack{
-                NavigationBarWithItemUI(viewModel: ViewRouter(), viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
+                NavigationBarWithItemUI(viewModel: viewRouter, viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
                 Walkthrough(image: "WalkthroughMail")
                 List{
                     VStack(alignment: .leading) {
@@ -79,10 +79,9 @@ struct Review: View {
                                     .font(.title)
                                     .foregroundColor(colorClass.startColor)
                                     .padding()
-                                LabelTextField(label: stringsClass.forkey_address, labelColor: colorClass.startColor, data: addressSaved ?? stringsClass.emptyText, dataColor: colorClass.startColor)
+                                LabelTextField(label: stringsClass.forkey_street, labelColor: colorClass.startColor, data: addressSaved ?? stringsClass.emptyText, dataColor: colorClass.startColor)
                                 LabelTextField(label: stringsClass.forkey_city, labelColor: colorClass.startColor, data: citySaved  ?? stringsClass.emptyText, dataColor: colorClass.startColor)
                                 LabelTextField(label: stringsClass.forkey_state, labelColor: colorClass.startColor, data: stateSaved ?? stringsClass.emptyText, dataColor: colorClass.startColor)
-                                LabelTextField(label: stringsClass.forkey_zipCode, labelColor: colorClass.startColor, data: zipCodeSaved ?? stringsClass.emptyText, dataColor: colorClass.startColor)
                             }
                             Spacer()
                             Image("chevron-right")

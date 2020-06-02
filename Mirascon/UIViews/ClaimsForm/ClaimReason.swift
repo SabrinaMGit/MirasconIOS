@@ -26,7 +26,7 @@ struct ClaimReason: View {
         ZStack{
             RadialGradientUI()
             VStack{
-                NavigationBarWithItemUI(viewModel: ViewRouter(), viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
+                NavigationBarWithItemUI(viewModel: viewRouter, viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
                 Walkthrough(image: "WalkthroughCar")
                     //Spacer()
                 List{

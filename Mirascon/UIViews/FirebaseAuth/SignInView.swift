@@ -168,7 +168,6 @@ struct SignInView: View {
                                 return
                             }
                             self.alertIdentifier = AlertIdentifier(id: .second)
-                            
                         }
                     }) {
                         

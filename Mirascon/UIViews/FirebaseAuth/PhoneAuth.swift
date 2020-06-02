@@ -34,7 +34,7 @@ struct PhoneAuth : View {
             }
             else{
                 NavigationView{
-                    FirstPage()
+                    FirstPage(value: CGFloat())
                 }
             }
             
@@ -75,16 +75,19 @@ struct FirstPage: View {
     @State var alert = false
     @State var verificationID = ""
     
-    //@ObjectBinding var text: Binding<String>
+    //@Binding var text: Binding<String>
     @State private var text = ""
     var onDismissKeyboard: (() -> Void)?
+    @State var value: CGFloat
+    @ObservedObject var keyboard = KeyboardResponder()
+    @State private var showingSheet = false
     
     //@State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
     
     var body : some View{
         ZStack{
             Image("phoneBackg_img")
-                .resizable() .aspectRatio(contentMode: .fill) .edgesIgnoringSafeArea(.top) .frame(width: 400.0, height:650)
+                .resizable() .aspectRatio(contentMode: .fill) .edgesIgnoringSafeArea(.top) .frame(width: screenWidth, height:screenHeight)
             RadialGradient(gradient: Gradient(colors: [colorClass.startColor.opacity(0.9), colorClass.endColor.opacity(0.8)]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
                 .edgesIgnoringSafeArea(.all)
             VStack(alignment: .center){
@@ -99,8 +102,6 @@ struct FirstPage: View {
                     .font(.body)
                     .foregroundColor(.gray)
                 
-                
-                
                 HStack{
                     Spacer()
                     TextField("+49", text: $ccode)
@@ -110,7 +111,6 @@ struct FirstPage: View {
                         .padding()
                         .background(Color.white)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
-                    
                     
                     TextField("Number", text: $no)
                         .keyboardType(.numberPad) //.numbersAndPunctuation
@@ -131,28 +131,24 @@ struct FirstPage: View {
                     
                     
                     Button(action: {
-                        //self.viewRouter.currentPage = "ScndPage"
+                        UIApplication.shared.endEditing() // Call to dismiss keyboard
+                        self.showingSheet.toggle()
                         PhoneAuthProvider.provider().verifyPhoneNumber("+"+self.ccode+self.no, uiDelegate: nil) { (verificationID, err) in
-                            //self.phoneAuth.showScnd = true
-                            //self.viewRouter.currentPage = "ScndPage"
                             if err != nil{
                                 print("Error!!")
                                 self.msg = (err?.localizedDescription)!
                                 self.alert.toggle()
-                                //self.phoneAuth.showScnd = true
+                                self.showingSheet.toggle()
                                 return
                             }
                             print("Success!!")
                            // UIApplication.shared.keyWindow!.rootViewController = UIHostingController(rootView: ScndPage(viewRouter: self.viewRouter, show: self.$show, verificationID: self.$verificationID ))
                             self.verificationID = verificationID!
                             self.show.toggle()
+                            self.showingSheet.toggle()
                             UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
-                            //self.phoneAuth.showScnd = true
-                            //self.viewRouter.currentPage = "ScndPage"
-                            //self.viewRouter.currentPage = self.stringsClass.view_saveData
                             
                         }
-                        //self.viewRouter.currentPage = "ScndPage"
                     }) {
                         
                         Text("Send").frame(width: UIScreen.main.bounds.width - 30,height: 50)
@@ -167,29 +163,23 @@ struct FirstPage: View {
                     
                     Alert(title: Text("An error has occurred!"), message: Text(self.msg), dismissButton: .default(Text("Got it!")))
             }
+            if showingSheet == true{
+                VStack {
+                 ActivityIndicator()
+                   .frame(width: 60, height: 60)
+                }.foregroundColor(colorClass.orange)
+            }
         }
-    }
-    func addDoneButtonOnNumpad(textField: UITextField) {
-
-      let keypadToolbar: UIToolbar = UIToolbar()
-
-      // add a done button to the numberpad
-      keypadToolbar.items=[
-        UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: textField, action: #selector(UITextField.resignFirstResponder)),
-        UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
-      ]
-      keypadToolbar.sizeToFit()
-      // add a toolbar with a done button above the number pad
-      textField.inputAccessoryView = keypadToolbar
+        .padding(.bottom, keyboard.currentHeight)
     }
 }
-/*
- UIApplication.shared.endEditing() // Call to dismiss keyboard
+
+ //UIApplication.shared.endEditing() // Call to dismiss keyboard
  extension UIApplication {
  func endEditing() {
  sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
  }
- }*/
+ }
 
 
 struct ScndPage : View {
@@ -204,13 +194,14 @@ struct ScndPage : View {
     //let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")
     @State var msg = ""
     @State var alert = false
+    @ObservedObject var keyboard = KeyboardResponder()
     
     var body : some View{
         
         ZStack(alignment: .topLeading) {
             
             Image("phoneBackg_img")
-                .resizable() .aspectRatio(contentMode: .fill) .edgesIgnoringSafeArea(.top) .frame(width: 400.0, height:650)
+                .resizable() .aspectRatio(contentMode: .fill) .edgesIgnoringSafeArea(.top) .frame(width: screenWidth, height:screenHeight)
             
             RadialGradient(gradient: Gradient(colors: [colorClass.startColor.opacity(0.9), colorClass.endColor.opacity(0.8)]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650).edgesIgnoringSafeArea(.all)
             
@@ -226,7 +217,7 @@ struct ScndPage : View {
                         .padding(.top, 12)
                     
                     TextField("Code", text: self.$verificationCode)
-                        .keyboardType(.default)
+                        .keyboardType(.numberPad)
                         .padding()
                         .background(Color.white)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -234,7 +225,7 @@ struct ScndPage : View {
                     
                     
                     Button(action: {
-                        
+                        UIApplication.shared.endEditing() // Call to dismiss keyboard
                         let credential =  PhoneAuthProvider.provider().credential(withVerificationID: self.verificationID, verificationCode: self.verificationCode)
                         
                         Auth.auth().signIn(with: credential) { (res, err) in
@@ -261,19 +252,7 @@ struct ScndPage : View {
                 }
                 
             }
-            
-            Button(action: {
-                
-                self.show.toggle()
-                 //self.viewRouter.currentPage = self.stringsClass.view_saveData
-                //self.viewRouter.currentPage = self.stringsClass.view_saveData
-                
-            }) {
-                
-                Image(systemName: "chevron.left").font(.title)
-                
-            }.foregroundColor(.orange)
-            
+            .padding(.bottom, keyboard.currentHeight)
         }
         .padding(.horizontal, 45).padding(.bottom,95)
         .alert(isPresented: $alert) {
@@ -281,115 +260,4 @@ struct ScndPage : View {
             Alert(title: Text("Error"), message: Text(self.msg), dismissButton: .default(Text("Ok")))
         }
     }
-}
-
-
-// The UIViewControllerRepresentable, feeding and controlling the UIViewController
-struct TextFieldRepresentable
-    : UIViewControllerRepresentable {
-    
-    // the callback
-    let dismissKeyboardCallback: (() -> Void)?
-
-    // created in the previous file/gist
-    let viewController: TextFieldViewController
-    
-    init (
-        text: Binding<String>
-        , dismissKeyboardCallback: (() -> Void)?) {
-        
-        self.dismissKeyboardCallback = dismissKeyboardCallback
-        self.viewController = TextFieldViewController(
-            text: text
-            , onDismiss: dismissKeyboardCallback
-        )
-    }
-    
-    // UIViewControllerRepresentable
-    func makeUIViewController(context: Context) -> UIViewController {
-        
-        return viewController
-    }
-      
-    // UIViewControllerRepresentable
-    func updateUIViewController(_ viewController: UIViewController, context: Context) {
-    }
-    
-}
-
-import UIKit
-import SwiftUI
-
-class TextFieldViewController
-    : UIViewController {
-    
-    // our custom text field will report changes to the outside
-    let text: Binding<String>?
-    
-    // if the toolbar (see below) is used (Done), the keyboard shall be dismissed
-    // and optionally we execute a provided closure
-    let onDismiss: (() -> Void)?
-    
-    init (
-        text: Binding<String>
-        , onDismiss: (() -> Void)?) {
-        
-        self.text = text
-        self.onDismiss = onDismiss
-        
-        super.init(
-            nibName: "<XIB>"
-            , bundle: Bundle.main //Bundle.main?
-        )
-    }
-    
-    required init?(coder: NSCoder) {
-        self.text = nil
-        self.onDismiss = nil
-        
-        super.init(coder: coder)
-    }
-    
-    // helper function to encapsulate calling the "view" of UIViewController
-    fileprivate func getTextField() -> UITextField? {
-        return view as? UITextField
-    }
-    
-    override func viewDidLoad() {
-        let textField = self.getTextField()
-        guard textField != nil else {
-            return
-        }
-        
-        // configure a toolbar with a Done button
-        let toolbar = UIToolbar()
-        toolbar.setItems([
-                // just moves the Done item to the right
-                UIBarButtonItem(
-                    barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace
-                    , target: nil
-                    , action: nil
-                )
-                , UIBarButtonItem(
-                    title: "Done"
-                    , style: UIBarButtonItem.Style.done
-                    , target: self
-                    , action: #selector(self.onSet)
-                )
-            ]
-            , animated: true
-        )
-        toolbar.barStyle = UIBarStyle.default
-        toolbar.sizeToFit()
-        textField?.inputAccessoryView = toolbar
-    }
-    
-    @objc private func onSet() {
-        let textField = self.getTextField()
-        textField?.resignFirstResponder()
-        
-        self.text?.wrappedValue = textField?.text ?? ""
-        self.onDismiss?()
-    }
-    
 }

@@ -78,7 +78,11 @@ struct SignInView: View {
     var body: some View {
         
         ZStack{
-            RadialGradientUI()
+            Image("roadway_signIn_img")
+                .resizable() .aspectRatio(contentMode: .fill) .edgesIgnoringSafeArea(.top) .frame(width: screenWidth, height:screenHeight)
+            
+            RadialGradient(gradient: Gradient(colors: [colorClass.startColor.opacity(0.9), colorClass.endColor.opacity(0.8)]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
+                .edgesIgnoringSafeArea(.all)
             
             VStack() {
                 NavigationBarImageUI()
@@ -148,7 +152,7 @@ struct SignInView: View {
                 }
                 ) {
                     Text("Forgot Password")
-                }
+                }.padding(.bottom,20)
                 
                 
                // Text(errorText).frame(minWidth: 0, maxWidth: .infinity, alignment: .topLeading)

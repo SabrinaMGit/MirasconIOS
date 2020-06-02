@@ -59,8 +59,8 @@ struct Profil: View {
                 
                 }.foregroundColor(Color.white)
                 Spacer()
-                LogOutView(viewRouter: viewRouter)
-                backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_claimsForm)
+                //LogOutView(viewRouter: viewRouter)
+                //backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_claimsForm)
                 
             }
         }

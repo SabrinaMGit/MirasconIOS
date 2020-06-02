@@ -38,7 +38,7 @@ struct LoginUI: View {
             } else {
                
                 Image("mercedes_img")
-                    .resizable() .aspectRatio(contentMode: .fill) .edgesIgnoringSafeArea(.top) .frame(width: 400.0,height:650)
+                    .resizable() .aspectRatio(contentMode: .fill) .edgesIgnoringSafeArea(.top) .frame(width: screenWidth, height:screenHeight)
                 
                 RadialGradient(gradient: Gradient(colors: [colorClass.startColor.opacity(0.9), colorClass.endColor.opacity(0.8)]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
                     .edgesIgnoringSafeArea(.all)
@@ -58,10 +58,12 @@ struct LoginUI: View {
                         HStack{
                             Text("Only for debug:")
                                 .foregroundColor(colorClass.blue)
-                                .fontWeight(.medium)
-                            Text("Show me the main view. Click me!")
+                                .fontWeight(.light)
+                                .font(.body)
+                            Text("Click me!")
                                 .foregroundColor(colorClass.blue)
-                                .fontWeight(.medium)
+                                .fontWeight(.light)
+                                .font(.body)
                         }
                     }
                    
@@ -103,7 +105,7 @@ struct LoginUI: View {
                         }
                     }.padding(.horizontal, 5)
                     backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_pagerview)
-                }.padding(.bottom, 50)
+                }.padding(.bottom, 10)
             }
         }
     }

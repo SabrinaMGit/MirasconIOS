@@ -23,7 +23,6 @@ struct GoogleMapsView: View {
         UITableViewCell.appearance().backgroundColor = .clear
     }
     
-    @State public var atHome = false
     @State public var manuallyLocation = false
     @State var street: String = ""
     @State var city: String = ""
@@ -41,33 +40,42 @@ struct GoogleMapsView: View {
             ZStack{
                 RadialGradientUI()
                 VStack {
-                    NavigationBarWithItemUI(viewModel: viewRouter, viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
-                    Walkthrough(image: "WalkthroughMap")
+                    NavigationBarImageUI().padding(.bottom,20)
+                    Walkthrough(image: "WalkthroughMap").padding(.horizontal,10)
                     
                     List{
+                        ZStack(alignment: .leading){
+                            RadialGradient(gradient: Gradient(colors: [colorClass.blue, colorClass.blue]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
+                            
+                            Text("Use the location button in the map view or enter your location manually.")
+                                //.background(Color.white)
+                                //.cornerRadius(dimensClass.cg_4)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(Color.white)
+                                .padding(dimensClass.cg_8)
+                                .font(.subheadline)
+                                .lineLimit(nil)
+                                .fixedSize(horizontal: false, vertical: true)
+                            //.padding(.top, dimensClass.cg_20)
+                        }.frame( height: dimensClass.cg_40).cornerRadius(5)
+                           // .padding(.horizontal,12)
                         GoogleMap()
                             .frame(height: dimensClass.cg_200)
-                  
-                        Toggle(isOn: $atHome) {
-                            Text("Is this vehicle at home?")
-                                .foregroundColor(Color.white)
-                        }
+    
                         Toggle(isOn: $manuallyLocation) {
                             Text("Enter manually your location below.")
                                 .foregroundColor(Color.white)
                         }
+                        
                         if manuallyLocation {
-                            LabelTextFields(label: "Street:", labelColor: Color.white, datas: $street, textFieldBorderColor: Color.white )
                             LabelTextFields(label: "City:", labelColor: Color.white, datas: $city, textFieldBorderColor: Color.white )
-                            LabelTextFields(label: "State:", labelColor: Color.white, datas: $state, textFieldBorderColor: Color.white )
+                            LabelTextFields(label: "Street:", labelColor: Color.white, datas: $street, textFieldBorderColor: Color.white )
+                            LabelTextFields(label: stringsClass.forkey_state, labelColor: Color.white, datas: $state, textFieldBorderColor: Color.white )
                         }
-                 
+                        
                     }
                     .listRowInsets(EdgeInsets())
                     Button(action: {
-                        if self.atHome {
-                            //set UserDefaults
-                        }
                         if self.manuallyLocation {
                             if self.street != self.stringsClass.emptyText && self.city != self.stringsClass.emptyText && self.state != self.stringsClass.emptyText {
                                 
@@ -84,8 +92,8 @@ struct GoogleMapsView: View {
                                 self.showingAlert = true
                             }
                         } else{
-                        //set manuelly Location in UserDefaults
-                        self.viewRouter.currentPage = self.stringsClass.view_review
+                            //set manuelly Location in UserDefaults
+                            self.viewRouter.currentPage = self.stringsClass.view_review
                         }
                     }) {
                         Text(stringsClass.proceed_name)

@@ -26,16 +26,32 @@ struct ClaimReason: View {
         ZStack{
             RadialGradientUI()
             VStack{
-                NavigationBarWithItemUI(viewModel: viewRouter, viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
-                Walkthrough(image: "WalkthroughCar")
+                NavigationBarImageUI().padding(.bottom,20)
+                Walkthrough(image: "WalkthroughCar").padding(.horizontal,10)
                     //Spacer()
                 List{
+                ZStack(alignment: .leading){
+                    RadialGradient(gradient: Gradient(colors: [colorClass.blue, colorClass.blue]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
+                    
+                    Text("What is the cause of your accident?")
+                        //.background(Color.white)
+                        //.cornerRadius(dimensClass.cg_4)
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(Color.white)
+                        .padding(dimensClass.cg_8)
+                        .font(.subheadline)
+                        .lineLimit(nil)
+                        .fixedSize(horizontal: false, vertical: true)
+                    //.padding(.top, dimensClass.cg_20)
+                }.frame( height: dimensClass.cg_40).cornerRadius(5)
+                   // .padding(.horizontal,12)
+            
+                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: "car-disabled", name: "My vehicle is deactivated")
+                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: "car-fire", name: "Stuck in a Ditch")
                     ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: "platter_reifen", name: "Flat Tire")
                     ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: "gas-station", name: "Low Fuel")
                     ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: "battery-off-outline", name: "Battery Dead")
                     ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: "car-door-lock", name: "Locked")
-                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: "car-disabled", name: "My vecicle is disabled")
-                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: "car-fire", name: "Stuck in a Ditch")
                     // Spacer()
                     }
                 //.padding()

@@ -19,7 +19,7 @@ struct Walkthrough: View {
             .resizable()
             .scaledToFit()
             .frame(height:dimensClass.cg_50)
-            .padding()
+            .padding(1)
     }
 }
 

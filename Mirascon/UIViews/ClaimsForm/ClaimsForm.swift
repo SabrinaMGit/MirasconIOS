@@ -48,18 +48,35 @@ struct ClaimsForm: View {
         ZStack{
             RadialGradientUI()
                 VStack{
-                    NavigationBarWithItemUI(viewModel: viewRouter, viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
+                    //NavigationBarWithItemUI(viewModel: viewRouter, viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
+                    NavigationBarImageUI().padding(.bottom,20)
                     ZStack{
-                    Walkthrough(image: "selectInfo")
+                    Walkthrough(image: "selectInfo").padding(.horizontal,10)
                         HStack{
-                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_claimsForm}) {Text("")}.padding(.horizontal,20)
-                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_claimReason}) {Text("")}.padding(.horizontal,20)
-                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_camera}) {Text("")}.padding(.horizontal,20)
-                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_googleMaps}) {Text("")}.padding(.horizontal,20)
-                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_review}) {Text("")}.padding(.horizontal,20)
+                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_claimsForm}) {Text("")}.frame(width: 50, height: 50)//.background(Color.white)
+                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_claimReason}) {Text("")}.frame(width: 20, height: 20)
+                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_camera}) {Text("")}.frame(width: 20, height: 20)
+                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_googleMaps}) {Text("")}.frame(width: 20, height: 20)
+                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_review}) {Text("")}.frame(width: 20, height: 20)
                             }
                     }
-                List{
+                    List{
+                    ZStack(alignment: .leading){
+                        RadialGradient(gradient: Gradient(colors: [colorClass.blue, colorClass.blue]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
+                        
+                        Text("Is your personal data correct? You can complete and change the data in the profile.")
+                            //.background(Color.white)
+                            //.cornerRadius(dimensClass.cg_4)
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(Color.white)
+                            .padding(dimensClass.cg_8)
+                            .font(.subheadline)
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
+                        //.padding(.top, dimensClass.cg_20)
+                    }.frame( height: dimensClass.cg_70).cornerRadius(5)
+                      //  .padding(.horizontal,12)
+               
                     /* HStack{
                      Image(stringsClass.fillForm_img)
                      .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
@@ -86,15 +103,17 @@ struct ClaimsForm: View {
                      .cornerRadius(dimensClass.cg_4)
                      .multilineTextAlignment(.leading)
                      */
+                    HStack{
                     VStack(alignment: .leading) {
-                        LabelTextField(label: stringsClass.firstName_name, labelColor: Color.white, data: stringsClass.emptyText, dataColor: Color.white)
-                        LabelTextField(label: stringsClass.lastName_name, labelColor: Color.white, data: stringsClass.emptyText, dataColor: Color.white)
-                        LabelTextField(label: stringsClass.licencePlate_name, labelColor: Color.white, data: stringsClass.emptyText, dataColor: Color.white)
-                        LabelTextField(label: stringsClass.phoneNumber_name, labelColor: Color.white, data: stringsClass.emptyText, dataColor: Color.white)
-                        LabelTextField(label: stringsClass.email_name, labelColor: Color.white, data: stringsClass.emptyText, dataColor: Color.white)
+                        LabelTextField(label: stringsClass.firstName_name, labelColor: Color.black, data: stringsClass.emptyText, dataColor: Color.white)
+                        LabelTextField(label: stringsClass.lastName_name, labelColor: Color.black, data: stringsClass.emptyText, dataColor: Color.white)
+                        LabelTextField(label: stringsClass.licencePlate_name, labelColor: Color.black, data: stringsClass.emptyText, dataColor: Color.white)
+                        LabelTextField(label: stringsClass.phoneNumber_name, labelColor: Color.black, data: stringsClass.emptyText, dataColor: Color.white)
+                        LabelTextField(label: stringsClass.email_name, labelColor: Color.black, data: stringsClass.emptyText, dataColor: Color.white)
                         
                     }
-                    .padding(.top, 20)
+                    }.frame( width: screenWidth-30) .background(Color.white) .cornerRadius(5) .clipped().shadow(color: Color.black, radius: 5, x: 0, y: 5)
+                    .padding(.top, 10)
                     //.listRowInsets(EdgeInsets())
                    
                     /*HStack {
@@ -143,62 +162,9 @@ struct GradientBackgroundStyle: ButtonStyle {
     }
 }*/
 
-struct claimsFormRow: View {
-    
-    let colorClass = ColorUI()
-    let dimensClass = dimens()
-    let stringsClass = strings()
-    
-    @State var lp: String = ""
-    @State public var lpSaved = UserDefaults.standard.string(forKey: "lp")
-    
-    var body: some View{
-        VStack {
-            HStack {
-                Text(stringsClass.licencePlate_name)
-                    .foregroundColor(Color.white)
-                    .multilineTextAlignment(.leading)
-                // Spacer()
-            }
-            ZStack(alignment: .leading){
-                TextField(stringsClass.emptyText, text: $lp)
-                    .padding(dimensClass.cg_8)
-                    .background(colorClass.blueRectangle)
-                    .foregroundColor(Color.white)
-                    .clipShape(RoundedRectangle(cornerRadius:  dimensClass.cg_10, style: .continuous))
-                    .overlay(RoundedRectangle(cornerRadius:  dimensClass.cg_10, style: .continuous)
-                        .stroke( lineWidth:  dimensClass.cg_0))
-                if lp.isEmpty { Text("\(lpSaved ?? stringsClass.emptyText)").foregroundColor(.white) }
-            }
-        }
-    }
-}
 
-struct LabelTextField : View {
-    let colorClass = ColorUI()
-    let dimensClass = dimens()
-    let stringsClass = strings()
-    
-    var label: String
-    var labelColor: Color
-    var data: String
-    var dataColor: Color
-    
-    var body: some View {
-        
-        VStack(alignment: .leading) {
-            Text(label)
-                .foregroundColor(labelColor)
-                .multilineTextAlignment(.leading)
-                .font(.headline)
-            Text(data)
-                .foregroundColor(dataColor)
-                .multilineTextAlignment(.leading)
-                .font(.body)
-        }
-        .padding(.horizontal, 15)
-    }
-}
+
+
 
 
 /*

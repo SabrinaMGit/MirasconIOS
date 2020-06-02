@@ -190,8 +190,8 @@ struct SignUpView: View {
                                 print("Printing outputs" + self.email, self.password  )
                                 self.shouldAnimate = true
                                 self.MailVerificationAuthView(email:self.email, password:self.password)
-                                self.alertIdentifier = AlertIdentifier(id: .forth)
-                                self.viewRouter.currentPage = self.stringsClass.view_loginUI
+                                //self.alertIdentifier = AlertIdentifier(id: .forth)
+                                self.viewRouter.currentPage = self.stringsClass.view_mainview
                             }
                             else{
                                 //self.errorText = "Please Agree to the Terms and Condition"

@@ -37,61 +37,115 @@ struct Review: View {
     @State public var zipCodeSaved = UserDefaults.standard.string(forKey: "zipCode")
     
     @State var result: Result<MFMailComposeResult, Error>? = nil
-       @State var isShowingMailView = false
-       @State var alertNoMail = false
+    @State var isShowingMailView = false
+    @State var alertNoMail = false
+    @State var ProfilIsPresent: Bool = false
     
     var body: some View {
         ZStack{
             RadialGradientUI()
             VStack{
-                NavigationBarWithItemUI(viewModel: viewRouter, viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
-                Walkthrough(image: "WalkthroughMail")
+                NavigationBarImageUI().padding(.bottom,20)
+                Walkthrough(image: "WalkthroughMail").padding(.horizontal,10)
+                
                 List{
-                    VStack(alignment: .leading) {
+                    ZStack(alignment: .leading){
+                        RadialGradient(gradient: Gradient(colors: [colorClass.blue, colorClass.blue]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
                         
+                        Text("Are all the data complete? Confirm your entries and send us your damage report.")
+                            //.background(Color.white)
+                            //.cornerRadius(dimensClass.cg_4)
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(Color.white)
+                            .padding(dimensClass.cg_8)
+                            .font(.subheadline)
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
+                        //.padding(.top, dimensClass.cg_20)
+                    }.frame( height: dimensClass.cg_70).cornerRadius(5)
+                    // .padding(.horizontal,12)
+                    
+                    Button(action: {
+                        self.ProfilIsPresent = true
+                    }){
                         HStack{
                             
                             VStack(alignment: .leading){
                                 
-                                Text("Personal Information")
-                                    .font(.title)
+                                Text("Personal Information:")
+                                    .font(.headline)
                                     .foregroundColor(colorClass.startColor)
                                     .padding()
+                                    .multilineTextAlignment(.leading)
                                 
                                 LabelTextField(label: stringsClass.firstName_name, labelColor: colorClass.startColor, data: firstNameSaved  ?? stringsClass.emptyText, dataColor: colorClass.startColor)
                                 LabelTextField(label: stringsClass.lastName_name, labelColor: colorClass.startColor, data: lastNameSaved ?? stringsClass.emptyText, dataColor: colorClass.startColor)
                                 LabelTextField(label: stringsClass.licencePlate_name, labelColor: colorClass.startColor, data: lpSaved ?? stringsClass.emptyText, dataColor: colorClass.startColor)
+                                 LabelTextField(label: stringsClass.email_name, labelColor: colorClass.startColor, data: mailSaved ?? stringsClass.emptyText, dataColor: colorClass.startColor)
                                 LabelTextField(label: stringsClass.phoneNumber_name, labelColor: colorClass.startColor, data: phoneSaved ?? stringsClass.emptyText, dataColor: colorClass.startColor)
- 
-                                
-                            }
+                        
+                            }.padding(.bottom,10)
                             Spacer()
-                            Image("chevron-right")
+                            Image("pencil-black").resizable().frame(width: 20, height: 20)
                         }
-                        .frame(minWidth: dimensClass.cg_0, idealWidth: dimensClass.cg_450, maxWidth: dimensClass.cg_500, minHeight: dimensClass.cg_0, idealHeight: dimensClass.cg_300, maxHeight: dimensClass.cg_450, alignment: .leading)
-                        .background(colorClass.grey)
-                        .padding(.bottom, 20)
-                        
-                        
+                        .frame( width: screenWidth-30) .background(Color.white) .cornerRadius(5) .clipped().shadow(color: Color.gray, radius: 2, x: 0, y: 2)
+                        .padding(.bottom, 5)
+                    }.sheet(isPresented: $ProfilIsPresent) {
+                        Profil(self.viewRouter)
+                    }
+                    //-------
+                    Button(action: {
+                        self.ProfilIsPresent = true
+                    }){
                         HStack{
                             VStack(alignment: .leading){
-                                Text("Accident Information")
-                                    .font(.title)
+                                Text("Accident Information:")
+                                    .font(.headline)
+                                    .foregroundColor(colorClass.startColor)
+                                    .padding()
+                                VStack(alignment: .leading) {
+                                    Text("The reason for my damage report is: ")
+                                        .foregroundColor(colorClass.startColor)
+                                        .multilineTextAlignment(.leading)
+                                        .font(.body)
+                                    Text("A disabled vehicle.")
+                                        .foregroundColor(colorClass.startColor)
+                                        .multilineTextAlignment(.leading)
+                                        .font(.body)
+                                }
+                                .padding(.horizontal, 15)
+                            
+                            }.padding(.bottom,5)
+                            Spacer()
+                            Image("pencil-black").resizable().frame(width: 20, height: 20)
+                        }
+                        .frame( width: screenWidth-30) .background(Color.white) .cornerRadius(5) .clipped().shadow(color: Color.gray, radius: 2, x: 0, y: 2)
+                        .padding(.bottom, 5)
+                    }.sheet(isPresented: $ProfilIsPresent) {
+                        ClaimReason(self.viewRouter)
+                    }
+                    
+                    Button(action: {
+                        self.ProfilIsPresent = true
+                    }){
+                        HStack{
+                            VStack(alignment: .leading){
+                                Text("Location Information:")
+                                    .font(.headline)
                                     .foregroundColor(colorClass.startColor)
                                     .padding()
                                 LabelTextField(label: stringsClass.forkey_street, labelColor: colorClass.startColor, data: addressSaved ?? stringsClass.emptyText, dataColor: colorClass.startColor)
                                 LabelTextField(label: stringsClass.forkey_city, labelColor: colorClass.startColor, data: citySaved  ?? stringsClass.emptyText, dataColor: colorClass.startColor)
                                 LabelTextField(label: stringsClass.forkey_state, labelColor: colorClass.startColor, data: stateSaved ?? stringsClass.emptyText, dataColor: colorClass.startColor)
-                            }
+                            }.padding(.bottom,10)
                             Spacer()
-                            Image("chevron-right")
+                            Image("pencil-black").resizable().frame(width: 20, height: 20)
                         }
-                        .frame(minWidth: dimensClass.cg_0, idealWidth: dimensClass.cg_350, maxWidth: dimensClass.cg_450, minHeight: dimensClass.cg_0, idealHeight: dimensClass.cg_300, maxHeight: dimensClass.cg_450, alignment: .leading)
-                        .background(colorClass.grey)
-                        .padding(.bottom, 20)
-                        
+                        .frame( width: screenWidth-30) .background(Color.white) .cornerRadius(5) .clipped().shadow(color: Color.gray, radius: 2, x: 0, y: 2)
+                        .padding(.bottom, 5)
+                    }.sheet(isPresented: $ProfilIsPresent) {
+                        GoogleMapsView(self.viewRouter)
                     }
-                    .padding(.top, 20)
                 }
                 //ContinueBtn(viewModel: viewRouter, viewRouterName: stringsClass.view_googleMaps)
                 Button(action: {
@@ -103,13 +157,13 @@ struct Review: View {
                         .foregroundColor(Color.white)
                     
                 }.buttonStyle(GradientBackgroundStyle(color: colorClass.btnColor))
-                //            .disabled(!MFMailComposeViewController.canSendMail())
-                .sheet(isPresented: $isShowingMailView) {
-                    MailView(result: self.$result)
-            }
-            .alert(isPresented: self.$alertNoMail) {
-                Alert(title: Text(stringsClass.no_mail_setup_txt))
-            }
+                    //            .disabled(!MFMailComposeViewController.canSendMail())
+                    .sheet(isPresented: $isShowingMailView) {
+                        MailView(result: self.$result)
+                }
+                .alert(isPresented: self.$alertNoMail) {
+                    Alert(title: Text(stringsClass.no_mail_setup_txt))
+                }
                 backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_googleMaps)
             }
         }

@@ -82,8 +82,14 @@
 		8DC95D022471D52C00197C0F /* ProfilRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95D012471D52C00197C0F /* ProfilRow.swift */; };
 		8DC95D042471D83100197C0F /* LogOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95D032471D83100197C0F /* LogOutView.swift */; };
 		8DC95D062471DB2300197C0F /* AlertIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95D052471DB2300197C0F /* AlertIdentifier.swift */; };
+		8DD277D224867E0200B9F9FB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8DD277D124867E0200B9F9FB /* .gitignore */; };
+		8DD277D424867F5B00B9F9FB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8DD277D324867F5B00B9F9FB /* Settings.bundle */; };
+		8DD277D62486A78400B9F9FB /* TestNumbPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD277D52486A78400B9F9FB /* TestNumbPad.swift */; };
+		8DD277D82486B16500B9F9FB /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD277D72486B16500B9F9FB /* ActivityIndicator.swift */; };
+		8DD277DA2486B49400B9F9FB /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD277D92486B49400B9F9FB /* KeyboardResponder.swift */; };
+		8DD277DC2486E2AD00B9F9FB /* LabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD277DB2486E2AD00B9F9FB /* LabelTextField.swift */; };
+		8DD277DE2486E34300B9F9FB /* claimsFormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD277DD2486E34300B9F9FB /* claimsFormRow.swift */; };
 		8DDAD9F923E05774001409EC /* ClaimsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAD9F823E05774001409EC /* ClaimsForm.swift */; };
-		8DE184EE24811CFF0010573F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8DE184ED24811CFF0010573F /* Settings.bundle */; };
 		8DEBB2042415297800622D88 /* Profil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEBB2032415297800622D88 /* Profil.swift */; };
 /* End PBXBuildFile section */
 
@@ -193,8 +199,14 @@
 		8DC95D012471D52C00197C0F /* ProfilRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilRow.swift; sourceTree = "<group>"; };
 		8DC95D032471D83100197C0F /* LogOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutView.swift; sourceTree = "<group>"; };
 		8DC95D052471DB2300197C0F /* AlertIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertIdentifier.swift; sourceTree = "<group>"; };
+		8DD277D124867E0200B9F9FB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		8DD277D324867F5B00B9F9FB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		8DD277D52486A78400B9F9FB /* TestNumbPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNumbPad.swift; sourceTree = "<group>"; };
+		8DD277D72486B16500B9F9FB /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		8DD277D92486B49400B9F9FB /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
+		8DD277DB2486E2AD00B9F9FB /* LabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTextField.swift; sourceTree = "<group>"; };
+		8DD277DD2486E34300B9F9FB /* claimsFormRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = claimsFormRow.swift; sourceTree = "<group>"; };
 		8DDAD9F823E05774001409EC /* ClaimsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsForm.swift; sourceTree = "<group>"; };
-		8DE184ED24811CFF0010573F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		8DEBB2032415297800622D88 /* Profil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profil.swift; sourceTree = "<group>"; };
 		B6D56FEE086A1E36BA3E6D41 /* Pods-Mirascon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirascon.debug.xcconfig"; path = "Target Support Files/Pods-Mirascon/Pods-Mirascon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -309,6 +321,8 @@
 				8DBD930F23ECC87F0034E918 /* LocationManager.swift */,
 				8DC95CF9247194B000197C0F /* WebView.swift */,
 				8DC95D052471DB2300197C0F /* AlertIdentifier.swift */,
+				8DD277D72486B16500B9F9FB /* ActivityIndicator.swift */,
+				8DD277D92486B49400B9F9FB /* KeyboardResponder.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -353,6 +367,7 @@
 				8DEBB2032415297800622D88 /* Profil.swift */,
 				8D1C077E2460768600F4EC7E /* OldClaimsForm.swift */,
 				8DA40AAD2467F48900EFB8D9 /* AGB.swift */,
+				8DD277D52486A78400B9F9FB /* TestNumbPad.swift */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
@@ -381,6 +396,8 @@
 		8DB99D2F23AD247300AE483B = {
 			isa = PBXGroup;
 			children = (
+				8DD277D324867F5B00B9F9FB /* Settings.bundle */,
+				8DD277D124867E0200B9F9FB /* .gitignore */,
 				8D5742AD242B89290018160B /* Podfile */,
 				8DB99D3A23AD247300AE483B /* Mirascon */,
 				8DB99D8023AE86CB00AE483B /* Models */,
@@ -405,7 +422,6 @@
 				8D213876244244580063F001 /* SectorViews */,
 				8D213877244244EF0063F001 /* Utilities */,
 				8DB2E1E7243DC36300E3A1BD /* Values */,
-				8DE184ED24811CFF0010573F /* Settings.bundle */,
 			);
 			path = Mirascon;
 			sourceTree = "<group>";
@@ -461,6 +477,8 @@
 				8DA40AAB2467EF5A00EFB8D9 /* PreviewRow.swift */,
 				8D527DF8246C9E3B00879FAD /* LoginRow.swift */,
 				8DC95D012471D52C00197C0F /* ProfilRow.swift */,
+				8DD277DB2486E2AD00B9F9FB /* LabelTextField.swift */,
+				8DD277DD2486E34300B9F9FB /* claimsFormRow.swift */,
 			);
 			path = Rows;
 			sourceTree = "<group>";
@@ -529,13 +547,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DE184EE24811CFF0010573F /* Settings.bundle in Resources */,
 				8D55D9A923E0852700B0DC4B /* ClaimsCenterData.json in Resources */,
 				8DB99D4823AD247600AE483B /* LaunchScreen.storyboard in Resources */,
 				8DB99D4523AD247600AE483B /* Preview Assets.xcassets in Resources */,
 				8DB99D8523AE87B100AE483B /* introductionData.json in Resources */,
 				8D25408823ED6F5D00707704 /* GoogleService-Info.plist in Resources */,
 				8D5742AE242B89290018160B /* Podfile in Resources */,
+				8DD277D224867E0200B9F9FB /* .gitignore in Resources */,
+				8DD277D424867F5B00B9F9FB /* Settings.bundle in Resources */,
 				8DB99D4223AD247600AE483B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,15 +613,19 @@
 				8DB2E1E2243C93DB00E3A1BD /* LogoBarWithLabel.swift in Sources */,
 				8D55D9B323E08DE900B0DC4B /* UserData.swift in Sources */,
 				8D1C07902462DFA400F4EC7E /* ButtonRow.swift in Sources */,
+				8DD277DA2486B49400B9F9FB /* KeyboardResponder.swift in Sources */,
+				8DD277D62486A78400B9F9FB /* TestNumbPad.swift in Sources */,
 				8D1C07A22463037300F4EC7E /* NextBtn.swift in Sources */,
 				8DC95CFD2471A7D500197C0F /* LogOutBtn.swift in Sources */,
 				8DC95D022471D52C00197C0F /* ProfilRow.swift in Sources */,
 				8D52E50A2464A96A00B1FA33 /* LabelTextFields.swift in Sources */,
+				8DD277D82486B16500B9F9FB /* ActivityIndicator.swift in Sources */,
 				8D1C07862461DFFA00F4EC7E /* Walkthrough.swift in Sources */,
 				8DDAD9F923E05774001409EC /* ClaimsForm.swift in Sources */,
 				8D1C07962462E69A00F4EC7E /* MailView.swift in Sources */,
 				8D1C07882461E50100F4EC7E /* SaveUserData.swift in Sources */,
 				8D55D9B923E208E200B0DC4B /* Coordinator.swift in Sources */,
+				8DD277DE2486E34300B9F9FB /* claimsFormRow.swift in Sources */,
 				8D1C07942462E56500F4EC7E /* CaptureImage.swift in Sources */,
 				8D1C078C2462C12500F4EC7E /* NavigationBarWithItemUI.swift in Sources */,
 				8D527DF5246C982900879FAD /* PhoneAuth.swift in Sources */,
@@ -614,6 +637,7 @@
 				8DC95CFA247194B000197C0F /* WebView.swift in Sources */,
 				8DA40AAA2467ED9700EFB8D9 /* Preview.swift in Sources */,
 				8D1C07922462E52C00F4EC7E /* camera.swift in Sources */,
+				8DD277DC2486E2AD00B9F9FB /* LabelTextField.swift in Sources */,
 				8D1C07982462E6D600F4EC7E /* ImagePicker.swift in Sources */,
 				8DB2E1E6243DC35300E3A1BD /* dimens.swift in Sources */,
 				8D55D9BF23E34FC000B0DC4B /* LaunchLogo.swift in Sources */,
@@ -803,7 +827,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mirascon/Mirascon.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.2.1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Mirascon/Preview Content\"";
 				DEVELOPMENT_TEAM = QBKR6YXC55;
@@ -837,7 +861,7 @@
 				CODE_SIGN_ENTITLEMENTS = Mirascon/Mirascon.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.2.1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Mirascon/Preview Content\"";
 				DEVELOPMENT_TEAM = QBKR6YXC55;

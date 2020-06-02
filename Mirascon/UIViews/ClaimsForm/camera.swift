@@ -30,7 +30,7 @@ struct camera: View {
         ZStack{
         RadialGradientUI()
         VStack {
-            NavigationBarWithItemUI(viewModel: ViewRouter(), viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
+            NavigationBarWithItemUI(viewModel: viewRouter, viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
             Walkthrough(image: "WalkthroughCamera")
             List{
                 if image != nil{
@@ -59,7 +59,7 @@ struct camera: View {
                 .foregroundColor(Color.white)
             
                 .buttonStyle(GradientBackgroundStyle(color: colorClass.btnColor))
-            Button(stringsClass.continue_name) {
+            Button(stringsClass.proceed_name) {
                 self.viewRouter.currentPage = self.stringsClass.view_googleMaps
             }.foregroundColor(Color.white)
                 .buttonStyle(GradientBackgroundStyle(color: colorClass.btnColor))

@@ -99,6 +99,8 @@ struct strings {
     let phoneNumber_name: String
     let email_name: String
     let continue_name: String
+    let proceed_name: String
+    let next_name: String
     
     let forkey_firstname: String
     let forkey_lastname: String
@@ -107,10 +109,9 @@ struct strings {
     let forkey_mail: String
     let forkey_firstLaunchIsDone: String
     let forkey_firstLaunch: String
-    let forkey_address: String
+    let forkey_street: String
     let forkey_city: String
     let forkey_state: String
-    let forkey_zipCode: String
     
     //**UploadPhto**
     let introduction_photos: String
@@ -230,10 +231,11 @@ struct strings {
         forkey_mail = "mail"
         forkey_firstLaunchIsDone = "com.any-suggestion.FirstLaunch.WasLaunchedBefore"
         forkey_firstLaunch = "firstLaunch"
-        forkey_address = "address"
+        forkey_street = "street"
         forkey_city = "city"
         forkey_state = "state"
-        forkey_zipCode = "zipCode"
+        proceed_name = "proceed"
+        next_name = "NEXT"
         
         //**Uploadphoto**
         introduction_photos = " INSTRUCTION WHAT TO MAKE PHOTOS FROM \n - CAR \n - SCENE \n - OTHER"

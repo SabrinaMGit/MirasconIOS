@@ -23,27 +23,39 @@ struct MainScreen: View {
     
     init(_ viewRouter: ViewRouter){
         self.viewRouter = viewRouter
+        UITableView.appearance().backgroundColor = .clear
+        UITableViewCell.appearance().backgroundColor = .clear
     }
     
     var body: some View {
         ZStack {
-            if sizeClass == .compact {
             RadialGradientUI()
-            VStack {
+                VStack (alignment: .center){
                 LogoBarWithLabel(labelName: stringsClass.labelNameM)
-                Spacer()
-                    HStack{
-                        MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.emergency_img, image: stringsClass.emergency_img, name: stringsClass.emergency_name)
-                        MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.roadsideAssistance_img, image: stringsClass.roadsideAssistance_img, name: stringsClass.roadsideAssistance_name)
-                    }
-                Spacer()
-                 //view.flex.addItem(imageView).width(100).aspectRatio(1)
-                    HStack{
-                        MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.view_claimsCenter, image: stringsClass.claimsCenter_img, name: stringsClass.claimsCenter_name)
-                        MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.products_img, image: stringsClass.products_img, name: stringsClass.products_img)
-                }
-                Spacer()
+                List{
+          
+                   ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.emergency_img, image: stringsClass.emergency_img, name: stringsClass.emergency_name)
+                    ButtonRow(viewModel: viewRouter, viewRouterName:  stringsClass.roadsideAssistance_img, image: stringsClass.roadsideAssistance_img, name: stringsClass.roadsideAssistance_name)
+                    
+                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_claimsCenter, image: stringsClass.claimsCenter_img, name: stringsClass.claimsCenter_name)
+                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.products_img, image: stringsClass.products_img, name: stringsClass.products_img)
+                   
+                }.padding(.top,20)
+                
             }
+                /*
+             
+             HStack{
+                                    MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.emergency_img, image: stringsClass.emergency_img, name: stringsClass.emergency_name)
+                                    MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.roadsideAssistance_img, image: stringsClass.roadsideAssistance_img, name: stringsClass.roadsideAssistance_name)
+                                }
+                                
+                             //view.flex.addItem(imageView).width(100).aspectRatio(1)
+                                HStack{
+                                    MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.view_claimsCenter, image: stringsClass.claimsCenter_img, name: stringsClass.claimsCenter_name)
+                                    MainViewRow(viewModel: viewRouter, viewRouterName: stringsClass.products_img, image: stringsClass.products_img, name: stringsClass.products_img)
+                                    }
+             
             HStack{
                 Spacer()
                 Button(action: {
@@ -57,9 +69,11 @@ struct MainScreen: View {
                         .mask(Circle())
                 }
             }
+             //this is for checking the screen size of iphone or ipad
+            if sizeClass == .compact {
             } else {
                 
-            }
+            }*/
         }
     }
     
@@ -91,13 +105,16 @@ struct MainViewRow: View {
                     .scaledToFit()
                     .frame(width: dimensClass.cg_150,height: dimensClass.cg_150)
                     .foregroundColor(Color.white)
+                    //.padding(.top,10)
                 Text("\(name)")
                     .font(.body)
                     .fontWeight(.medium)
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
                     .lineLimit(Int(dimensClass.cg_2))
-            }.buttonStyle(btnStyle())
+            }//.buttonStyle(btnStyle())
+                .buttonStyle(GradientBackgroundStyle(color: .blue))
+            .frame(width: dimensClass.cg_150, height: dimensClass.cg_160)
         }
     }
 }

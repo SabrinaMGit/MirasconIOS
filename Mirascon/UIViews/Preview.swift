@@ -36,8 +36,8 @@ struct Preview: View {
                     .multilineTextAlignment(.center)*/
                 List{
                     PreviewRow(image: "Claims_80x80px", name: "Claims Center", description: "Mirascon supports you by quickly connecting to your local emergency center and also creating an accident report for you.")
-                    PreviewRow(image: "Police_80x80px", name: "Emergency Center", description: "Mirascon supports you by quickly connecting to your local emergency center and also creating an accident report for you.")
-                    PreviewRow(image: "RoadsideAssistance", name: "Roadside Assistance", description: "Mirascon supports you by quickly connecting to your local emergency center and also creating an accident report for you.")
+                    PreviewRow(image: "Police_80x80px", name: "Emergency Center", description: "In case of an accident you can contact the emergency call directly via the app. ")
+                    PreviewRow(image: "RoadsideAssistance", name: "Roadside Assistance", description: "You can quickly and easily submit the accident claim to us via app. We take care of everything!")
                     //PreviewRow(image: "Chat_80x80px", name: "Support", description: "Mirascon supports you by quickly connecting to your local emergency center and also creating an accident report for you.")
                 }
                 .listRowInsets(EdgeInsets())

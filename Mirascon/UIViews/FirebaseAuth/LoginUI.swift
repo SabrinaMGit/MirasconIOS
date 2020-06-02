@@ -28,7 +28,6 @@ struct LoginUI: View {
     @State var viewState = CGSize.zero
     @State var MainviewState =  CGSize.zero
     
-    
     var body: some View {
         ZStack{
             
@@ -37,7 +36,7 @@ struct LoginUI: View {
                 MainScreen(viewRouter)
                 //LogOutView()
             } else {
-                
+               
                 Image("mercedes_img")
                     .resizable() .aspectRatio(contentMode: .fill) .edgesIgnoringSafeArea(.top) .frame(width: 400.0,height:650)
                 
@@ -46,19 +45,26 @@ struct LoginUI: View {
                 
                 VStack(alignment: .center){
                     
-                    Image("MirasconLogo") .resizable() .scaledToFit() .frame(width: dimensClass.cg_200,height:dimensClass.cg_150) .padding(.bottom, 25)
-                    
+                    Image("MirasconLogo") .resizable() .scaledToFit() .frame(width: dimensClass.cg_200,height:dimensClass.cg_150) .padding(.top, 30)
+                    Spacer()
                     VStack(alignment: .leading){
                         
-                        LoginRow(image: "email_img", name: "Sign Up With EMail", color: colorClass.darkerRed, viewModel: viewRouter, viewRouterName: stringsClass.view_signUpView)
+                        LoginRow(image: "email_img", name: "Sign Up With EMail", color: colorClass.darkerRed, viewModel: viewRouter, viewRouterName: stringsClass.view_signUpView, sheetView: "signup")
                         
-                        LoginRow(image: "apple_img", name: "Sign In With Apple", color: Color.black, viewModel: viewRouter, viewRouterName: stringsClass.view_loginUI)
-                        
-                        LoginRow(image: "google_img", name: "Sign In With Google", color: colorClass.facebookColor, viewModel: viewRouter, viewRouterName: stringsClass.view_loginUI)
-                        
-                        LoginRow(image: "PhoneCall", name: "Sign In With Phone", color: colorClass.phoneColor, viewModel: viewRouter, viewRouterName: stringsClass.view_phoneAuth)
-                        
+                        LoginRow(image: "PhoneCall", name: "Sign In With Phone", color: colorClass.phoneColor, viewModel: viewRouter, viewRouterName: stringsClass.view_phoneAuth, sheetView: "phone")
                     }
+                    .padding(.bottom, 50)
+                    Button(action: { self.viewRouter.currentPage = self.stringsClass.view_mainview}) {
+                        HStack{
+                            Text("Only for debug:")
+                                .foregroundColor(colorClass.blue)
+                                .fontWeight(.medium)
+                            Text("Show me the main view. Click me!")
+                                .foregroundColor(colorClass.blue)
+                                .fontWeight(.medium)
+                        }
+                    }
+                   
                     Button(action: { self.signInIsPresent = true}) {
                         HStack{
                             Text("Already have an account?")
@@ -97,7 +103,7 @@ struct LoginUI: View {
                         }
                     }.padding(.horizontal, 5)
                     backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_pagerview)
-                }
+                }.padding(.bottom, 50)
             }
         }
     }

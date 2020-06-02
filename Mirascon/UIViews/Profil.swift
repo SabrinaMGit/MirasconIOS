@@ -14,7 +14,6 @@ struct Profil: View {
     let colorClass = ColorUI()
     let dimensClass = dimens()
     let stringsClass = strings()
-    let cForm = ClaimsForm(ViewRouter())
     
     @ObservedObject var viewRouter: ViewRouter
     
@@ -52,11 +51,11 @@ struct Profil: View {
                     .shadow(radius: dimensClass.cg_10)
                 Spacer()
                 List {
-                    ProfilRow(category:stringsClass.firstName_name, customer_details: "\(cForm.firstNameSaved!)", whichEntry: Int(dimensClass.cg_1))
-                    ProfilRow(category:stringsClass.lastName_name, customer_details: "\(cForm.lastNameSaved!)", whichEntry: Int(dimensClass.cg_2))
-                    ProfilRow(category:stringsClass.licencePlate_name, customer_details: "\(cForm.lpSaved!)", whichEntry: Int(dimensClass.cg_3))
-                    ProfilRow(category:stringsClass.phoneNumber_name, customer_details: "\(cForm.phoneSaved!)", whichEntry: Int(dimensClass.cg_4))
-                    ProfilRow(category:stringsClass.email_name, customer_details: "\(cForm.mailSaved!)", whichEntry: Int(dimensClass.cg_5))
+                    ProfilRow(category:stringsClass.firstName_name, customer_details: "", whichEntry: Int(dimensClass.cg_1))
+                    ProfilRow(category:stringsClass.lastName_name, customer_details: "", whichEntry: Int(dimensClass.cg_2))
+                    ProfilRow(category:stringsClass.licencePlate_name, customer_details: "", whichEntry: Int(dimensClass.cg_3))
+                    ProfilRow(category:stringsClass.phoneNumber_name, customer_details: "", whichEntry: Int(dimensClass.cg_4))
+                    ProfilRow(category:stringsClass.email_name, customer_details: "", whichEntry: Int(dimensClass.cg_5))
                 
                 }.foregroundColor(Color.white)
                 Spacer()

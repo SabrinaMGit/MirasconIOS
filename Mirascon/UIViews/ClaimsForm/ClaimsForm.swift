@@ -49,7 +49,16 @@ struct ClaimsForm: View {
             RadialGradientUI()
                 VStack{
                     NavigationBarWithItemUI(viewModel: viewRouter, viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
+                    ZStack{
                     Walkthrough(image: "selectInfo")
+                        HStack{
+                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_claimsForm}) {Text("")}.padding(.horizontal,20)
+                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_claimReason}) {Text("")}.padding(.horizontal,20)
+                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_camera}) {Text("")}.padding(.horizontal,20)
+                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_googleMaps}) {Text("")}.padding(.horizontal,20)
+                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_review}) {Text("")}.padding(.horizontal,20)
+                            }
+                    }
                 List{
                     /* HStack{
                      Image(stringsClass.fillForm_img)
@@ -78,11 +87,11 @@ struct ClaimsForm: View {
                      .multilineTextAlignment(.leading)
                      */
                     VStack(alignment: .leading) {
-                        LabelTextField(label: stringsClass.firstName_name, labelColor: Color.white, data: firstNameSaved  ?? stringsClass.emptyText, dataColor: Color.white)
-                        LabelTextField(label: stringsClass.lastName_name, labelColor: Color.white, data: lastNameSaved ?? stringsClass.emptyText, dataColor: Color.white)
-                        LabelTextField(label: stringsClass.licencePlate_name, labelColor: Color.white, data: lpSaved ?? stringsClass.emptyText, dataColor: Color.white)
-                        LabelTextField(label: stringsClass.phoneNumber_name, labelColor: Color.white, data: phoneSaved ?? stringsClass.emptyText, dataColor: Color.white)
-                        LabelTextField(label: stringsClass.email_name, labelColor: Color.white, data: mailSaved ?? stringsClass.emptyText, dataColor: Color.white)
+                        LabelTextField(label: stringsClass.firstName_name, labelColor: Color.white, data: stringsClass.emptyText, dataColor: Color.white)
+                        LabelTextField(label: stringsClass.lastName_name, labelColor: Color.white, data: stringsClass.emptyText, dataColor: Color.white)
+                        LabelTextField(label: stringsClass.licencePlate_name, labelColor: Color.white, data: stringsClass.emptyText, dataColor: Color.white)
+                        LabelTextField(label: stringsClass.phoneNumber_name, labelColor: Color.white, data: stringsClass.emptyText, dataColor: Color.white)
+                        LabelTextField(label: stringsClass.email_name, labelColor: Color.white, data: stringsClass.emptyText, dataColor: Color.white)
                         
                     }
                     .padding(.top, 20)
@@ -107,7 +116,7 @@ struct ClaimsForm: View {
                     }*/
                     
                 }
-                     ContinueBtn(viewModel: viewRouter, viewRouterName: stringsClass.view_claimReason)
+                    NextBtn(viewModel: viewRouter, viewRouterName: stringsClass.view_claimReason, btn_name: stringsClass.proceed_name)
                     backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_claimsCenter)
             }
         }

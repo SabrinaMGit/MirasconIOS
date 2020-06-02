@@ -11,10 +11,10 @@ import Firebase
 
 struct PhoneAuth : View {
     @ObservedObject var viewRouter: ViewRouter
-    
     init(_ viewRouter: ViewRouter){
-        self.viewRouter = viewRouter
-    }
+           self.viewRouter = viewRouter
+       }
+    
      let stringsClass = strings()
     //@State var showScnd = false
     
@@ -30,11 +30,11 @@ struct PhoneAuth : View {
             if status{
                 
                 //ContentView(viewRouter)
-                SaveUserData(ViewRouter())
+                SaveUserData(viewRouter)
             }
             else{
                 NavigationView{
-                    FirstPage(ViewRouter())
+                    FirstPage()
                 }
             }
             
@@ -51,19 +51,17 @@ struct PhoneAuth : View {
         }
         
     }
+    
 }
 
 struct PhoneAuth_Previews: PreviewProvider {
+     
     static var previews: some View {
         PhoneAuth(ViewRouter())
     }
 }
 
 struct FirstPage: View {
-    @ObservedObject var viewRouter: ViewRouter
-    init(_ viewRouter: ViewRouter){
-          self.viewRouter = viewRouter
-      }
       
     let stringsClass = strings()
     let colorClass = ColorUI()
@@ -76,6 +74,10 @@ struct FirstPage: View {
     @State var msg = ""
     @State var alert = false
     @State var verificationID = ""
+    
+    //@ObjectBinding var text: Binding<String>
+    @State private var text = ""
+    var onDismissKeyboard: (() -> Void)?
     
     //@State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
     
@@ -115,11 +117,17 @@ struct FirstPage: View {
                         .padding()
                         .background(Color.white)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .id(1)
+                    
+                    /*TextFieldRepresentable(
+                        text: $text
+                        , dismissKeyboardCallback: self.onDismissKeyboard
+                    )*/
                     Spacer()
                     
                 } .padding(.top, 15).padding(.bottom,10)
                 
-                NavigationLink(destination: ScndPage(viewRouter: viewRouter, show: $show, verificationID: $verificationID ), isActive: $show) {
+                NavigationLink(destination: ScndPage(show: $show, verificationID: $verificationID ), isActive: $show) {
                     
                     
                     Button(action: {
@@ -152,7 +160,7 @@ struct FirstPage: View {
                     }.foregroundColor(.white).background(colorClass.blue).cornerRadius(10).padding(.bottom, 60)
                 }
                 
-                backBtn_view(viewRouter: ViewRouter(), viewRouterName: stringsClass.view_loginUI)
+               // backBtn_view(viewRouter: ViewRouter(), viewRouterName: stringsClass.view_loginUI)
                 
             }.padding(.horizontal, 45).padding(.bottom,65)
                 .alert(isPresented: $alert) {
@@ -160,6 +168,19 @@ struct FirstPage: View {
                     Alert(title: Text("An error has occurred!"), message: Text(self.msg), dismissButton: .default(Text("Got it!")))
             }
         }
+    }
+    func addDoneButtonOnNumpad(textField: UITextField) {
+
+      let keypadToolbar: UIToolbar = UIToolbar()
+
+      // add a done button to the numberpad
+      keypadToolbar.items=[
+        UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: textField, action: #selector(UITextField.resignFirstResponder)),
+        UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
+      ]
+      keypadToolbar.sizeToFit()
+      // add a toolbar with a done button above the number pad
+      textField.inputAccessoryView = keypadToolbar
     }
 }
 /*
@@ -172,7 +193,6 @@ struct FirstPage: View {
 
 
 struct ScndPage : View {
-    @ObservedObject var viewRouter: ViewRouter
     let stringsClass = strings()
     let colorClass = ColorUI()
     let dimensClass = dimens()
@@ -225,7 +245,7 @@ struct ScndPage : View {
                                 self.alert.toggle()
                                 return
                             }
-                            self.viewRouter.currentPage = self.stringsClass.view_saveData
+                            //self.viewRouter.currentPage = self.stringsClass.view_saveData
                             UserDefaults.standard.set(true, forKey: "status")
                             
                             NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
@@ -245,7 +265,7 @@ struct ScndPage : View {
             Button(action: {
                 
                 self.show.toggle()
-                 self.viewRouter.currentPage = self.stringsClass.view_saveData
+                 //self.viewRouter.currentPage = self.stringsClass.view_saveData
                 //self.viewRouter.currentPage = self.stringsClass.view_saveData
                 
             }) {
@@ -264,6 +284,112 @@ struct ScndPage : View {
 }
 
 
+// The UIViewControllerRepresentable, feeding and controlling the UIViewController
+struct TextFieldRepresentable
+    : UIViewControllerRepresentable {
+    
+    // the callback
+    let dismissKeyboardCallback: (() -> Void)?
 
-//func addButtonToKeyboard: ()->Void =
+    // created in the previous file/gist
+    let viewController: TextFieldViewController
+    
+    init (
+        text: Binding<String>
+        , dismissKeyboardCallback: (() -> Void)?) {
+        
+        self.dismissKeyboardCallback = dismissKeyboardCallback
+        self.viewController = TextFieldViewController(
+            text: text
+            , onDismiss: dismissKeyboardCallback
+        )
+    }
+    
+    // UIViewControllerRepresentable
+    func makeUIViewController(context: Context) -> UIViewController {
+        
+        return viewController
+    }
+      
+    // UIViewControllerRepresentable
+    func updateUIViewController(_ viewController: UIViewController, context: Context) {
+    }
+    
+}
 
+import UIKit
+import SwiftUI
+
+class TextFieldViewController
+    : UIViewController {
+    
+    // our custom text field will report changes to the outside
+    let text: Binding<String>?
+    
+    // if the toolbar (see below) is used (Done), the keyboard shall be dismissed
+    // and optionally we execute a provided closure
+    let onDismiss: (() -> Void)?
+    
+    init (
+        text: Binding<String>
+        , onDismiss: (() -> Void)?) {
+        
+        self.text = text
+        self.onDismiss = onDismiss
+        
+        super.init(
+            nibName: "<XIB>"
+            , bundle: Bundle.main //Bundle.main?
+        )
+    }
+    
+    required init?(coder: NSCoder) {
+        self.text = nil
+        self.onDismiss = nil
+        
+        super.init(coder: coder)
+    }
+    
+    // helper function to encapsulate calling the "view" of UIViewController
+    fileprivate func getTextField() -> UITextField? {
+        return view as? UITextField
+    }
+    
+    override func viewDidLoad() {
+        let textField = self.getTextField()
+        guard textField != nil else {
+            return
+        }
+        
+        // configure a toolbar with a Done button
+        let toolbar = UIToolbar()
+        toolbar.setItems([
+                // just moves the Done item to the right
+                UIBarButtonItem(
+                    barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace
+                    , target: nil
+                    , action: nil
+                )
+                , UIBarButtonItem(
+                    title: "Done"
+                    , style: UIBarButtonItem.Style.done
+                    , target: self
+                    , action: #selector(self.onSet)
+                )
+            ]
+            , animated: true
+        )
+        toolbar.barStyle = UIBarStyle.default
+        toolbar.sizeToFit()
+        textField?.inputAccessoryView = toolbar
+    }
+    
+    @objc private func onSet() {
+        let textField = self.getTextField()
+        textField?.resignFirstResponder()
+        
+        self.text?.wrappedValue = textField?.text ?? ""
+        self.onDismiss?()
+    }
+    
+}

@@ -36,6 +36,7 @@ struct dimens {
     let cg_130: CGFloat
     let cg_140: CGFloat
     let cg_150: CGFloat
+    let cg_170: CGFloat
     let cg_160: CGFloat
     let cg_190: CGFloat
     let cg_200: CGFloat
@@ -81,6 +82,7 @@ struct dimens {
         cg_140 = 140
         cg_150 = 150
         cg_160 = 160
+        cg_170 = 170
         cg_190 = 190
         cg_200 = 200
         cg_220 = 220

@@ -93,7 +93,7 @@ struct LoginUI: View {
                 //LogOutView()
             } else {
                
-                Image("mercedes_img")
+                Image("roadway_signIn_img")
                     .resizable() .aspectRatio(contentMode: .fill) .edgesIgnoringSafeArea(.top) .frame(width: screenWidth, height:screenHeight)
                 
                 RadialGradient(gradient: Gradient(colors: [colorClass.startColor.opacity(0.9), colorClass.endColor.opacity(0.8)]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
@@ -134,7 +134,7 @@ struct LoginUI: View {
 
                                       .background(RoundedRectangle(cornerRadius: 8)
 
-                                          .stroke(Color.gray, lineWidth: 2)))
+                                          .stroke(didTap ? colorClass.darkerRed : Color.gray, lineWidth: 2)))
 
                             .padding(.horizontal,10)
                         
@@ -151,7 +151,7 @@ struct LoginUI: View {
 
                                      .background(RoundedRectangle(cornerRadius: 8)
 
-                                         .stroke(Color.gray, lineWidth: 2)))
+                                         .stroke(didTap ? colorClass.darkerRed : Color.gray, lineWidth: 2)))
 
                             .padding(.horizontal,10)
                             
@@ -220,10 +220,8 @@ struct LoginUI: View {
                     }.padding(.bottom, 20)
                     LabelledDivider(label: "or")
                         //-------
+                     Text("I'm not a customer?").font(.headline).fontWeight(.heavy).foregroundColor(Color.white).padding(.bottom, 10)
                     VStack(alignment: .leading){
-                        Text("I'm not a customer?").font(.headline).fontWeight(.heavy).foregroundColor(Color.white).padding(.bottom, 10)
-                        
-                    
                         Button(action: {
                              //self.signInIsPresent = true
                             self.viewRouter.currentPage = self.stringsClass.view_createAccount

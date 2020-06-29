@@ -48,13 +48,13 @@ struct ClaimsCenter: View {
                     
                     
                     ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_claimsForm, image: stringsClass.fillForm_img, name: stringsClass.fillForm_description)
-                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_glassDamage, image: stringsClass.glassDamage_img, name: stringsClass.glassDamage_description)
+                    ButtonRow(viewModel: viewRouter, viewRouterName: "", image: stringsClass.glassDamage_img, name: stringsClass.glassDamage_description)
                     Spacer()
                     
                 }.padding(.top, 20)
                     .listRowInsets(EdgeInsets())
                 //Spacer()
-                backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_mainview)
+                backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_mainview) 
                 
                 /*Button(action: {
                  self.viewRouter.currentPage = self.stringsClass.view_mainview

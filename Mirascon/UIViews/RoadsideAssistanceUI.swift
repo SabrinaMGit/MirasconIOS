@@ -34,16 +34,16 @@ struct RoadsideAssistanceUI: View {
                 VStack {
                     
                     Button(action: {
-                        
-                        self.phone(tel: self.stringsClass.tel, number: self.stringsClass.roadsideNmb)
+                        print("")
+                        //self.phone(tel: self.stringsClass.tel, number: self.stringsClass.roadsideNmb)
                         
                     }){
                             Rows(image: stringsClass.roadside_img, name: stringsClass.labelNameR)
                     }.buttonStyle(btnStyle());
                     
                     Button(action: {
-                        
-                        self.phone(tel: self.stringsClass.tel, number: self.stringsClass.carclaimsNmb)
+                        print("")
+                        //self.phone(tel: self.stringsClass.tel, number: self.stringsClass.carclaimsNmb)
                         
                     }){
                             Rows(image: stringsClass.carClaims_img, name: stringsClass.carClaims_description)

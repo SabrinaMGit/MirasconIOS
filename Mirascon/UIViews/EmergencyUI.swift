@@ -33,7 +33,7 @@ struct EmergencyUI: View {
                     //Change this maybe
                     List{
                         Button(action: {
-                            
+                            print("")
                             //self.phone(tel: self.stringsClass.tel, number: self.stringsClass.police_number)
                             
                         }){
@@ -43,7 +43,7 @@ struct EmergencyUI: View {
                         }.buttonStyle(btnStyle());
                         
                         Button(action: {
-                            
+                            print("")
                             //self.phone(tel: self.stringsClass.tel, number: self.stringsClass.fireDepartment_number)
                             
                         }){
@@ -52,8 +52,8 @@ struct EmergencyUI: View {
                         }.buttonStyle(btnStyle());
                         
                         Button(action: {
-                            
-                            self.phone(tel: self.stringsClass.tel, number: self.stringsClass.mirascon_number)
+                            print("")
+                            //self.phone(tel: self.stringsClass.tel, number: self.stringsClass.mirascon_number)
                             
                         }){
                             Rows(image: stringsClass.mirasconStar_img, name: stringsClass.mirasconStar_description)

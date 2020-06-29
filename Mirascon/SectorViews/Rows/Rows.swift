@@ -25,7 +25,7 @@ struct Rows: View {
                 .frame(width: CGFloat(dimensClass.cg_80),height: CGFloat(dimensClass.cg_60))
             Text("\(name)")
                 .foregroundColor(Color.white)
-        } .frame(width: CGFloat(dimensClass.cg_350),height: CGFloat(dimensClass.cg_60))
+        } .frame(width: screenWidth-30, height: CGFloat(dimensClass.cg_60))
             .border(colorClass.endColor, width: CGFloat(dimensClass.cg_2))
     }
 }

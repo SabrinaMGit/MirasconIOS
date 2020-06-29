@@ -48,8 +48,6 @@ struct ClaimsCenter: View {
                     
                     
                     ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_claimsForm, image: stringsClass.fillForm_img, name: stringsClass.fillForm_description)
-                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: stringsClass.view_camera, name: stringsClass.camera_description)
-                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_googleMaps, image: stringsClass.cellphone_img, name: stringsClass.cellphone_decription)
                     ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_glassDamage, image: stringsClass.glassDamage_img, name: stringsClass.glassDamage_description)
                     Spacer()
                     

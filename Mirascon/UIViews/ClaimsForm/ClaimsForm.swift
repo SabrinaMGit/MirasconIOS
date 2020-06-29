@@ -47,20 +47,76 @@ struct ClaimsForm: View {
     var body: some View {
         ZStack{
             RadialGradientUI()
-                VStack{
-                    //NavigationBarWithItemUI(viewModel: viewRouter, viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
-                    NavigationBarImageUI().padding(.bottom,20)
-                    ZStack{
-                    Walkthrough(image: "selectInfo").padding(.horizontal,10)
-                        HStack{
-                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_claimsForm}) {Text("")}.frame(width: 50, height: 50)//.background(Color.white)
-                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_claimReason}) {Text("")}.frame(width: 20, height: 20)
-                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_camera}) {Text("")}.frame(width: 20, height: 20)
-                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_googleMaps}) {Text("")}.frame(width: 20, height: 20)
-                            Button(action: {self.viewRouter.currentPage = self.stringsClass.view_review}) {Text("")}.frame(width: 20, height: 20)
-                            }
+            VStack{
+                //NavigationBarWithItemUI(viewModel: viewRouter, viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
+                NavigationBarImageUI().padding(.bottom,20)
+                ZStack{
+                    //Walkthrough(image: "selectInfo").padding(.horizontal,10)
+                    //Horizontal Line
+                   VStack{
+                    colorClass.fillForm_orange.frame(width: screenWidth-40, height:CGFloat(1) / UIScreen.main.scale)
                     }
-                    List{
+                    HStack{
+                        Button(action: {self.viewRouter.currentPage = self.stringsClass.view_claimsForm})
+                        {
+                            ZStack{
+                            Image("Selected_Red_Small_View")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: screenWidth-270,height: CGFloat(dimensClass.cg_60))
+                            Image("fillForm")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
+                            }
+                        }.buttonStyle(PlainButtonStyle())
+                        Button(action: {self.viewRouter.currentPage = self.stringsClass.view_claimReason}) {
+                            ZStack{
+                                Image("Unselected_Red_View") .resizable()
+                                .scaledToFit()
+                                .frame(width: screenWidth-270,height: CGFloat(dimensClass.cg_60))
+                                Image("car-info")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
+                            }
+                        }.buttonStyle(PlainButtonStyle())
+                        Button(action: {self.viewRouter.currentPage = self.stringsClass.view_camera}) {
+                            ZStack{
+                                Image("Unselected_Red_View") .resizable()
+                                .scaledToFit()
+                                .frame(width: screenWidth-270,height: CGFloat(dimensClass.cg_60))
+                                Image("camera")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
+                            }
+                        }.buttonStyle(PlainButtonStyle())
+                        Button(action: {self.viewRouter.currentPage = self.stringsClass.view_googleMaps}) {
+                            ZStack{
+                                Image("Unselected_Red_View") .resizable()
+                                .scaledToFit()
+                                .frame(width: screenWidth-270,height: CGFloat(dimensClass.cg_60))
+                                Image("googlemaps")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
+                            }
+                        }.buttonStyle(PlainButtonStyle())
+                        Button(action: {self.viewRouter.currentPage = self.stringsClass.view_review}) {
+                            ZStack{
+                                Image("Unselected_Red_View") .resizable()
+                                .scaledToFit()
+                                .frame(width: screenWidth-270, height: CGFloat(dimensClass.cg_60))
+                                Image("email-send-outline")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
+                            }
+                        }.buttonStyle(PlainButtonStyle())
+                    }//.frame(width: screenWidth)
+                }
+                List{
                     ZStack(alignment: .leading){
                         RadialGradient(gradient: Gradient(colors: [colorClass.blue, colorClass.blue]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
                         
@@ -75,8 +131,17 @@ struct ClaimsForm: View {
                             .fixedSize(horizontal: false, vertical: true)
                         //.padding(.top, dimensClass.cg_20)
                     }.frame( height: dimensClass.cg_70).cornerRadius(5)
-                      //  .padding(.horizontal,12)
-               
+                    //  .padding(.horizontal,12)
+                    
+                 
+                      
+                           ProfilRow(category:stringsClass.firstName_name, customer_details: "", whichEntry: Int(dimensClass.cg_1))
+                           ProfilRow(category:stringsClass.lastName_name, customer_details: "", whichEntry: Int(dimensClass.cg_2))
+                           ProfilRow(category:stringsClass.licencePlate_name, customer_details: "", whichEntry: Int(dimensClass.cg_3))
+                           ProfilRow(category:stringsClass.phoneNumber_name, customer_details: "", whichEntry: Int(dimensClass.cg_4))
+                           ProfilRow(category:stringsClass.email_name, customer_details: "", whichEntry: Int(dimensClass.cg_5))
+                    
+                    } .listRowInsets(EdgeInsets())
                     /* HStack{
                      Image(stringsClass.fillForm_img)
                      .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
@@ -103,64 +168,78 @@ struct ClaimsForm: View {
                      .cornerRadius(dimensClass.cg_4)
                      .multilineTextAlignment(.leading)
                      */
-                    HStack{
-                    VStack(alignment: .leading) {
-                        LabelTextField(label: stringsClass.firstName_name, labelColor: Color.black, data: stringsClass.emptyText, dataColor: Color.white)
-                        LabelTextField(label: stringsClass.lastName_name, labelColor: Color.black, data: stringsClass.emptyText, dataColor: Color.white)
-                        LabelTextField(label: stringsClass.licencePlate_name, labelColor: Color.black, data: stringsClass.emptyText, dataColor: Color.white)
-                        LabelTextField(label: stringsClass.phoneNumber_name, labelColor: Color.black, data: stringsClass.emptyText, dataColor: Color.white)
-                        LabelTextField(label: stringsClass.email_name, labelColor: Color.black, data: stringsClass.emptyText, dataColor: Color.white)
-                        
-                    }
-                    }.frame( width: screenWidth-30) .background(Color.white) .cornerRadius(5) .clipped().shadow(color: Color.black, radius: 5, x: 0, y: 5)
-                    .padding(.top, 10)
-                    //.listRowInsets(EdgeInsets())
-                   
-                    /*HStack {
-                        Spacer()
-                        VStack{
-                            Button(action: {
-                                self.viewRouter.currentPage = self.stringsClass.view_claimReason
-                            }) {
-                                Text(stringsClass.continue_name)
-                                    .fontWeight(.medium)
-                                    .foregroundColor(Color.white)
-                                
-                            }.buttonStyle(GradientBackgroundStyle())
-                            /*.alert(isPresented: $showingAlert) {
-                             Alert(title: Text("Some fields are empty"), message: Text("Fill out all fields"), dismissButton: .default(Text("Got it!")))
-                             }*/
-                        }
-                        Spacer()
-                    }*/
                     
-                }
-                    NextBtn(viewModel: viewRouter, viewRouterName: stringsClass.view_claimReason, btn_name: stringsClass.proceed_name)
-                    backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_claimsCenter)
+                    
+                    /*HStack{
+                        VStack(alignment: .leading) {
+                            HStack {
+                                       Text("Firstname:")
+                                           .foregroundColor(Color.white)
+                                           .multilineTextAlignment(.leading)
+                                           .font(.body)
+                                       Text("data")
+                                           .foregroundColor(Color.white)
+                                           .multilineTextAlignment(.leading)
+                                           .font(.body)
+                                   }
+                                   
+                            
+                            LabelTextField(label: stringsClass.firstName_name, labelColor: Color.black, data: stringsClass.emptyText, dataColor: Color.white)
+                            LabelTextField(label: stringsClass.lastName_name, labelColor: Color.black, data: stringsClass.emptyText, dataColor: Color.white)
+                            LabelTextField(label: stringsClass.licencePlate_name, labelColor: Color.black, data: stringsClass.emptyText, dataColor: Color.white)
+                            LabelTextField(label: stringsClass.phoneNumber_name, labelColor: Color.black, data: stringsClass.emptyText, dataColor: Color.white)
+                            LabelTextField(label: stringsClass.email_name, labelColor: Color.black, data: stringsClass.emptyText, dataColor: Color.white)*/
+                            
+                        //}
+                   // }.frame( width: screenWidth-30) .background(Color.white) .cornerRadius(5) .clipped().shadow(color: Color.black, radius: 5, x: 0, y: 5)
+                      //  .padding(.top, 10)
+                    //.listRowInsets(EdgeInsets())
+                    
+                    /*HStack {
+                     Spacer()
+                     VStack{
+                     Button(action: {
+                     self.viewRouter.currentPage = self.stringsClass.view_claimReason
+                     }) {
+                     Text(stringsClass.continue_name)
+                     .fontWeight(.medium)
+                     .foregroundColor(Color.white)
+                     
+                     }.buttonStyle(GradientBackgroundStyle())
+                     /*.alert(isPresented: $showingAlert) {
+                     Alert(title: Text("Some fields are empty"), message: Text("Fill out all fields"), dismissButton: .default(Text("Got it!")))
+                     }*/
+                     }
+                     Spacer()
+                     }*/
+                    
+                
+                NextBtn(viewModel: viewRouter, viewRouterName: stringsClass.view_claimReason, btn_name: stringsClass.proceed_name)
+                backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_claimsCenter)
             }
         }
     }
 }
 
 /*
-struct GradientBackgroundStyle: ButtonStyle {
-    
-    let colorClass = ColorUI()
-    let dimensClass = dimens()
-    
-    func makeBody(configuration: Self.Configuration) -> some View {
-        VStack {
-            configuration.label
-                .frame(minWidth: dimensClass.cg_0, maxWidth: dimensClass.cg_100)
-                .padding()
-                .padding(.horizontal, dimensClass.cg_20)
-                .background(colorClass.btnColor)
-                .cornerRadius(dimensClass.cg_10)
-                .scaleEffect(configuration.isPressed ? dimensClass.cg_scaleEffect_0_9 : dimensClass.cg_scaleEffect_1)
-            
-        }
-    }
-}*/
+ struct GradientBackgroundStyle: ButtonStyle {
+ 
+ let colorClass = ColorUI()
+ let dimensClass = dimens()
+ 
+ func makeBody(configuration: Self.Configuration) -> some View {
+ VStack {
+ configuration.label
+ .frame(minWidth: dimensClass.cg_0, maxWidth: dimensClass.cg_100)
+ .padding()
+ .padding(.horizontal, dimensClass.cg_20)
+ .background(colorClass.btnColor)
+ .cornerRadius(dimensClass.cg_10)
+ .scaleEffect(configuration.isPressed ? dimensClass.cg_scaleEffect_0_9 : dimensClass.cg_scaleEffect_1)
+ 
+ }
+ }
+ }*/
 
 
 

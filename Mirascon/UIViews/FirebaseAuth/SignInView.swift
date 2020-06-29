@@ -9,7 +9,7 @@
 import SwiftUI
 import Firebase
 
-struct actIndSignin: UIViewRepresentable {
+/*struct actIndSignin: UIViewRepresentable {
     @Binding var shouldAnimate: Bool
     
     func makeUIView(context: Context) -> UIActivityIndicatorView {
@@ -24,7 +24,7 @@ struct actIndSignin: UIViewRepresentable {
             uiView.stopAnimating()
         }
     }
-}
+}*/
 
 
 struct SignInView: View {

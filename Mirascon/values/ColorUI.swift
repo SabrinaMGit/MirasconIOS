@@ -26,6 +26,8 @@ struct ColorUI {
     var facebookColor: Color
     var mailColor: Color
     var phoneColor: Color
+    var orange: Color
+    var fillForm_orange: Color
 
   init() {
     startColor = Color(hex: "#19334f")
@@ -42,7 +44,9 @@ struct ColorUI {
     darkerBlue2 = Color(hex: "#2b63bd")
     facebookColor = Color(hex: "#4885ed") //<- google. facebook Color: #29487d
     mailColor = Color(hex: "#db3232")
-    phoneColor = Color(hex: "#0d7a1e") 
+    phoneColor = Color(hex: "#0d7a1e")
+    orange = Color(hex: "#FFA500")
+    fillForm_orange = Color(hex: "#f15b24")
     
   }
 }

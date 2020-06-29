@@ -59,6 +59,10 @@ struct ContentView: View {
                //SignInView(viewRouter)
             } else if viewRouter.currentPage == "SignUp" {
                SignUpView(viewRouter)
+            } else if viewRouter.currentPage == "CreateAccount" {
+               CreateAccount(viewRouter)
+            } else if viewRouter.currentPage == "fPassword" {
+               ForgotPassword(viewRouter)
             }
         }
     }

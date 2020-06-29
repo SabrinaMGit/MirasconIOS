@@ -33,14 +33,14 @@ struct MainScreen: View {
                 VStack (alignment: .center){
                 LogoBarWithLabel(labelName: stringsClass.labelNameM)
                 List{
-          
+          VStack (alignment: .center){
                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.emergency_img, image: stringsClass.emergency_img, name: stringsClass.emergency_name)
                     ButtonRow(viewModel: viewRouter, viewRouterName:  stringsClass.roadsideAssistance_img, image: stringsClass.roadsideAssistance_img, name: stringsClass.roadsideAssistance_name)
                     
                     ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_claimsCenter, image: stringsClass.claimsCenter_img, name: stringsClass.claimsCenter_name)
                     ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.products_img, image: stringsClass.products_img, name: stringsClass.products_img)
-                   
-                }.padding(.top,20)
+                    }
+                }.padding(.top,50)
                 LogOutView(viewRouter: viewRouter)
             }
                 /*

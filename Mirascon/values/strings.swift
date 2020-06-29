@@ -67,6 +67,8 @@ struct strings {
     let view_agb: String
     let view_signInView: String
     let view_signUpView: String
+    let view_createAccount:String
+    let view_fPassword: String
     
     //**RoadsideAssistance**
     let roadsideNmb: String
@@ -194,6 +196,8 @@ struct strings {
         view_agb = "AGB"
         view_signInView = "SignIn"
         view_signUpView = "SignUp"
+        view_createAccount = "CreateAccount"
+        view_fPassword = "fPassword"
         
         //**RoadsideAssistance
         roadsideNmb = "+49 22192548879"
@@ -222,7 +226,7 @@ struct strings {
         lastName_name = "Last Name:"
         licencePlate_name = "Licence Plate:"
         phoneNumber_name = "Phone Number:"
-        email_name = "EMail:"
+        email_name = "Mail:"
         continue_name = "Submit"
         forkey_firstname = "firstName"
         forkey_lastname = "lastName"
@@ -231,9 +235,9 @@ struct strings {
         forkey_mail = "mail"
         forkey_firstLaunchIsDone = "com.any-suggestion.FirstLaunch.WasLaunchedBefore"
         forkey_firstLaunch = "firstLaunch"
-        forkey_street = "street"
-        forkey_city = "city"
-        forkey_state = "state"
+        forkey_street = "Street:"
+        forkey_city = "City:"
+        forkey_state = "Postcode:"
         proceed_name = "proceed"
         next_name = "NEXT"
         

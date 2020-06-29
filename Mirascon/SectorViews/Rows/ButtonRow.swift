@@ -35,7 +35,7 @@ struct ButtonRow: View {
                                .foregroundColor(Color.white)
                         Spacer()
                        }.buttonStyle(btnStyle())
-                           .frame(width: dimensClass.cg_300,height: dimensClass.cg_60)
+                           .frame(width: screenWidth-30,height: dimensClass.cg_60)
                            .border(colorClass.endColor, width: dimensClass.cg_2)
                        
                    }.buttonStyle(btnStyle())

@@ -69,6 +69,8 @@ struct strings {
     let view_signUpView: String
     let view_createAccount:String
     let view_fPassword: String
+    let view_findQuote: String
+    
     
     //**RoadsideAssistance**
     let roadsideNmb: String
@@ -114,6 +116,7 @@ struct strings {
     let forkey_street: String
     let forkey_city: String
     let forkey_state: String
+    let zipcode: String
     
     //**UploadPhto**
     let introduction_photos: String
@@ -198,6 +201,7 @@ struct strings {
         view_signUpView = "SignUp"
         view_createAccount = "CreateAccount"
         view_fPassword = "fPassword"
+        view_findQuote = "FindYourQuote"
         
         //**RoadsideAssistance
         roadsideNmb = "+49 22192548879"
@@ -240,6 +244,7 @@ struct strings {
         forkey_state = "Postcode:"
         proceed_name = "proceed"
         next_name = "NEXT"
+        zipcode = "ZIP Code"
         
         //**Uploadphoto**
         introduction_photos = " INSTRUCTION WHAT TO MAKE PHOTOS FROM \n - CAR \n - SCENE \n - OTHER"

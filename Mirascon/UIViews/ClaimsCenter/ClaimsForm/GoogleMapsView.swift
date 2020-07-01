@@ -68,9 +68,9 @@ struct GoogleMapsView: View {
                         }
                         
                         if manuallyLocation {
-                            LabelTextFields(label: "City:", labelColor: Color.white, datas: $city, textFieldBorderColor: Color.white )
-                            LabelTextFields(label: "Street:", labelColor: Color.white, datas: $street, textFieldBorderColor: Color.white )
-                            LabelTextFields(label: stringsClass.forkey_state, labelColor: Color.white, datas: $state, textFieldBorderColor: Color.white )
+                            LabelTextFields(label: "City:", labelColor: Color.white, datas: $city, textFieldBorderColor: Color.white, placeholderName: stringsClass.emptyText )
+                            LabelTextFields(label: "Street:", labelColor: Color.white, datas: $street, textFieldBorderColor: Color.white, placeholderName: stringsClass.emptyText )
+                            LabelTextFields(label: stringsClass.forkey_state, labelColor: Color.white, datas: $state, textFieldBorderColor: Color.white, placeholderName: stringsClass.emptyText )
                         }
                         
                     }

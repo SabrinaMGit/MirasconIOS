@@ -69,11 +69,11 @@ struct SaveUserData: View {
 
                     
                     VStack(alignment: .leading) {
-                        LabelTextFields(label: stringsClass.firstName_name, labelColor: Color.white, datas: $firstName, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray) 
-                        LabelTextFields(label: stringsClass.lastName_name, labelColor: Color.white, datas: $lastName, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
-                        LabelTextFields(label: stringsClass.licencePlate_name, labelColor: Color.white, datas: $lp, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
-                        LabelTextFields(label: stringsClass.phoneNumber_name, labelColor: Color.white, datas: $phone, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
-                        LabelTextFields(label: stringsClass.email_name, labelColor: Color.white, datas: $email, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
+                        LabelTextFields(label: stringsClass.firstName_name, labelColor: Color.white, datas: $firstName, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray, placeholderName: stringsClass.emptyText)
+                        LabelTextFields(label: stringsClass.lastName_name, labelColor: Color.white, datas: $lastName, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray, placeholderName: stringsClass.emptyText)
+                        LabelTextFields(label: stringsClass.licencePlate_name, labelColor: Color.white, datas: $lp, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray, placeholderName: stringsClass.emptyText)
+                        LabelTextFields(label: stringsClass.phoneNumber_name, labelColor: Color.white, datas: $phone, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray, placeholderName: stringsClass.emptyText)
+                        LabelTextFields(label: stringsClass.email_name, labelColor: Color.white, datas: $email, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray, placeholderName: stringsClass.emptyText)
                         
                     }
                 }.padding(.top, dimensClass.cg_20)

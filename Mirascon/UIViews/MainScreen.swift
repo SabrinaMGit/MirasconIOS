@@ -38,7 +38,7 @@ struct MainScreen: View {
                     ButtonRow(viewModel: viewRouter, viewRouterName:  stringsClass.roadsideAssistance_img, image: stringsClass.roadsideAssistance_img, name: stringsClass.roadsideAssistance_name)
                     
                     ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_claimsCenter, image: stringsClass.claimsCenter_img, name: stringsClass.claimsCenter_name)
-                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.products_img, image: stringsClass.products_img, name: stringsClass.products_img)
+                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_mainview, image: stringsClass.products_img, name: stringsClass.products_img)
                     }
                 }.padding(.top,50)
                 LogOutView(viewRouter: viewRouter)

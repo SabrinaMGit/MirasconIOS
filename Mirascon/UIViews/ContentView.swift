@@ -65,6 +65,8 @@ struct ContentView: View {
                ForgotPassword(viewRouter)
             } else if viewRouter.currentPage == "glassDamage" {
                GlassDamageUI(viewRouter)
+            } else if viewRouter.currentPage == "FindYourQuote" {
+               FindYourQuote(viewRouter)
             }
         }
     }

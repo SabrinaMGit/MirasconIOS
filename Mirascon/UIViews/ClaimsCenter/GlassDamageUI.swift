@@ -28,7 +28,7 @@ struct GlassDamageUI: View {
                    RadialGradientUI()
                    VStack{
                        NavigationBarImageUI().padding(.bottom,20)
-                       List{
+                    
                        ZStack(alignment: .leading){
                            RadialGradient(gradient: Gradient(colors: [colorClass.blue, colorClass.blue]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
                            
@@ -42,18 +42,33 @@ struct GlassDamageUI: View {
                                .lineLimit(nil)
                                .fixedSize(horizontal: false, vertical: true)
                            //.padding(.top, dimensClass.cg_20)
-                       }.frame( height: dimensClass.cg_40).cornerRadius(5)
+                       }.frame( height: dimensClass.cg_40).cornerRadius(5).padding(.horizontal,20)
                           // .padding(.horizontal,12)
                    
-                           ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: "car-disabled", name: "Collision")
-                           ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_camera, image: "car-fire", name: "Breakdown")
-                    }
-                    VStack(alignment: .center){
-                        Text("Select which glass parts were damaged:").foregroundColor(.white)
+                           ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_glassDamage, image: "CarClaims", name: "Collision")
+                           ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_glassDamage, image: "ic_glassdamage", name: "Breakdown")
+                    
+                        //Text("Select which glass parts were damaged:").foregroundColor(colorClass.darkerBlue).font(.system(size: 21)).fontWeight(.bold)
+                        ZStack(alignment: .leading){
+                            RadialGradient(gradient: Gradient(colors: [colorClass.blue, colorClass.blue]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
+                            
+                            Text("Select which glass parts were damaged:")
+                                //.background(Color.white)
+                                //.cornerRadius(dimensClass.cg_4)
+                                .multilineTextAlignment(.leading)
+                                .foregroundColor(Color.white)
+                                .padding(dimensClass.cg_8)
+                                .font(.subheadline)
+                                .lineLimit(nil)
+                                .fixedSize(horizontal: false, vertical: true)
+                            //.padding(.top, dimensClass.cg_20)
+                        }.frame( height: dimensClass.cg_40).cornerRadius(5).padding(.horizontal,20)
+                        
                         RadioButtonGroup(items: reason, selectedId: self.reason[0]) { selected in
                                    print("Selected is: \(selected)")
-                        }.padding(.leading,screenWidth/4)
-                    }
+                        }.padding(.leading,screenWidth/5)
+
+                    
                     NextBtn(viewModel: viewRouter, viewRouterName: stringsClass.view_glassDamage, btn_name: stringsClass.send_txt)
                        backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_claimsCenter)
                    }
@@ -108,7 +123,7 @@ struct RadioButton: View {
         selectedID: String,
         size: CGFloat = 20,
         color: Color = Color.white,
-        textSize: CGFloat = 14
+        textSize: CGFloat = 19
         ) {
         self.id = id
         self.size = size

@@ -90,7 +90,7 @@ struct SignInView: View {
                 VStack{
                     Text("Sign In").font(.title).fontWeight(.bold).foregroundColor(Color.white).padding(.bottom, 20)
                 //Text("Email").font(.title).fontWeight(.thin).frame(minWidth: 0, maxWidth: .infinity, alignment: .topLeading).foregroundColor(Color.white)
-                LabelTextFields(label: stringsClass.email_name, labelColor: Color.white, datas: $emailAddress, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray)
+                    LabelTextFields(label: stringsClass.email_name, labelColor: Color.white, datas: $emailAddress, textFieldBorderColor: didTap ? colorClass.darkerRed : Color.gray, placeholderName: stringsClass.emptyText)
                 
                 VStack(alignment: .leading) {
                     

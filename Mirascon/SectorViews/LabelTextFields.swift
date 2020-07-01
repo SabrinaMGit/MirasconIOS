@@ -18,6 +18,7 @@ struct LabelTextFields : View {
     var labelColor: Color
     @Binding var datas: String
     var textFieldBorderColor: Color
+    var placeholderName: String
     
     var body: some View {
         
@@ -27,7 +28,7 @@ struct LabelTextFields : View {
                 .multilineTextAlignment(.leading)
                 .font(.headline)
             
-            TextField(stringsClass.emptyText, text: $datas)
+            TextField(placeholderName, text: $datas)
                 .padding(dimensClass.cg_3)
                 .background(colorClass.startColor)
                 .foregroundColor(Color.white)

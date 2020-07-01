@@ -31,7 +31,7 @@ struct camera: View {
             RadialGradientUI()
             VStack {
                NavigationBarImageUI().padding(.bottom,20)
-                Walkthrough(image: "WalkthroughCamera").padding(.horizontal,10)
+                 WalkThroughBtn(viewRouter: viewRouter, isSelectedForm: false, isCompletedForm: true, isSelectedCar: false, isCompletedCar: true, isSelectedCam: true, isCompletedCam: false, isSelectedMaps: false, isCompletedMaps: false, isSelectedSbm: false, isCompletedSbm: false)
                 ZStack(alignment: .leading){
                     RadialGradient(gradient: Gradient(colors: [colorClass.blue, colorClass.blue]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
                     

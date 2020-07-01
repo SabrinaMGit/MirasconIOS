@@ -12,10 +12,19 @@ struct WalkThroughBtn: View {
     let dimensClass = dimens()
     let stringsClass = strings()
     let colorClass = ColorUI()
-    @ObservedObject var viewModel: ViewRouter
+    @ObservedObject var viewRouter: ViewRouter
     
-    var viewRouterName: String
-    @State private var isSelected: Bool = false
+ 
+    var isSelectedForm: Bool
+    var isCompletedForm: Bool
+    var isSelectedCar: Bool
+    var isCompletedCar: Bool
+    var isSelectedCam: Bool
+    var isCompletedCam: Bool
+    var isSelectedMaps: Bool
+    var isCompletedMaps: Bool
+    var isSelectedSbm: Bool
+    var isCompletedSbm: Bool
     
     var body: some View {
         
@@ -25,22 +34,22 @@ struct WalkThroughBtn: View {
                 colorClass.fillForm_orange.frame(width: screenWidth-40, height:CGFloat(1) / UIScreen.main.scale)
             }
             HStack{
-                Button(action: {self.viewModel.currentPage = "\(self.viewRouterName)"}) {
+                Button(action: {self.viewRouter.currentPage = self.stringsClass.view_claimsForm}) {
                     ZStack{
-                        Image(isSelected ? isSelected ? "Selected_Red_View": "" : "Unselected_Red_View") .resizable()
+                        Image(isSelectedForm ? isCompletedForm ? "Selected_Green_View": "Selected_Red_View" : isCompletedForm ? "Unselected_Green_View" : "Unselected_Red_View") .resizable()
                             .scaledToFit()
                             .frame(width: screenWidth-270,height: CGFloat(dimensClass.cg_60))
-                        Image("car-info")
+                        Image("fillForm")
                             .resizable()
                             .scaledToFit()
                             .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
                     }
                 }.buttonStyle(PlainButtonStyle())
                 Button(action:
-                    {self.viewModel.currentPage = "\(self.viewRouterName)"
+                    {self.viewRouter.currentPage = self.stringsClass.view_claimReason
                 }) {
                     ZStack{
-                        Image("Unselected_Red_View") .resizable()
+                        Image(isSelectedCar ? isCompletedCar ? "Selected_Green_View": "Selected_Red_View" : isCompletedCar ? "Unselected_Green_View" : "Unselected_Red_View") .resizable()
                             .scaledToFit()
                             .frame(width: screenWidth-270,height: CGFloat(dimensClass.cg_60))
                         Image("car-info")
@@ -50,12 +59,11 @@ struct WalkThroughBtn: View {
                     }
                 }.buttonStyle(PlainButtonStyle())
                 Button(action: {
-                    self.viewModel.currentPage = "\(self.viewRouterName)"
-                    
+                   self.viewRouter.currentPage = self.stringsClass.view_camera
                 }
                 ) {
                     ZStack{
-                        Image("Unselected_Red_View") .resizable()
+                        Image(isSelectedCam ? isCompletedCam ? "Selected_Green_View": "Selected_Red_View" : isCompletedCam ? "Unselected_Green_View" : "Unselected_Red_View") .resizable()
                             .scaledToFit()
                             .frame(width: screenWidth-270,height: CGFloat(dimensClass.cg_60))
                         Image("camera")
@@ -64,9 +72,9 @@ struct WalkThroughBtn: View {
                             .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
                     }
                 }.buttonStyle(PlainButtonStyle())
-                Button(action: {self.viewModel.currentPage = "\(self.viewRouterName)"}) {
+                Button(action: {self.viewRouter.currentPage = self.stringsClass.view_googleMaps}) {
                     ZStack{
-                        Image("Unselected_Red_View") .resizable()
+                        Image(isSelectedMaps ? isCompletedMaps ? "Selected_Green_View": "Selected_Red_View" : isCompletedMaps ? "Unselected_Green_View" : "Unselected_Red_View") .resizable()
                             .scaledToFit()
                             .frame(width: screenWidth-270,height: CGFloat(dimensClass.cg_60))
                         Image("googlemaps")
@@ -75,9 +83,9 @@ struct WalkThroughBtn: View {
                             .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
                     }
                 }.buttonStyle(PlainButtonStyle())
-                Button(action: {self.viewModel.currentPage = "\(self.viewRouterName)"}) {
+                Button(action: {self.viewRouter.currentPage = self.stringsClass.view_review}) {
                     ZStack{
-                        Image("Unselected_Red_View") .resizable()
+                        Image(isSelectedSbm ? isCompletedSbm ? "Selected_Green_View": "Selected_Red_View" : isCompletedSbm ? "Unselected_Green_View" : "Unselected_Red_View") .resizable()
                             .scaledToFit()
                             .frame(width: screenWidth-270, height: CGFloat(dimensClass.cg_60))
                         Image("email-send-outline")
@@ -91,10 +99,11 @@ struct WalkThroughBtn: View {
     }
 }
 
-struct WalkThroughBtn_Previews: PreviewProvider {
+/*struct WalkThroughBtn_Previews: PreviewProvider {
     static var previews: some View {
-       WalkThroughBtn(viewModel: ViewRouter(), viewRouterName: "")
+        WalkThroughBtn(viewRouter: ViewRouter())
     }
 }
 
 
+ /**/*/

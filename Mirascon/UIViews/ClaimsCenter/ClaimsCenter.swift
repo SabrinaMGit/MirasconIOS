@@ -48,7 +48,7 @@ struct ClaimsCenter: View {
                     
                     
                     ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_claimsForm, image: stringsClass.fillForm_img, name: stringsClass.fillForm_description)
-                    ButtonRow(viewModel: viewRouter, viewRouterName: "", image: stringsClass.glassDamage_img, name: stringsClass.glassDamage_description)
+                    ButtonRow(viewModel: viewRouter, viewRouterName: stringsClass.view_glassDamage, image: stringsClass.glassDamage_img, name: stringsClass.glassDamage_description)
                     Spacer()
                     
                 }.padding(.top, 20)

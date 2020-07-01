@@ -36,6 +36,8 @@ struct Review: View {
     @State public var stateSaved = UserDefaults.standard.string(forKey: "state")
     @State public var zipCodeSaved = UserDefaults.standard.string(forKey: "zipCode")
     
+    @State var boolPInfo = UserDefaults.standard.bool(forKey: "fillForm")
+    
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State var isShowingMailView = false
     @State var alertNoMail = false
@@ -46,7 +48,7 @@ struct Review: View {
             RadialGradientUI()
             VStack{
                 NavigationBarImageUI().padding(.bottom,20)
-                Walkthrough(image: "WalkthroughMail").padding(.horizontal,10)
+                 WalkThroughBtn(viewRouter: viewRouter, isSelectedForm: false, isCompletedForm: true, isSelectedCar: false, isCompletedCar: true, isSelectedCam: false, isCompletedCam: false, isSelectedMaps: false, isCompletedMaps: false, isSelectedSbm: true, isCompletedSbm: false)
                 
                 List{
                     ZStack(alignment: .leading){
@@ -64,9 +66,9 @@ struct Review: View {
                         //.padding(.top, dimensClass.cg_20)
                     }.frame( height: dimensClass.cg_70).cornerRadius(5)
                     // .padding(.horizontal,12)
-                    
+                    //Personal Information View
                     Button(action: {
-                        self.ProfilIsPresent = true
+                        self.viewRouter.currentPage = self.stringsClass.view_claimsForm
                     }){
                         HStack{
                             
@@ -90,12 +92,11 @@ struct Review: View {
                         }
                         .frame( width: screenWidth-30) .background(Color.white) .cornerRadius(5) .clipped().shadow(color: Color.gray, radius: 2, x: 0, y: 2)
                         .padding(.bottom, 5)
-                    }.sheet(isPresented: $ProfilIsPresent) {
-                        Profil(self.viewRouter)
                     }
                     //-------
+                    //ClaimReasonView
                     Button(action: {
-                        self.ProfilIsPresent = true
+                        self.viewRouter.currentPage = self.stringsClass.view_claimReason
                     }){
                         HStack{
                             VStack(alignment: .leading){
@@ -121,12 +122,10 @@ struct Review: View {
                         }
                         .frame( width: screenWidth-30) .background(Color.white) .cornerRadius(5) .clipped().shadow(color: Color.gray, radius: 2, x: 0, y: 2)
                         .padding(.bottom, 5)
-                    }.sheet(isPresented: $ProfilIsPresent) {
-                        ClaimReason(self.viewRouter)
                     }
-                    
+                    //googleMapsView
                     Button(action: {
-                        self.ProfilIsPresent = true
+                        self.viewRouter.currentPage = self.stringsClass.view_googleMaps
                     }){
                         HStack{
                             VStack(alignment: .leading){
@@ -143,8 +142,6 @@ struct Review: View {
                         }
                         .frame( width: screenWidth-30) .background(Color.white) .cornerRadius(5) .clipped().shadow(color: Color.gray, radius: 2, x: 0, y: 2)
                         .padding(.bottom, 5)
-                    }.sheet(isPresented: $ProfilIsPresent) {
-                        GoogleMapsView(self.viewRouter)
                     }
                 }
                 //ContinueBtn(viewModel: viewRouter, viewRouterName: stringsClass.view_googleMaps)

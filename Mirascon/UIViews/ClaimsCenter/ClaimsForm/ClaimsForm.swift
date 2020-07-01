@@ -41,6 +41,8 @@ struct ClaimsForm: View {
     @State public var mailSaved = UserDefaults.standard.string(forKey: "mail")
     @State public var firstLaunchApp = UserDefaults.standard.bool(forKey: "firstLaunch")
     
+    @State var boolPInfo: Bool = true
+    
     let status = UserDefaults.standard.bool(forKey: "firstLaunc")
     let firstLaunch = FirstLaunch(userDefaults: .standard, key: "com.any-suggestion.FirstLaunch.WasLaunchedBefore")
     
@@ -48,74 +50,9 @@ struct ClaimsForm: View {
         ZStack{
             RadialGradientUI()
             VStack{
-                //NavigationBarWithItemUI(viewModel: viewRouter, viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
+               
                 NavigationBarImageUI().padding(.bottom,20)
-                ZStack{
-                    //Walkthrough(image: "selectInfo").padding(.horizontal,10)
-                    //Horizontal Line
-                   VStack{
-                    colorClass.fillForm_orange.frame(width: screenWidth-40, height:CGFloat(1) / UIScreen.main.scale)
-                    }
-                    HStack{
-                        Button(action: {self.viewRouter.currentPage = self.stringsClass.view_claimsForm})
-                        {
-                            ZStack{
-                            Image("Selected_Red_Small_View")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: screenWidth-270,height: CGFloat(dimensClass.cg_60))
-                            Image("fillForm")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
-                            }
-                        }.buttonStyle(PlainButtonStyle())
-                        Button(action: {self.viewRouter.currentPage = self.stringsClass.view_claimReason}) {
-                            ZStack{
-                                Image("Unselected_Red_View") .resizable()
-                                .scaledToFit()
-                                .frame(width: screenWidth-270,height: CGFloat(dimensClass.cg_60))
-                                Image("car-info")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
-                            }
-                        }.buttonStyle(PlainButtonStyle())
-                        Button(action: {self.viewRouter.currentPage = self.stringsClass.view_camera}) {
-                            ZStack{
-                                Image("Unselected_Red_View") .resizable()
-                                .scaledToFit()
-                                .frame(width: screenWidth-270,height: CGFloat(dimensClass.cg_60))
-                                Image("camera")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
-                            }
-                        }.buttonStyle(PlainButtonStyle())
-                        Button(action: {self.viewRouter.currentPage = self.stringsClass.view_googleMaps}) {
-                            ZStack{
-                                Image("Unselected_Red_View") .resizable()
-                                .scaledToFit()
-                                .frame(width: screenWidth-270,height: CGFloat(dimensClass.cg_60))
-                                Image("googlemaps")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
-                            }
-                        }.buttonStyle(PlainButtonStyle())
-                        Button(action: {self.viewRouter.currentPage = self.stringsClass.view_review}) {
-                            ZStack{
-                                Image("Unselected_Red_View") .resizable()
-                                .scaledToFit()
-                                .frame(width: screenWidth-270, height: CGFloat(dimensClass.cg_60))
-                                Image("email-send-outline")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
-                            }
-                        }.buttonStyle(PlainButtonStyle())
-                    }//.frame(width: screenWidth)
-                }
+                 WalkThroughBtn(viewRouter: viewRouter, isSelectedForm: true, isCompletedForm: false, isSelectedCar: false, isCompletedCar: false, isSelectedCam: false, isCompletedCam: false, isSelectedMaps: false, isCompletedMaps: false, isSelectedSbm: false, isCompletedSbm: false)
                 List{
                     ZStack(alignment: .leading){
                         RadialGradient(gradient: Gradient(colors: [colorClass.blue, colorClass.blue]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
@@ -142,7 +79,28 @@ struct ClaimsForm: View {
                            ProfilRow(category:stringsClass.email_name, customer_details: "", whichEntry: Int(dimensClass.cg_5))
                     
                     } .listRowInsets(EdgeInsets())
-                    /* HStack{
+                   
+                VStack{
+                   Button(action: {
+                    UserDefaults.standard.set(self.boolPInfo, forKey: "fillForm")
+                    self.viewRouter.currentPage = self.stringsClass.view_claimReason
+                   }) {
+                       Text(stringsClass.proceed_name)
+                           .fontWeight(.medium)
+                           .foregroundColor(Color.white)
+                       
+                   }.buttonStyle(GradientBackgroundStyle(color: colorClass.btnColor))
+               }
+                //NextBtn(viewModel: viewRouter, viewRouterName: stringsClass.view_claimReason, btn_name: stringsClass.proceed_name)
+                backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_claimsCenter)
+            }
+        }
+    }
+}
+
+/*
+  //NavigationBarWithItemUI(viewModel: viewRouter, viewRouterName: stringsClass.view_profil, image: stringsClass.edit_img)
+ /* HStack{
                      Image(stringsClass.fillForm_img)
                      .frame(width: dimensClass.cg_60, height: dimensClass.cg_60)
                      .overlay(
@@ -213,15 +171,9 @@ struct ClaimsForm: View {
                      Spacer()
                      }*/
                     
-                
-                NextBtn(viewModel: viewRouter, viewRouterName: stringsClass.view_claimReason, btn_name: stringsClass.proceed_name)
-                backBtn_view(viewRouter: viewRouter, viewRouterName: stringsClass.view_claimsCenter)
-            }
-        }
-    }
-}
-
-/*
+ 
+ 
+ 
  struct GradientBackgroundStyle: ButtonStyle {
  
  let colorClass = ColorUI()
@@ -282,5 +234,73 @@ struct ClaimsForm_Previews: PreviewProvider {
  .padding(.horizontal, dimensClass.cg_10)
  .background(colorClass.endColor)
  .cornerRadius(dimensClass.cg_10)
+ 
+ 
+ ZStack{
+     //Walkthrough(image: "selectInfo").padding(.horizontal,10)
+     //Horizontal Line
+    VStack{
+     colorClass.fillForm_orange.frame(width: screenWidth-40, height:CGFloat(1) / UIScreen.main.scale)
+     }
+     HStack{
+         Button(action: {self.viewRouter.currentPage = self.stringsClass.view_claimsForm})
+         {
+             ZStack{
+             Image("Selected_Red_View")
+                 .resizable()
+                 .scaledToFit()
+                 .frame(width: screenWidth-270,height: CGFloat(dimensClass.cg_60))
+             Image("fillForm")
+                 .resizable()
+                 .scaledToFit()
+                 .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
+             }
+         }.buttonStyle(PlainButtonStyle())
+         Button(action: {self.viewRouter.currentPage = self.stringsClass.view_claimReason}) {
+             ZStack{
+                 Image("Unselected_Red_View") .resizable()
+                 .scaledToFit()
+                 .frame(width: screenWidth-270,height: CGFloat(dimensClass.cg_60))
+                 Image("car-info")
+                     .resizable()
+                     .scaledToFit()
+                     .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
+             }
+         }.buttonStyle(PlainButtonStyle())
+         Button(action: {self.viewRouter.currentPage = self.stringsClass.view_camera}) {
+             ZStack{
+                 Image("Unselected_Red_View") .resizable()
+                 .scaledToFit()
+                 .frame(width: screenWidth-270,height: CGFloat(dimensClass.cg_60))
+                 Image("camera")
+                     .resizable()
+                     .scaledToFit()
+                     .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
+             }
+         }.buttonStyle(PlainButtonStyle())
+         Button(action: {self.viewRouter.currentPage = self.stringsClass.view_googleMaps}) {
+             ZStack{
+                 Image("Unselected_Red_View") .resizable()
+                 .scaledToFit()
+                 .frame(width: screenWidth-270,height: CGFloat(dimensClass.cg_60))
+                 Image("googlemaps")
+                     .resizable()
+                     .scaledToFit()
+                     .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
+             }
+         }.buttonStyle(PlainButtonStyle())
+         Button(action: {self.viewRouter.currentPage = self.stringsClass.view_review}) {
+             ZStack{
+                 Image("Unselected_Red_View") .resizable()
+                 .scaledToFit()
+                 .frame(width: screenWidth-270, height: CGFloat(dimensClass.cg_60))
+                 Image("email-send-outline")
+                     .resizable()
+                     .scaledToFit()
+                     .frame(width: CGFloat(dimensClass.cg_30),height: CGFloat(dimensClass.cg_30))
+             }
+         }.buttonStyle(PlainButtonStyle())
+     }//.frame(width: screenWidth)
+ }
  */
 

@@ -76,6 +76,7 @@
 		8DB99D8523AE87B100AE483B /* introductionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8DB99D8423AE87B100AE483B /* introductionData.json */; };
 		8DB99D8723AE881800AE483B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB99D8623AE881800AE483B /* Data.swift */; };
 		8DB99D9323AEB69900AE483B /* Introduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB99D9223AEB69900AE483B /* Introduction.swift */; };
+		8DBBB1F824ACD1CB006CEB9E /* GlassDamageUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBBB1F724ACD1CB006CEB9E /* GlassDamageUI.swift */; };
 		8DBD931023ECC87F0034E918 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD930F23ECC87F0034E918 /* LocationManager.swift */; };
 		8DC0FF8323EEFA0400B8401F /* ListMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0FF8223EEFA0400B8401F /* ListMessage.swift */; };
 		8DC0FF8523EEFA4500B8401F /* Messagepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0FF8423EEFA4500B8401F /* Messagepage.swift */; };
@@ -197,6 +198,7 @@
 		8DB99D8423AE87B100AE483B /* introductionData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = introductionData.json; sourceTree = "<group>"; };
 		8DB99D8623AE881800AE483B /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		8DB99D9223AEB69900AE483B /* Introduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Introduction.swift; sourceTree = "<group>"; };
+		8DBBB1F724ACD1CB006CEB9E /* GlassDamageUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassDamageUI.swift; sourceTree = "<group>"; };
 		8DBD930F23ECC87F0034E918 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		8DC0FF8223EEFA0400B8401F /* ListMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMessage.swift; sourceTree = "<group>"; };
 		8DC0FF8423EEFA4500B8401F /* Messagepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messagepage.swift; sourceTree = "<group>"; };
@@ -370,8 +372,7 @@
 				8D55D9BA23E2FDEA00B0DC4B /* MainScreen.swift */,
 				8DB99D4F23AD255300AE483B /* EmergencyUI.swift */,
 				8DB99D5123AD25F500AE483B /* RoadsideAssistanceUI.swift */,
-				8D55D9A523E0807800B0DC4B /* ClaimsCenter.swift */,
-				8D1C07822461DBF400F4EC7E /* ClaimsForm */,
+				8DBBB1F624ACD170006CEB9E /* ClaimsCenter */,
 				8D55D9B423E1EFFC00B0DC4B /* uploadPhotos.swift */,
 				8D55D9B623E201FD00B0DC4B /* GlassDamage.swift */,
 				8DEBB2032415297800622D88 /* Profil.swift */,
@@ -463,6 +464,16 @@
 				8D55D9A823E0852700B0DC4B /* ClaimsCenterData.json */,
 			);
 			path = Ressources;
+			sourceTree = "<group>";
+		};
+		8DBBB1F624ACD170006CEB9E /* ClaimsCenter */ = {
+			isa = PBXGroup;
+			children = (
+				8D55D9A523E0807800B0DC4B /* ClaimsCenter.swift */,
+				8D1C07822461DBF400F4EC7E /* ClaimsForm */,
+				8DBBB1F724ACD1CB006CEB9E /* GlassDamageUI.swift */,
+			);
+			path = ClaimsCenter;
 			sourceTree = "<group>";
 		};
 		8DC95CFB2471A7B300197C0F /* Auth */ = {
@@ -646,6 +657,7 @@
 				8D2138792442459A0063F001 /* HostingController.swift in Sources */,
 				8DB99D3C23AD247300AE483B /* AppDelegate.swift in Sources */,
 				8D1C07812461A05100F4EC7E /* IntroUI.swift in Sources */,
+				8DBBB1F824ACD1CB006CEB9E /* GlassDamageUI.swift in Sources */,
 				8D2138742441FE8F0063F001 /* cellphone_layout.swift in Sources */,
 				8DC95CFA247194B000197C0F /* WebView.swift in Sources */,
 				8DA40AAA2467ED9700EFB8D9 /* Preview.swift in Sources */,

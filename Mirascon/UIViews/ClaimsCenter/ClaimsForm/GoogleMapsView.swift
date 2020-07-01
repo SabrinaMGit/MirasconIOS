@@ -41,7 +41,7 @@ struct GoogleMapsView: View {
                 RadialGradientUI()
                 VStack {
                     NavigationBarImageUI().padding(.bottom,20)
-                    Walkthrough(image: "WalkthroughMap").padding(.horizontal,10)
+                     WalkThroughBtn(viewRouter: viewRouter, isSelectedForm: false, isCompletedForm: true, isSelectedCar: false, isCompletedCar: true, isSelectedCam: false, isCompletedCam: false, isSelectedMaps: true, isCompletedMaps: false, isSelectedSbm: false, isCompletedSbm: false)
                     
                     List{
                         ZStack(alignment: .leading){

@@ -27,7 +27,8 @@ struct ClaimReason: View {
             RadialGradientUI()
             VStack{
                 NavigationBarImageUI().padding(.bottom,20)
-                Walkthrough(image: "WalkthroughCar").padding(.horizontal,10)
+                //Walkthrough(image: "WalkthroughCar").padding(.horizontal,10)
+                WalkThroughBtn(viewRouter: viewRouter, isSelectedForm: false, isCompletedForm: true, isSelectedCar: true, isCompletedCar: false, isSelectedCam: false, isCompletedCam: false, isSelectedMaps: false, isCompletedMaps: false, isSelectedSbm: false, isCompletedSbm: false)
                     //Spacer()
                 List{
                 ZStack(alignment: .leading){

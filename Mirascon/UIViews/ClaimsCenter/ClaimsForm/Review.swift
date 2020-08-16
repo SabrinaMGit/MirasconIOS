@@ -14,7 +14,7 @@ struct Review: View {
     let colorClass = ColorUI()
     let dimensClass = dimens()
     let stringsClass = strings()
-    let ggleMaps = GoogleMapsView(ViewRouter())
+   // let ggleMaps = GoogleMapsView(ViewRouter())
     
     @ObservedObject var viewRouter: ViewRouter
     

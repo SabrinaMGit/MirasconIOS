@@ -11,7 +11,7 @@ import MessageUI
 import UIKit
 
 struct MailView: UIViewControllerRepresentable {
-    let gMap = GoogleMap()
+   // let gMap = GoogleMap()
     let cForm = ClaimsForm(ViewRouter())
     @Environment(\.presentationMode) var presentation
     @Binding var result: Result<MFMailComposeResult, Error>?

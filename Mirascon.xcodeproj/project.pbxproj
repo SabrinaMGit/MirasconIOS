@@ -33,6 +33,12 @@
 		8D25408623ED6B9F00707704 /* DataFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D25408523ED6B9F00707704 /* DataFire.swift */; };
 		8D25408823ED6F5D00707704 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D25408723ED6F5D00707704 /* GoogleService-Info.plist */; };
 		8D3DD1CF24634068002C2418 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3DD1CE24634068002C2418 /* Review.swift */; };
+		8D4F295024E96EDB00D2933E /* MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F294D24E9676700D2933E /* MapKit.swift */; };
+		8D4F295124E9704600D2933E /* GoogleMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5742AB242B47260018160B /* GoogleMapsView.swift */; };
+		8D4F295224E9704D00D2933E /* GoogleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3835623EC52BA00000039 /* GoogleMap.swift */; };
+		8D4F295324E9705600D2933E /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F294924E857C000D2933E /* LocationService.swift */; };
+		8D4F295424E970B500D2933E /* SearchMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F294B24E857F600D2933E /* SearchMap.swift */; };
+		8D4F295524E970C400D2933E /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4F294724E8545D00D2933E /* Map.swift */; };
 		8D527DF0246C95DB00879FAD /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D527DEF246C95DB00879FAD /* SignInView.swift */; };
 		8D527DF2246C95FD00879FAD /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D527DF1246C95FD00879FAD /* SignUpView.swift */; };
 		8D527DF5246C982900879FAD /* PhoneAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D527DF4246C982900879FAD /* PhoneAuth.swift */; };
@@ -49,7 +55,6 @@
 		8D55D9BD23E2FF1800B0DC4B /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55D9BC23E2FF1800B0DC4B /* ViewRouter.swift */; };
 		8D55D9BF23E34FC000B0DC4B /* LaunchLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55D9BE23E34FC000B0DC4B /* LaunchLogo.swift */; };
 		8D55D9C323E38BD500B0DC4B /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D55D9C223E38BD500B0DC4B /* FirstLaunch.swift */; };
-		8D5742AC242B47260018160B /* GoogleMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5742AB242B47260018160B /* GoogleMapsView.swift */; };
 		8D5742AE242B89290018160B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 8D5742AD242B89290018160B /* Podfile */; };
 		8DA40AAA2467ED9700EFB8D9 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA40AA92467ED9700EFB8D9 /* Preview.swift */; };
 		8DA40AAC2467EF5A00EFB8D9 /* PreviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA40AAB2467EF5A00EFB8D9 /* PreviewRow.swift */; };
@@ -81,7 +86,6 @@
 		8DBD931023ECC87F0034E918 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DBD930F23ECC87F0034E918 /* LocationManager.swift */; };
 		8DC0FF8323EEFA0400B8401F /* ListMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0FF8223EEFA0400B8401F /* ListMessage.swift */; };
 		8DC0FF8523EEFA4500B8401F /* Messagepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC0FF8423EEFA4500B8401F /* Messagepage.swift */; };
-		8DC3835723EC52BA00000039 /* GoogleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3835623EC52BA00000039 /* GoogleMap.swift */; };
 		8DC95CFA247194B000197C0F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95CF9247194B000197C0F /* WebView.swift */; };
 		8DC95CFD2471A7D500197C0F /* LogOutBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95CFC2471A7D500197C0F /* LogOutBtn.swift */; };
 		8DC95D002471AAFC00197C0F /* ScreenSizeFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC95CFF2471AAFC00197C0F /* ScreenSizeFrame.swift */; };
@@ -152,6 +156,10 @@
 		8D25408523ED6B9F00707704 /* DataFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFire.swift; sourceTree = "<group>"; };
 		8D25408723ED6F5D00707704 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D3DD1CE24634068002C2418 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		8D4F294724E8545D00D2933E /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		8D4F294924E857C000D2933E /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		8D4F294B24E857F600D2933E /* SearchMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMap.swift; sourceTree = "<group>"; };
+		8D4F294D24E9676700D2933E /* MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKit.swift; sourceTree = "<group>"; };
 		8D527DEF246C95DB00879FAD /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		8D527DF1246C95FD00879FAD /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		8D527DF3246C97AD00879FAD /* Mirascon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mirascon.entitlements; sourceTree = "<group>"; };
@@ -269,6 +277,9 @@
 				8DDAD9F823E05774001409EC /* ClaimsForm.swift */,
 				8D1C07832461DC2900F4EC7E /* ClaimReason.swift */,
 				8D1C07912462E52C00F4EC7E /* camera.swift */,
+				8D4F294724E8545D00D2933E /* Map.swift */,
+				8D4F294D24E9676700D2933E /* MapKit.swift */,
+				8D4F294B24E857F600D2933E /* SearchMap.swift */,
 				8D5742AB242B47260018160B /* GoogleMapsView.swift */,
 				8D3DD1CE24634068002C2418 /* Review.swift */,
 				8D06BB9524AA497E00F1A0AF /* SwiftUIView.swift */,
@@ -337,6 +348,7 @@
 				8DC95D052471DB2300197C0F /* AlertIdentifier.swift */,
 				8DD277D72486B16500B9F9FB /* ActivityIndicator.swift */,
 				8DD277D92486B49400B9F9FB /* KeyboardResponder.swift */,
+				8D4F294924E857C000D2933E /* LocationService.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -644,6 +656,7 @@
 				8D1C07A22463037300F4EC7E /* NextBtn.swift in Sources */,
 				8DC95CFD2471A7D500197C0F /* LogOutBtn.swift in Sources */,
 				8DC95D022471D52C00197C0F /* ProfilRow.swift in Sources */,
+				8D4F295524E970C400D2933E /* Map.swift in Sources */,
 				8D52E50A2464A96A00B1FA33 /* LabelTextFields.swift in Sources */,
 				8DD277D82486B16500B9F9FB /* ActivityIndicator.swift in Sources */,
 				8DBBB1FA24ACE7AA006CEB9E /* FindYourQuote.swift in Sources */,
@@ -653,9 +666,11 @@
 				8DB4013024AA78DD008FB572 /* WalkThroughBtn.swift in Sources */,
 				8D1C07882461E50100F4EC7E /* SaveUserData.swift in Sources */,
 				8D55D9B923E208E200B0DC4B /* Coordinator.swift in Sources */,
+				8D4F295424E970B500D2933E /* SearchMap.swift in Sources */,
 				8DD277DE2486E34300B9F9FB /* claimsFormRow.swift in Sources */,
 				8D1C07942462E56500F4EC7E /* CaptureImage.swift in Sources */,
 				8D1C078C2462C12500F4EC7E /* NavigationBarWithItemUI.swift in Sources */,
+				8D4F295224E9704D00D2933E /* GoogleMap.swift in Sources */,
 				8D527DF5246C982900879FAD /* PhoneAuth.swift in Sources */,
 				8DA40AAE2467F48900EFB8D9 /* AGB.swift in Sources */,
 				8D2138792442459A0063F001 /* HostingController.swift in Sources */,
@@ -678,8 +693,8 @@
 				8DB2E1DE243B54DC00E3A1BD /* ColorUI.swift in Sources */,
 				8D25408623ED6B9F00707704 /* DataFire.swift in Sources */,
 				8DB99D3E23AD247300AE483B /* SceneDelegate.swift in Sources */,
-				8D5742AC242B47260018160B /* GoogleMapsView.swift in Sources */,
 				8DC95D062471DB2300197C0F /* AlertIdentifier.swift in Sources */,
+				8D4F295324E9705600D2933E /* LocationService.swift in Sources */,
 				8DB99D7623AE154400AE483B /* PlayerView.swift in Sources */,
 				8DC0FF8323EEFA0400B8401F /* ListMessage.swift in Sources */,
 				8D06BB9624AA497E00F1A0AF /* SwiftUIView.swift in Sources */,
@@ -691,12 +706,14 @@
 				8D1C077F2460768600F4EC7E /* OldClaimsForm.swift in Sources */,
 				8D1C07842461DC2900F4EC7E /* ClaimReason.swift in Sources */,
 				8DB99D5223AD25F500AE483B /* RoadsideAssistanceUI.swift in Sources */,
+				8D4F295124E9704600D2933E /* GoogleMapsView.swift in Sources */,
 				8DEBB2042415297800622D88 /* Profil.swift in Sources */,
 				8D527DF2246C95FD00879FAD /* SignUpView.swift in Sources */,
 				8D1C078E2462DE4A00F4EC7E /* Rows.swift in Sources */,
 				8DA40AAC2467EF5A00EFB8D9 /* PreviewRow.swift in Sources */,
 				8DB99D9323AEB69900AE483B /* Introduction.swift in Sources */,
 				8DBD931023ECC87F0034E918 /* LocationManager.swift in Sources */,
+				8D4F295024E96EDB00D2933E /* MapKit.swift in Sources */,
 				8D1C078A2462B8EE00F4EC7E /* NavigationBarImageUI.swift in Sources */,
 				8DB2E1E4243C9AE900E3A1BD /* LogoBar.swift in Sources */,
 				8D55D9BD23E2FF1800B0DC4B /* ViewRouter.swift in Sources */,
@@ -706,7 +723,6 @@
 				8D527DF0246C95DB00879FAD /* SignInView.swift in Sources */,
 				8D1C079D2462E92F00F4EC7E /* PhotoCaptureView.swift in Sources */,
 				8DC95D042471D83100197C0F /* LogOutView.swift in Sources */,
-				8DC3835723EC52BA00000039 /* GoogleMap.swift in Sources */,
 				8D527DF9246C9E3B00879FAD /* LoginRow.swift in Sources */,
 				8DB99D4023AD247300AE483B /* ContentView.swift in Sources */,
 				8DB99D8723AE881800AE483B /* Data.swift in Sources */,

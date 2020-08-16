@@ -43,26 +43,11 @@ struct GoogleMapsView: View {
                     NavigationBarImageUI().padding(.bottom,20)
                      WalkThroughBtn(viewRouter: viewRouter, isSelectedForm: false, isCompletedForm: true, isSelectedCar: false, isCompletedCar: true, isSelectedCam: false, isCompletedCam: false, isSelectedMaps: true, isCompletedMaps: false, isSelectedSbm: false, isCompletedSbm: false)
                     
-                    List{
-                        ZStack(alignment: .leading){
-                            RadialGradient(gradient: Gradient(colors: [colorClass.blue, colorClass.blue]), center: .center, startRadius: dimensClass.cg_2, endRadius: dimensClass.cg_650)
-                            
-                            Text("Use the location button in the map view or enter your location manually.")
-                                //.background(Color.white)
-                                //.cornerRadius(dimensClass.cg_4)
-                                .multilineTextAlignment(.leading)
-                                .foregroundColor(Color.white)
-                                .padding(dimensClass.cg_8)
-                                .font(.subheadline)
-                                .lineLimit(nil)
-                                .fixedSize(horizontal: false, vertical: true)
-                            //.padding(.top, dimensClass.cg_20)
-                        }.frame( height: dimensClass.cg_40).cornerRadius(5)
-                           // .padding(.horizontal,12)
-                        GoogleMap()
-                            .frame(height: dimensClass.cg_200)
+                    
+                        MapKit(viewRouter, LocationManagers())
+                            .frame(width: screenWidth-20,height: dimensClass.cg_300)
     
-                        Toggle(isOn: $manuallyLocation) {
+                        /*Toggle(isOn: $manuallyLocation) {
                             Text("Enter manually your location below.")
                                 .foregroundColor(Color.white)
                         }
@@ -72,9 +57,7 @@ struct GoogleMapsView: View {
                             LabelTextFields(label: "Street:", labelColor: Color.white, datas: $street, textFieldBorderColor: Color.white, placeholderName: stringsClass.emptyText )
                             LabelTextFields(label: stringsClass.forkey_state, labelColor: Color.white, datas: $state, textFieldBorderColor: Color.white, placeholderName: stringsClass.emptyText )
                         }
-                        
-                    }
-                    .listRowInsets(EdgeInsets())
+                        */
                     Button(action: {
                         if self.manuallyLocation {
                             if self.street != self.stringsClass.emptyText && self.city != self.stringsClass.emptyText && self.state != self.stringsClass.emptyText {

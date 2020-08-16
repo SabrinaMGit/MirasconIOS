@@ -11,7 +11,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import CoreLocation
-
+/*
 private let locationManager = CLLocationManager()
 
 struct GoogleMap: UIViewRepresentable {
@@ -128,4 +128,4 @@ struct GoogleMap_Previews: PreviewProvider {
          GoogleMapsView(ViewRouter())
      }
  }
- */
+ */*/
